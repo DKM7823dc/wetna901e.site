@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schroders Capital: Neue Möglichkeiten in Private Markets erschließen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #003366 0%, #004080 100%);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-left h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-left p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero-right {
+            text-align: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .hero-stats {
+            background: rgba(255,215,0,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255,215,0,0.3);
+            margin-top: 30px;
+        }
+
+        .hero-stats h3 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #FFD700;
+        }
+
+        .hero-stats p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        /* About Section - Two Column Layout */
+        .about-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-left h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: #003366;
+            position: relative;
+        }
+
+        .about-left h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+        }
+
+        .about-left p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .about-right {
+            background: linear-gradient(135deg, #003366 0%, #004080 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-right::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,215,0,0.1)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+
+        /* Problem Section - Zigzag Layout */
+        .problem-section {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .problem-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .problem-left {
+            order: 2;
+        }
+
+        .problem-left h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: #003366;
+            position: relative;
+        }
+
+        .problem-left h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+        }
+
+        .problem-left p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .problem-right {
+            order: 1;
+            position: relative;
+        }
+
+        .problem-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .problem-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .urgency-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #FF8C00;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        /* Services Section - Card Grid */
+        .services-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .services-header h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: #003366;
+            position: relative;
+        }
+
+        .services-header h2::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #FFD700;
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #003366, #004080);
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #FFD700;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #003366;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: #FFD700;
+            color: #003366;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Testimonial Section */
+        .testimonial-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #003366 0%, #004080 100%);
+            color: white;
+        }
+
+        .testimonial-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial-quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .author-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: #FFD700;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Collaboration Section - Split Layout */
+        .collaboration-section {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .collaboration-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .collaboration-left {
+            position: relative;
+        }
+
+        .collaboration-right h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: #003366;
+            position: relative;
+        }
+
+        .collaboration-right h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+        }
+
+        .collaboration-right p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .experience-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-left: 5px solid #FFD700;
+        }
+
+        .experience-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+
+        .experience-text {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* CTA Buttons */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #003366;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+            border: none;
+            cursor: pointer;
+            margin: 20px 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #003366 0%, #004080 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="0,100 100,0 100,100" fill="rgba(255,215,0,0.05)"/></svg>');
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .limited-time {
+            background: rgba(255,215,0,0.2);
+            padding: 15px 30px;
+            border-radius: 25px;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-weight: bold;
+            color: #FFD700;
+        }
+
+        /* Floating Button */
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, #FF8C00, #FF6B35);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(255, 140, 0, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+        }
+
+        .floating-button:hover {
+            transform: translateX(-50%) translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 140, 0, 0.5);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateX(0px); }
+            100% { transform: translateX(-50px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content,
+            .about-content,
+            .problem-content,
+            .collaboration-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .problem-left,
+            .problem-right {
+                order: initial;
+            }
+
+            .hero-left h1 {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .floating-button:hover {
+                transform: translateX(-50%) translateY(-3px);
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-header h2::after,
+            .about-left h2::after,
+            .problem-left h2::after,
+            .collaboration-right h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .services-header,
+            .about-left,
+            .problem-left,
+            .collaboration-right {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <h1>Schroders Capital: Neue Möglichkeiten in Private Markets erschließen</h1>
+                    <p>Entdecken Sie unerschlossene Investmentmöglichkeiten</p>
+                    <p>In einem sich schnell verändernden Marktumfeld stehen Investoren vor zunehmend komplexen Entscheidungen. Wie findet man stabile Renditemöglichkeiten außerhalb der öffentlichen Märkte?</p>
+                    <button class="cta-button" onclick="d2()">Marktbericht erhalten</button>
+                </div>
+                <div class="hero-right">
+                    <img src="img/1.jpg" alt="Professional Investment" class="hero-image">
+                    <div class="hero-stats">
+                        <h3>200+</h3>
+                        <p>Jahre Expertise</p>
+                        <h3>5835</h3>
+                        <p>Experten weltweit</p>
+                        <h3>38</h3>
+                        <p>Globale Standorte</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-left">
+                    <h2>Über uns</h2>
+                    <p>Wir verfügen über mehr als 200 Jahre Berufserfahrung und haben 5835 Mitarbeiter in 38 Regionen weltweit</p>
+                    <p>Unsere umfassenden aktiven Anlageverwaltungsdienstleistungen in öffentlichen und privaten Märkten ermöglichen es uns, einzigartige Lösungen für die unterschiedlichen Bedürfnisse unserer Kunden anzubieten.</p>
+                    <button class="cta-button" onclick="d2()">Mehr erfahren</button>
+                </div>
+                <div class="about-right">
+                    <h3 style="margin-bottom: 20px; color: #FFD700;">Warum Schroders Capital?</h3>
+                    <p>✓ Globale Präsenz in wichtigen Finanzmärkten</p>
+                    <p>✓ Bewährte Erfolgsbilanz seit 1804</p>
+                    <p>✓ Innovative Anlagelösungen</p>
+                    <p>✓ Persönliche Beratung</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="problem-content">
+                <div class="problem-left">
+                    <h2>Verwirrung und Risiken bei der Anlagewahl</h2>
+                    <p>Viele Investoren fühlen sich bei traditionellen Anlageinstrumenten überfordert, insbesondere bei der Suche nach hochrentablen, risikoarmen Investitionen.</p>
+                    <p>Private Equity, Private Debt, Immobilien und Infrastruktur sind oft schwer zugänglich - wodurch Investoren potenzielle Renditen verpassen.</p>
+                    <button class="cta-button" onclick="d2()">Sofort beraten lassen</button>
+                </div>
+                <div class="problem-right">
+                    <div class="problem-image-wrapper">
+                        <img src="img/2.jpg" alt="Investment Opportunities">
+                        <div class="urgency-badge">Begrenzte Plätze!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="services-header">
+                <h2>Professionelle Investmentservices von Schroders Capital</h2>
+                <p>Schroders Capital verfügt über mehr als 200 Jahre Branchenerfahrung und bietet Ihnen innovative Anlagelösungen in vier Schwerpunktbereichen:</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="popular-badge">Beliebt</div>
+                    <div class="service-icon">💼</div>
+                    <h3>Private Equity</h3>
+                    <p>Wachstumspotenzial erfassen und Überrenditen erzielen.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Private Debt</h3>
+                    <p>Stabilen Cashflow bieten und Anlagerisiken reduzieren.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Immobilieninvestment</h3>
+                    <p>Diversifiziertes Anlageportfolio zur Abwehr von Marktschwankungen.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌉</div>
+                    <h3>Infrastrukturinvestment</h3>
+                    <p>Teilnahme an nationalen Großprojekten für langfristige Renditen.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <img src="img/3.jpg" alt="Investment Services" style="max-width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="testimonial-content">
+                <div class="testimonial-quote">
+                    "Schroders Capital hat unsere Erwartungen übertroffen. Die professionelle Beratung und innovative Anlagelösungen haben unser Portfolio deutlich gestärkt."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <h4>Dr. Schmidt</h4>
+                        <p>Family Office, München</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaboration Section -->
+    <section class="collaboration-section">
+        <div class="container">
+            <div class="collaboration-content">
+                <div class="collaboration-left">
+                    <div class="experience-card">
+                        <div class="experience-number">20+</div>
+                        <div class="experience-text">Jahre Private-Client-Service Erfahrung</div>
+                    </div>
+                    <div class="experience-card">
+                        <div class="experience-number">100%</div>
+                        <div class="experience-text">Maßgeschneiderte Lösungen</div>
+                    </div>
+                </div>
+                <div class="collaboration-right">
+                    <h2>Maßgeschneiderte Zusammenarbeit mit vermögenden Kunden</h2>
+                    <p>Schroders Capital konzentriert sich nicht nur auf Anlagerenditen, sondern legt auch großen Wert auf Kommunikation und Zusammenarbeit mit Kunden.</p>
+                    <p>Unser Team widmet sich der Bereitstellung personalisierter Anlageberatung und -services für vermögende Privatpersonen und Family Offices.</p>
+                    <p>Lassen Sie uns gemeinsam eine glänzende Anlagezukunft schaffen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="final-cta-content">
+                <div class="limited-time">⏰ Exklusives Beratungsgespräch - Nur noch wenige Plätze verfügbar</div>
+                <h2>Jetzt handeln</h2>
+                <p>Möchten Sie mehr über die Anlagemöglichkeiten von Schroders Capital erfahren? Kontaktieren Sie uns für einen tiefgreifenden Austausch mit unserem Expertenteam und beginnen Sie Ihre Anlagereise!</p>
+                <button class="cta-button" onclick="d2()">Kostenloses Beratungsgespräch sichern</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Button -->
+    <button class="floating-button" onclick="d2()">Jetzt beraten lassen</button>
+
+    <script>
+        function d2() {
+            window.open('https://wa.me/1111111', '_blank');
+        }
+    </script>
+</body>
+</html>
