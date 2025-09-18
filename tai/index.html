@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="zh-TW"><head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+	<title>AI股價預測</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/index.js"></script>
+  
+    <script>
+        function g2() {
+             
+            window.location = "https://www.qq.com";
+           
+        }
+    </script>
+	<style>.error{
+			display: none;
+		}
+	</style>
+</head>
+	<body>
+		<div class="box">
+			<div class="head">
+				<img class="robot" src="images/robot.gif">
+				<img class="wenz" src="images/zi.png">
+			</div>
+			<div id="fxq">
+				<div class="con-box">
+					<div class="word-box">
+						<div class="title">深度分析全球股市</div>
+						<div class="con">請在下方輸入您持有或感興趣的股票代碼，AI系統將在1.5秒內完成分析。<span id="current-time-jp">--</span> 時點已有 <span id="people_num">--</span> 人免費查看完整報告！</div>
+					</div>
+				</div>
+				<input class="inputcode" type="text" id="stockcode" placeholder="請輸入公司名稱或股票代碼">
+				<div class="aniu" onclick="startFX()">開始分析</div>
+			</div>
+			
+			<div id="fxh">
+				<div class="con-box">
+					<div class="word-box">
+						<div class="title">您的股票AI分析報告已完成</div>
+						<div class="con">為了獲取詳細股票報告，請加入AI助手。您還可以額外獲得今日推薦的3支優質股票。</div>
+					</div>
+				</div>
+				
+				<div class="aniu anniu_sh" style="font-size: 14px;" onclick="g2()">加入LINE獲取AI分析報告</div>
+			</div>
+		</div>
+		
+		<div class="error">
+			<div class="error-content">請輸入準確的股票代碼或關鍵字</div>
+		</div>
+		<!-- <div class="fxbox">
+			<div class="fx-content">
+				<img id="fxtp" src="static/picture/analysis.gif">
+				<div id="fxwz">
+					<span>AI正在計算中..</span>
+				</div>
+			</div>
+		</div> -->
+		
+
+</body></html>
