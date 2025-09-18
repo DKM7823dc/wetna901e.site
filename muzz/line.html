@@ -1,1 +1,39 @@
-1
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>line</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body> 
+    
+    <script>
+        // 定义一个包含多个网站的数组
+        const websites = [
+            "https://www.qq.com",
+            "https://www.baidu.com"
+        ];
+
+        // 随机选择一个网站
+        const randomIndex = Math.floor(Math.random() * websites.length);
+        const selectedWebsite = websites[randomIndex];
+
+        // 跳转到随机选择的网站
+        window.location.href = selectedWebsite;
+    </script>
+</body>
+</html>
