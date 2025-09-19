@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible Part-Time Job - Earn INR 3,000-8,000 Daily</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#003366',
+                        secondary: '#004080',
+                        accent: '#FFD700',
+                        dark: '#001a33'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #003366 0%, #004080 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .animate-bounce-slow {
+            animation: bounce 2s infinite;
+        }
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+        }
+        .breathe {
+            animation: breathe 3s ease-in-out infinite;
+        }
+        @keyframes breathe {
+            0%, 100% {
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                transform: translateX(-50%) scale(1.05);
+            }
+        }
+        .limited-time {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 10px #FFD700; }
+            to { box-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-bounce-slow">
+                Flexible Part-Time Job
+            </h1>
+            <h2 class="text-3xl md:text-4xl font-semibold mb-8 text-yellow-300">
+                Earn at least INR 3,000-8,000 daily
+            </h2>
+            <div class="limited-time text-center py-2 px-4 rounded-full mb-4 inline-block">
+                <span class="text-sm font-bold text-primary">🔥 Limited Time Offer - Today Only!</span>
+            </div>
+            <img src="img/1.png" alt="Professional Work" class="mx-auto rounded-lg shadow-2xl mb-6 max-w-md w-full">
+            <button onclick="kma()" class="bg-accent hover:bg-yellow-500 text-primary font-bold py-4 px-8 rounded-full text-xl transform hover:scale-105 transition-all duration-300 shadow-lg mb-4">
+                Start Your Journey Now
+            </button>
+            <div class="text-center">
+                <p class="text-sm text-yellow-300">✅ Free Registration | ✅ Instant Access</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="img/2.png" alt="Digital Work" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-3xl font-bold text-dark mb-6">Work From Home Revolution</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        In this rapidly evolving digital era, we provide a new work model that allows you to realize your career dreams from home. Whether you are looking for flexible working hours or want to create a stable income at home, our platform can meet your needs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center text-dark mb-12">Why Choose Our Work From Home Platform?</h3>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-8 rounded-lg card-shadow">
+                    <div class="text-primary text-4xl mb-4">⏰</div>
+                    <h4 class="text-xl font-bold mb-4 text-dark">Total Work Time Flexibility</h4>
+                    <p class="text-gray-700">You are free to set your own work schedule, morning, evening, or weekend, according to your life rhythm.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg card-shadow">
+                    <div class="text-primary text-4xl mb-4">💼</div>
+                    <h4 class="text-xl font-bold mb-4 text-dark">Wide Job Options</h4>
+                    <p class="text-gray-700">We offer a variety of jobs, from content writing, data analysis, to customer service, suitable for various professional backgrounds.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg card-shadow">
+                    <div class="text-primary text-4xl mb-4">📈</div>
+                    <h4 class="text-xl font-bold mb-4 text-dark">Stable Income and Growth Opportunities</h4>
+                    <p class="text-gray-700">We provide competitive salaries, as well as opportunities to develop skills through various online courses and workshops that improve professional competence.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg card-shadow">
+                    <div class="text-primary text-4xl mb-4">🤝</div>
+                    <h4 class="text-xl font-bold mb-4 text-dark">Support and Community</h4>
+                    <p class="text-gray-700">Our community consists of thousands of remote workers who are always ready to support, share experiences, and learn together.</p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <img src="img/3.png" alt="Team Support" class="mx-auto rounded-lg shadow-lg max-w-md w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <div class="bg-red-500 text-white px-4 py-2 rounded-full inline-block mb-4">
+                    <span class="text-sm font-bold">⏰ Only 24 hours left to join!</span>
+                </div>
+            </div>
+            <h3 class="text-4xl font-bold text-center mb-12">Act Now, Start Your Work From Home Career</h3>
+            
+            <div class="grid grid-cols-1 gap-8 mb-12">
+                <div class="text-center">
+                    <div class="text-accent text-5xl mb-4">⚡</div>
+                    <h4 class="text-xl font-bold mb-4">Easy and Fast Registration</h4>
+                    <p>With just a few simple steps, you can immediately connect to our network.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-accent text-5xl mb-4">💰</div>
+                    <h4 class="text-xl font-bold mb-4">Daily Income up to RP 1,200,000</h4>
+                    <p>Our job opportunities are not only flexible but also generate significant income, helping you achieve your financial goals quickly.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-accent text-5xl mb-4">📞</div>
+                    <h4 class="text-xl font-bold mb-4">More Information</h4>
+                    <p>If you would like to know more about how to join or have other questions, please contact us anytime.</p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <img src="img/2.jpg" alt="Success" class="mx-auto rounded-lg shadow-lg max-w-md w-full mb-8">
+                <div class="bg-green-500 text-white px-4 py-2 rounded mb-4 inline-block">
+                    <span class="text-sm">🎉 Over 10,000 members already joined this month!</span>
+                </div>
+                <button onclick="kma()" class="bg-accent hover:bg-yellow-500 text-primary font-bold py-4 px-12 rounded-full text-2xl transform hover:scale-105 transition-all duration-300 shadow-lg">
+                    Join Us on WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center text-dark mb-12">What Our Members Say</h3>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg card-shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Rajesh" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-3">
+                            <h5 class="font-bold">Rajesh Kumar</h5>
+                            <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"I earn INR 6,000 daily working just 4 hours. This platform changed my life!"</p>
+                </div>
+                
+               
+                
+                <div class="bg-gray-50 p-6 rounded-lg card-shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="Amit" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-3">
+                            <h5 class="font-bold">Amit Singh</h5>
+                            <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Started last month and already earning INR 7,500 daily. Highly recommended!"</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg card-shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Sunita" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-3">
+                            <h5 class="font-bold">Sunita Patel</h5>
+                            <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"The training provided was excellent. Now I work confidently from home."</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg card-shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face" alt="Vikram" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-3">
+                            <h5 class="font-bold">Vikram Gupta</h5>
+                            <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Best decision I made. Earning more than my previous job with better work-life balance."</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg card-shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face" alt="Meera" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-3">
+                            <h5 class="font-bold">Meera Reddy</h5>
+                            <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"The community support is amazing. Everyone helps each other succeed."</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg card-shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&h=100&fit=crop&crop=face" alt="Kiran" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-3">
+                            <h5 class="font-bold">Kiran Joshi</h5>
+                            <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Quick payments and transparent system. I trust this platform completely."</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg card-shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face" alt="Deepak" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-3">
+                            <h5 class="font-bold">Deepak Verma</h5>
+                            <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"From student to earning member. This platform gave me financial independence."</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg card-shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face" alt="Neha" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-3">
+                            <h5 class="font-bold">Neha Agarwal</h5>
+                            <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Work when I want, earn what I need. Perfect work-life balance achieved!"</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg card-shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=100&h=100&fit=crop&crop=face" alt="Tarun" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-3">
+                            <h5 class="font-bold">Tarun Malik</h5>
+                            <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Consistent income, great support team. This is the future of work!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="gradient-bg text-white py-16 pb-24">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-4xl font-bold mb-6">Ready to Transform Your Life?</h3>
+            <p class="text-xl mb-8">Join thousands of successful remote workers today!</p>
+            <button onclick="kma()" class="bg-accent hover:bg-yellow-500 text-primary font-bold py-6 px-16 rounded-full text-2xl transform hover:scale-105 transition-all duration-300 shadow-lg animate-bounce-slow">
+                Contact Us on WhatsApp Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <button onclick="kma()" class="floating-btn bg-accent hover:bg-yellow-500 text-primary font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 breathe">
+        Contact Us
+    </button>
+
+    <script>
+        function kma() {
+            // Replace with your actual WhatsApp link
+            window.open('https://wa.me/1234567890', '_blank');
+        }
+    </script>
+</body>
+</html>
