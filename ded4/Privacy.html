@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzrichtlinie | Professionelle Aktienanalyse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'accent-blue': '#3B82F6',
+                        'dark-blue': '#1E40AF'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-inter">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-4xl mx-auto px-4 py-6">
+            <h1 class="text-2xl md:text-3xl font-bold text-accent-blue">Professionelle Aktienanalyse</h1>
+            <p class="text-gray-600 dark:text-gray-400 mt-2">Bildungsplattform für Investitionen</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8 md:py-12">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 md:p-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-center mb-2">Datenschutzrichtlinie</h1>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-8">Letzte Aktualisierung: Januar 2025</p>
+            
+            <div class="prose prose-gray dark:prose-invert max-w-none">
+                <!-- Introduction -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">1. Einführung</h2>
+                    <p class="mb-4 leading-relaxed">
+                        Diese Datenschutzrichtlinie beschreibt, wie Professionelle Aktienanalyse ("wir", "unser" oder "uns") Ihre persönlichen Informationen sammelt, verwendet und schützt, wenn Sie unsere Bildungsplattform für Investitionen und verwandte Dienste nutzen (zusammen der "Service").
+                    </p>
+                    <p class="mb-4 leading-relaxed">
+                        Wir sind dem Schutz Ihrer Privatsphäre und der Gewährleistung der Sicherheit Ihrer persönlichen Informationen verpflichtet. Diese Richtlinie erklärt Ihre Datenschutzrechte und wie das Gesetz Sie schützt.
+                    </p>
+                </section>
+
+                <!-- Information We Collect -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">2. Informationen, die wir sammeln</h2>
+                    
+                    <h3 class="text-xl font-medium mb-3">2.1 Persönliche Informationen</h3>
+                    <p class="mb-4 leading-relaxed">Wir können die folgenden Arten von persönlichen Informationen sammeln:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Name, E-Mail-Adresse und andere Kontaktinformationen</li>
+                        <li>Kontoregistrierungsinformationen und Anmeldedaten</li>
+                        <li>Zahlungsinformationen für Abonnementdienste</li>
+                        <li>Kommunikationspräferenzen und Marketing-Entscheidungen</li>
+                        <li>Bildungsfortschritt und Lernpräferenzen</li>
+                    </ul>
+
+                    <h3 class="text-xl font-medium mb-3">2.2 Technische Informationen</h3>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>IP-Adresse, Browser-Typ und Geräteinformationen</li>
+                        <li>Nutzungsdaten und Interaktion mit unserer Plattform</li>
+                        <li>Cookies und ähnliche Tracking-Technologien</li>
+                        <li>Log-Dateien und Analysedaten</li>
+                    </ul>
+
+                    <h3 class="text-xl font-medium mb-3">2.3 Bildungsinhalt</h3>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Lernfortschritt und Kursabschlussdaten</li>
+                        <li>Quiz-Ergebnisse und Bewertungspunkte</li>
+                        <li>Diskussionsforumsbeiträge und Community-Interaktionen</li>
+                        <li>Feedback und Umfrageantworten</li>
+                    </ul>
+                </section>
+
+                <!-- How We Use Information -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">3. Wie wir Ihre Informationen verwenden</h2>
+                    <p class="mb-4 leading-relaxed">Wir verwenden Ihre persönlichen Informationen für die folgenden Zwecke:</p>
+                    
+                    <h3 class="text-xl font-medium mb-3">3.1 Servicebereitstellung</h3>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Bereitstellung des Zugangs zu Bildungsinhalten und Lernmaterialien</li>
+                        <li>Bearbeitung der Kontoregistrierung und Verwaltung von Benutzerkonten</li>
+                        <li>Ermöglichung von Community-Funktionen und Diskussionsforen</li>
+                        <li>Verfolgung des Lernfortschritts und Bereitstellung personalisierter Empfehlungen</li>
+                    </ul>
+
+                    <h3 class="text-xl font-medium mb-3">3.2 Kommunikation</h3>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Sendung von Bildungsupdates und Kursbenachrichtigungen</li>
+                        <li>Bereitstellung von Kundensupport und Beantwortung von Anfragen</li>
+                        <li>Sendung von Marketing-Kommunikation (mit Ihrer Einwilligung)</li>
+                        <li>Mitteilung wichtiger Richtlinien-Updates und Service-Ankündigungen</li>
+                    </ul>
+
+                    <h3 class="text-xl font-medium mb-3">3.3 Plattformverbesserung</h3>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Analyse von Nutzungsmustern zur Verbesserung unserer Dienste</li>
+                        <li>Durchführung von Forschung und Entwicklung für neue Funktionen</li>
+                        <li>Überwachung und Verhinderung von Betrug, Sicherheitsbedrohungen und Missbrauch</li>
+                        <li>Gewährleistung der Einhaltung gesetzlicher und regulatorischer Anforderungen</li>
+                    </ul>
+                </section>
+
+                <!-- Information Sharing -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">4. Informationsaustausch und Offenlegung</h2>
+                    <p class="mb-4 leading-relaxed">Wir verkaufen, handeln oder vermieten Ihre persönlichen Informationen nicht an Dritte. Wir können Ihre Informationen unter den folgenden begrenzten Umständen teilen:</p>
+                    
+                    <h3 class="text-xl font-medium mb-3">4.1 Dienstleister</h3>
+                    <p class="mb-4 leading-relaxed">
+                        Wir können Informationen mit vertrauenswürdigen Drittanbietern teilen, die uns beim Betrieb unserer Plattform, der Geschäftsführung oder der Betreuung von Nutzern unterstützen, vorausgesetzt, sie stimmen zu, diese Informationen vertraulich zu behandeln.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">4.2 Rechtliche Anforderungen</h3>
+                    <p class="mb-4 leading-relaxed">
+                        Wir können Ihre Informationen offenlegen, wenn dies gesetzlich vorgeschrieben ist, durch Gerichtsbeschluss oder behördliche Anordnung, oder wenn wir in gutem Glauben der Ansicht sind, dass eine Offenlegung notwendig ist, um unsere Rechte, Ihre Sicherheit oder die Sicherheit anderer zu schützen.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">4.3 Geschäftsübertragungen</h3>
+                    <p class="mb-4 leading-relaxed">
+                        Im Falle einer Fusion, Übernahme oder des Verkaufs von Vermögenswerten können Ihre Informationen als Teil der Transaktion übertragen werden, vorbehaltlich angemessener Vertraulichkeitsschutzmaßnahmen.
+                    </p>
+                </section>
+
+                <!-- Cookies and Tracking -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">5. Cookies und Tracking-Technologien</h2>
+                    <p class="mb-4 leading-relaxed">
+                        Wir verwenden Cookies und ähnliche Technologien, um Ihr Erlebnis auf unserer Plattform zu verbessern. Diese Technologien helfen uns dabei:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Ihren Anmeldestatus und Ihre Präferenzen zu speichern</li>
+                        <li>Website-Traffic und Nutzerverhalten zu analysieren</li>
+                        <li>Personalisierte Inhalte und Empfehlungen bereitzustellen</li>
+                        <li>Unsere Dienste und Benutzererfahrung zu verbessern</li>
+                    </ul>
+                    <p class="mb-4 leading-relaxed">
+                        Sie können Cookie-Einstellungen über Ihre Browser-Einstellungen steuern. Das Deaktivieren von Cookies kann jedoch einige Funktionen unserer Plattform einschränken.
+                    </p>
+                </section>
+
+                <!-- Data Security -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">6. Datensicherheit</h2>
+                    <p class="mb-4 leading-relaxed">
+                        Wir implementieren angemessene technische und organisatorische Sicherheitsmaßnahmen, um Ihre persönlichen Informationen vor unbefugtem Zugriff, Veränderung, Offenlegung oder Zerstörung zu schützen. Diese Maßnahmen umfassen:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Verschlüsselung von Daten während der Übertragung und im Ruhezustand</li>
+                        <li>Regelmäßige Sicherheitsbewertungen und Updates</li>
+                        <li>Zugriffskontrollen und Authentifizierungsprotokolle</li>
+                        <li>Mitarbeiterschulungen zu Datenschutzpraktiken</li>
+                    </ul>
+                    <p class="mb-4 leading-relaxed">
+                        Obwohl wir uns bemühen, Ihre Informationen zu schützen, ist keine Übertragungsmethode über das Internet oder elektronische Speicherung 100% sicher. Wir können keine absolute Sicherheit garantieren.
+                    </p>
+                </section>
+
+                <!-- Data Retention -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">7. Datenspeicherung</h2>
+                    <p class="mb-4 leading-relaxed">
+                        Wir speichern Ihre persönlichen Informationen so lange, wie es notwendig ist, um unsere Dienste bereitzustellen und die in dieser Richtlinie beschriebenen Zwecke zu erfüllen. Spezifische Aufbewahrungszeiten umfassen:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Kontoinformationen: Gespeichert, solange Ihr Konto aktiv ist und für einen angemessenen Zeitraum danach</li>
+                        <li>Bildungsfortschrittsdaten: Gespeichert zur Bereitstellung fortlaufender Dienste und Unterstützung</li>
+                        <li>Kommunikationsaufzeichnungen: Gespeichert für Kundendienst- und rechtliche Compliance-Zwecke</li>
+                        <li>Technische Daten: Gespeichert für Analyse- und Serviceverbesserungszwecke</li>
+                    </ul>
+                </section>
+
+                <!-- Your Rights -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">8. Ihre Datenschutzrechte</h2>
+                    <p class="mb-4 leading-relaxed">
+                        Abhängig von Ihrem Standort haben Sie möglicherweise bestimmte Rechte bezüglich Ihrer persönlichen Informationen:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li><strong>Zugang:</strong> Beantragung des Zugangs zu Ihren persönlichen Informationen, die wir besitzen</li>
+                        <li><strong>Berichtigung:</strong> Beantragung der Korrektur ungenauer oder unvollständiger Informationen</li>
+                        <li><strong>Löschung:</strong> Beantragung der Löschung Ihrer persönlichen Informationen</li>
+                        <li><strong>Übertragbarkeit:</strong> Beantragung einer Kopie Ihrer Daten in einem strukturierten Format</li>
+                        <li><strong>Widerspruch:</strong> Widerspruch gegen bestimmte Verarbeitungen Ihrer Informationen</li>
+                        <li><strong>Einschränkung:</strong> Beantragung der Einschränkung der Verarbeitung unter bestimmten Umständen</li>
+                    </ul>
+                    <p class="mb-4 leading-relaxed">
+                        Um diese Rechte auszuüben, verwenden Sie bitte die Kontoeinstellungen in Ihrem Benutzer-Dashboard oder reichen Sie eine Anfrage über unsere Plattform ein.
+                    </p>
+                </section>
+
+                <!-- International Transfers -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">9. Internationale Datenübertragungen</h2>
+                    <p class="mb-4 leading-relaxed">
+                        Ihre Informationen können in anderen Ländern als Ihrem eigenen verarbeitet und gespeichert werden. Wir stellen sicher, dass alle internationalen Übertragungen den geltenden Datenschutzgesetzen entsprechen und angemessene Schutzmaßnahmen zum Schutz Ihrer Informationen beinhalten.
+                    </p>
+                </section>
+
+                <!-- Children's Privacy -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">10. Datenschutz für Kinder</h2>
+                    <p class="mb-4 leading-relaxed">
+                        Unsere Dienste sind nicht für Personen unter 18 Jahren bestimmt. Wir sammeln wissentlich keine persönlichen Informationen von Kindern unter 18 Jahren. Wenn wir erfahren, dass wir solche Informationen gesammelt haben, werden wir Schritte unternehmen, um sie umgehend zu löschen.
+                    </p>
+                </section>
+
+                <!-- Third-Party Links -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">11. Links und Dienste Dritter</h2>
+                    <p class="mb-4 leading-relaxed">
+                        Unsere Plattform kann Links zu Websites oder Diensten Dritter enthalten. Diese Datenschutzrichtlinie gilt nicht für diese externen Websites. Wir empfehlen Ihnen, die Datenschutzrichtlinien aller Websites Dritter zu überprüfen, die Sie besuchen.
+                    </p>
+                </section>
+
+                <!-- Changes to Policy -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">12. Änderungen an dieser Datenschutzrichtlinie</h2>
+                    <p class="mb-4 leading-relaxed">
+                        Wir können diese Datenschutzrichtlinie von Zeit zu Zeit aktualisieren, um Änderungen in unseren Praktiken oder geltenden Gesetzen widerzuspiegeln. Wir werden Sie über wesentliche Änderungen informieren, indem wir die aktualisierte Richtlinie auf unserer Plattform veröffentlichen und das Datum "Letzte Aktualisierung" aktualisieren.
+                    </p>
+                    <p class="mb-4 leading-relaxed">
+                        Ihre fortgesetzte Nutzung unserer Dienste nach Änderungen stellt die Annahme der aktualisierten Datenschutzrichtlinie dar.
+                    </p>
+                </section>
+
+                <!-- Compliance -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">13. Rechtliche Compliance</h2>
+                    <p class="mb-4 leading-relaxed">
+                        Diese Datenschutzrichtlinie ist darauf ausgelegt, den geltenden Datenschutzgesetzen zu entsprechen, einschließlich aber nicht beschränkt auf:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Datenschutz-Grundverordnung (DSGVO)</li>
+                        <li>California Consumer Privacy Act (CCPA)</li>
+                        <li>Andere geltende lokale und internationale Datenschutzbestimmungen</li>
+                    </ul>
+                </section>
+
+                <!-- Final Notes -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">14. Wichtige Haftungsausschlüsse</h2>
+                    <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 p-4 mb-4">
+                        <p class="text-sm font-medium text-yellow-800 dark:text-yellow-200">
+                            <strong>Bildungszweck:</strong> Bitte denken Sie daran, dass unsere Plattform nur Bildungsinhalte bereitstellt und nicht als Finanzberatung betrachtet werden sollte. Alle Anlageentscheidungen sollten nach Beratung mit qualifizierten Finanzfachleuten getroffen werden.
+                        </p>
+                    </div>
+                    <div class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-400 p-4 mb-4">
+                        <p class="text-sm font-medium text-red-800 dark:text-red-200">
+                            <strong>Anlagerisiko:</strong> Trading und Investitionen bergen erhebliche Verlustrisiken. Vergangene Leistungen garantieren keine zukünftigen Ergebnisse.
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-12">
+        <div class="max-w-4xl mx-auto px-4 py-6">
+            <div class="text-center text-gray-600 dark:text-gray-400 text-sm">
+                <p>&copy; 2025 Professionelle Aktienanalyse. Alle Rechte vorbehalten.</p>
+                <p class="mt-2">Nur Bildungsinhalt. Keine Finanzberatung. Investieren birgt Verlustrisiken.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
