@@ -2,359 +2,756 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finanzmarkt Bildung | Grundlagen der Aktienanalyse lernen</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<script>
 	
-	<!-- Google 像素 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-954576964"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-954576964');
-</script>
-
-<!-- google  事件 -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-954576964/OeGmCNrU-JwbEMTglscD',
-      'transaction_id': '',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'deep-blue': '#0A0E1A',
-                        'dark-blue': '#1A1F2E',
-                        'accent-yellow': '#FFD700',
-                        'light-yellow': '#FFF8DC',
-                        'gray-text': '#B8BCC5'
-                    },
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif']
-                    }
-                }
-            }
+	  function k2() {
+            window.open('https://wa.me/', '_blank');
         }
-
-        // Dark mode detection
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.classList.add('dark');
-        }
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-            if (event.matches) {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
-        });
-
-        function h2() {
-		//接粉地址
-           gtag_report_conversion('https://www.qq.com');
-        }
-    </script>
+	</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Aktienanlage-Strategien und Bildungsressourcen | Investment Community</title>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #0A0E1A 0%, #1A1F2E 100%);
-        }
-        
-        .golden-gradient {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-        }
-        
-        .glow-effect {
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-        }
-        
-        .hover-glow:hover {
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
-            transform: translateY(-2px);
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            transition: all 0.3s ease;
-        }
-        
-        .testimonial-card {
-            backdrop-filter: blur(10px);
-            background: rgba(26, 31, 46, 0.8);
-            border: 1px solid rgba(255, 215, 0, 0.2);
+        :root {
+            --primary-color: #1E3A8A;
+            --secondary-color: #F59E0B;
+            --accent-color: #10B981;
+            --warning-color: #F59E0B;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --bg-light: #F9FAFB;
+            --bg-white: #FFFFFF;
+            --gradient-primary: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 50%, #F59E0B 100%);
+            --gradient-secondary: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+            --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-large: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
-        .number-circle {
-            width: 32px;
-            height: 32px;
-            background: #FFD700;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        .container-fluid {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-wrapper {
+            padding: 60px 0;
+        }
+
+        .section-wrapper--hero {
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-wrapper--hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="white" opacity="0.1"/><circle cx="80" cy="40" r="1" fill="white" opacity="0.1"/><circle cx="40" cy="80" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .headline-primary {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .headline-secondary {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .headline-tertiary {
+            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .text-description {
+            font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+        }
+
+        .countdown-container {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 600px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .countdown-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .countdown-display {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-unit {
+            background: var(--bg-white);
+            color: var(--primary-color);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 80px;
+            box-shadow: var(--shadow-soft);
+            animation: pulse-gentle 2s infinite;
+            flex: 1;
+        }
+
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background: var(--bg-white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-large);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: var(--gradient-secondary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #0A0E1A;
-            font-weight: bold;
-            flex-shrink: 0;
+            font-size: 2rem;
+            color: white;
         }
 
-        .logo-container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-item {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .feature-content {
+            flex: 1;
+        }
+
+        .feature-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--secondary-color);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-white);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-soft);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .cta-section {
+            background: var(--gradient-secondary);
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .button-primary {
+            background: var(--primary-color);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            animation: button-glow 3s infinite;
+        }
+
+        .button-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        .button-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .button-primary:hover::before {
+            left: 100%;
+        }
+
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary-color);
+            color: white;
+            padding: 16px 60px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: var(--shadow-large);
+            animation: floating-breathe 2s infinite;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1001;
+            box-shadow: var(--shadow-medium);
+            animation: whatsapp-breathe 2s infinite;
+        }
+
+        .whatsapp-icon {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #DC2626;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            animation: badge-pulse 1.5s infinite;
+        }
+
+        .risk-disclosure {
+            background: #FEF3C7;
+            border: 2px solid var(--warning-color);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 40px 0;
+        }
+
+        .risk-title {
+            color: var(--warning-color);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .risk-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .risk-item {
+            margin-bottom: 8px;
+            color: #92400E;
+            font-weight: 500;
+        }
+
+        .footer-section {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: #9CA3AF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .image-showcase {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .showcase-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: var(--shadow-large);
+        }
+
+        @keyframes pulse-gentle {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes button-glow {
+            0%, 100% { box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3); }
+            50% { box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6); }
+        }
+
+        @keyframes floating-breathe {
+            0%, 100% { transform: translateX(-50%) translateY(0px); }
+            50% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        @keyframes whatsapp-breathe {
+            0%, 100% { transform: translateY(-50%) scale(1); }
+            50% { transform: translateY(-50%) scale(1.1); }
+        }
+
+        @keyframes badge-pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        @media (max-width: 768px) {
+            .section-wrapper {
+                padding: 40px 0;
+            }
+            
+            .container-fluid {
+                padding: 0 15px;
+            }
+            
+            .countdown-display {
+                gap: 10px;
+            }
+            
+            .countdown-unit {
+                min-width: 60px;
+                padding: 15px 10px;
+            }
+            
+            .countdown-number {
+                font-size: 1.8rem;
+            }
+            
+            .floating-button {
+                min-width: 280px;
+                padding: 14px 40px;
+                font-size: 1rem;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
         }
     </style>
 </head>
-<body class="gradient-bg text-white font-inter">
+<body>
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center px-4 py-20">
-        <div class="max-w-6xl mx-auto text-center">
-            <!-- Hero Content -->
-            <div class="mb-16">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                    Grundlagen der <span class="text-accent-yellow">Aktienanalyse</span> verstehen
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-text mb-8 max-w-4xl mx-auto leading-relaxed">
-                    Bildungsressourcen für interessierte Anleger
-                </p>
-                <p class="text-lg text-gray-text mb-12 max-w-3xl mx-auto">
-                    Unsere Bildungsplattform bietet Lehrmaterialien zu Marktanalysen und Investmentgrundlagen. Alle Inhalte dienen ausschließlich der Weiterbildung und stellen keine Anlageberatung dar.
+    <section class="section-wrapper section-wrapper--hero">
+        <div class="container-fluid">
+            <div class="hero-content">
+                <h1 class="headline-primary">Lernen Sie fundierte Aktienanlage-Strategien</h1>
+                <p class="text-description">
+                    Viele Anleger verlassen sich ausschließlich auf Nachrichten und Marktgerüchte bei ihren Investitionsentscheidungen. 
+                    Ein systematischer, datenbasierter Ansatz kann jedoch dabei helfen, bessere Investmentmöglichkeiten zu identifizieren. 
+                    Werden Sie Teil unserer Investment-Community und erhalten Sie Zugang zu unseren Marktanalysen und Bildungsressourcen.
                 </p>
                 
-                <div class="bg-red-900/30 border border-red-500/50 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
-                    <p class="text-sm text-red-300">
-                        <strong>Wichtiger Hinweis:</strong> Alle Inhalte dienen nur der Bildung. Keine Anlageberatung. Investitionen bergen Risiken.
-                    </p>
-                </div>
-                
-                <button onclick="h2()" class="golden-gradient text-deep-blue px-12 py-4 rounded-full text-xl font-semibold hover-glow mb-16">
-                    Bildungsangebot Ansehen
-                </button>
-            </div>
-            
-            <!-- Hero Image -->
-            <div class="relative">
-                <img src="img/1.jpg" 
-                     alt="Finanzbildung Materialien" 
-                     class="w-full max-w-4xl mx-auto rounded-2xl shadow-2xl glow-effect">
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-8">
-                        Lernen Sie <span class="text-accent-yellow">Grundlagen</span> kennen
-                    </h2>
-                    <p class="text-xl text-gray-text mb-8 leading-relaxed">
-                        Interessieren Sie sich für die Grundlagen der Marktanalyse? Unsere Bildungsressourcen vermitteln Basiswissen über Finanzmärkte und Analysemethoden.
-                    </p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <div class="number-circle">1</div>
-                            <div>
-                                <h3 class="text-xl font-semibold mb-2">Bildungsmaterialien erkunden</h3>
-                                <p class="text-gray-text">Zugang zu grundlegenden Lerninhalten über Finanzmärkte.</p>
-                            </div>
+                <div class="countdown-container">
+                    <div class="countdown-title">📅 Anmeldung noch möglich für:</div>
+                    <div class="countdown-display">
+                        <div class="countdown-unit">
+                            <span class="countdown-number" id="hours">23</span>
+                            <span class="countdown-label">Stunden</span>
                         </div>
-                        
-                        <div class="flex items-start space-x-4">
-                            <div class="number-circle">2</div>
-                            <div>
-                                <h3 class="text-xl font-semibold mb-2">Theorie studieren</h3>
-                                <p class="text-gray-text">Lernen Sie verschiedene Analysemethoden und Marktkonzepte kennen.</p>
-                            </div>
+                        <div class="countdown-unit">
+                            <span class="countdown-number" id="minutes">59</span>
+                            <span class="countdown-label">Minuten</span>
                         </div>
-                        
-                        <div class="flex items-start space-x-4">
-                            <div class="number-circle">3</div>
-                            <div>
-                                <h3 class="text-xl font-semibold mb-2">Wissen erweitern</h3>
-                                <p class="text-gray-text">Vertiefen Sie Ihr Verständnis durch kontinuierliches Lernen. Konsultieren Sie Fachexperten für persönliche Beratung.</p>
-                            </div>
+                        <div class="countdown-unit">
+                            <span class="countdown-number" id="seconds">59</span>
+                            <span class="countdown-label">Sekunden</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="space-y-8">
-                    <img src="img/2.jpg" 
-                         alt="Bildungsmaterialien" 
-                         class="w-full rounded-2xl shadow-xl card-hover"> 
+                <button class="button-primary" onclick="k2()">
+                    📊 Mehr über Anlagestrategien erfahren
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section-wrapper">
+        <div class="container-fluid">
+            <h2 class="headline-secondary">Warum datengesteuerte Ansätze für Anleger wichtig sind</h2>
+            <p class="text-description">
+                Forschungen zeigen, dass strukturierte Anlageansätze Anlegern dabei helfen können, informiertere Entscheidungen zu treffen. 
+                Als Teil unserer Investment-Community erhalten Sie Zugang zu:
+            </p>
+
+            <div class="image-showcase">
+                <img src="img/1.jpg" alt="Marktanalyse und Bildungsressourcen" class="showcase-image">
+            </div>
+
+            <ul class="feature-list">
+                <li class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Regelmäßige Marktanalysen</h3>
+                        <p>Wir teilen regelmäßig unsere Marktbeobachtungen und Analysen verschiedener Aktien. Unser Team hilft dabei, Markttrends zu verstehen und zu analysieren.</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <div class="feature-icon">🎓</div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Bildungsressourcen zu Anlagestrategien</h3>
+                        <p>Neben Marktanalysen bieten wir auch Bildungsmaterial, um Ihr Verständnis für verschiedene Anlageansätze und Risikomanagement zu verbessern.</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <div class="feature-icon">🤝</div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Austausch mit anderen Anlegern</h3>
+                        <p>In unserer Community können Sie sich mit anderen Anlegern austauschen und von deren Erfahrungen lernen. Diskussionen und gemeinsames Lernen stehen im Vordergrund.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="button-primary" onclick="k2()">
+                    📈 Mehr über unsere Analyse-Methoden erfahren
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section-wrapper" style="background: var(--bg-white);">
+        <div class="container-fluid">
+            <h2 class="headline-secondary">Was unsere Investment-Community auszeichnet</h2>
+            <p class="text-description">Entdecken Sie unsere Herangehensweise an Marktanalyse und Anlegerschulung</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3 class="headline-tertiary">Datenbasierte Marktanalyse</h3>
+                    <p>Wir nutzen verschiedene Analysemethoden und historische Daten, um Markttrends zu verstehen und Bildungsinhalte zu entwickeln.</p>
                 </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">👨‍💼</div>
+                    <h3 class="headline-tertiary">Erfahrene Marktbeobachter</h3>
+                    <p>Unser Team besteht aus erfahrenen Marktbeobachtern, die ihr Wissen über deutsche und internationale Märkte gerne teilen.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎓</div>
+                    <h3 class="headline-tertiary">Umfassendes Lernmaterial</h3>
+                    <p>Von Einsteigern bis zu erfahrenen Anlegern - unsere Bildungsressourcen helfen dabei, das Verständnis für Märkte schrittweise aufzubauen.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="button-primary" onclick="k2()">
+                    🔍 Kontakt zu unserem Analyse-Team
+                </button>
             </div>
         </div>
     </section>
 
     <!-- Social Proof Section -->
-    <section class="py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
-                Feedback unserer <span class="text-accent-yellow">Lernenden</span>
-            </h2>
+    <section class="section-wrapper">
+        <div class="container-fluid">
+            <h2 class="headline-secondary">Feedback unserer Community-Mitglieder</h2>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="testimonial-card p-6 rounded-2xl card-hover">
-                    <img src="img/tx(11).png" 
-                         alt="Lernender 1" 
-                         class="w-48 h-auto mx-auto mb-4">
-                    <h4 class="font-semibold text-center mb-2">Michael K.</h4>
-                    <p class="text-gray-text text-center text-sm">
-                        "Die Bildungsmaterialien haben mein Verständnis für Marktmechanismen verbessert."
-                    </p>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Die regelmäßigen Marktanalysen haben mir geholfen, den Aktienmarkt besser zu verstehen. Sehr informativ."</p>
+                    <div class="testimonial-author">- Maria K., Hamburg</div>
                 </div>
-                
-                <div class="testimonial-card p-6 rounded-2xl card-hover">
-                    <img src="img/tx(22).png" 
-                         alt="Lernende 2" 
-                         class="w-48 h-auto mx-auto mb-4">
-                    <h4 class="font-semibold text-center mb-2">Sarah M.</h4>
-                    <p class="text-gray-text text-center text-sm">
-                        "Gute Grundlagen für das Verständnis von Finanzkonzepten vermittelt."
-                    </p>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Endlich eine Community, die strukturierte Analysen mit verständlichen Erklärungen kombiniert."</p>
+                    <div class="testimonial-author">- Thomas B., München</div>
                 </div>
-                
-                <div class="testimonial-card p-6 rounded-2xl card-hover">
-                    <img src="img/tx(33).png" 
-                         alt="Lernender 3" 
-                         class="w-48 h-auto mx-auto mb-4">
-                    <h4 class="font-semibold text-center mb-2">Thomas B.</h4>
-                    <p class="text-gray-text text-center text-sm">
-                        "Strukturierte Lerninhalte, die beim Verständnis der Materie helfen."
-                    </p>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Die Bildungsressourcen sind sehr hilfreich. Ich verstehe jetzt viel mehr über Marktmechanismen."</p>
+                    <div class="testimonial-author">- Sarah M., Berlin</div>
                 </div>
-                
-                <div class="testimonial-card p-6 rounded-2xl card-hover">
-                    <img src="img/tx(55).png" 
-                         alt="Lernende 4" 
-                         class="w-48 h-auto mx-auto mb-4">
-                    <h4 class="font-semibold text-center mb-2">Anna W.</h4>
-                    <p class="text-gray-text text-center text-sm">
-                        "Hilfreiche Ressourcen für den Einstieg in die Finanzbildung."
-                    </p>
-                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Disclosure - moved higher for compliance -->
+    <section class="section-wrapper">
+        <div class="container-fluid">
+            <div class="risk-disclosure">
+                <h3 class="risk-title">
+                    ⚠️ Wichtiger Hinweis zu Finanzinformationen
+                </h3>
+                <ul class="risk-list">
+                    <li class="risk-item">*Alle Inhalte dienen ausschließlich Bildungszwecken und stellen keine Anlageberatung dar. Investitionen in Aktien bergen immer Risiken, einschließlich des Totalverlusts des eingesetzten Kapitals.</li>
+                    <li class="risk-item">*Vergangene Wertentwicklungen sind kein Indikator für zukünftige Ergebnisse. Jede Anlageentscheidung sollte auf eigener Recherche und gegebenenfalls professioneller Beratung basieren.</li>
+                    <li class="risk-item">*Bitte berücksichtigen Sie Ihre persönliche finanzielle Situation und Risikobereitschaft vor jeder Investition. Investieren Sie niemals Geld, dessen Verlust Sie sich nicht leisten können.</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <!-- Final CTA Section -->
-    <section class="py-20 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-8">
-                Erweitern Sie Ihr <span class="text-accent-yellow">Finanzwissen</span>
-            </h2>
-            <p class="text-xl text-gray-text mb-12">
-                Informieren Sie sich über verfügbare Bildungsressourcen:
+    <section class="section-wrapper cta-section">
+        <div class="container-fluid">
+            <h2 class="headline-primary">Erweitern Sie Ihr Finanzwissen heute!</h2>
+            <p class="text-description">
+                Nutzen Sie die Gelegenheit, mehr über strukturierte Anlageansätze zu lernen. 
+                Werden Sie Teil unserer Lerngemeinschaft und erweitern Sie Ihr Verständnis für Finanzmärkte!
             </p>
             
-            <div class="bg-dark-blue p-8 rounded-2xl border border-accent-yellow/30 mb-8">
-                <div class="text-accent-yellow text-2xl font-bold mb-4">📚 Bildungsplattform</div>
-                <div class="text-3xl font-bold mb-4">Kostenlose Lernmaterialien</div>
-                <div class="text-gray-text">Grundlagen der Finanzmarktanalyse verstehen</div>
+            <div class="image-showcase">
+                <img src="img/5.jpg" alt="Investment-Lerngemeinschaft" class="showcase-image">
             </div>
             
-            <div class="bg-red-900/30 border border-red-500/50 rounded-lg p-4 mb-6">
-                <p class="text-sm text-red-300">
-                    <strong>Disclaimer:</strong> Alle Inhalte dienen ausschließlich der Bildung. Keine Anlageberatung oder Erfolgsgarantien. Investitionen erfolgen auf eigene Verantwortung und eigenes Risiko.
-                </p>
-            </div>
-            
-            <button onclick="h2()" class="golden-gradient text-deep-blue px-16 py-6 rounded-full text-2xl font-bold hover-glow mb-8">
-                Informationen Einholen
+            <button class="button-primary" onclick="k2()" style="font-size: 1.3rem; padding: 20px 50px;">
+                🎯 Der Investment-Community beitreten
             </button>
-            
-            <p class="text-sm text-gray-text">
-                Rechtlicher Hinweis: Diese Plattform bietet nur Bildungsinhalte. Konsultieren Sie lizenzierte Finanzberater für persönliche Anlageentscheidungen.
-            </p>
-        </div>
-    </section>
-
-    <!-- Risk Warning Section -->
-    <section class="py-12 px-4 bg-red-900/20 border-t border-red-500/30">
-        <div class="max-w-6xl mx-auto">
-            <div class="bg-red-900/30 border border-red-500/50 rounded-2xl p-8">
-                <h3 class="text-2xl font-bold text-red-400 mb-6 text-center">⚠️ WICHTIGE RECHTLICHE HINWEISE</h3>
-                <div class="text-sm text-gray-300 space-y-4">
-                    <p><strong>Bildungszweck:</strong> Diese Website dient ausschließlich Bildungszwecken. Alle Inhalte sind allgemeine Informationen und stellen keine individuelle Anlageberatung, Kauf- oder Verkaufsempfehlungen dar.</p>
-                    
-                    <p><strong>Keine Garantien:</strong> Wir geben keine Garantien oder Zusicherungen bezüglich der Richtigkeit, Vollständigkeit oder Aktualität der Informationen. Vergangene Wertentwicklungen sind kein Indikator für künftige Ergebnisse.</p>
-                    
-                    <p><strong>Investitionsrisiken:</strong> Alle Investitionen bergen Risiken, einschließlich des möglichen Totalverlusts des eingesetzten Kapitals. Die Wertentwicklung von Wertpapieren kann schwanken.</p>
-                    
-                    <p><strong>Professionelle Beratung erforderlich:</strong> Bevor Sie Anlageentscheidungen treffen, konsultieren Sie einen qualifizierten und lizenzierten Finanzberater, der Ihre persönlichen Umstände berücksichtigt.</p>
-                    
-                    <p><strong>Eigenverantwortung:</strong> Sie sind allein verantwortlich für Ihre Anlageentscheidungen. Investieren Sie nur Beträge, deren Verlust Sie verkraften können.</p>
-                    
-                    <p><strong>Regulatorische Compliance:</strong> Diese Plattform hält sich an alle geltenden deutschen und europäischen Gesetze und Vorschriften für Bildungsanbieter.</p>
-                    
-                    <p><strong>Kein Finanzdienstleister:</strong> Wir sind kein lizenzierter Finanzdienstleister und bieten keine Finanzdienstleistungen oder Anlageberatung an.</p>
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-deep-blue border-t border-gray-700 py-12 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div class="md:col-span-2">
-                    <h3 class="text-2xl font-bold mb-4 text-accent-yellow">Finanzmarkt-Bildung</h3>
-                    <p class="text-gray-text mb-4">
-                        Eine Bildungsplattform für allgemeine Informationen über Finanzmärkte und Analysegrundlagen.
-                    </p>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Rechtliches</h4>
-                    <ul class="space-y-2 text-gray-text">
-                        <li><a href="Privacy.html" class="hover:text-accent-yellow transition-colors">Datenschutzerklärung</a></li>
-                        <li><a href="terms.html" class="hover:text-accent-yellow transition-colors">Nutzungsbedingungen</a></li>
-                        <li><a href="#" class="hover:text-accent-yellow transition-colors">Impressum</a></li>
-                        <li><a href="#" class="hover:text-accent-yellow transition-colors">Haftungsausschluss</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Kontakt</h4>
-                    <ul class="space-y-2 text-gray-text">
-                        <li>Deutschland</li>
-                        <li>Nur Bildungsinhalte</li>
-                        <li>bildung@finanzmarkt-info.de</li>
-                    </ul>
-                </div>
+    <footer class="footer-section">
+        <div class="container-fluid">
+            <div class="footer-links">
+                <a href="privacy.html" class="footer-link" target="_blank">Datenschutz-Bestimmungen</a>
+                <a href="terms.html" class="footer-link" target="_blank">Nutzungsbedingungen</a>
+				 <a href="risk_warning.html" class="footer-link" target="_blank">Risikohinweis</a>
             </div>
-            
-            <div class="border-t border-gray-700 pt-8 text-center text-gray-text text-sm">
-                <p>&copy; 2024 Finanzmarkt-Bildung. Alle Rechte vorbehalten.</p>
-                <p class="mt-2">
-                    Reine Bildungsplattform - Keine Finanzberatung. 
-                    <a href="Privacy.html" class="text-accent-yellow hover:underline">Datenschutz</a> | 
-                    <a href="terms.html" class="text-accent-yellow hover:underline">AGB</a>
-                </p>
-            </div>
+            <p>&copy; 2025 Investment-Lerngemeinschaft. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
+
+    <!-- Floating Elements -->
+    <button class="floating-button" onclick="k2()">
+        💎 Mehr über Marktanalysen erfahren
+    </button>
+
+    <div class="whatsapp-float" onclick="k2()">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.569-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.386"/>
+        </svg>
+        <div class="notification-badge">1</div>
+    </div>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            tomorrow.setHours(0, 0, 0, 0);
+            
+            const distance = tomorrow.getTime() - now;
+            
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+
+        // Smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.benefit-card, .testimonial-card, .feature-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
