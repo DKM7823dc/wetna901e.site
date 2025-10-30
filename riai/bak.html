@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script>
+  function ya2() { 
+            window.open('https://line.me/', '_blank');
+        }
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIによる無料の株価予測情報</title>
+    <style>
+        :root {
+            --cosmic-primary-hue: 240;
+            --cosmic-secondary-hue: 300;
+            --cosmic-accent-hue: 180;
+            --cosmic-warning-hue: 45;
+            --cosmic-depth-primary: hsl(var(--cosmic-primary-hue), 85%, 5%);
+            --cosmic-depth-secondary: hsl(var(--cosmic-primary-hue), 75%, 8%);
+            --cosmic-luminance-primary: hsl(var(--cosmic-accent-hue), 100%, 50%);
+            --cosmic-luminance-secondary: hsl(var(--cosmic-secondary-hue), 100%, 70%);
+            --cosmic-luminance-tertiary: hsl(var(--cosmic-warning-hue), 100%, 60%);
+            --cosmic-text-primary: hsl(0, 0%, 95%);
+            --cosmic-text-secondary: hsl(0, 0%, 75%);
+            --cosmic-grid-opacity: 0.15;
+            --cosmic-glow-intensity: 0.8;
+            --cosmic-animation-duration-primary: 2.5s;
+            --cosmic-animation-duration-secondary: 4s;
+            --cosmic-border-radius-primary: 12px;
+            --cosmic-border-radius-secondary: 8px;
+            --cosmic-shadow-elevation-primary: 0 8px 32px rgba(0, 255, 255, 0.3);
+            --cosmic-shadow-elevation-secondary: 0 4px 16px rgba(255, 0, 255, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .quantum-container-wrapper {
+            min-height: 100vh;
+            background: linear-gradient(135deg, 
+                var(--cosmic-depth-primary) 0%, 
+                var(--cosmic-depth-secondary) 50%, 
+                hsl(var(--cosmic-primary-hue), 90%, 3%) 100%);
+            position: relative;
+            overflow: hidden;
+            font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+        }
+
+        .quantum-grid-overlay-system {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, var(--cosmic-grid-opacity)) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, var(--cosmic-grid-opacity)) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: quantum-grid-pulse var(--cosmic-animation-duration-secondary) ease-in-out infinite alternate;
+        }
+
+        .stellar-particle-field {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, var(--cosmic-luminance-primary), transparent),
+                radial-gradient(2px 2px at 40px 70px, var(--cosmic-luminance-secondary), transparent),
+                radial-gradient(1px 1px at 90px 40px, var(--cosmic-luminance-tertiary), transparent),
+                radial-gradient(1px 1px at 130px 80px, var(--cosmic-luminance-primary), transparent),
+                radial-gradient(2px 2px at 160px 30px, var(--cosmic-luminance-secondary), transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: stellar-drift var(--cosmic-animation-duration-secondary) linear infinite;
+        }
+
+        .neural-content-interface {
+            position: relative;
+            z-index: 10;
+            padding: 20px;
+            max-width: 420px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .ai-branding-header-complex {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .primary-title-luminous {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--cosmic-text-primary);
+            text-shadow: 0 0 20px var(--cosmic-luminance-primary);
+            margin-bottom: 15px;
+            animation: holographic-text-glow var(--cosmic-animation-duration-primary) ease-in-out infinite alternate;
+        }
+
+        .descriptive-subtitle-enhanced {
+            font-size: 16px;
+            color: var(--cosmic-text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .special-highlight-capsule {
+            background: linear-gradient(135deg, var(--cosmic-luminance-primary), var(--cosmic-luminance-secondary));
+            color: var(--cosmic-depth-primary);
+            padding: 12px 20px;
+            border-radius: var(--cosmic-border-radius-primary);
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 25px;
+            box-shadow: var(--cosmic-shadow-elevation-primary);
+            animation: quantum-pulse var(--cosmic-animation-duration-primary) ease-in-out infinite;
+        }
+
+        .avatar-display-container {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .circular-avatar-enhanced {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid var(--cosmic-luminance-primary);
+            box-shadow: var(--cosmic-shadow-elevation-primary);
+            animation: avatar-breathing 3s ease-in-out infinite;
+        }
+
+        .input-interface-complex {
+            margin-bottom: 25px;
+        }
+
+        .input-label-sophisticated {
+            display: block;
+            color: var(--cosmic-text-primary);
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .quantum-input-field {
+            width: 100%;
+            padding: 16px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid transparent;
+            border-radius: var(--cosmic-border-radius-primary);
+            color: var(--cosmic-text-primary);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .quantum-input-field:focus {
+            outline: none;
+            border-color: var(--cosmic-luminance-primary);
+            box-shadow: var(--cosmic-shadow-elevation-primary);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .quantum-input-field::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .neural-action-button-primary {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--cosmic-luminance-primary), var(--cosmic-luminance-secondary));
+            color: var(--cosmic-depth-primary);
+            border: none;
+            border-radius: var(--cosmic-border-radius-primary);
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: var(--cosmic-shadow-elevation-primary);
+            transition: all 0.3s ease;
+            animation: breathing-luminance var(--cosmic-animation-duration-primary) ease-in-out infinite;
+        }
+
+        .neural-action-button-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 255, 255, 0.4);
+        }
+
+        .modal-overlay-quantum {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content-sophisticated {
+            background: linear-gradient(135deg, var(--cosmic-depth-secondary), var(--cosmic-depth-primary));
+            border: 2px solid var(--cosmic-luminance-primary);
+            border-radius: var(--cosmic-border-radius-primary);
+            padding: 30px;
+            max-width: 350px;
+            width: 90%;
+            text-align: center;
+            box-shadow: var(--cosmic-shadow-elevation-primary);
+            position: relative;
+        }
+
+        .analysis-progress-indicator {
+            margin: 20px 0;
+        }
+
+        .processing-animation-complex {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            border: 4px solid rgba(0, 255, 255, 0.3);
+            border-top: 4px solid var(--cosmic-luminance-primary);
+            border-radius: 50%;
+            animation: quantum-rotation 1s linear infinite;
+        }
+
+        .analysis-stages-container {
+            margin: 20px 0;
+        }
+
+        .stage-item-enhanced {
+            color: var(--cosmic-text-secondary);
+            margin: 8px 0;
+            opacity: 0.5;
+            transition: all 0.5s ease;
+        }
+
+        .stage-item-enhanced.stage-active {
+            color: var(--cosmic-luminance-primary);
+            opacity: 1;
+            text-shadow: 0 0 10px var(--cosmic-luminance-primary);
+        }
+
+        .completion-interface {
+            display: none;
+        }
+
+        .success-message-primary {
+            color: var(--cosmic-luminance-primary);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px var(--cosmic-luminance-primary);
+        }
+
+        .line-redirect-button {
+            background: linear-gradient(135deg, #00C851, #00A040);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: var(--cosmic-border-radius-primary);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 15px 0;
+            animation: breathing-luminance var(--cosmic-animation-duration-primary) ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        .line-redirect-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 200, 81, 0.4);
+        }
+
+        .statistics-dashboard-complex {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .metric-card-sophisticated {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--cosmic-luminance-primary);
+            border-radius: var(--cosmic-border-radius-secondary);
+            padding: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .metric-value-primary {
+            color: var(--cosmic-luminance-primary);
+            font-size: 20px;
+            font-weight: 700;
+            display: block;
+            text-shadow: 0 0 10px var(--cosmic-luminance-primary);
+        }
+
+        .metric-label-secondary {
+            color: var(--cosmic-text-secondary);
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .disclaimer-section-complex {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--cosmic-border-radius-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .disclaimer-text-primary {
+            color: var(--cosmic-text-secondary);
+            font-size: 12px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .copyright-notice {
+            color: var(--cosmic-text-secondary);
+            font-size: 11px;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .legal-links-container {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .legal-link {
+            color: var(--cosmic-luminance-primary);
+            font-size: 11px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .legal-link:hover {
+            color: var(--cosmic-luminance-secondary);
+            text-shadow: 0 0 8px var(--cosmic-luminance-primary);
+        }
+
+        .link-separator {
+            color: var(--cosmic-text-secondary);
+            margin: 0 8px;
+            font-size: 11px;
+        }
+
+        .hidden-element {
+            display: none !important;
+        }
+
+        /* Animation Keyframes */
+        @keyframes quantum-grid-pulse {
+            0% { opacity: var(--cosmic-grid-opacity); }
+            100% { opacity: calc(var(--cosmic-grid-opacity) * 1.5); }
+        }
+
+        @keyframes stellar-drift {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-200px); }
+        }
+
+        @keyframes holographic-text-glow {
+            0% { text-shadow: 0 0 20px var(--cosmic-luminance-primary); }
+            100% { text-shadow: 0 0 30px var(--cosmic-luminance-primary), 0 0 40px var(--cosmic-luminance-secondary); }
+        }
+
+        @keyframes quantum-pulse {
+            0% { transform: scale(1); box-shadow: var(--cosmic-shadow-elevation-primary); }
+            100% { transform: scale(1.02); box-shadow: var(--cosmic-shadow-elevation-secondary); }
+        }
+
+        @keyframes orbital-rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes breathing-luminance {
+            0% { box-shadow: var(--cosmic-shadow-elevation-primary); }
+            50% { box-shadow: var(--cosmic-shadow-elevation-secondary), 0 0 25px var(--cosmic-luminance-primary); }
+            100% { box-shadow: var(--cosmic-shadow-elevation-primary); }
+        }
+
+        @keyframes quantum-rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes avatar-breathing {
+            0% { 
+                transform: scale(1); 
+                box-shadow: var(--cosmic-shadow-elevation-primary);
+                border-color: var(--cosmic-luminance-primary);
+            }
+            50% { 
+                transform: scale(1.05); 
+                box-shadow: 0 12px 40px rgba(0, 255, 255, 0.4), 0 0 20px var(--cosmic-luminance-primary);
+                border-color: var(--cosmic-luminance-secondary);
+            }
+            100% { 
+                transform: scale(1); 
+                box-shadow: var(--cosmic-shadow-elevation-primary);
+                border-color: var(--cosmic-luminance-primary);
+            }
+        }
+
+        .modal-close-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: var(--cosmic-text-primary);
+            font-size: 24px;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close-button:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--cosmic-luminance-primary);
+        }
+
+        .special-report-button {
+            background: linear-gradient(135deg, #FF8C00, #FF6347) !important;
+            animation: breathing-orange var(--cosmic-animation-duration-primary) ease-in-out infinite !important;
+        }
+
+        @keyframes breathing-orange {
+            0% { box-shadow: 0 8px 32px rgba(255, 140, 0, 0.3); }
+            50% { box-shadow: 0 4px 16px rgba(255, 99, 71, 0.2), 0 0 25px rgba(255, 140, 0, 0.5); }
+            100% { box-shadow: 0 8px 32px rgba(255, 140, 0, 0.3); }
+        }
+
+        @media (max-width: 480px) {
+            .neural-content-interface {
+                padding: 15px;
+            }
+            
+            .primary-title-luminous {
+                font-size: 24px;
+            }
+            
+            .metric-value-primary {
+                font-size: 16px;
+            }
+            
+            .metric-label-secondary {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="quantum-container-wrapper">
+        <div class="quantum-grid-overlay-system"></div>
+        <div class="stellar-particle-field"></div>
+        
+        <div class="neural-content-interface">
+            <div class="ai-branding-header-complex">
+                <h1 class="primary-title-luminous">AIによる無料の株価予測情報</h1>
+                <p class="descriptive-subtitle-enhanced">
+                    株式コードを入力するだけで、最新のAIモデルを駆使して株価の動向を徹底分析！多次元的な株式データを詳細に解析し、市場での成功をサポートします。「783」を入力すると、AIが厳選した明日暴騰する5銘柄をすぐに受け取れます。
+                </p>
+                <div class="special-highlight-capsule">
+                    783を入力すると特別レポートを即時入手
+                </div>
+            </div>
+
+            <div class="avatar-display-container">
+                <img src="img/1.jpg" alt="AI分析システム" class="circular-avatar-enhanced">
+            </div>
+
+            <div class="input-interface-complex">
+                <label class="input-label-sophisticated">株式コードまたは銘柄名をご入力ください</label>
+                <input type="text" id="quantumStockInputField" class="quantum-input-field" placeholder="例: 783, AAPL, Tesla">
+            </div>
+
+            <button class="neural-action-button-primary" onclick="initializeQuantumAnalysis()">
+                AI分析を開始
+            </button>
+
+            <div class="statistics-dashboard-complex">
+                <div class="metric-card-sophisticated">
+                    <span class="metric-value-primary">98.8%</span>
+                    <div class="metric-label-secondary">分析精度</div>
+                </div>
+                <div class="metric-card-sophisticated">
+                    <span class="metric-value-primary">2秒</span>
+                    <div class="metric-label-secondary">処理時間</div>
+                </div>
+                <div class="metric-card-sophisticated">
+                    <span class="metric-value-primary" id="userCounterDisplay">16,330</span>
+                    <div class="metric-label-secondary">本日の利用者数</div>
+                </div>
+            </div>
+
+            <div class="disclaimer-section-complex">
+                <p class="disclaimer-text-primary">
+                    当サービスは情報提供のみを目的としており、投資アドバイスを目的としたものではございません。株式投資には常にリスクが伴います。過去の実績は将来の結果を保証するものではございません。投資判断の前には、必ず専門家にご相談ください。
+                </p>
+                <div class="legal-links-container">
+                    <a href="privacy.html" target="_blank" class="legal-link">プライバシーポリシー</a>
+                    <span class="link-separator">|</span>
+                    <a href="terms.html" target="_blank" class="legal-link">利用規約</a>
+                    <span class="link-separator">|</span>
+                    <a href="law.html" target="_blank" class="legal-link">特定商取引法に基づく開示</a>
+                </div>
+                <div class="copyright-notice">
+                    © 2025 AI株式分析 All Rights Reserved
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div id="analysisModalOverlay" class="modal-overlay-quantum">
+        <div class="modal-content-sophisticated">
+            <button class="modal-close-button" onclick="quantumEngine.closeAnalysisModal()">×</button>
+            <div id="processingPhaseInterface" class="analysis-progress-indicator">
+                <h3 style="color: var(--cosmic-text-primary); margin-bottom: 20px;">AIが分析を開始しております</h3>
+                <div class="processing-animation-complex"></div>
+                <p style="color: var(--cosmic-text-secondary);">お待ちください... まもなく完了いたします</p>
+                
+                <div class="analysis-stages-container">
+                    <div class="stage-item-enhanced" id="stage-market">市場分析</div>
+                    <div class="stage-item-enhanced" id="stage-news">最新ニュース</div>
+                    <div class="stage-item-enhanced" id="stage-history">履歴データ</div>
+                </div>
+            </div>
+
+            <div id="completionPhaseInterface" class="completion-interface">
+                <button class="modal-close-button" onclick="quantumEngine.closeAnalysisModal()">×</button>
+                <div class="success-message-primary">分析が完了いたしました！</div>
+                <button class="line-redirect-button" onclick="ya2()">
+                    LINEで結果を受け取る
+                </button>
+                <p style="color: var(--cosmic-text-secondary); font-size: 12px; margin-top: 15px;">
+                    本分析はAIによる予測情報であり、投資勧誘を目的としたものではございません。投資判断はご自身の責任でお願いいたします。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class QuantumAnalysisEngine {
+            constructor() {
+                this.userCounterBaseValue = 16330;
+                this.analysisStages = ['market', 'news', 'history'];
+                this.currentStageIndex = 0;
+                this.initializeUserCounterSystem();
+            }
+
+            initializeUserCounterSystem() {
+                setInterval(() => {
+                    const randomIncrement = Math.floor(Math.random() * 41) + 10; // 10-50 random increment
+                    this.userCounterBaseValue += randomIncrement;
+                    document.getElementById('userCounterDisplay').textContent = this.userCounterBaseValue.toLocaleString();
+                }, 1000);
+            }
+
+            activateAnalysisModal() {
+                const modalOverlay = document.getElementById('analysisModalOverlay');
+                const processingInterface = document.getElementById('processingPhaseInterface');
+                const completionInterface = document.getElementById('completionPhaseInterface');
+                
+                modalOverlay.style.display = 'flex';
+                processingInterface.style.display = 'block';
+                completionInterface.style.display = 'none';
+                
+                this.resetAnalysisStages();
+                this.executeAnalysisSequence();
+            }
+
+            resetAnalysisStages() {
+                this.analysisStages.forEach(stage => {
+                    document.getElementById(`stage-${stage}`).classList.remove('stage-active');
+                });
+                this.currentStageIndex = 0;
+            }
+
+            executeAnalysisSequence() {
+                const stageActivationInterval = setInterval(() => {
+                    if (this.currentStageIndex < this.analysisStages.length) {
+                        const currentStage = this.analysisStages[this.currentStageIndex];
+                        document.getElementById(`stage-${currentStage}`).classList.add('stage-active');
+                        this.currentStageIndex++;
+                    } else {
+                        clearInterval(stageActivationInterval);
+                        setTimeout(() => {
+                            this.displayCompletionInterface();
+                        }, 500);
+                    }
+                }, 600);
+            }
+
+            displayCompletionInterface() {
+                document.getElementById('processingPhaseInterface').style.display = 'none';
+                document.getElementById('completionPhaseInterface').style.display = 'block';
+            }
+
+            closeAnalysisModal() {
+                document.getElementById('analysisModalOverlay').style.display = 'none';
+            }
+        }
+
+        const quantumEngine = new QuantumAnalysisEngine();
+
+        function initializeQuantumAnalysis() {
+            const inputValue = document.getElementById('quantumStockInputField').value.trim();
+            const analysisButton = document.querySelector('.neural-action-button-primary');
+            
+            if (!inputValue) {
+                showCustomNotification('株式コードまたは銘柄名を入力してください');
+                return;
+            }
+            
+            // Check if input is 783 for special report
+            if (inputValue === '783') {
+                analysisButton.textContent = '特別レポートを取得中...';
+                analysisButton.classList.add('special-report-button');
+                analysisButton.disabled = true;
+                
+                setTimeout(() => {
+                    ya2();
+                }, 1000);
+                return;
+            }
+            
+            quantumEngine.activateAnalysisModal();
+        }
+
+        function showCustomNotification(message) {
+            const notificationElement = document.createElement('div');
+            notificationElement.style.cssText = `
+                position: fixed;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+                color: white;
+                padding: 15px 25px;
+                border-radius: 8px;
+                box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
+                z-index: 2000;
+                animation: fadeInOut 3s ease-in-out forwards;
+            `;
+            notificationElement.textContent = message;
+            document.body.appendChild(notificationElement);
+            
+            setTimeout(() => {
+                document.body.removeChild(notificationElement);
+            }, 3000);
+        }
+
+      
+
+        // Close modal when clicking outside
+        document.getElementById('analysisModalOverlay').addEventListener('click', function(event) {
+            if (event.target === this) {
+                quantumEngine.closeAnalysisModal();
+            }
+        });
+
+        // Add fade animation for notifications
+        const fadeInOutAnimation = `
+            @keyframes fadeInOut {
+                0% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+                20% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                80% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+            }
+        `;
+        
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = fadeInOutAnimation;
+        document.head.appendChild(styleSheet);
+    </script>
+</body>
+</html>
