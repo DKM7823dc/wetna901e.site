@@ -1,0 +1,322 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<title>Morgan Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+
+  ttq.load('D3BSR13C77UAH4NB1EB0');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+    
+      <script>
+  function k2() {
+      // 定义多个链接
+      const links = [
+           'https://wa.me/8619584852575',
+           'https://wa.me/8617605065559',
+           'https://wa.me/8613959576753',
+      ];
+
+      // 随机选择一个链接
+      const randomIndex = Math.floor(Math.random() * links.length);
+      const randomLink = links[randomIndex];
+
+      // 追踪事件
+      ttq.track('ClickButton');
+      ttq.track('Contact');
+      ttq.track('AddToCart');
+      ttq.track('CompleteRegistration');
+
+      // 新窗口打开随机链接
+      window.open(randomLink, '_blank');
+  }
+</script>
+<style>
+body{
+  margin:0; padding:0;
+  font-family: Arial, sans-serif;
+  background:#fff;
+  overflow-x:hidden;
+}
+
+.wrapper{ max-width:430px; margin:0 auto; }
+.hero-img{ width:100%; display:block; }
+
+/* ❄ 雪花 */
+.snowflake {
+  position: fixed;
+  top:-10px;
+  color:white;
+  opacity:0.9;
+  font-size:12px;
+  pointer-events:none;
+  animation:fall 10s linear infinite;
+  filter:drop-shadow(0 0 6px rgba(255,255,255,.9));
+}
+@keyframes fall {
+  0% { transform:translateY(-10px) translateX(0); opacity:0; }
+  10% { opacity:1; }
+  100% { transform:translateY(100vh) translateX(40px); opacity:0; }
+}
+
+/* ⭐ 按钮上方提示文案 */
+.top-info {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  background: #f7c443;
+  color: #fff;
+  text-align: center;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  z-index: 9998;
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.15);
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ⭐ 黑金 WhatsApp 按钮 */
+.wa-fixed{
+  position:fixed; bottom:0; left:0;
+  width:100%;
+  padding:18px 0;
+  background:#f7c443;
+  text-align:center;
+  font-size:20px;
+  font-weight:700;
+  color:#fff;
+  z-index:9999;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+
+  border-top-left-radius:18px;
+  border-top-right-radius:18px;
+
+  box-shadow:0 -4px 18px rgba(0,0,0,0.15);
+  cursor:pointer;
+  overflow:hidden;
+}
+
+.wa-fixed img{ width:28px; height:28px; z-index:3; }
+
+/* 🎄 圣诞红金粒子效果 */
+.wa-particles{
+  position:absolute; inset:0; overflow:hidden; z-index:1;
+}
+.wa-particles span{
+  position:absolute;
+  width:6px;
+  height:6px;
+  background:rgba(255,230,160,0.95); /* 金色 */
+  border-radius:50%;
+  opacity:0;
+  box-shadow:0 0 8px rgba(255,50,50,0.55); /* 红色光晕 */
+  animation:floatUp 3s infinite ease-out;
+}
+@keyframes floatUp{
+  0%{ transform:translateY(20px) scale(0.25); opacity:0;}
+  40%{ opacity:1; }
+  100%{ transform:translateY(-25px) scale(1); opacity:0;}
+}
+
+.wa-text{ position:relative; z-index:3; }
+
+/* ⭐ Ripple 水波纹 */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  background: rgba(255,255,255,0.55);
+  animation: rippleEffect 0.65s linear;
+  pointer-events:none;
+}
+
+@keyframes rippleEffect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 雪花 -->
+<div id="snowContainer"></div>
+
+<!-- 主体图片 -->
+<div class="wrapper">
+  <img src="images/pp-2-0.png" class="hero-img">
+  <img src="images/pp-3-1.png" class="hero-img">
+  <img src="images/pp-2-2.png" class="hero-img">
+  <img src="images/haoping-2.png" class="hero-img">
+  <img src="images/haoping-3.png" class="hero-img">
+  <img src="images/dingouliuchen-1.png" class="hero-img">
+  <img src="images/gonsijiesao-.png" class="hero-img">
+</div>
+
+<!-- 提示文案 -->
+<div class="top-info">
+  If you're interested in our products, please screenshot the item and send it to our WhatsApp. 
+  We'll provide full details and the best price.
+</div>
+
+
+<!-- WhatsApp 主按钮 -->
+<div class="wa-fixed" onclick="goWhatsApp(event)">
+  <div class="wa-particles" id="waParticles"></div>
+  <img src="images/WhatsApp.svg">
+  <span id="waText" class="wa-text">Chat on WhatsApp</span>
+</div>
+
+
+<script>
+/* =====================================================
+   ⭐ 电话轮询（A 代码原逻辑）
+===================================================== */
+const phones = [
+  "8613959576753",
+  "8617605065559"
+  
+];
+const phoneIndex = Math.floor(Date.now() / 1000) % phones.length;
+const finalPhone = phones[phoneIndex];
+
+/* =====================================================
+   ⭐ CL0–CL9 英文文案（默认英文）
+===================================================== */
+const messages = {
+  CL0:"CL0",
+  CL1:"CL1",
+  CL2:"CL2",
+  CL3:"CL3",
+  CL4:"CL4",
+  CL5:"CL5",
+  CL6:"CL6",
+  CL7:"CL7",
+  CL8:"CL8",
+  CL9:"CL9",
+};
+
+/* ⭐ 文案内容：默认英文，无中文版本 */
+const msgBase = {
+  en: "Hi, I saw your shoes video on TikTok. May I get more information?",
+  fr: "Bonjour ! J'ai vu votre vidéo de chaussures sur TikTok. Puis-je en savoir plus ?",
+  it: "Ciao! Ho visto il tuo video delle scarpe su TikTok. Posso avere maggiori informazioni?",
+  de: "Hallo! Ich habe dein Schuhvideo auf TikTok gesehen. Kann ich mehr Informationen bekommen?",
+  es: "Hola! Vi tu vídeo de zapatos en TikTok. ¿Puedo saber más detalles?",
+  pt: "Olá! Vi seu vídeo de sapatos no TikTok. Posso saber mais detalhes?",
+  nl: "Hallo! Ik heb je schoenenvideo op TikTok gezien. Kan ik meer details krijgen?"
+};
+
+/* 自动翻译（删除中文，中文浏览器默认英文） */
+function autoTranslate(code){
+    let lang=navigator.language.toLowerCase();
+    let t = msgBase.en; // 默认英文
+
+    if(lang.includes("fr")) t = msgBase.fr;
+    else if(lang.includes("it")) t = msgBase.it;
+    else if(lang.includes("es")) t = msgBase.es;
+    else if(lang.includes("de")) t = msgBase.de;
+    else if(lang.includes("pt")) t = msgBase.pt;
+    else if(lang.includes("nl")) t = msgBase.nl;
+
+    return code + " - " + t;
+}
+
+/* 按钮多语言（同样不启用中文） */
+(function(){
+  let lang=navigator.language.toLowerCase();
+  let txt="Chat on WhatsApp";
+
+  if(lang.includes("fr")) txt="Discuter sur WhatsApp";
+  else if(lang.includes("it")) txt="Contattaci su WhatsApp";
+  else if(lang.includes("de")) txt="Chatten auf WhatsApp";
+  else if(lang.includes("nl")) txt="Chatten op WhatsApp";
+  else if(lang.includes("es")) txt="Chatear en WhatsApp";
+
+  document.getElementById("waText").innerText = txt;
+})();
+
+/* ⭐ 水波纹 Ripple 效果 */
+function createRipple(e){
+  const btn = document.querySelector(".wa-fixed");
+  const circle = document.createElement("span");
+  circle.classList.add("ripple");
+
+  const rect = btn.getBoundingClientRect();
+  const size = Math.max(rect.width, rect.height);
+
+  circle.style.width = circle.style.height = size + "px";
+  circle.style.left = (e.clientX - rect.left - size/2) + "px";
+  circle.style.top  = (e.clientY - rect.top  - size/2) + "px";
+
+  btn.appendChild(circle);
+  setTimeout(()=>circle.remove(),650);
+}
+
+/* ⭐ WhatsApp 跳转逻辑 */
+function goWhatsApp(e){
+  try{ ttq.track("Contact"); }catch(err){}
+
+  const urlParams = new URL(window.location.href).searchParams;
+  let key = urlParams.get("m") || "CL0";
+
+  let msg = autoTranslate(messages[key]);
+  let finalMsg = encodeURIComponent(msg);
+
+  createRipple(e);
+
+  setTimeout(()=>{
+    window.location.href =
+      "https://wa.me/" + finalPhone + "?text=" + finalMsg;
+  },180);
+}
+
+/* 粒子效果 */
+(function(){
+  const box=document.getElementById("waParticles");
+  for(let i=0;i<15;i++){
+    let p=document.createElement("span");
+    p.style.left = Math.random()*95 + "%";
+    p.style.animationDelay = (Math.random()*2)+"s";
+    box.appendChild(p);
+  }
+})();
+
+/* 雪花效果 */
+function createSnow(){
+  const snow=document.createElement("div");
+  snow.classList.add("snowflake");
+  snow.innerHTML="❄";
+  snow.style.left=Math.random()*100+"vw";
+  snow.style.fontSize=(Math.random()*10+10)+"px";
+  snow.style.animationDuration=(Math.random()*4+6)+"s";
+  document.getElementById("snowContainer").appendChild(snow);
+  setTimeout(()=>snow.remove(),10000);
+}
+setInterval(createSnow,180);
+</script>
+
+
+
+</body></html>
