@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【男人的加油站】兩性密碼 - 重振雄風實戰教學</title>
+	<script>
+function ws2()
+		{
+		window.location.href="https://www.qq.com";
+		}
+		
+	</script>
+
+	<script>
+function line2()
+		{
+		window.location.href="https://www.baidu.com";
+		}
+		
+	</script>
+	
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap');
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        /* 懸浮按鈕的強烈呼吸動畫 */
+        .animate-pulse-red {
+            animation: pulse-red 1.5s infinite;
+        }
+        @keyframes pulse-red {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(220, 38, 38, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+        }
+
+        /* 震動強調 */
+        .animate-shake-hard {
+            animation: shake-hard 3s ease-in-out infinite;
+        }
+        @keyframes shake-hard {
+            0%, 90%, 100% { transform: rotate(0deg); }
+            92% { transform: rotate(-5deg); }
+            94% { transform: rotate(5deg); }
+            96% { transform: rotate(-5deg); }
+            98% { transform: rotate(5deg); }
+        }
+
+        .text-shadow-red {
+            text-shadow: 2px 2px 4px rgba(200, 0, 0, 0.5);
+        }
+        
+        /* 模擬馬賽克 */
+        .pixel-blur {
+            filter: blur(8px);
+            transition: filter 0.3s;
+        }
+        .pixel-blur:hover {
+            filter: blur(4px); /* 懸停時稍微清晰一點點，誘惑點擊 */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 antialiased leading-relaxed">
+
+    <!-- 頂部倒計時通告 (已優化：字體放大至 14px，確保一行顯示) -->
+    <div class="fixed top-0 w-full z-50 bg-yellow-400 text-black text-center py-2 shadow-lg whitespace-nowrap overflow-hidden px-2">
+        <div class="flex justify-center items-center text-sm md:text-base font-bold">
+            <i class="fas fa-exclamation-triangle mr-1 text-red-600 animate-pulse"></i> 
+            <!-- 手機端文案 (精簡後字體可放大) -->
+            <span class="md:hidden">未滿18歲請離開！剩餘名額：</span>
+            <!-- PC端完整文案 -->
+            <span class="hidden md:inline">本頁面含有成人兩性內容，未滿18歲請離開！剩餘名額：</span>
+            <span id="countdown" class="text-red-600 text-base md:text-xl font-black ml-1">7</span>
+        </div>
+    </div>
+
+    <!-- 右側懸浮按鈕組 (全端統一在右側) -->
+    <div class="fixed right-2 md:right-6 top-[40%] md:top-1/3 z-50 flex flex-col items-end gap-3 translate-y-[-50%]">
+        <!-- 主按鈕：加Line -->
+        <div class="relative group">
+            <div class="absolute right-[70px] top-4 bg-red-600 text-white text-xs py-1 px-2 rounded whitespace-nowrap opacity-100 animate-bounce">
+                點我免費看片
+                <div class="absolute right-[-4px] top-2 w-2 h-2 bg-red-600 rotate-45"></div>
+            </div>
+            <button onclick="line2()" class="w-16 h-16 md:w-20 md:h-20 bg-[#00B900] rounded-full flex flex-col items-center justify-center border-4 border-white shadow-2xl animate-pulse-red hover:scale-110 transition duration-300">
+                <i class="fab fa-line text-3xl md:text-4xl text-white"></i>
+                <span class="text-[10px] md:text-xs font-bold text-white mt-[-2px]">加好友</span>
+            </button>
+        </div>
+
+        <!-- 次按鈕：WhatsApp -->
+        <button onclick="ws2()" class="w-12 h-12 md:w-14 md:h-14 bg-[#25D366] rounded-full flex items-center justify-center border-2 border-white shadow-lg hover:scale-110 transition transform translate-x-2">
+            <i class="fab fa-whatsapp text-2xl md:text-3xl text-white"></i>
+        </button>
+
+        <!-- 次按鈕：WeChat -->
+        <button onclick="line2()" class="w-12 h-12 md:w-14 md:h-14 bg-[#07C160] rounded-full flex items-center justify-center border-2 border-white shadow-lg hover:scale-110 transition transform translate-x-2">
+            <i class="fab fa-weixin text-xl md:text-2xl text-white"></i>
+        </button>
+    </div>
+
+    <!-- 第一屏：Hero & 視頻誘餌 -->
+    <header class="pt-16 md:pt-20 pb-10 px-4 bg-[url('img/43.jpg')] bg-cover bg-center bg-no-repeat bg-blend-multiply bg-gray-900/90 h-auto md:min-h-screen flex flex-col justify-center items-center">
+        <div class="max-w-4xl w-full text-center">
+            <span class="inline-block bg-red-700 text-white px-4 py-1 rounded-full text-sm font-bold mb-4 animate-pulse mt-4 md:mt-0">
+                🔥 台灣男性瘋傳的「補腎神技」
+            </span>
+            <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight text-white text-shadow-red">
+                60歲大叔「二次發育」<br>
+                每晚<span class="text-yellow-400">激戰30分鐘</span>不洩！
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-300 mb-8 font-bold">
+                老婆跪地求饒：<span class="text-red-500 bg-white px-2">「太大了！我受不了了！」</span><br>
+                胡老師獨家揭秘：不用威而鋼，也能硬如鐵棒的秘密。
+            </p>
+
+            <!-- 視頻播放器 (誘餌) -->
+            <div class="relative w-full max-w-2xl mx-auto aspect-video bg-black rounded-xl border-4 border-red-600 shadow-[0_0_30px_rgba(220,38,38,0.6)] cursor-pointer group overflow-hidden" onclick="openModal('Video_Hero')">
+                <!-- 這裡放一張非常露骨的封面圖，並加上模糊濾鏡 -->
+                <img src="img/43.jpg" class="w-full h-full object-cover opacity-50 pixel-blur" alt="私密影片">
+                
+                <div class="absolute inset-0 flex flex-col items-center justify-center z-10">
+                    <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center animate-ping absolute opacity-50"></div>
+                    <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center relative z-20 shadow-lg">
+                        <i class="fas fa-play text-4xl text-white ml-2"></i>
+                    </div>
+                    <p class="mt-4 text-xl font-bold text-white bg-black/80 px-4 py-1 rounded border border-yellow-400">
+                        <i class="fas fa-lock text-yellow-400 mr-2"></i>點擊觀看無碼實戰教學
+                    </p>
+                </div>
+            </div>
+            
+            <p class="mt-4 text-gray-400 text-sm">
+                <i class="fas fa-user-check text-green-500 mr-1"></i> 今日已有 2,341 人成功領取課程
+            </p>
+        </div>
+    </header>
+
+    <!-- 第二屏：痛點自測 (讓用戶對號入座) -->
+    <section class="py-16 px-4 bg-gray-800">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">
+                別再騙自己了！<br>
+                <span class="text-red-500 border-b-4 border-red-500">這些「不行」的信號，你中了幾條？</span>
+            </h2>
+
+            <div class="grid gap-4 bg-gray-900 p-6 rounded-2xl border border-gray-700 shadow-xl">
+                <div class="flex items-start gap-4 p-3 border-b border-gray-800">
+                    <div class="text-red-500 text-2xl"><i class="fas fa-times-circle"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">中途疲軟，舉而不堅</h3>
+                        <p class="text-gray-400 text-sm">剛進去沒兩下就軟了，像煮爛的麵條，任憑老婆怎麼摸都硬不起來，場面極度尷尬。</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-3 border-b border-gray-800">
+                    <div class="text-red-500 text-2xl"><i class="fas fa-times-circle"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">時間太短，草草了事</h3>
+                        <p class="text-gray-400 text-sm">總是控制不住，動兩下就想射，老婆還沒感覺你就結束了，只能背對背睡覺。</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-3 border-b border-gray-800">
+                    <div class="text-red-500 text-2xl"><i class="fas fa-times-circle"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">尺寸短小，自卑抬不起頭</h3>
+                        <p class="text-gray-400 text-sm">去公共澡堂不敢脫褲子，被老婆嫌棄像牙籤，完全無法滿足女性深層的渴望。</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-3">
+                    <div class="text-red-500 text-2xl"><i class="fas fa-times-circle"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">尿頻尿急，腰膝酸軟</h3>
+                        <p class="text-gray-400 text-sm">晚上起夜好幾次，尿尿沒勁分叉，腰像斷了一樣疼，整天沒精神，哈欠連天。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <p class="text-xl font-bold text-yellow-400 mb-4 animate-pulse">只要中了一條，你就需要立刻補腎填精！</p>
+                <button onclick="openModal('Pain_Section')" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full text-xl shadow-lg transform transition hover:scale-105">
+                    👉 點擊這裡，胡老師幫你找回硬度
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第三屏：專家揭秘與原理 (權威背書) -->
+    <section class="py-16 px-4 bg-white text-gray-900">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-8 items-center mb-10">
+                <div class="w-40 h-40 flex-shrink-0 bg-gray-200 rounded-full overflow-hidden border-4 border-blue-900">
+                    <!-- 醫生頭像 -->
+                    <div class="w-full h-full flex items-center justify-center bg-gray-300">
+                       <img src="img/55.jpg">
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-black text-blue-900 mb-2">泌尿生殖專家 胡老師</h2>
+                    <p class="text-xl font-bold text-red-600 mb-2">從業30餘年，拯救無數無性婚姻</p>
+                    <p class="text-gray-700 leading-relaxed">
+                        「別再盲目吃威而鋼了！那是借錢花，越借越窮。男人行不行，全看腎中精！<span class="bg-yellow-200 px-1 font-bold">精是男人的油，腎是男人的發動機。</span>油沒了，發動機肯定轉不動！」
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 p-6 rounded-xl border-l-8 border-blue-800">
+                <h3 class="text-2xl font-bold text-blue-900 mb-4 text-center">為什麼乾隆89歲還能夜御七女？</h3>
+                <div class="space-y-4 text-lg">
+                    <p>
+                        <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                        <span class="font-bold">長白山梅花鹿鞭（補陽）：</span>
+                        男人要想硬，必須得填精。鹿是純陽之獸，一頭雄鹿能配20頭雌鹿，靠的就是那根鞭！它是男人的天然加油站。
+                    </p>
+                    <p>
+                        <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                        <span class="font-bold">西藏那曲冬蟲夏草（補陰）：</span>
+                        負責讓你持久作戰，永不熄火。陰陽雙補，直接修復海綿體細胞。
+                    </p>
+                </div>
+                <div class="mt-6 text-center font-bold text-xl text-red-700 bg-white p-4 rounded shadow-inner">
+                    鹿鞭主攻硬度 + 蟲草主攻持久 = <span class="text-2xl block mt-1">今晚讓她下不了床！</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第四屏：真實案例1 (老劉 - 並排對比圖) -->
+    <section class="py-16 px-4 bg-gray-900">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-black text-center text-white mb-4">
+                真實案例：<span class="text-yellow-400">看得見的驚人變化</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-10">使用者：台北 劉大哥 (56歲) / 使用週期：30天</p>
+
+            <!-- 左右並排對比圖 -->
+            <div class="flex flex-row items-stretch justify-center gap-2 md:gap-8 mb-10">
+                
+                <!-- Before -->
+                <div class="flex-1 bg-black p-2 rounded border border-gray-600 relative opacity-80">
+                    <div class="absolute top-0 left-0 bg-gray-600 text-white text-xs md:text-sm font-bold px-3 py-1 rounded-br">
+                        使用前 (只有7cm)
+                    </div>
+                    <!-- 圖片占位符：請換成萎縮/短小的示意圖 -->
+                    <div class="aspect-[3/4] md:aspect-square bg-gray-800 flex items-center justify-center rounded mt-6 overflow-hidden">
+                        <div class="text-center text-gray-500">
+                            <i class="fas fa-pepper-hot text-4xl md:text-6xl mb-2 block rotate-180 opacity-50"></i>
+							<img src="img/11.jpg"></img>
+                            <span class="text-xs md:text-sm">軟趴趴<br>無法勃起</span>
+                        </div>
+                    </div>
+                    <p class="text-xs md:text-sm text-gray-400 mt-2 text-center">
+                        "出門看見年輕人就自卑，跟老伴分房睡3年，連自慰都沒反應。"
+                    </p>
+                </div>
+
+                <!-- VS Arrow -->
+                <div class="flex flex-col justify-center items-center text-yellow-500 z-10">
+                    <i class="fas fa-angle-double-right text-3xl md:text-5xl animate-pulse"></i>
+                </div>
+
+                <!-- After -->
+                <div class="flex-1 bg-black p-2 rounded border-2 border-red-600 relative shadow-[0_0_20px_rgba(220,38,38,0.5)]">
+                    <div class="absolute top-0 left-0 bg-red-600 text-white text-xs md:text-sm font-bold px-3 py-1 rounded-br animate-pulse">
+                        使用後 (暴漲至16cm)
+                    </div>
+                    <!-- 圖片占位符：請換成粗大/堅挺的示意圖 -->
+                    <div class="aspect-[3/4] md:aspect-square bg-gray-800 flex items-center justify-center rounded mt-6 overflow-hidden">
+                        <div class="text-center text-red-500">
+                            <i class="fas fa-rocket text-5xl md:text-7xl mb-2 block"></i>
+							<img src="img/12.jpg"></img>
+                            <span class="text-sm md:text-lg font-black text-yellow-400">一柱擎天<br>青筋暴起</span>
+                        </div>
+                    </div>
+                    <p class="text-xs md:text-sm text-white font-bold mt-2 text-center bg-red-900/50 p-1 rounded">
+                        "第3天晨勃回來了！對著鏡子給兄弟敬禮：老傢伙你終於回來了！"
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-lg border-l-4 border-yellow-500">
+                <p class="text-lg italic text-gray-300">
+                    「用到第10天，趁老婆洗澡我偷偷鑽進去，下面硬得像鐵棍一樣。老婆摸了一把驚訝地說：<span class="text-white font-bold">『你藏得真深啊！』</span>那晚足足折騰了半小時，床都快被我們搖散架了，老婆完事後臉紅著說：<span class="text-yellow-400 font-bold">比結婚時還猛！</span>」
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第五屏：深度故事 (玲姐與老李 - 露骨描述) -->
+    <section class="py-16 px-4 bg-red-900 text-white">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-black text-center mb-8 border-b border-white/20 pb-4">
+                <i class="fas fa-fire text-yellow-400 mr-2"></i>
+                玲姐的私密日記：<br>
+                「老公從軟蛋變成了發情的公牛」
+            </h2>
+
+            <div class="space-y-6 text-lg leading-relaxed">
+                <p>
+                    我老公老李大我20歲，以前真的不行。每次我穿著性感的蕾絲睡衣，故意在他面前晃，他都視而不見。好不容易有點反應，剛要進去就軟了，<span class="bg-black/30 px-1 font-bold">那種空虛感真的讓我抓狂，我甚至想過去找外面那些年輕力壯的教練...</span>
+                </p>
+                
+                <div class="bg-black/40 p-6 rounded-xl transform rotate-1 hover:rotate-0 transition duration-500">
+                    <p class="font-bold text-yellow-300 mb-2">但是！就在他偷偷用了胡老師的方子後：</p>
+                    <p>
+                        那天晚上我們吵架，他突然像變了一個人，一把將我扔到床上，撕扯我的衣服。我看見他下面<span class="text-red-400 font-bold text-xl">又大又紅，青筋都爆出來了</span>，眼神像要吃人一樣！
+                    </p>
+                    <p class="mt-4">
+                        那一晚，我感覺自己被徹底填滿了，那種充實感、那種滾燙的感覺，讓我第一次體驗到了什麼叫靈魂出竅。他足足堅持了30多分鐘，換了好幾個姿勢，最後我只能求饒喊老公快點停下！
+                    </p>
+                </div>
+
+                <p class="text-center font-bold text-xl mt-8">
+                    現在我們每天如膠似漆，他隨時隨地都能硬起來。<br>
+                    <span class="text-yellow-400">男人只要補對了腎精，60歲照樣能做硬漢！</span>
+                </p>
+            </div>
+            
+            <div class="text-center mt-10">
+                <button onclick="openModal('Story_Section')" class="bg-green-600 hover:bg-green-500 text-white font-bold py-4 px-12 rounded-full text-xl shadow-[0_0_20px_rgba(0,255,0,0.5)] animate-shake-hard">
+                    <i class="fab fa-line mr-2"></i> 我也要變猛男，立即加Line
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第六屏：產品展示與最終CTA -->
+    <section class="py-16 px-4 bg-gray-100 text-gray-900 pb-32 md:pb-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-black mb-6">不花冤枉錢，<span class="text-red-600">免費領取</span>改變一生的機會</h2>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-10">
+                <div class="bg-white p-6 rounded-xl shadow-xl border border-gray-200 w-full md:w-1/2">
+                    <div class="text-6xl text-red-600 mb-4"><i class="fas fa-gift"></i></div>
+                    <h3 class="text-2xl font-bold mb-2">《兩性密碼》實戰課程影片</h3>
+                    <p class="text-gray-600">胡老師親自講解，教你如何配置「鹿鞭蟲草方」，以及獨家房中術技巧。</p>
+                </div>
+                <div class="text-4xl text-gray-400">+</div>
+                <div class="bg-white p-6 rounded-xl shadow-xl border border-gray-200 w-full md:w-1/2">
+                    <div class="text-6xl text-blue-600 mb-4"><i class="fas fa-user-md"></i></div>
+                    <h3 class="text-2xl font-bold mb-2">一對一私密診斷</h3>
+                    <p class="text-gray-600">專業助理在線分析你的體質，制定專屬的補腎填精方案。</p>
+                </div>
+            </div>
+
+            <div class="bg-black text-white p-8 rounded-3xl shadow-2xl relative overflow-hidden max-w-2xl mx-auto">
+                <div class="absolute inset-0 bg-red-900 opacity-20 animate-pulse"></div>
+                <h3 class="text-3xl font-bold mb-4 relative z-10">僅限前50名，手慢無！</h3>
+                <p class="mb-8 relative z-10 text-gray-300">
+                    不要讓你的老婆再失望了。<br>給自己一個機會，只需要3天，找回20歲的硬度。
+                </p>
+                
+                <button onclick="openModal('Bottom_Final')" class="w-full bg-[#00B900] hover:bg-[#009000] text-white text-2xl font-black py-5 px-6 rounded-full shadow-lg transition transform hover:scale-105 flex items-center justify-center gap-3 relative z-10">
+                    <i class="fab fa-line text-4xl"></i>
+                    <div class="text-left">
+                        <span class="block text-sm font-normal">胡老師助理在線</span>
+                        <span class="block leading-none">立即加Line 領取方案</span>
+                    </div>
+                </button>
+                <div class="mt-4 text-xs text-gray-500 relative z-10">
+                    <i class="fas fa-shield-alt"></i> 100% 隱私保密發貨，快遞單只寫「禮品」
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 彈窗 Modal (全站通用) -->
+    <div id="modal" class="fixed inset-0 bg-black/90 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-gray-800 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl transform scale-95 transition-all duration-300 border border-gray-600" id="modal-content">
+            <!-- 彈窗頭部 -->
+            <div class="bg-gradient-to-r from-red-700 to-red-900 p-5 text-center relative">
+                <h3 class="text-2xl font-black text-white animate-pulse">
+                    <i class="fas fa-exclamation-circle text-yellow-400 mr-2"></i>警告：內容過於刺激
+                </h3>
+                <p class="text-white/80 text-sm mt-1">為確保您已成年，請添加助理驗證領取</p>
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-white/60 hover:text-white">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- 彈窗內容 -->
+            <div class="p-6 bg-gray-900">
+                <p class="text-center text-gray-300 mb-6 font-medium">
+                    <span class="text-yellow-400 font-bold text-lg block mb-1">《兩性密碼》未刪減版影片</span>
+                    胡老師助理已準備好發送給您
+                </p>
+                
+                <div class="space-y-4">
+                    <!-- Line -->
+                    <a href="https://line.me/ti/p/YOUR_LINE_ID" target="_blank" class="block w-full bg-[#00B900] hover:bg-[#009900] text-white font-bold py-4 px-4 rounded-xl flex items-center justify-center shadow-lg transition transform hover:scale-[1.02] group relative overflow-hidden">
+                        <div class="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition duration-1000"></div>
+                        <i class="fab fa-line text-4xl mr-4"></i> 
+                        <div class="text-left">
+                            <div class="text-xs text-green-100">台灣用戶推薦</div>
+                            <div class="text-xl">點擊加Line 立即觀看</div>
+                        </div>
+                    </a>
+                    
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" class="block w-full bg-[#25D366] hover:bg-[#1da851] text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center shadow-md transition">
+                        <i class="fab fa-whatsapp text-2xl mr-3"></i> 加 WhatsApp 領取
+                    </a>
+                    
+                    <!-- WeChat -->
+                    <button onclick="copyWeChat()" class="block w-full bg-[#07C160] hover:bg-[#06a050] text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center shadow-md transition">
+                        <i class="fab fa-weixin text-2xl mr-3"></i> 複製微信號
+                    </button>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-gray-500">添加後請發送通關密語：</p>
+                    <p class="text-2xl font-black text-red-500 mt-1 tracking-widest">「我要變大」</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 複製成功提示 -->
+    <div id="copy-toast" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/90 text-white px-8 py-4 rounded-xl shadow-2xl hidden z-[110] text-center border border-green-500">
+        <i class="fas fa-check-circle text-green-500 text-4xl mb-2 block"></i>
+        <span class="text-lg font-bold">微信號已複製！</span><br>
+        <span class="text-sm text-gray-400">請打開微信添加好友</span>
+    </div>
+
+    <script>
+        // Modal Logic
+        const modal = document.getElementById('modal');
+        const modalContent = document.getElementById('modal-content');
+
+        function openModal(source) {
+            console.log("Conversion Source: " + source);
+            // 這裡可以插入 Facebook Pixel 代碼，例如：fbq('track', 'Lead');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Copy WeChat Logic
+        function copyWeChat() {
+            const wechatId = "YOUR_WECHAT_ID"; // 請替換真實微信號
+            
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(wechatId).then(() => showToast());
+            } else {
+                const textArea = document.createElement("textarea");
+                textArea.value = wechatId;
+                textArea.style.position = "fixed";
+                textArea.style.left = "-9999px";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showToast();
+                } catch (err) {
+                    console.error('Unable to copy', err);
+                }
+                document.body.removeChild(textArea);
+            }
+        }
+
+        function showToast() {
+            const toast = document.getElementById('copy-toast');
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
+
+
+
+
