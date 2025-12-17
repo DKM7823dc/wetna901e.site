@@ -1,0 +1,22 @@
+.btn {
+    padding: 0.973rem 0 !important;
+    font-size: 1.5rem;
+}
+
+.btn-primary {
+    background-color: #f70044 !important;
+    box-shadow: 0 0 5px #f70044, 0 0 15px #f70044, 0 0 20px #f70044, 0 0 30px #f70044;
+    border: 1px solid #f70044;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #f70067 !important;
+    box-shadow: 0 0 5px #f70067, 0 0 15px #f70067, 0 0 20px #f70067, 0 0 30px #f70067;
+    border: 1px solid #f70067;
+    color: black;
+}
+
+.country-list {
+    color: black !important;
+}

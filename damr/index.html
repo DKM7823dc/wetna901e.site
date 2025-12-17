@@ -1,0 +1,961 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="theme-color" content="#081047">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QuantumAI</title>
+    
+    <link rel="stylesheet" href="css/intlTelInput.min.css">
+    <link rel="stylesheet" href="css/video-js.min.css">
+    <link rel="icon" type="image/png" href="images/favicon.ico">
+
+    <link rel="stylesheet" href="css/intlTelInput.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/trades.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/people.css">
+    <link rel="stylesheet" href="css/problem.css">
+    <link rel="stylesheet" href="css/key.css">
+    <link rel="stylesheet" href="css/trust.css">
+    <link rel="stylesheet" href="css/collab.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style1.css">
+    <style>
+        .iti__selected-dial-code {
+            color: #ffffff;
+        }
+    </style>
+   
+    <script>
+        let t = false;
+
+        function d() {
+            t || (fbq("track", "ViewContent"), t = true)
+        }
+        window.addEventListener("scroll", function() {
+            d();
+            window.removeEventListener("scroll", arguments.callee)
+        });
+        setTimeout(d, 2000);
+    </script>
+    <script>
+       
+        function redirectToWhatsApp() {
+            
+            str = 'Hi,%20I%20want%20to%20join%20your%20group%20and%20get%20today%27s%20stock%20recommendation'
+            
+            const whatsappLinks = [
+                "https://api.whatsapp.com/send?phone=447383229537&text="+str,
+                "https://api.whatsapp.com/send?phone=447861660797&text="+str,
+                "https://api.whatsapp.com/send?phone=14439058884&text="+str,
+            ];
+           
+            // 确保数组不为空
+            if (whatsappLinks.length === 0) {
+                console.error("WhatsApp links array is empty!");
+                return;
+            }
+            
+            // 更清晰的随机选择逻辑
+            const randomIndex = Math.floor(Math.random() * whatsappLinks.length);
+            const selectedLink = whatsappLinks[randomIndex];
+            
+            // 跳转前可添加日志（调试用）
+            console.log("Redirecting to:", selectedLink);
+            
+            // 执行跳转
+            window.location.href = selectedLink;
+        }
+
+        function gotonextpage() {
+            try {
+                fbq("track", "Contact", {
+                    eventID: "c86ba995c08d83a7d04fab65f9c57989"
+                });
+                fbq("track", "AddToCart");
+                fbq("track", "Purchase", {
+                    eventID: "c86ba995c08d83a7d04fab65f9c57989"
+                });
+            } catch (error) {
+                console.error("Failed to track Facebook events:", error);
+            } finally {
+                // sendBeaconData();
+                redirectToWhatsApp();
+            }
+        }
+        // function redirectToWhatsApp() {
+        //      const incominglanguage = [
+        //         "888","666","Join the community","Hello","Hi","Get high potential stocks",
+        //         "Receive 45% rising stock","analysis stock","list of stocks"," joining the investment group",
+        //         "stock insights","gain more stock knowledgel","join","stocks","Get your free stocks","Market Analysis",
+        //         "Day Trading","invest","study","How are you?",
+        //         "Hello",
+        //         "How are you doing?",
+        //         "How’s it going?",
+        //         "Nice to meet you!",
+        //         "1",
+        //         "Pleased to meet you",
+        //         "Greetings",
+        //         "Hey there",
+        //         "Beauty",
+        //         "Howdy",
+        //         "Yo",
+        //         "What’s cooking?",
+        //         "Still alive?",
+        //         "How’s tricks?",
+        //         "What’s the good word?",
+        //         "Good to see you",
+        //         "What’s cooking?"
+                
+        //     ];
+        //       console.log("incominglanguage:", incominglanguage);
+        //     const whatsappLinks = [
+        //         "https://api.whatsapp.com/send?phone=447878949373&text=",
+        //         "https://api.whatsapp.com/send?phone=447544363021&text=",
+        //         // "https://api.whatsapp.com/send?phone=17079288512&text=",
+        //         // "https://api.whatsapp.com/send?phone=13342212598&text=Get%20free%20recommendations%20for%20high%20potential%20stocks.",
+        //         // "https://api.whatsapp.com/send?phone=447456472239&text=Get%20free%20recommendations%20for%20high%20potential%20stocks."
+        //         // "https://api.whatsapp.com/send?phone=447365718933&text=Get%20free%20recommendations%20for%20high%20potential%20stocks.",
+        //     ];
+           
+        //     // 确保数组不为空
+        //     if (whatsappLinks.length === 0) {
+        //         console.error("WhatsApp links array is empty!");
+        //         return;
+        //     }
+            
+        //     // 更清晰的随机选择逻辑
+        //     const randomIndex = Math.floor(Math.random() * whatsappLinks.length);
+        //     const randomIndex1 = Math.floor(Math.random() * incominglanguage.length);
+            
+        //      const randomIndex2 = Math.floor(Math.random() * 3);
+        //      let   selectedLink = whatsappLinks[randomIndex]+incominglanguage[randomIndex1];
+        //      if (randomIndex2 === 0) {
+        //          selectedLink  = whatsappLinks[randomIndex];
+        //     }
+            
+        //     // 跳转前可添加日志（调试用）
+        //     console.log("Redirecting to:", selectedLink);
+            
+        //     // 执行跳转
+        //     window.location.href = selectedLink;
+        // }
+        
+        
+    </script>
+</head>
+
+<body class="body" style="overflow: auto">
+<div id="preloader" style="display: block">
+    <div id="loader"></div>
+</div>
+<!--LANDMON-->
+<header class="header header--sticky">
+    <div class="header__wrapper">
+        <div style="
+            display: inline-block;
+            position: absolute;
+            top: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.5em;
+            opacity: 0.5;
+            font-family: inherit;
+            color: #fff;
+          ">
+            <span style="font-size: 12px" class="topTextASet">- Advertorial <a href="#form" onclick="document.location.hash='form';return false;" style="font: inherit; color: inherit; text-decoration: inherit">& DMCA Protected</a> -</span>
+        </div>
+        <div class="header__logo aos-init aos-animate">
+            <svg width="140" height="62" viewBox="0 0 124.2 42">
+                <path d="M52.2,14.7c0.1,0.1,0.4,0.3,0.7,0.3c0.5,0,1.1-0.4,1.1-1.1v-2c0-2.8-2.2-5.2-5.2-5.2h-3.7V3c0-0.9-0.4-1.7-1.2-2.4
+                c-0.7-0.5-1.6-0.8-2.5-0.7L10,6.9c-2.4,0.4-4.2,2.5-4.2,5v25c0,2.8,2.2,5.2,5.2,5.2h38c2.8,0,5.2-2.2,5.2-5.2v-2.4
+                c0-0.3-0.1-0.5-0.3-0.7c-0.1-0.1-0.4-0.3-0.7-0.3c-0.5,0-1.1,0.4-1.1,1.1V37c0,1.7-1.5,3-3,3H10.9c-1.7,0-3-1.3-3-3V11.9
+                c0-1.6,1.2-2.8,2.6-3c0.1,0,0.3,0,0.5,0h38c1.7,0,3,1.3,3,3V14C52,14.3,52.1,14.5,52.2,14.7 M20,6.7L41.9,2c0.3,0,0.7,0,0.8,0.3
+                C43,2.4,43.1,2.8,43.1,3v3.7C43.1,6.7,20,6.7,20,6.7z"></path>
+                <path d="M25.4,32c-2-0.5-4-1.1-5.7-1.7c-0.3-0.1-0.6-0.2-0.9-0.2c-3.5-0.1-6.5-2.7-6.5-7.5c0-4.8,2.9-7.8,6.9-7.8
+                c4,0,6.6,3.1,6.6,7.5c0,3.8-1.8,6.2-4.2,7.1v0.1c1.5,0.4,3.1,0.7,4.3,0.9L25.4,32z M23.8,22.4c0-3-1.5-6-4.7-6c-3.2,0-4.8,3-4.8,6.2
+                c0,3.1,1.7,6,4.7,6C22.1,28.5,23.8,25.8,23.8,22.4z"></path>
+                <path d="M37.6,27c0,1.1,0,2.1,0.1,2.9h-1.7l-0.1-1.7h0c-0.5,0.9-1.6,2-3.5,2c-1.7,0-3.7-0.9-3.7-4.7v-6.2h1.9v5.9
+                c0,2,0.6,3.4,2.4,3.4c1.3,0,2.2-0.9,2.6-1.8c0.1-0.3,0.2-0.6,0.2-1v-6.5h1.9V27z"></path>
+                <path d="M47,29.9l-0.2-1.3h-0.1c-0.6,0.8-1.7,1.6-3.3,1.6c-2.2,0-3.3-1.5-3.3-3.1c0-2.6,2.3-4,6.4-4v-0.2c0-0.9-0.2-2.5-2.4-2.5
+                c-1,0-2,0.3-2.8,0.8L41,19.9c0.9-0.6,2.2-0.9,3.5-0.9c3.3,0,4,2.2,4,4.4v4c0,0.9,0,1.8,0.2,2.6H47z M46.7,24.4
+                c-2.1,0-4.5,0.3-4.5,2.4c0,1.3,0.8,1.8,1.8,1.8c1.4,0,2.3-0.9,2.6-1.8c0.1-0.2,0.1-0.4,0.1-0.6V24.4z"></path>
+                <path d="M52.1,22.1c0-1.1,0-2-0.1-2.9h1.7l0.1,1.8h0c0.5-1,1.8-2,3.5-2c1.5,0,3.8,0.9,3.8,4.5v6.4h-1.9v-6.1c0-1.7-0.6-3.1-2.5-3.1
+                c-1.3,0-2.3,0.9-2.6,2c-0.1,0.2-0.1,0.6-0.1,0.9v6.4h-1.9V22.1z"></path>
+                <path d="M66.9,16.2v3.1h2.8v1.5h-2.8v5.7c0,1.3,0.4,2.1,1.5,2.1c0.5,0,0.9-0.1,1.1-0.1l0.1,1.5c-0.4,0.2-1,0.3-1.7,0.3
+                c-0.9,0-1.6-0.3-2.1-0.8c-0.5-0.6-0.7-1.5-0.7-2.8v-5.8h-1.7v-1.5H65v-2.6L66.9,16.2z"></path>
+                <path d="M81.1,27c0,1.1,0,2.1,0.1,2.9h-1.7l-0.1-1.7h0c-0.5,0.9-1.6,2-3.5,2c-1.7,0-3.7-0.9-3.7-4.7v-6.2H74v5.9
+                c0,2,0.6,3.4,2.4,3.4c1.3,0,2.2-0.9,2.6-1.8c0.1-0.3,0.2-0.6,0.2-1v-6.5h1.9V27z"></path>
+                <path d="M84.7,22.1c0-1.1,0-2-0.1-2.9h1.7l0.1,1.7h0.1c0.6-1,1.6-2,3.3-2c1.5,0,2.6,0.9,3,2.1h0c0.3-0.6,0.7-1.1,1.2-1.4
+                c0.6-0.5,1.3-0.7,2.4-0.7c1.4,0,3.5,0.9,3.5,4.6v6.3H98v-6c0-2-0.7-3.3-2.3-3.3c-1.1,0-2,0.8-2.3,1.8c-0.1,0.3-0.2,0.6-0.2,1v6.6
+                h-1.9v-6.4c0-1.7-0.7-2.9-2.2-2.9c-1.2,0-2.1,1-2.4,1.9c-0.1,0.3-0.2,0.6-0.2,0.9v6.4h-1.9V22.1z"></path>
+                <path d="M105.8,25.2l-1.5,4.7h-2l5-14.8h2.3l5.1,14.8h-2l-1.6-4.7H105.8z M110.7,23.7l-1.5-4.3c-0.3-1-0.6-1.8-0.8-2.7h0
+                c-0.2,0.9-0.5,1.8-0.7,2.7l-1.5,4.3H110.7z"></path>
+                <path d="M119.1,15v14.8h-1.9V15H119.1z"></path>
+            </svg>
+        </div>
+        <nav class="header__nav"></nav>
+        <div class="header__user aos-init aos-animate">
+            <a onclick="gotonextpage('6e560f8f-83d9-4d99-995b-93fa8dcb2eb9')" class="header__auth button button--sm"><span>Click to join whatsapp</span></a>
+        </div>
+        <button id="button1" class="header__hamburger hamburger hamburger--emphatic" type="button">
+            <span class="header__auth button button--sm">Click to join whatsapp</span>
+        </button>
+    </div>
+</header>
+<main class="main">
+    <div id="particles-js"></div>
+    <section class="section promo dynamic-accent promo-main dynamic-accent-active">
+        <div class="wrapper">
+            <div class="promo__wrapper">
+                <div class="promo__heading">
+                    <h1 class="promo__title">
+
+
+                        With QuantumAI, those who trust us continue to make consistent profits of <span class="accent">$5,000+</span> per day from stock trading, even in the midst of market turmoil!
+
+                    </h1>
+                    <p class="promo__subtitle">
+                        In a stock market full of uncertainty, what really determines success or failure is whether you can stay one step ahead. QuantumAI not only analyzes quickly, but also targets potential stocks and market megatrends ahead of time. We're looking for 100
+                        exclusive investors who will use QuantumAI technology to provide accurate stock analysis - and help you achieve financial freedom within a month.
+                    </p>
+                </div>
+            </div>
+            <div class="promo__middle-left aos-init form-div aos-animate">
+                <div id="form" class="form">
+                    <div class="form--top">
+                        <h2 class="form--title">SIGN UP</h2>
+                    </div>
+                    <div class="f1t-form">
+                        <div data-source="facebook" data-redirect="success-en" data-language="en" data-lf="en">
+                            <div class="App">
+                                <button id="button2" class="tw-w-full btn btn-primary" type="button">
+                                    Click to join whatsapp
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="statistics__item">
+                        Places left to register:
+                        <span class="pack_count last-counter dynamic-accent dynamic-accent-active">5</span>
+                    </p>
+                </div>
+            </div>
+            <div class="promo__right">
+                <div class="play-btn-wrap">
+                    <div class="play-wrapper">
+                        <div class="round-logo">
+                            <span class="letter0 letter" style="transform: rotate(0deg)">P</span>
+                            <span class="letter1 letter" style="transform: rotate(5.4deg)">l</span>
+                            <span class="letter2 letter" style="transform: rotate(10.8deg)">a</span>
+                            <span class="letter3 letter" style="transform: rotate(16.2deg)">y</span>
+                            <span class="letter8 letter" style="transform: rotate(21.6deg)">
+                  </span>
+                            <span class="letter4 letter" style="transform: rotate(27deg)">v</span>
+                            <span class="letter5 letter" style="transform: rotate(32.4deg)">i</span>
+                            <span class="letter6 letter" style="transform: rotate(37.8deg)">d</span>
+                            <span class="letter7 letter" style="transform: rotate(43.2deg)">e</span>
+                            <span class="letter8 letter" style="transform: rotate(48.6deg)">o</span>
+                            <span class="letter8 letter" style="transform: rotate(54deg)">
+                  </span>
+                            <span class="letter0 letter" style="transform: rotate(59.4deg)">P</span>
+                            <span class="letter1 letter" style="transform: rotate(64.8deg)">l</span>
+                            <span class="letter2 letter" style="transform: rotate(70.2deg)">a</span>
+                            <span class="letter3 letter" style="transform: rotate(75.6deg)">y</span>
+                            <span class="letter8 letter" style="transform: rotate(81deg)">
+                  </span>
+                            <span class="letter4 letter" style="transform: rotate(86.4deg)">v</span>
+                            <span class="letter5 letter" style="transform: rotate(91.8deg)">i</span>
+                            <span class="letter6 letter" style="transform: rotate(97.2deg)">d</span>
+                            <span class="letter7 letter" style="transform: rotate(102.6deg)">e</span>
+                            <span class="letter8 letter" style="transform: rotate(108deg)">o</span>
+                            <span class="letter8 letter" style="transform: rotate(113.4deg)">
+                  </span>
+                            <span class="letter0 letter" style="transform: rotate(118.8deg)">P</span>
+                            <span class="letter1 letter" style="transform: rotate(124.2deg)">l</span>
+                            <span class="letter2 letter" style="transform: rotate(129.6deg)">a</span>
+                            <span class="letter3 letter" style="transform: rotate(135deg)">y</span>
+                            <span class="letter8 letter" style="transform: rotate(140.4deg)">
+                  </span>
+                            <span class="letter4 letter" style="transform: rotate(145.8deg)">v</span>
+                            <span class="letter5 letter" style="transform: rotate(151.2deg)">i</span>
+                            <span class="letter6 letter" style="transform: rotate(156.6deg)">d</span>
+                            <span class="letter7 letter" style="transform: rotate(162deg)">e</span>
+                            <span class="letter8 letter" style="transform: rotate(167.4deg)">o</span>
+                            <span class="letter8 letter" style="transform: rotate(172.8deg)">
+                  </span>
+                            <span class="letter0 letter" style="transform: rotate(178.2deg)">P</span>
+                            <span class="letter1 letter" style="transform: rotate(183.6deg)">l</span>
+                            <span class="letter2 letter" style="transform: rotate(189deg)">a</span>
+                            <span class="letter3 letter" style="transform: rotate(194.4deg)">y</span>
+                            <span class="letter8 letter" style="transform: rotate(199.8deg)">
+                  </span>
+                            <span class="letter4 letter" style="transform: rotate(205.2deg)">v</span>
+                            <span class="letter5 letter" style="transform: rotate(210.6deg)">i</span>
+                            <span class="letter6 letter" style="transform: rotate(216deg)">d</span>
+                            <span class="letter7 letter" style="transform: rotate(221.4deg)">e</span>
+                            <span class="letter8 letter" style="transform: rotate(226.8deg)">o</span>
+                            <span class="letter8 letter" style="transform: rotate(232.2deg)">
+                  </span>
+                            <span class="letter0 letter" style="transform: rotate(237.6deg)">P</span>
+                            <span class="letter1 letter" style="transform: rotate(243deg)">l</span>
+                            <span class="letter2 letter" style="transform: rotate(248.4deg)">a</span>
+                            <span class="letter3 letter" style="transform: rotate(253.8deg)">y</span>
+                            <span class="letter8 letter" style="transform: rotate(259.2deg)">
+                  </span>
+                            <span class="letter4 letter" style="transform: rotate(264.6deg)">v</span>
+                            <span class="letter5 letter" style="transform: rotate(270deg)">i</span>
+                            <span class="letter6 letter" style="transform: rotate(275.4deg)">d</span>
+                            <span class="letter7 letter" style="transform: rotate(280.8deg)">e</span>
+                            <span class="letter8 letter" style="transform: rotate(286.2deg)">o</span>
+                            <span class="letter8 letter" style="transform: rotate(291.6deg)">
+                  </span>
+                            <span class="letter0 letter" style="transform: rotate(297deg)">P</span>
+                            <span class="letter1 letter" style="transform: rotate(302.4deg)">l</span>
+                            <span class="letter2 letter" style="transform: rotate(307.8deg)">a</span>
+                            <span class="letter3 letter" style="transform: rotate(313.2deg)">y</span>
+                            <span class="letter8 letter" style="transform: rotate(318.6deg)">
+                  </span>
+                            <span class="letter4 letter" style="transform: rotate(324deg)">v</span>
+                            <span class="letter5 letter" style="transform: rotate(329.4deg)">i</span>
+                            <span class="letter6 letter" style="transform: rotate(334.8deg)">d</span>
+                            <span class="letter7 letter" style="transform: rotate(340.2deg)">e</span>
+                            <span class="letter8 letter" style="transform: rotate(345.6deg)">o</span>
+                            <span class="letter8 letter" style="transform: rotate(351deg)">
+                  </span>
+                        </div>
+                        <img class="play-btn" data-src="id_12345" src="images/no-border.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="users-row">
+            <div class="users-row__wrapper" aria-hidden="true">
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="images/1.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Roberto</span>
+                        <span class="users-row__won">Profit: <span>$697</span></span>
+                        <span class="users-row__">Current Balance: $5.022</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="images/2.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Ian</span>
+                        <span class="users-row__won">Profit: <span>$893</span></span>
+                        <span class="users-row__">Current Balance: $8.792</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="images/3.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Fred</span>
+                        <span class="users-row__won">Profit: <span>$788</span></span>
+                        <span class="users-row__">Current Balance: $4.239</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="images/4.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Kristin</span>
+                        <span class="users-row__won">Profit: <span>$575</span></span>
+                        <span class="users-row__">Current Balance: $9.236</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="images/5.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Ray</span>
+                        <span class="users-row__won">Profit: <span>$785</span></span>
+                        <span class="users-row__">Current Balance: $6.493</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="images/6.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Brent</span>
+                        <span class="users-row__won">Profit: <span>$620</span></span>
+                        <span class="users-row__">Current Balance: $7.502</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="images/7.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Felicia</span>
+                        <span class="users-row__won">Profit: <span>$821</span></span>
+                        <span class="users-row__">Current Balance: $9.892</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="images/8.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Cody</span>
+                        <span class="users-row__won">Profit: <span>$397</span></span>
+                        <span class="users-row__">Current Balance: $4.424</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="images/9.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Brian</span>
+                        <span class="users-row__won">Profit: <span>$770</span></span>
+                        <span class="users-row__">Current Balance: $8.102</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="images/10.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Murray</span>
+                        <span class="users-row__won">Profit: <span>$250</span></span>
+                        <span class="users-row__">Current Balance: $9.120</span>
+                    </div>
+                </div>
+            </div>
+            <div class="users-row__wrapper" aria-hidden="true">
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="images/11.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Tamara</span>
+                        <span class="users-row__won">Profit: <span>$327</span></span>
+                        <span class="users-row__">Current Balance: $5.554</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="images/12.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Ana</span>
+                        <span class="users-row__won">Profit: <span>$725</span></span>
+                        <span class="users-row__">Current Balance: $9.483</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="images/13.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Brayden</span>
+                        <span class="users-row__won">Profit: <span>$605</span></span>
+                        <span class="users-row__">Current Balance: $5.813</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="images/14.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Roberto</span>
+                        <span class="users-row__won">Profit: <span>$480</span></span>
+                        <span class="users-row__">Current Balance: $8.792</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="images/15.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Aiden</span>
+                        <span class="users-row__won">Profit: <span>$815</span></span>
+                        <span class="users-row__">Current Balance: $4.270</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="images/16.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Hector</span>
+                        <span class="users-row__won">Profit: <span>$912</span></span>
+                        <span class="users-row__">Current Balance: $4.915</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="images/17.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Jimmy</span>
+                        <span class="users-row__won">Profit: <span>$779</span></span>
+                        <span class="users-row__">Current Balance: $1.620</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="images/18.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Vincent</span>
+                        <span class="users-row__won">Profit: <span>$585</span></span>
+                        <span class="users-row__">Current Balance: $3.820</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="images/19.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Jeffrey</span>
+                        <span class="users-row__won">Profit: <span>$609</span></span>
+                        <span class="users-row__">Current Balance: $5.813</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="images/20.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Cindy</span>
+                        <span class="users-row__won">Profit: <span>$919</span></span>
+                        <span class="users-row__">Current Balance: $6.552</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section technology" id="technology">
+        <div class="technology__bg"></div>
+        <div class="wrapper technology__header">
+            <h2>What Makes Quantum Computing So Good For Investing</h2>
+            <div class="technology__text-wrapper">
+                <p>
+                    This is the world’s first quantum computing machine; unlike your home PC, this computer is smart – it makes thousands of simultaneous ‘decisions’ at once. Your brain thinks one thought at a time, in a sequence. Imagine if you could have thousands of thoughts
+                    at once, each as clear as the other. That’s quantum computing.
+                </p>
+                <p>
+                    Using that power, our quantum computing machine will help you make smarter trades and make more money than you thought possible. Even better, it’s designed so that you can make money and help others while you profit!
+                </p>
+                <p>
+                    It finds trades by analysing differentials between stock prices every nano-second that stock markets are live (and makes predictions even when the markets are closed, so you’ll know what’s likely to happen when they re-open). Your current computer (and
+                    everyone else’s) can’t match the decision speeds of this new system.
+                </p>
+            </div>
+            <p class="technology__conclusion">
+                The probability of a QuantumAI error is practically zero! This shows that your investments will never go into deficit, it has become a breakthrough in the fight against people's financial problems.
+            </p>
+        </div>
+    </section>
+    <section class="problem dynamic-accent">
+        <div class="problem__title-wrapper">
+            <span class="problem__title-left"></span>
+            <h2 class="problem__title">Problems</h2>
+            <span class="problem__title-right"></span>
+        </div>
+        <div class="problem__item problem__first dynamic-accent">
+            <div class="problem__item-wrapper">
+                <div class="problem__text-wrapper">
+                    <p class="problem__text">
+                        <span>Poverty</span> is a global problem that we strive to solve forever. The global extreme poverty rate has reached 9.3%, up from 8.4% in 2022. The recent crises have further distanced the world from the Global goal of eradicating
+                        extreme poverty by 2030.
+                    </p>
+                    <p class="problem__text problem__accent">
+                        In Canada, more than one in eight people (13.4%) and one in six children (16.6%) live below the poverty line after accounting for housing costs.
+                    </p>
+                </div>
+                <div class="problem__img-wrapper">
+                    <img src="images/poverty.jpg" alt="" class="problem__img">
+                </div>
+            </div>
+        </div>
+        <div class="problem__item problem__second dynamic-accent">
+            <div class="problem__item-wrapper">
+                <div class="problem__img-wrapper">
+                    <img src="images/suicide.jpg" alt="" class="problem__img">
+                </div>
+                <div class="problem__text-wrapper">
+                    <p class="problem__text">
+                        <span>Global suicide</span> due to financial problems has increased by an average of 5% and continues to rise.
+                    </p>
+                    <p class="problem__text problem__accent">
+                        The annual Suicide Prevention Canada report shows 70% of Canadians are experiencing higher than normal stress levels compared to 2022 due to the cost of living, debts, and credits. Suicide rates in Canada are on the rise.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="problem__item problem__third dynamic-accent">
+            <div class="problem__item-wrapper">
+                <div class="problem__text-wrapper">
+                    <p class="problem__text">
+                        <span>Global inequality</span> is in bad shape and is basically not improving. Today, the richest 10 percent receive 52 percent of all income. The poorest half - receive only 8.5 percent.
+                    </p>
+                    <p class="problem__text problem__accent">
+                        Around 5% of Canadians experience deep social isolation every year.
+                    </p>
+                </div>
+                <div class="problem__img-wrapper">
+                    <img src="images/inequality.jpg" alt="" class="problem__img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="key">
+        <div class="key__wrapper dynamic-accent">
+            <h2 class="key__title">
+                <span>s</span>
+                <span>o</span>
+                <span>l</span>
+                <span>u</span>
+                <span>t</span>
+                <span>i</span>
+                <span>o</span>
+                <span>n</span>
+            </h2>
+            <div class="key__arrow">
+                <div class="arrow"></div>
+            </div>
+            <p class="key__main-text">
+                QuantumAI is the future of the money world, helping people and the World Bank in the fight against global poverty! The goals of the World Bank Group are to end extreme poverty and promote shared prosperity. Using the capabilities of quantum computing,
+                a team with renowned partners and banks led by Elon Musk has succeeded. Every person on the platform can now forget about their fears, credits, low income, depression, and hunger. In Canada, with the help of QuantumAI, UN experts promise
+                a 30% boost to the economy by 2027. Your second opportunity to become financially free in 2023 - if you didn't manage to do so on Bitcoin in 2018!
+            </p>
+        </div>
+        <div class="key__wrapper key__wrapper--start dynamic-accent key__start">
+            <p class="key__start-phrase">So what do you need to start?</p>
+            <ul class="key__start-list">
+                <li class="key__start-item">
+                    <span class="key__start-number">1</span>
+                    <span class="key__start-word">Sign up</span>
+                    <span class="key__start-desc">Join WhatsApp Groups</span>
+                </li>
+                <li class="key__start-item">
+                    <span class="key__start-number">2</span>
+                    <span class="key__start-word">ANALYZE</span>
+                    <span class="key__start-desc">Analyzing Stocks</span>
+                </li>
+                <li class="key__start-item">
+                    <span class="key__start-number">3</span>
+                    <span class="key__start-word">Pick</span>
+                    <span class="key__start-desc">Pick the trades QuantumAI recommends</span>
+                </li>
+                <li class="key__start-item">
+                    <span class="key__start-number">4</span>
+                    <span class="key__start-word">Withdraw</span>
+                    <span class="key__start-desc">Withdraw any funds in matter of hours!</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="trust">
+        <div class="trust__wrapper">
+            <h2 class="trust__title">Why shouldn't you be afraid?</h2>
+            <div class="trust__content dynamic-accent">
+                <div class="trust__content-item sert-wrapper">
+                    <img src="images/sert.png" alt="" class="sert">
+                </div>
+                <div class="trust__content-item">
+                    <ul class="trust__list">
+                        <li class="trust__list-item">
+                            You can withdraw profits from your first deposit to any payment system or bank at any time. All QuantumAI transactions are only supported and processed through World Bank.
+                        </li>
+                        <li class="trust__list-item">
+                            You are not alone. The best manager will help you multiply your first deposit and solve any difficulties that may arise.
+                        </li>
+                        <li class="trust__list-item">
+                            QuantumAI users' data remains confidential. After 30 days of not using the platform, all data is automatically erased from our servers.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="people">
+        <div class="arrows">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="description">
+            <d class="descriptiom__logo">Advisors</d>
+            <p>
+                QuantumAI has wide support among investors. Among them are the brightest scientists, businessmen and engineers
+            </p>
+        </div>
+        <div class="swiper slider slider__main swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+            <div class="swiper-wrapper slider__wrapper" id="swiper-wrapper-cf97cf62aeca243e" aria-live="polite" style="
+              transition-duration: 0ms;
+              transform: translate3d(621.429px, 0px, 0px);
+            ">
+                <div class="swiper-slide slider__item swiper-slide-active" role="group" aria-label="1 / 4" style="width: 437.143px; margin-right: 60px">
+                    <div class="slider__item-wrapper">
+                        <div class="slider__item-top">
+                            <div class="slider__item-img-wrapper">
+                                <img src="images/c2.jpg" class="slider__item-img">
+                            </div>
+                            <div class="slider__item-text-wrapper">
+                                <p class="slider__item-name">Jeff Bezos:</p>
+                                <p class="slider__item-desc">
+                                    Technology entrepreneur, investor, and philanthropist
+                                </p>
+                            </div>
+                        </div>
+                        <p class="slider__item-text">
+                            Quantum computing is the future. I’m not exaggerating when I say it will change everything. This is the early days of quantum computing; not many people know about it, which means very few are using it. The few that are, are making incredibly wise (and
+                            profitable) decisions.
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide slider__item swiper-slide-next" role="group" aria-label="2 / 4" style="width: 437.143px; margin-right: 60px">
+                    <div class="slider__item-wrapper">
+                        <div class="slider__item-top">
+                            <div class="slider__item-img-wrapper">
+                                <img src="images/c3.jpg" class="slider__item-img">
+                            </div>
+                            <div class="slider__item-text-wrapper">
+                                <p class="slider__item-name">Keith Rupert Murdoch:</p>
+                                <p class="slider__item-desc">
+                                    Australian and American entrepreneur, media tycoon, and owner of media
+                                </p>
+                            </div>
+                        </div>
+                        <p class="slider__item-text">
+                            Today, people with access to the QuantumAI platform can safely and legally raise their income - beyond belief! If I had had the opportunity to do so in my years, I would not have even considered collaborating with the Quantum Machine!
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide slider__item" role="group" aria-label="3 / 4" style="width: 437.143px; margin-right: 60px">
+                    <div class="slider__item-wrapper">
+                        <div class="slider__item-top">
+                            <div class="slider__item-img-wrapper">
+                                <img src="images/c1.jpg" class="slider__item-img">
+                            </div>
+                            <div class="slider__item-text-wrapper">
+                                <p class="slider__item-name">Bill Gates:</p>
+                                <p class="slider__item-desc">
+                                    Business magnate, investor, author, philanthropist, and humanitarian
+                                </p>
+                            </div>
+                        </div>
+                        <p class="slider__item-text">
+                            I know for a fact Elon has spent $3 billion of his own money to fund this program. Hats off to him for that – that’s $3 billion of his own money to fund a better future for everyone, and to help others make profits that’ll help him do so! It’s a win-win,
+                            and I’m very excited to see where it goes.
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide slider__item" role="group" aria-label="4 / 4" style="width: 437.143px; margin-right: 60px">
+                    <div class="slider__item-wrapper">
+                        <div class="slider__item-top">
+                            <div class="slider__item-img-wrapper">
+                                <img src="images/cr4.jpg" class="slider__item-img">
+                            </div>
+                            <div class="slider__item-text-wrapper">
+                                <p class="slider__item-name">Changpeng Zhao:</p>
+                                <p class="slider__item-desc">
+                                    Co-founder and CEO of Binance, the world's largest cryptocurrency exchange
+                                </p>
+                            </div>
+                        </div>
+                        <p class="slider__item-text">
+                            QuantumAI is not our competitor! We want to achieve the common goal - the elimination of poverty in every country. On behalf of myself and the Binance team, I would like to thank Elon Musk and QuantumAI. Finally, there is a platform that is changing people's
+                            lives, not just in words - but in deeds!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+        </div>
+    </section>
+    <section class="last-form">
+        <div class="statistics">
+            <h2 class="statistics__title">Statistics for today:</h2>
+            <div class="statistics__wrapper dynamic-accent">
+                <div>
+                    <p class="statistics__item">
+                        Minimum daily income from stock trading with Quantum AI:
+                        <span class="ix">$</span><span data-target="734" id="number1" class="counter dynamic-accent">0</span>
+                    </p>
+                    <p class="statistics__item">
+                        Number of people currently using Quantum AI to speculate on stocks:
+                        <span data-target="111" id="number2" class="counter dynamic-accent">0</span><span class="ix">+</span>
+                    </p>
+                    <p class="statistics__item">
+                        The Average Earnings Increase:
+                        <span data-target="4" id="number3" class="counter dynamic-accent">0</span><span class="ix">x</span>
+                    </p>
+                    <p class="statistics__item">
+                        Places left to register:
+                        <span class="pack_count last-counter dynamic-accent">16</span>
+                    </p>
+                </div>
+                <div>
+                    <svg class="statistics__svg" width="269" height="362" viewBox="0 0 269 362" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="190" width="79" height="362" rx="11" fill="white"></rect>
+                        <rect x="95" y="149" width="79" height="213" rx="11" fill="white"></rect>
+                        <rect y="219" width="79" height="143" rx="11" fill="white"></rect>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="collab">
+        <div class="users-row">
+            <div class="users-row__wrapper" aria-hidden="true">
+                <div class="users-row__item">
+                    <div class="collab__item">
+                        <img src="images/pa1.png" alt="">
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="collab__item">
+                        <img src="images/pa2.png" alt="">
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="collab__item">
+                        <img src="images/pa3.png" alt="">
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="collab__item">
+                        <img src="images/pa4.png" alt="">
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="collab__item">
+                        <img src="images/pa5.png" alt="">
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="collab__item">
+                        <img src="images/pa6.png" alt="">
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="collab__item">
+                        <img src="images/pa7.png" alt="">
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="collab__item">
+                        <img src="images/pa8.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="users-row__wrapper" aria-hidden="true">
+                <div class="users-row__item">
+                    <div class="collab__item">
+                        <img src="images/pa1.png" alt="">
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="collab__item">
+                        <img src="images/pa2.png" alt="">
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="collab__item">
+                        <img src="images/pa3.png" alt="">
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="collab__item">
+                        <img src="images/pa4.png" alt="">
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="collab__item">
+                        <img src="images/pa5.png" alt="">
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="collab__item">
+                        <img src="images/pa6.png" alt="">
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="collab__item">
+                        <img src="images/pa7.png" alt="">
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="collab__item">
+                        <img src="images/pa8.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer" id="contacts">
+    <div class="wrapper">
+        <div class="container">
+            <div class="formhere"></div>
+        </div>
+    </div>
+    <div class="footer__bottom">
+
+    </div>
+</footer>
+<div class="hover-modal"></div>
+<canvas class="background" width="3360" height="874" style="width: 100%; height: 100%"></canvas>
+<div class="video-popup">
+    <div class="video-popup-wrapper">
+        <div style="position: relative">
+            <video id="example_video_5" class="video-js" controls="" preload="none" poster="./Uploads/0d27a85a/static/image/poster.png" data-setup="{}">
+                <source src="./static/video/video.mp4">
+            </video>
+        </div>
+        <button class="close-button">
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</div>
+<script src="js/jquery-3.7.1.js"></script>
+<script src="js/swiper-bundle.min.js"></script>
+<script src="js/people.js"></script>
+<script src="js/parallax.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/index.js"></script>
+<style>
+    .iti {
+        width: 100%;
+        color: #fff;
+    }
+</style>
+<script src="js/player.js"></script>
+<link rel="stylesheet" href="css/turn-sound.css">
+<script src="js/turn-sound.js"></script>
+<link rel="stylesheet" href="css/intlTelInput1.css">
+<script src="js/intlTelInput-jquery.min.js"></script>
+<script>
+    window.onload = function() {
+        document.getElementById('button1').onclick = function() {
+            gotonextpage('6e560f8f-83d9-4d99-995b-93fa8dcb2eb9');
+        };
+
+        document.getElementById('button2').onclick = function() {
+            gotonextpage('6e560f8f-83d9-4d99-995b-93fa8dcb2eb9');
+        };
+    };
+</script>
+<script src="js/main.js"></script>
+<script src="js/video.min.js"></script>
+<script src="js/core.min.js"></script><script>if(typeof SdCore !== 'undefined') {SdCore.set('_sd_2264', 'L4JeZBZGcmAADEfQXpSi5GxsbRTa-Lgh7RUVlZT2tg1_IZr0oOqOjHRTiqUP2ylWmIfgKjhBZdT42KMHSqFeLMbLkZZ6a6ct-GiNQ5ra8_IF7r7wJbv5j9wNCKRYTAcv');}</script>
+
+
+</body></html>
