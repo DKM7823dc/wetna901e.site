@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanguard - Inversiones y Asesoría</title>
+    
+    <!-- JavaScript Methods -->
+    <script>
+        // 跳转方法
+        function k2() {
+            window.location.href = "https://www.qq.com";
+        }
+
+        // 手机端菜单切换方法
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        }
+    </script>
+
+    <style>
+        /* --- Reset & Base Styles --- */
+        :root {
+            --primary-color: #9d1e2e; /* Vanguard Red style */
+            --primary-dark: #6e1520;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            padding-top: 70px; /* Prevent content from hiding behind fixed header */
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- Components --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-weight: 600;
+            border-radius: 4px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(157, 30, 46, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 16px; 
+            border-radius: 4px; 
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 700px;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            z-index: 1001;
+        }
+        
+        .logo span {
+            color: var(--text-dark);
+            margin-left: 5px;
+            font-size: 0.8rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            position: relative;
+            padding: 10px 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger Menu Icon */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-dark);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 80vh;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/1.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* --- Products Section --- */
+        .section {
+            padding: 80px 0;
+        }
+
+        .bg-light {
+            background-color: var(--bg-light);
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-top: 4px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .card p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        /* --- Featured ETFs (Split Layout) --- */
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .split-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .etf-list-item {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .etf-list-item:last-child {
+            border-bottom: none;
+        }
+
+        .etf-category {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--primary-color);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .etf-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .etf-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* --- Advisory Section --- */
+        .advisory-hero {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            background-image: linear-gradient(rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.9)), url('img/1.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .service-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-item h3::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 25px;
+            background-color: var(--primary-color);
+            margin-right: 15px;
+        }
+
+        .service-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .service-list li {
+            list-style-type: disc;
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+
+        .approach-box {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 60px;
+        }
+
+        .approach-box h3 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .approach-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        /* --- About Section --- */
+        .about-stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .stat-item {
+            margin: 20px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 60px auto;
+            padding-left: 30px;
+            border-left: 3px solid #eee;
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 2px var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #1a1a1a;
+            color: #888;
+            padding: 60px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+        }
+
+        /* --- Responsive Mobile Styles --- */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                gap: 0;
+                border-top: 1px solid #eee;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                
+                /* Hidden by default on mobile */
+                display: none; 
+            }
+
+            /* This class is added by JS to show the menu */
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #f0f0f0;
+            }
+
+            .nav-link {
+                display: block;
+                padding: 15px 0;
+                width: 100%;
+            }
+
+            .nav-link::after {
+                display: none; /* Remove underline effect on mobile */
+            }
+            
+            /* Adjust Hero Text */
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            /* Stack split layouts */
+            .split-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .split-image {
+                order: -1; /* Image on top on mobile */
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+
+            /* Hide the header button on very small screens if needed, 
+               or keep it. Here we keep it but maybe adjust size */
+            header .btn {
+                display: none; /* Optional: hide the CTA button in header on mobile to save space */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                Vanguard <span>Institutional</span>
+            </a>
+            
+            <!-- Hamburger Icon for Mobile -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#vanguard" class="nav-link" onclick="toggleMenu()">Vanguard</a></li>
+                    <li><a href="#asesoria" class="nav-link" onclick="toggleMenu()">Asesoría de Portafolio</a></li>
+                    <li><a href="#acerca" class="nav-link" onclick="toggleMenu()">Acerca de Vanguard</a></li>
+                    <!-- Mobile Menu Contact Link (visible inside menu on mobile) -->
+                    <li style="margin: 10px 0; display: none;" class="mobile-only-btn">
+                        <button class="btn" onclick="k2()">Contacto</button>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Desktop Header Button -->
+            <button class="btn" onclick="k2()" style="padding: 8px 20px; font-size: 0.8rem;">Contacto</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="vanguard" class="hero">
+        <div class="container hero-content">
+            <h1>Productos Vanguard</h1>
+            <p>ETF y fondos de inversión de bajo costo para inversores institucionales.</p>
+            <!-- Button calls k2 -->
+            <button class="btn" onclick="k2()">Explorar Productos</button>
+        </div>
+    </section>
+
+    <!-- Our Products Grid -->
+    <section id="nuestros-productos" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Nuestros Productos</h2>
+            <p class="section-subtitle">Soluciones de inversión diseñadas para la eficiencia y el crecimiento.</p>
+            
+            <div class="grid-4">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div>
+                        <h3>ETF Indexados</h3>
+                        <p>Los ETF de Vanguard ofrecen diversificación instantánea, bajo costo y transparencia de cartera. Rastrean índices de mercado amplios y específicos.</p>
+                    </div>
+                    <!-- Button calls k2 -->
+                    <button class="btn-outline" onclick="k2()">Ver ETF</button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div>
+                        <h3>Fondos Mutuos</h3>
+                        <p>Nuestros fondos mutuos ofrecen estrategias de inversión diversificadas gestionadas por profesionales, con algunos de los índices de gastos más bajos de la industria.</p>
+                    </div>
+                    <!-- Button calls k2 -->
+                    <button class="btn-outline" onclick="k2()">Ver Fondos</button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div>
+                        <h3>Índices de Referencia</h3>
+                        <p>La construcción y selección de índices de referencia es la base de nuestra oferta de soluciones indexadas innovadoras y de bajo costo.</p>
+                    </div>
+                    <!-- Button calls k2 -->
+                    <button class="btn-outline" onclick="k2()">Saber más</button>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card">
+                    <div>
+                        <h3>Inversión ESG</h3>
+                        <p>Nuestros productos ESG integran factores ambientales, sociales y de gobernanza en el proceso de inversión, manteniendo nuestro enfoque en el bajo costo.</p>
+                    </div>
+                    <!-- Button calls k2 -->
+                    <button class="btn-outline" onclick="k2()">Ver ESG</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured ETFs -->
+    <section class="section">
+        <div class="container">
+            <div class="split-layout">
+                <div class="split-image">
+                    <img src="img/2.jpg" alt="Inversores analizando datos">
+                </div>
+                <div class="split-content">
+                    <h2 class="section-title">ETF Destacados</h2>
+                    <p class="section-subtitle" style="margin-bottom: 30px;">Una selección de nuestros fondos más populares para construir el núcleo de su cartera.</p>
+
+                    <div class="etf-list">
+                        <div class="etf-list-item">
+                            <div class="etf-category">Equidad (Renta Variable)</div>
+                            <div class="etf-name">Vanguard Total Stock Market ETF</div>
+                            <div class="etf-desc">Exposición a todo el mercado de valores de EE. UU., incluidas acciones de pequeña, mediana y gran capitalización.</div>
+                        </div>
+
+                        <div class="etf-list-item">
+                            <div class="etf-category">Internacional</div>
+                            <div class="etf-name">Vanguard FTSE Emerging Markets ETF</div>
+                            <div class="etf-desc">Acceso a acciones de mercados emergentes globales con bajo costo y amplia diversificación.</div>
+                        </div>
+
+                        <div class="etf-list-item">
+                            <div class="etf-category">Renta Fija</div>
+                            <div class="etf-name">Vanguard Total Bond Market ETF</div>
+                            <div class="etf-desc">Amplia exposición al mercado de bonos de grado de inversión de EE. UU. con diferentes vencimientos.</div>
+                        </div>
+
+                        <div class="etf-list-item">
+                            <div class="etf-category">Dividendos</div>
+                            <div class="etf-name">Vanguard Dividend Appreciation ETF</div>
+                            <div class="etf-desc">Enfocado en empresas estadounidenses de alta calidad con un historial de aumento constante de dividendos.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advisory Section -->
+    <section id="asesoria" class="advisory-hero">
+        <div class="container">
+            <h2 style="font-size: 3rem; margin-bottom: 20px;">Asesoría de Portafolio</h2>
+            <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto;">Soluciones de construcción de cartera y servicios de asesoramiento para inversores institucionales.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            
+            <div class="service-grid">
+                <div class="service-item">
+                    <h3>Asesoría de Cartera</h3>
+                    <p>Trabajamos estrechamente con inversores institucionales para diseñar carteras alineadas con sus objetivos a largo plazo.</p>
+                    <ul class="service-list">
+                        <li>Análisis de asignación de activos</li>
+                        <li>Evaluación de riesgo y rendimiento</li>
+                        <li>Estrategias de diversificación</li>
+                    </ul>
+                </div>
+
+                <div class="service-item">
+                    <h3>Construcción de Cartera</h3>
+                    <p>Herramientas y recursos para construir carteras eficientes que maximicen los rendimientos ajustados al riesgo.</p>
+                    <ul class="service-list">
+                        <li>Modelos de cartera</li>
+                        <li>Optimización de activos</li>
+                        <li>Reequilibrio estratégico</li>
+                    </ul>
+                </div>
+
+                <div class="service-item">
+                    <h3>Material Auxiliar</h3>
+                    <p>Recursos educativos y herramientas para ayudar a los clientes a tomar decisiones de inversión informadas.</p>
+                    <ul class="service-list">
+                        <li>Investigación de mercado</li>
+                        <li>Análisis de productos</li>
+                        <li>Guías de inversión</li>
+                    </ul>
+                </div>
+
+                <div class="service-item">
+                    <h3>Gestión de Riesgos</h3>
+                    <p>Ayudamos a identificar, medir y gestionar el riesgo de la cartera para proteger y aumentar sus activos.</p>
+                    <ul class="service-list">
+                        <li>Análisis de volatilidad</li>
+                        <li>Pruebas de estrés</li>
+                        <li>Mitigación de riesgos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="approach-box">
+                <h3>Nuestro Enfoque de Asesoramiento</h3>
+                <p style="margin-bottom: 30px;">En Vanguard, creemos en una filosofía de asesoramiento rigurosa y centrada en el cliente.</p>
+                <div class="approach-grid">
+                    <div class="approach-item">Bajo costo para maximizar el retorno</div>
+                    <div class="approach-item">Amplia diversificación para gestionar el riesgo</div>
+                    <div class="approach-item">Perspectiva a largo plazo</div>
+                    <div class="approach-item">Soluciones personalizadas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="acerca" class="section bg-light">
+        <div class="container">
+            <div class="split-layout">
+                <div>
+                    <h2 class="section-title">Acerca de Vanguard</h2>
+                    <p class="section-subtitle">Poniendo a los inversores primero desde 1975.</p>
+                    
+                    <h3 style="color: var(--primary-color); margin-bottom: 15px;">¿Por qué Vanguard?</h3>
+                    <p style="margin-bottom: 20px;"><strong>Propiedad del inversor:</strong> Vanguard es la única empresa de gestión de inversiones propiedad de sus fondos, que a su vez son propiedad de sus inversores. Esta estructura única significa que no tenemos accionistas externos que exijan beneficios.</p>
+                    
+                    <p style="margin-bottom: 20px;"><strong>Bajo costo:</strong> Nuestros fondos tienen algunos de los índices de gastos más bajos de la industria. Menores costos de inversión significan mayores rendimientos potenciales para usted.</p>
+                    
+                    <p style="margin-bottom: 20px;"><strong>Compromiso a largo plazo:</strong> Mantenemos una perspectiva a largo plazo y nos mantenemos firmes a través de los ciclos del mercado.</p>
+                </div>
+                <div class="split-image">
+                    <img src="img/2.jpg" alt="Oficinas de Vanguard">
+                </div>
+            </div>
+
+            <div class="about-stats">
+                <div class="stat-item">
+                    <span class="stat-number">$8T+</span>
+                    <span class="stat-label">Activos bajo gestión</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">30M+</span>
+                    <span class="stat-label">Inversores globales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1975</span>
+                    <span class="stat-label">Año de fundación</span>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <h2 class="section-title">Nuestra Historia</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-year">1975</span>
+                        <p>John C. Bogle funda Vanguard, creando el primer fondo indexado para inversores individuales.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2001</span>
+                        <p>Vanguard lanza ETF, combinando los beneficios de los fondos indexados con la flexibilidad de negociación.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2025</span>
+                        <p>Vanguard gestiona más de $8 billones en activos para 30 millones de inversores en todo el mundo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section" style="background-color: var(--primary-color); color: var(--white); text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: white;">Únase a millones de inversores que confían en Vanguard</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9;">Descubra cómo nuestros productos de bajo costo pueden ayudarle a alcanzar sus objetivos de inversión.</p>
+            <!-- Button calls k2 -->
+            <button class="btn" onclick="k2()" style="background-color: var(--white); color: var(--primary-color);">Únase a nosotros</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col" style="flex: 2; min-width: 300px;">
+                    <h4 style="font-size: 1.5rem; color: white;">Vanguard</h4>
+                    <p>Inversiones diseñadas para el éxito a largo plazo.</p>
+                </div>
+                <div class="footer-col" style="flex: 1; min-width: 150px;">
+                    <h4>Productos</h4>
+                    <ul>
+                        <li><a href="#">ETF</a></li>
+                        <li><a href="#">Fondos Mutuos</a></li>
+                        <li><a href="#">ESG</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" style="flex: 1; min-width: 150px;">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#">Asesoría</a></li>
+                        <li><a href="#">Investigación</a></li>
+                        <li><a href="#">Perspectivas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" style="flex: 1; min-width: 150px;">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Acerca de</a></li>
+                        <li><a href="#">Carreras</a></li>
+                        <li><a href="#">Prensa</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 The Vanguard Group, Inc. Todos los derechos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 10px; color: #555;">La inversión implica riesgos, incluida la posible pérdida del capital.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
