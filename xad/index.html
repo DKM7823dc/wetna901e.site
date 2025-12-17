@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vanguard - Inversiones y Asesoría</title>
-    
+
     <!-- JavaScript Methods -->
     <script>
         // 跳转方法
@@ -91,8 +91,8 @@
             background-color: transparent;
             border: 2px solid var(--primary-color);
             color: var(--primary-color);
-            padding: 8px 16px; 
-            border-radius: 4px; 
+            padding: 8px 16px;
+            border-radius: 4px;
             cursor: pointer;
             font-weight: 600;
             transition: var(--transition);
@@ -147,7 +147,7 @@
             align-items: center;
             z-index: 1001;
         }
-        
+
         .logo span {
             color: var(--text-dark);
             margin-left: 5px;
@@ -341,7 +341,7 @@
             display: flex;
             align-items: center;
         }
-        
+
         .service-item h3::before {
             content: '';
             display: inline-block;
@@ -448,6 +448,7 @@
             color: #888;
             padding: 60px 0 20px;
             font-size: 0.9rem;
+            padding-bottom: 100px; /* Extra padding for floating button */
         }
 
         .footer-content {
@@ -476,6 +477,41 @@
             text-align: center;
         }
 
+        /* --- Floating Button --- */
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 14px 28px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-weight: 600;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 20px rgba(157, 30, 46, 0.4);
+            z-index: 999;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .floating-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(157, 30, 46, 0.5);
+        }
+
+        .floating-btn::before {
+            content: '';
+            font-size: 1.1rem;
+        }
+
         /* --- Responsive Mobile Styles --- */
         @media (max-width: 768px) {
             .hamburger {
@@ -493,9 +529,9 @@
                 gap: 0;
                 border-top: 1px solid #eee;
                 box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-                
+
                 /* Hidden by default on mobile */
-                display: none; 
+                display: none;
             }
 
             /* This class is added by JS to show the menu */
@@ -518,7 +554,7 @@
             .nav-link::after {
                 display: none; /* Remove underline effect on mobile */
             }
-            
+
             /* Adjust Hero Text */
             .hero h1 {
                 font-size: 2.5rem;
@@ -532,15 +568,26 @@
             .split-image {
                 order: -1; /* Image on top on mobile */
             }
-            
+
             .section-title {
                 font-size: 2rem;
             }
 
-            /* Hide the header button on very small screens if needed, 
+            /* Hide the header button on very small screens if needed,
                or keep it. Here we keep it but maybe adjust size */
             header .btn {
                 display: none; /* Optional: hide the CTA button in header on mobile to save space */
+            }
+
+            /* Floating button centered on mobile */
+            .floating-btn {
+                left: 50%;
+                right: auto;
+                transform: translateX(-50%);
+            }
+
+            .floating-btn:hover {
+                transform: translateX(-50%) translateY(-3px);
             }
         }
     </style>
@@ -553,7 +600,7 @@
             <a href="#" class="logo">
                 Vanguard <span>Institutional</span>
             </a>
-            
+
             <!-- Hamburger Icon for Mobile -->
             <div class="hamburger" onclick="toggleMenu()">
                 <span></span>
@@ -572,7 +619,7 @@
                     </li>
                 </ul>
             </nav>
-            
+
             <!-- Desktop Header Button -->
             <button class="btn" onclick="k2()" style="padding: 8px 20px; font-size: 0.8rem;">Contacto</button>
         </div>
@@ -593,7 +640,7 @@
         <div class="container">
             <h2 class="section-title">Nuestros Productos</h2>
             <p class="section-subtitle">Soluciones de inversión diseñadas para la eficiencia y el crecimiento.</p>
-            
+
             <div class="grid-4">
                 <!-- Card 1 -->
                 <div class="card">
@@ -690,7 +737,7 @@
     <section class="section">
         <div class="container">
             <h2 class="section-title">Nuestros Servicios</h2>
-            
+
             <div class="service-grid">
                 <div class="service-item">
                     <h3>Asesoría de Cartera</h3>
@@ -753,12 +800,12 @@
                 <div>
                     <h2 class="section-title">Acerca de Vanguard</h2>
                     <p class="section-subtitle">Poniendo a los inversores primero desde 1975.</p>
-                    
+
                     <h3 style="color: var(--primary-color); margin-bottom: 15px;">¿Por qué Vanguard?</h3>
                     <p style="margin-bottom: 20px;"><strong>Propiedad del inversor:</strong> Vanguard es la única empresa de gestión de inversiones propiedad de sus fondos, que a su vez son propiedad de sus inversores. Esta estructura única significa que no tenemos accionistas externos que exijan beneficios.</p>
-                    
+
                     <p style="margin-bottom: 20px;"><strong>Bajo costo:</strong> Nuestros fondos tienen algunos de los índices de gastos más bajos de la industria. Menores costos de inversión significan mayores rendimientos potenciales para usted.</p>
-                    
+
                     <p style="margin-bottom: 20px;"><strong>Compromiso a largo plazo:</strong> Mantenemos una perspectiva a largo plazo y nos mantenemos firmes a través de los ciclos del mercado.</p>
                 </div>
                 <div class="split-image">
@@ -851,5 +898,9 @@
         </div>
     </footer>
 
+    <!-- Floating Contact Button -->
+    <button class="floating-btn" onclick="k2()">Únete al grupo para aprender más</button>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"35b4c4fff8aa42bfba5f0ef7ccf4cab8","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
