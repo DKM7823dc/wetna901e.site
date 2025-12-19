@@ -1,107 +1,214 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跳转企业微信</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-gradient-start: #e8f5e9;
+            --bg-gradient-end: #c8e6c9;
+            --btn-gradient-start: #07c160;
+            --btn-gradient-end: #06ad56;
+            --btn-shadow: rgba(7, 193, 96, 0.4);
+            --text-color: #1a1a1a;
+            --subtitle-color: #666;
+        }
+
+        .dark {
+            --bg-gradient-start: #1a2f23;
+            --bg-gradient-end: #0d1f15;
+            --btn-gradient-start: #08d665;
+            --btn-gradient-end: #07c160;
+            --btn-shadow: rgba(8, 214, 101, 0.3);
+            --text-color: #f0f0f0;
+            --subtitle-color: #a0a0a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background decoration */
+        body::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 40%, rgba(7, 193, 96, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 60%, rgba(7, 193, 96, 0.06) 0%, transparent 40%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-20px, 20px) rotate(5deg); }
+        }
+
         .container {
-            padding: 50px;
             text-align: center;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
         }
-        .btn {
-            background: #07c160;
-            color: white;
-            padding: 15px 30px;
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 24px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            color: var(--text-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            color: var(--subtitle-color);
+            font-size: 1rem;
+            margin-bottom: 40px;
+        }
+
+        .btn-wecom {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 18px 48px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #fff;
+            background: linear-gradient(135deg, var(--btn-gradient-start) 0%, var(--btn-gradient-end) 100%);
             border: none;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 50px;
             cursor: pointer;
-            margin: 10px;
+            text-decoration: none;
+            box-shadow: 0 8px 30px var(--btn-shadow),
+                        0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
-        .qr-container {
-            margin-top: 30px;
-            display: none;
+
+        .btn-wecom::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-wecom:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 40px var(--btn-shadow),
+                        0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-wecom:hover::before {
+            left: 100%;
+        }
+
+        .btn-wecom:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
+        .btn-wecom svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .btn-wecom {
+                padding: 16px 36px;
+                font-size: 16px;
+            }
+
+            .icon {
+                width: 64px;
+                height: 64px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h3>跳转企业微信的几种方式</h3>
-        
-        <!-- 方式1：尝试打开App（可能失败） -->
-        <button class="btn" onclick="tryOpenWeChatWork()">
-            尝试打开企业微信App
-        </button>
-        
-        <!-- 方式2：跳转网页版 -->
-        <button class="btn" onclick="window.open('https://work.weixin.qq.com/')">
-            访问企业微信网页版
-        </button>
-        
-        <!-- 方式3：下载链接 -->
-        <button class="btn" onclick="window.open('https://work.weixin.qq.com/#indexDownload')">
-            下载企业微信
-        </button>
-        
-        <!-- 方式4：显示二维码（推荐） -->
-        <button class="btn" onclick="showQRCode()">
-            显示企业微信二维码
-        </button>
-        
-        <div id="qrContainer" class="qr-container">
-            <p>请使用企业微信扫码：</p>
-            <img src="https://res.wx.qq.com/op_res/S3E0H1W2T1M1D3O4N5C6G7R8Q9P0O1N2Z3Y4X5W6V7U8T9S0R1Q2P3O4N5M6L7K8J9I0H1G2" 
-                 alt="企业微信二维码" width="200">
-            <p><small>或访问: work.weixin.qq.com</small></p>
-        </div>
-        
-        <div style="margin-top: 30px; color: #666; font-size: 14px;">
-            <p>实际情况：</p>
-            <p>✓ 在<b>企业微信内置浏览器</b>中：可直接打开</p>
-            <p>✓ 在<b>微信内置浏览器</b>中：有限制</p>
-            <p>✗ 在<b>普通浏览器</b>中：通常无法直接打开</p>
-        </div>
+        <!-- WeCom Icon -->
+        <svg class="icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="48" fill="#07c160"/>
+            <path d="M35 38C35 35.2386 37.2386 33 40 33H60C62.7614 33 65 35.2386 65 38V52C65 54.7614 62.7614 57 60 57H55L50 63L45 57H40C37.2386 57 35 54.7614 35 52V38Z" fill="white"/>
+            <circle cx="43" cy="45" r="3" fill="#07c160"/>
+            <circle cx="57" cy="45" r="3" fill="#07c160"/>
+            <path d="M70 48V58C70 60.2091 68.2091 62 66 62H62L58 67V62H54" stroke="white" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+
+        <h1>企业微信</h1>
+        <p class="subtitle">点击下方按钮前往企业微信官网</p>
+
+        <a href="https://work.weixin.qq.com/" target="_blank" rel="noopener noreferrer" class="btn-wecom">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+            打开企业微信
+        </a>
     </div>
 
     <script>
-        // 尝试打开企业微信（成功率低）
-        function tryOpenWeChatWork() {
-            const scheme = 'wxwork://';
-            
-            // 方案A：直接跳转
-            window.location.href = scheme;
-            
-            // 方案B：如果没打开，2秒后提示
-            setTimeout(() => {
-                if (document.hasFocus()) {
-                    const fallback = confirm(
-                        '无法打开企业微信应用\n\n' +
-                        '可能原因：\n' +
-                        '1. 未安装企业微信\n' +
-                        '2. 浏览器限制\n' +
-                        '是否跳转到下载页面？'
-                    );
-                    if (fallback) {
-                        window.open('https://work.weixin.qq.com/#indexDownload');
-                    }
-                }
-            }, 2000);
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
         }
-        
-        function showQRCode() {
-            document.getElementById('qrContainer').style.display = 'block';
-        }
-        
-        // 检测是否在企业微信中
-        function isInWeChatWork() {
-            const ua = navigator.userAgent.toLowerCase();
-            return ua.indexOf('wxwork') > -1;
-        }
-        
-        // 页面加载时检查
-        window.onload = function() {
-            if (isInWeChatWork()) {
-                console.log('在企业微信内置浏览器中，支持更多功能');
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
             }
-        };
+        });
     </script>
 </body>
 </html>
