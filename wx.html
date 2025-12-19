@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .protocol-btn {
+            margin: 10px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #07c160, #06ad56);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .tip {
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>企业微信跳转示例</h2>
+        
+        <div>
+            <button class="protocol-btn" onclick="openWechatWorkApp()">
+                📱 打开企业微信App
+            </button>
+        </div>
+        
+        <div>
+            <button class="protocol-btn" onclick="openWechatWorkChat()">
+                💬 打开企业微信聊天
+            </button>
+        </div>
+        
+        <div>
+            <button class="protocol-btn" onclick="openWechatWorkWeb()">
+            🌐 打开网页版
+            </button>
+        </div>
+        
+        <p class="tip">
+            * 在手机上点击可尝试打开企业微信应用<br>
+            * 在电脑上会跳转到企业微信官网
+        </p>
+    </div>
+    
+    <script>
+        // 打开企业微信应用
+        function openWechatWorkApp() {
+            const appScheme = 'wxwork://';
+            const webUrl = 'https://work.weixin.qq.com/';
+            
+            // 尝试打开应用
+            window.location.href = appScheme;
+            
+            // 如果应用未安装，跳转网页版
+            setTimeout(() => {
+                if (!document.hidden) {
+                    window.location.href = webUrl;
+                }
+            }, 1000);
+        }
+        
+        // 打开企业微信聊天（需要特定格式）
+        function openWechatWorkChat() {
+            // 格式：wxwork://message?username=用户ID
+            const chatScheme = 'wxwork://message';
+            const webUrl = 'https://work.weixin.qq.com/';
+            
+            window.location.href = chatScheme;
+            
+            setTimeout(() => {
+                if (!document.hidden) {
+                    window.location.href = webUrl;
+                }
+            }, 1000);
+        }
+        
+        // 直接打开网页版
+        function openWechatWorkWeb() {
+            window.open('https://work.weixin.qq.com/', '_blank');
+        }
+        
+        // 检测是否在微信浏览器中
+        function isInWechat() {
+            const ua = navigator.userAgent.toLowerCase();
+            return ua.indexOf('wxwork') > -1 || ua.indexOf('micromessenger') > -1;
+        }
+        
+        // 页面加载时检测环境
+        window.onload = function() {
+            if (isInWechat()) {
+                document.querySelector('.tip').innerHTML += '<br>检测到您在企业微信/微信中打开';
+            }
+        };
+    </script>
+</body>
+</html>
