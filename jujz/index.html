@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlexWork Pro - Legitimate Remote Work Opportunities</title>
-    
+
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17740402210"></script>
 <script>
@@ -314,7 +314,7 @@
             transform: rotate(5deg);
         }
 
-        /* Services Section - Masonry Layout */
+        /* Services Section - Grid Layout */
         .services {
             padding: 8rem 0;
             background: var(--bg-light);
@@ -350,9 +350,10 @@
             line-height: 1.6;
         }
 
-        .services-masonry {
-            columns: 3;
-            column-gap: 2rem;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
             margin-top: 4rem;
         }
 
@@ -360,12 +361,12 @@
             background: white;
             border-radius: 16px;
             padding: 2.5rem;
-            margin-bottom: 2rem;
-            break-inside: avoid;
             box-shadow: 0 4px 20px var(--shadow-light);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .service-card::before {
@@ -383,13 +384,13 @@
             box-shadow: 0 15px 50px var(--shadow-medium);
         }
 
-        .service-card:nth-child(2n) {
+        .service-card:nth-child(2) {
             background: var(--gradient-primary);
             color: white;
         }
 
-        .service-card:nth-child(2n) h3,
-        .service-card:nth-child(2n) p {
+        .service-card:nth-child(2) h3,
+        .service-card:nth-child(2) p {
             color: white;
         }
 
@@ -408,6 +409,7 @@
             color: var(--text-medium);
             line-height: 1.6;
             margin-bottom: 1.5rem;
+            flex-grow: 1;
         }
 
         .service-features {
@@ -429,7 +431,7 @@
             font-weight: bold;
         }
 
-        .service-card:nth-child(2n) .service-features li::before {
+        .service-card:nth-child(2) .service-features li::before {
             color: white;
         }
 
@@ -759,15 +761,15 @@
 
         /* Responsive Design */
         @media (max-width: 1200px) {
-            .services-masonry {
-                columns: 2;
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .process-steps {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 3rem 2rem;
             }
-            
+
             .process-steps::before {
                 display: none;
             }
@@ -807,7 +809,7 @@
             .nav-links {
                 display: none;
             }
-            
+
             .mobile-menu-btn {
                 display: block;
             }
@@ -816,8 +818,8 @@
                 position: static;
             }
 
-            .services-masonry {
-                columns: 1;
+            .services-grid {
+                grid-template-columns: 1fr;
             }
 
             .process-steps {
@@ -894,12 +896,12 @@
                     <div class="hero-badge">📋 Employment Referral Service</div>
                     <h1>Remote Work <span class="highlight">Connection</span> Platform</h1>
                     <p class="hero-subtitle">A referral service connecting job seekers with companies offering remote positions. We facilitate introductions between qualified candidates and potential employers for various remote work opportunities.</p>
-                    
+
                     <div class="hero-actions">
                         <button class="btn-primary" onclick="d2()">View Job Opportunities</button>
                         <button class="btn-secondary">Learn More</button>
                     </div>
-                    
+
                     <div class="hero-stats">
                         <div class="stat">
                             <span class="stat-number">2K+</span>
@@ -911,11 +913,11 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="hero-visual">
                     <img src="img/2.jpg" alt="Mobile work success" class="hero-image">
-                     
-                     
+
+
                 </div>
             </div>
         </div>
@@ -928,8 +930,8 @@
                 <h2 class="section-title">Remote Work Categories</h2>
                 <p class="section-description">Explore various remote work opportunities across different industries. Our platform connects candidates with companies seeking remote talent through our referral network.</p>
             </div>
-            
-            <div class="services-masonry">
+
+            <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">📊</div>
                     <h3>Market Research Support</h3>
@@ -941,7 +943,7 @@
                         <li>Research project assistance</li>
                     </ul>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">💼</div>
                     <h3>Digital Content Support</h3>
@@ -953,7 +955,7 @@
                         <li>Brand awareness activities</li>
                     </ul>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">🎯</div>
                     <h3>Product Feedback & Testing</h3>
@@ -965,7 +967,7 @@
                         <li>Quality assurance support</li>
                     </ul>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">🌐</div>
                     <h3>Administrative Support</h3>
@@ -988,26 +990,26 @@
                 <h2 class="section-title">Your Journey to Success</h2>
                 <p class="section-description">Follow our streamlined process to start earning with confidence and professional support.</p>
             </div>
-            
+
             <div class="process-steps">
                 <div class="process-step">
                     <div class="step-circle">01</div>
                     <h3>Professional Registration</h3>
                     <p>Complete our secure onboarding process with identity verification and skill assessment to ensure quality standards.</p>
                 </div>
-                
+
                 <div class="process-step">
                     <div class="step-circle">02</div>
                     <h3>Skill Matching & Training</h3>
                     <p>Receive personalized task recommendations based on your skills and complete our comprehensive training modules.</p>
                 </div>
-                
+
                 <div class="process-step">
                     <div class="step-circle">03</div>
                     <h3>Project Assignment</h3>
                     <p>Start with beginner-friendly projects and gradually progress to higher-value opportunities as you build your reputation.</p>
                 </div>
-                
+
                 <div class="process-step">
                     <div class="step-circle">04</div>
                     <h3>Performance & Growth</h3>
@@ -1023,7 +1025,7 @@
                 <div class="section-subtitle">Why Choose Us</div>
                 <h2 class="section-title">Exclusive Platform Advantages</h2>
             </div>
-            
+
             <div class="benefit-grid">
                 <div class="benefit-content">
                     <div class="benefit-number">01</div>
@@ -1037,10 +1039,10 @@
                     </ul>
                 </div>
                 <div class="benefit-visual">
-                    <img src="img/1.jpg" alt="Security and compliance" class="benefit-image" />
+                    <img src="img/1.jpg" alt="Security and compliance" class="benefit-image" >
                 </div>
             </div>
-            
+
             <div class="benefit-grid">
                 <div class="benefit-content">
                     <div class="benefit-number">02</div>
@@ -1054,7 +1056,7 @@
                     </ul>
                 </div>
                 <div class="benefit-visual">
-                    <img src="img/3.jpg" alt="Flexible scheduling" class="benefit-image" />
+                    <img src="img/3.jpg" alt="Flexible scheduling" class="benefit-image" >
                 </div>
             </div>
         </div>
@@ -1067,13 +1069,13 @@
                 <h2 class="section-title">Everything You Need to Know</h2>
                 <p class="section-description">Get answers to frequently asked questions about our platform and opportunities.</p>
             </div>
-            
+
             <div class="faq-tabs">
                 <button class="faq-tab active" onclick="switchFaqTab(0)">Getting Started</button>
                 <button class="faq-tab" onclick="switchFaqTab(1)">Payments & Security</button>
                 <button class="faq-tab" onclick="switchFaqTab(2)">Support & Growth</button>
             </div>
-            
+
             <div class="faq-content">
                 <div class="faq-panel active" id="faq-panel-0">
                     <div class="faq-item" onclick="toggleFaq(this)">
@@ -1085,7 +1087,7 @@
                             <p>You need a reliable smartphone, stable internet connection, and basic communication skills. Most opportunities require no prior experience as we provide comprehensive training.</p>
                         </div>
                     </div>
-                    
+
                     <div class="faq-item" onclick="toggleFaq(this)">
                         <div class="faq-question">
                             Can I work from any location?
@@ -1096,7 +1098,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="faq-panel" id="faq-panel-1">
                     <div class="faq-item" onclick="toggleFaq(this)">
                         <div class="faq-question">
@@ -1107,7 +1109,7 @@
                             <p>Payments are processed through secure, regulated financial institutions with multiple withdrawal options including bank transfers and digital wallets. All transactions are encrypted and tracked.</p>
                         </div>
                     </div>
-                    
+
                     <div class="faq-item" onclick="toggleFaq(this)">
                         <div class="faq-question">
                             What type of compensation can I expect?
@@ -1118,7 +1120,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="faq-panel" id="faq-panel-2">
                     <div class="faq-item" onclick="toggleFaq(this)">
                         <div class="faq-question">
@@ -1129,7 +1131,7 @@
                             <p>We provide 24/7 technical support, comprehensive training materials, mentorship programs, and a dedicated success team to help you maximize your earning potential.</p>
                         </div>
                     </div>
-                    
+
                     <div class="faq-item" onclick="toggleFaq(this)">
                         <div class="faq-question">
                             Is this platform legally compliant?
@@ -1163,13 +1165,13 @@
                     <p><strong>Regulatory Compliance:</strong> This platform operates in full compliance with international labor laws, data protection regulations, and financial transparency requirements.</p>
                     <p><strong>Age & Eligibility:</strong> Participants must be 18+ years old and eligible to work in their respective jurisdictions. Identity verification required.</p>
                 </div>
-                
+
                 <div class="footer-links">
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms of Service</a>
                     <a href="#">Contact Support</a>
                 </div>
-                
+
                 <div class="copyright">
                     <p><strong>Professional Standards:</strong> Committed to fair employment practices, transparent compensation, and ethical business operations as per international standards.</p>
                     <p>&copy; 2024 FlexWork Pro. All rights reserved. Professional remote work platform.</p>
@@ -1229,7 +1231,7 @@
         document.addEventListener('click', function(event) {
             const mobileNav = document.getElementById('mobileNav');
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            
+
             if (!mobileNav.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
                 mobileNav.classList.remove('active');
             }
@@ -1246,6 +1248,7 @@
                 document.documentElement.classList.remove('dark');
             }
         });
-    </script> 
+    </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"35b4c4fff8aa42bfba5f0ef7ccf4cab8","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
