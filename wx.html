@@ -3,103 +3,103 @@
 <head>
     <style>
         .container {
-            padding: 20px;
+            padding: 50px;
             text-align: center;
         }
-        
-        .protocol-btn {
-            margin: 10px;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, #07c160, #06ad56);
+        .btn {
+            background: #07c160;
             color: white;
+            padding: 15px 30px;
             border: none;
-            border-radius: 25px;
-            cursor: pointer;
+            border-radius: 5px;
             font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
         }
-        
-        .tip {
-            margin-top: 20px;
-            color: #666;
-            font-size: 14px;
+        .qr-container {
+            margin-top: 30px;
+            display: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>企业微信跳转示例</h2>
+        <h3>跳转企业微信的几种方式</h3>
         
-        <div>
-            <button class="protocol-btn" onclick="openWechatWorkApp()">
-                📱 打开企业微信App
-            </button>
+        <!-- 方式1：尝试打开App（可能失败） -->
+        <button class="btn" onclick="tryOpenWeChatWork()">
+            尝试打开企业微信App
+        </button>
+        
+        <!-- 方式2：跳转网页版 -->
+        <button class="btn" onclick="window.open('https://work.weixin.qq.com/')">
+            访问企业微信网页版
+        </button>
+        
+        <!-- 方式3：下载链接 -->
+        <button class="btn" onclick="window.open('https://work.weixin.qq.com/#indexDownload')">
+            下载企业微信
+        </button>
+        
+        <!-- 方式4：显示二维码（推荐） -->
+        <button class="btn" onclick="showQRCode()">
+            显示企业微信二维码
+        </button>
+        
+        <div id="qrContainer" class="qr-container">
+            <p>请使用企业微信扫码：</p>
+            <img src="https://res.wx.qq.com/op_res/S3E0H1W2T1M1D3O4N5C6G7R8Q9P0O1N2Z3Y4X5W6V7U8T9S0R1Q2P3O4N5M6L7K8J9I0H1G2" 
+                 alt="企业微信二维码" width="200">
+            <p><small>或访问: work.weixin.qq.com</small></p>
         </div>
         
-        <div>
-            <button class="protocol-btn" onclick="openWechatWorkChat()">
-                💬 打开企业微信聊天
-            </button>
+        <div style="margin-top: 30px; color: #666; font-size: 14px;">
+            <p>实际情况：</p>
+            <p>✓ 在<b>企业微信内置浏览器</b>中：可直接打开</p>
+            <p>✓ 在<b>微信内置浏览器</b>中：有限制</p>
+            <p>✗ 在<b>普通浏览器</b>中：通常无法直接打开</p>
         </div>
-        
-        <div>
-            <button class="protocol-btn" onclick="openWechatWorkWeb()">
-            🌐 打开网页版
-            </button>
-        </div>
-        
-        <p class="tip">
-            * 在手机上点击可尝试打开企业微信应用<br>
-            * 在电脑上会跳转到企业微信官网
-        </p>
     </div>
-    
+
     <script>
-        // 打开企业微信应用
-        function openWechatWorkApp() {
-            const appScheme = 'wxwork://';
-            const webUrl = 'https://work.weixin.qq.com/';
+        // 尝试打开企业微信（成功率低）
+        function tryOpenWeChatWork() {
+            const scheme = 'wxwork://';
             
-            // 尝试打开应用
-            window.location.href = appScheme;
+            // 方案A：直接跳转
+            window.location.href = scheme;
             
-            // 如果应用未安装，跳转网页版
+            // 方案B：如果没打开，2秒后提示
             setTimeout(() => {
-                if (!document.hidden) {
-                    window.location.href = webUrl;
+                if (document.hasFocus()) {
+                    const fallback = confirm(
+                        '无法打开企业微信应用\n\n' +
+                        '可能原因：\n' +
+                        '1. 未安装企业微信\n' +
+                        '2. 浏览器限制\n' +
+                        '是否跳转到下载页面？'
+                    );
+                    if (fallback) {
+                        window.open('https://work.weixin.qq.com/#indexDownload');
+                    }
                 }
-            }, 1000);
+            }, 2000);
         }
         
-        // 打开企业微信聊天（需要特定格式）
-        function openWechatWorkChat() {
-            // 格式：wxwork://message?username=用户ID
-            const chatScheme = 'wxwork://message';
-            const webUrl = 'https://work.weixin.qq.com/';
-            
-            window.location.href = chatScheme;
-            
-            setTimeout(() => {
-                if (!document.hidden) {
-                    window.location.href = webUrl;
-                }
-            }, 1000);
+        function showQRCode() {
+            document.getElementById('qrContainer').style.display = 'block';
         }
         
-        // 直接打开网页版
-        function openWechatWorkWeb() {
-            window.open('https://work.weixin.qq.com/', '_blank');
-        }
-        
-        // 检测是否在微信浏览器中
-        function isInWechat() {
+        // 检测是否在企业微信中
+        function isInWeChatWork() {
             const ua = navigator.userAgent.toLowerCase();
-            return ua.indexOf('wxwork') > -1 || ua.indexOf('micromessenger') > -1;
+            return ua.indexOf('wxwork') > -1;
         }
         
-        // 页面加载时检测环境
+        // 页面加载时检查
         window.onload = function() {
-            if (isInWechat()) {
-                document.querySelector('.tip').innerHTML += '<br>检测到您在企业微信/微信中打开';
+            if (isInWeChatWork()) {
+                console.log('在企业微信内置浏览器中，支持更多功能');
             }
         };
     </script>
