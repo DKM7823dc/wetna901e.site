@@ -1,1 +1,1490 @@
-1
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexWork Pro - Flexible Remote-Arbeitsmöglichkeiten</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17740402210"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17740402210');
+</script>
+
+<!-- Event snippet for 出站点击 (1) conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-17740402210/atNcCKvT9MIbEKKcpItC'});
+</script>
+
+
+    <style>
+        :root {
+            --primary-teal: #14b8a6;
+            --primary-cyan: #06b6d4;
+            --primary-dark: #0f172a;
+            --accent-orange: #f97316;
+            --accent-pink: #ec4899;
+            --text-dark: #1e293b;
+            --text-medium: #64748b;
+            --text-light: #94a3b8;
+            --bg-white: #ffffff;
+            --bg-light: #f8fafc;
+            --bg-dark: #1e293b;
+            --bg-section: #f1f5f9;
+            --shadow-light: rgba(20, 184, 166, 0.08);
+            --shadow-medium: rgba(20, 184, 166, 0.15);
+            --shadow-heavy: rgba(20, 184, 166, 0.25);
+            --gradient-primary: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%);
+            --gradient-accent: linear-gradient(135deg, #f97316 0%, #ec4899 100%);
+            --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            overflow-x: hidden;
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.75rem 0;
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            left: 1.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 0.5rem;
+            background: var(--bg-light);
+            padding: 0.4rem 0.6rem;
+            border-radius: 100px;
+        }
+
+        .nav-links a {
+            color: var(--text-medium);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.4rem 0.9rem;
+            border-radius: 100px;
+            transition: all 0.2s ease;
+            font-size: 0.8rem;
+        }
+
+        .nav-links a:hover {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            position: absolute;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--bg-white);
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .mobile-nav.active { display: block; }
+
+        .mobile-nav a {
+            display: block;
+            color: var(--text-medium);
+            text-decoration: none;
+            padding: 0.75rem;
+            margin: 0.25rem 0;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-nav a:hover {
+            background: var(--bg-light);
+            color: var(--primary-teal);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient-dark);
+            padding-top: 80px;
+            padding-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 20% 80%, rgba(20, 184, 166, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 40%);
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 560px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero-badge-dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h1 .highlight {
+            background: var(--gradient-primary);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.75rem 1.75rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px var(--shadow-medium);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dark);
+            padding: 0.75rem 1.75rem;
+            border: 1.5px solid var(--bg-section);
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-teal);
+            color: var(--primary-teal);
+        }
+
+        .hero .btn-secondary {
+            border-color: rgba(255,255,255,0.3);
+            color: white;
+        }
+
+        .hero .btn-secondary:hover {
+            border-color: var(--primary-teal);
+            background: var(--primary-teal);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            background: rgba(255,255,255,0.05);
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-teal);
+            line-height: 1;
+            letter-spacing: -1px;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.7);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Benefits Section */
+        .benefits-intro {
+            padding: 5rem 0;
+            background: var(--bg-white);
+        }
+
+        .benefits-intro-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .benefits-intro-header h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.5px;
+        }
+
+        .benefits-intro-header h2 .highlight {
+            background: var(--gradient-primary);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .benefits-intro-header p {
+            font-size: 0.95rem;
+            color: var(--text-medium);
+            line-height: 1.75;
+        }
+
+        .benefits-intro-visual {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .benefits-intro-image {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .benefits-floating-card {
+            position: absolute;
+            background: white;
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .benefits-floating-card.card-1 {
+            bottom: -20px;
+            left: -30px;
+        }
+
+        .benefits-floating-card.card-2 {
+            top: 20%;
+            right: -30px;
+        }
+
+        .benefits-floating-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .benefits-floating-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .benefits-floating-text span {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--text-medium);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-subtitle {
+            color: var(--primary-teal);
+            font-weight: 600;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .section-description {
+            font-size: 0.9rem;
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
+
+        /* Feature Cards */
+        .features {
+            padding: 5rem 0;
+            background: var(--bg-white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px var(--shadow-medium);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--gradient-primary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            font-size: 1.75rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.25px;
+        }
+
+        .feature-card p {
+            color: var(--text-medium);
+            line-height: 1.6;
+            font-size: 0.875rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 0;
+            background: var(--bg-section);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 16px var(--shadow-light);
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px var(--shadow-medium);
+        }
+
+        .testimonial-quote {
+            font-size: 2.5rem;
+            color: var(--primary-teal);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-card p {
+            color: var(--text-medium);
+            line-height: 1.7;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--bg-section);
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin-right: 0.75rem;
+            object-fit: cover;
+        }
+
+        .testimonial-info h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .testimonial-info span {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        /* Job Categories */
+        .jobs {
+            padding: 5rem 0;
+            background: var(--bg-white);
+        }
+
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .job-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px var(--shadow-light);
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--bg-section);
+        }
+
+        .job-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px var(--shadow-medium);
+            border-color: var(--primary-teal);
+        }
+
+        .job-card:nth-child(2) {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+        }
+
+        .job-card:nth-child(2) h3,
+        .job-card:nth-child(2) p,
+        .job-card:nth-child(2) .job-features li {
+            color: white;
+        }
+
+        .job-card:nth-child(2) .job-badge {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .job-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .job-badge {
+            display: inline-block;
+            background: var(--bg-light);
+            color: var(--primary-teal);
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .job-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.25px;
+        }
+
+        .job-card > p {
+            color: var(--text-medium);
+            font-size: 0.85rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+        }
+
+        .job-features {
+            list-style: none;
+        }
+
+        .job-features li {
+            padding: 0.4rem 0;
+            font-size: 0.8rem;
+            color: var(--text-medium);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .job-features li::before {
+            content: '✓';
+            color: var(--primary-teal);
+            font-weight: 700;
+        }
+
+        .job-card:nth-child(2) .job-features li::before {
+            color: white;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 0;
+            background: var(--gradient-dark);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 25% 25%, rgba(20, 184, 166, 0.1) 0%, transparent 50%),
+                              radial-gradient(circle at 75% 75%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .cta-section p {
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--bg-light);
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-cta {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--primary-teal);
+        }
+
+        .footer-links {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--primary-teal);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            padding: 0.4rem 0.75rem;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            background: var(--primary-teal);
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .copyright p {
+            font-size: 0.75rem;
+            margin-bottom: 0.4rem;
+        }
+
+        /* Floating CTA Button (Mobile) */
+        .floating-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: linear-gradient(to top, rgba(255,255,255,0.98) 80%, rgba(255,255,255,0));
+            z-index: 999;
+            padding-bottom: env(safe-area-inset-bottom, 1rem);
+        }
+
+        .floating-cta button {
+            width: 100%;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 20px var(--shadow-heavy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            animation: pulse-btn 2s infinite;
+        }
+
+        @keyframes pulse-btn {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .floating-cta .btn-icon {
+            font-size: 1.2rem;
+        }
+
+        /* Marketing Elements */
+        .urgency-banner {
+            background: var(--gradient-accent);
+            color: white;
+            text-align: center;
+            padding: 0.6rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .urgency-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .live-counter {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(20, 184, 166, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            color: var(--primary-teal);
+            font-weight: 600;
+            margin-top: 1.5rem;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .trust-badges {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 12px;
+        }
+
+        .trust-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.35rem;
+            text-align: center;
+        }
+
+        .trust-badge-icon {
+            font-size: 1.5rem;
+        }
+
+        .trust-badge span {
+            font-size: 0.7rem;
+            color: var(--text-medium);
+            font-weight: 500;
+        }
+
+        .limited-spots {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #fef3c7;
+            color: #b45309;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .features-grid,
+            .testimonials-grid,
+            .jobs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-container {
+                gap: 3rem;
+            }
+
+            .benefits-floating-card.card-1 {
+                left: 10px;
+            }
+
+            .benefits-floating-card.card-2 {
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .urgency-banner {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 70px;
+                padding-bottom: 2.5rem;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                padding: 1rem;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            .live-counter {
+                font-size: 0.7rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .benefits-floating-card {
+                display: none;
+            }
+
+            .benefits-intro-visual {
+                padding: 0;
+            }
+
+            .benefits-intro-header {
+                margin-bottom: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .logo {
+                position: static;
+            }
+
+            nav {
+                justify-content: space-between;
+                padding: 0.6rem 0;
+            }
+
+            .benefits-intro, .features, .testimonials, .jobs, .cta-section {
+                padding: 3.5rem 0;
+            }
+
+            .section-header {
+                margin-bottom: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.35rem;
+            }
+
+            .features-grid,
+            .testimonials-grid,
+            .jobs-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .feature-card,
+            .testimonial-card,
+            .job-card {
+                padding: 1.5rem;
+            }
+
+            .cta-section h2 {
+                font-size: 1.35rem;
+            }
+
+            .cta-section p {
+                font-size: 0.875rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .floating-cta {
+                display: block;
+            }
+
+            footer {
+                padding-bottom: 6rem;
+            }
+
+            .trust-badges {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-badge {
+                font-size: 0.7rem;
+                padding: 0.4rem 0.75rem;
+            }
+
+            .stat-number {
+                font-size: 1.35rem;
+            }
+
+            .stat-label {
+                font-size: 0.7rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-dark: #f1f5f9;
+                --text-medium: #94a3b8;
+                --bg-white: #0f172a;
+                --bg-light: #1e293b;
+                --bg-section: #1e293b;
+                --bg-dark: #334155;
+            }
+
+            header {
+                background: rgba(15, 23, 42, 0.95);
+                border-bottom-color: rgba(255,255,255,0.06);
+            }
+
+            .feature-card,
+            .testimonial-card,
+            .job-card {
+                background: #1e293b;
+            }
+
+            .job-card:nth-child(2) {
+                background: var(--gradient-primary);
+            }
+
+            .mobile-menu-btn {
+                color: var(--text-dark);
+            }
+
+            .floating-cta {
+                background: linear-gradient(to top, rgba(15, 23, 42, 0.98) 80%, transparent);
+            }
+
+            .benefits-floating-card {
+                background: #1e293b;
+            }
+
+            .benefits-floating-text {
+                color: #f1f5f9;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Urgency Banner (hidden on mobile) -->
+    <div class="urgency-banner">
+        🔥 Begrenzte Plätze verfügbar – Jetzt bewerben und sofort starten!
+    </div>
+
+    <header>
+        <nav class="container">
+            <div class="logo">FlexWork Pro</div>
+            <ul class="nav-links">
+                <li><a href="#vorteile">Vorteile</a></li>
+                <li><a href="#erfahrungen">Erfahrungen</a></li>
+                <li><a href="#jobs">Jobs</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </nav>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="#vorteile" onclick="closeMobileMenu()">Vorteile</a>
+            <a href="#erfahrungen" onclick="closeMobileMenu()">Erfahrungen</a>
+            <a href="#jobs" onclick="closeMobileMenu()">Jobs</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="hero-badge-dot"></span>
+                        Suchen Sie einen Job?
+                    </div>
+                    <h1>Arbeiten Sie <span class="highlight">remote</span>?</h1>
+                    <p class="hero-subtitle">Arbeiten Sie von zu Hause aus – mit flexiblen Möglichkeiten. Unsere leistungsstärksten Mitarbeiter erzielen hervorragende Ergebnisse – und Sie können das auch!</p>
+
+                    <div class="hero-actions">
+                        <button class="btn-primary" onclick="d2()">🚀 Jetzt Starten</button>
+                        <button class="btn-secondary" onclick="document.getElementById('vorteile').scrollIntoView({behavior:'smooth'})">Mehr Erfahren</button>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">2K+</span>
+                            <span class="stat-label">Partner-Unternehmen</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">85%</span>
+                            <span class="stat-label">Erfolgsquote</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Flexibel arbeiten</span>
+                        </div>
+                    </div>
+
+                    <div class="live-counter">
+                        <span class="live-dot"></span>
+                        <span id="liveViewers">127</span> Personen schauen sich diese Seite gerade an
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <img src="img/2.jpg" alt="Remote-Arbeit Lifestyle" class="hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="vorteile" class="benefits-intro">
+        <div class="container">
+            <div class="benefits-intro-header">
+                <div class="section-subtitle">Unsere Vorteile</div>
+                <h2>Entfalten Sie Ihr <span class="highlight">berufliches Potenzial!</span></h2>
+                <p>Suchen Sie nach neuen Karrieremöglichkeiten? Sind Sie bereit, remote zu arbeiten und einen flexibleren Arbeitsstil zu genießen? Treten Sie uns bei und starten Sie eine neue Reise – egal ob Sie von zu Hause aus arbeiten oder auf Reisen – auch Teilzeit ist möglich!</p>
+                <br>
+                <p>Sie werden Social Media nutzen, um Unternehmen beim Wachstum zu helfen und neue Kunden zu gewinnen. Durch die Erstellung ansprechender Inhalte und die Verwaltung von Likes, Shares und Kommentaren bauen Sie Vertrauen auf und stärken die Online-Präsenz von Unternehmen.</p>
+            </div>
+
+            <div class="benefits-intro-visual">
+                <img src="img/1.jpg" alt="Karrieremöglichkeiten" class="benefits-intro-image">
+
+                <div class="benefits-floating-card card-1">
+                    <div class="benefits-floating-icon">💼</div>
+                    <div class="benefits-floating-text">
+                        Flexible Arbeitszeiten
+                        <span>Arbeiten Sie wann Sie wollen</span>
+                    </div>
+                </div>
+
+                <div class="benefits-floating-card card-2">
+                    <div class="benefits-floating-icon">🌍</div>
+                    <div class="benefits-floating-text">
+                        100% Remote
+                        <span>Von überall arbeiten</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Nutzen Sie Ihre Freizeit</div>
+                <h2 class="section-title">Vorteile für Sie</h2>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Berufliche Entwicklung</h3>
+                    <p>Wir bieten umfassende Unterstützung und Anerkennungsprogramme, damit Sie in der Remote-Arbeit wachsen und herausragende Leistungen erzielen können.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚖️</div>
+                    <h3>Work-Life-Balance</h3>
+                    <p>Wir bieten flexible Arbeitszeiten, damit Sie Arbeit und Privatleben effektiv in Einklang bringen können.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Grundkenntnisse erforderlich</h3>
+                    <p>Wir bieten Schulungen und Unterstützung – Sie müssen nur bereit sein zu lernen und die Regeln zu befolgen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="erfahrungen" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Erfolgsgeschichten</div>
+                <h2 class="section-title">Das sagen unsere Mitarbeiter</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p>Ich war ein Jahr lang Vollzeit-Produkttester in diesem Unternehmen. Ich habe remote Produktbewertungen geschrieben und dabei wertvolle Berufserfahrung gesammelt, während ich mich um den Haushalt kümmerte.</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=face" alt="Thomas M." class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Thomas M.</h4>
+                            <span>Produkttester</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p>Ich bin Programmierer und arbeite seit zwei Jahren bei diesem Unternehmen. In meiner Freizeit bin ich Spieletester. Mein bester Monat war sehr erfolgreich – nicht jeder Monat ist gleich, aber mit Engagement ist es definitiv machbar!</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face" alt="Markus S." class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Markus S.</h4>
+                            <span>Spieletester</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p>Ich nutze meine Freizeit für Datenannotation hier – das bereichert nicht nur meine Freizeit, sondern bietet mir auch wertvolle Möglichkeiten zur beruflichen Weiterentwicklung!</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face" alt="Sarah K." class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Sarah K.</h4>
+                            <span>Datenannotation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="jobs" class="jobs">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Stellenangebote</div>
+                <h2 class="section-title">Aktuelle Remote-Positionen</h2>
+                <div class="limited-spots">
+                    ⚡ Nur noch wenige Plätze frei!
+                </div>
+            </div>
+
+            <div class="jobs-grid">
+                <div class="job-card">
+                    <div class="job-icon">🏷️</div>
+                    <div class="job-badge">Teilzeit</div>
+                    <h3>Datenannotation</h3>
+                    <p>Flexible Arbeitsmöglichkeit (Teilzeit)</p>
+                    <ul class="job-features">
+                        <li>1-3 Stunden pro Tag</li>
+                        <li>100-300 Euro pro Tag</li>
+                        <li>Monatsgehalt 4000+</li>
+                    </ul>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-icon">🔍</div>
+                    <div class="job-badge">Erfahrene Tester</div>
+                    <h3>Online-SEO-Experte</h3>
+                    <p>Wettbewerbsfähige Verdienstmöglichkeiten</p>
+                    <ul class="job-features">
+                        <li>120 Stunden pro Monat</li>
+                        <li>Arbeiten Sie jederzeit und überall</li>
+                        <li>Kompatibel mit allen Smart-Geräten</li>
+                    </ul>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-icon">⭐</div>
+                    <div class="job-badge">Top-Reviewer</div>
+                    <h3>Produktbewertung</h3>
+                    <p>Attraktive Möglichkeiten</p>
+                    <ul class="job-features">
+                        <li>180 Stunden pro Monat</li>
+                        <li>Arbeiten Sie jederzeit und überall</li>
+                        <li>Kompatibel mit allen Smart-Geräten</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <span class="trust-badge-icon">🔒</span>
+                    <span>100% Sicher</span>
+                </div>
+                <div class="trust-badge">
+                    <span class="trust-badge-icon">✅</span>
+                    <span>Verifiziert</span>
+                </div>
+                <div class="trust-badge">
+                    <span class="trust-badge-icon">⭐</span>
+                    <span>4.8/5 Bewertung</span>
+                </div>
+                <div class="trust-badge">
+                    <span class="trust-badge-icon">👥</span>
+                    <span>10K+ Mitarbeiter</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Starten Sie jetzt – mit flexiblen Remote-Optionen!</h2>
+                <p>Erweitern Sie Ihre Berufserfahrung durch flexible Remote-Arbeitsmöglichkeiten, während Sie Ihren aktuellen Job behalten.</p>
+                <button class="btn-primary" onclick="d2()">Jetzt Bewerben</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-cta">Werden Sie Teil unserer wachsenden Remote-Arbeiter-Community</p>
+
+                
+
+                <div class="copyright">
+                    <p>&copy; 2025 FlexWork Pro. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA for Mobile -->
+    <div class="floating-cta">
+        <button onclick="d2()">
+            <span class="btn-icon">🚀</span>
+            Jetzt Kostenlos Starten
+        </button>
+    </div>
+
+    <script>
+        function d2() {
+            window.open('https://QQ.COM', '_blank');
+        }
+
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.remove('active');
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        document.addEventListener('click', function(event) {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+
+            if (!mobileNav.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                mobileNav.classList.remove('active');
+            }
+        });
+
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Live viewer counter animation
+        function updateLiveViewers() {
+            const viewerEl = document.getElementById('liveViewers');
+            if (viewerEl) {
+                const base = 120;
+                const variation = Math.floor(Math.random() * 30) - 10;
+                viewerEl.textContent = base + variation;
+            }
+        }
+        setInterval(updateLiveViewers, 5000);
+    </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"35b4c4fff8aa42bfba5f0ef7ccf4cab8","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"35b4c4fff8aa42bfba5f0ef7ccf4cab8","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
