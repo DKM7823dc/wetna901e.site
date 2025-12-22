@@ -129,11 +129,31 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+        }
+
+        .btn-contact-sm i {
+            font-size: 1.2rem;
         }
 
         .btn-contact-sm:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(201, 169, 98, 0.4);
+        }
+
+        /* Breathing animation for buttons */
+        @keyframes breathe {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 4px 20px rgba(201, 169, 98, 0.3);
+            }
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 8px 35px rgba(201, 169, 98, 0.5);
+            }
         }
 
         /* Main Content */
@@ -400,7 +420,7 @@
         }
 
         .floating-btn i {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
         }
 
         .floating-btn:hover {
@@ -429,9 +449,17 @@
                 font-size: 1.2rem;
             }
 
+            /* Mobile: Header Contact Button - 75% width with breathing effect */
             .btn-contact-sm {
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
+                width: 75vw;
+                max-width: 320px;
+                padding: 1rem 1.5rem;
+                font-size: 1.05rem;
+                animation: breathe 2.5s ease-in-out infinite;
+            }
+
+            .btn-contact-sm i {
+                font-size: 1.5rem;
             }
 
             .cta-title {
@@ -459,33 +487,60 @@
                 border-radius: 12px;
             }
 
+            /* Mobile: Floating WhatsApp Button - 75% width with breathing effect */
             .floating-btn {
                 bottom: 20px;
                 left: 50%;
                 right: auto;
                 transform: translateX(-50%);
-                padding: 0.9rem 1.4rem;
-                font-size: 0.9rem;
-                animation: floatPulseMobile 2s ease-in-out infinite;
+                width: 75vw;
+                max-width: 320px;
+                padding: 1.1rem 1.5rem;
+                font-size: 1.05rem;
+                justify-content: center;
+                animation: floatBreatheMobile 2.5s ease-in-out infinite;
             }
 
             .floating-btn i {
-                font-size: 1.2rem;
+                font-size: 1.8rem;
             }
 
-            @keyframes floatPulseMobile {
+            @keyframes floatBreatheMobile {
                 0%, 100% {
                     transform: translateX(-50%) scale(1);
-                    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+                    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
                 }
                 50% {
-                    transform: translateX(-50%) scale(1.05);
-                    box-shadow: 0 8px 40px rgba(37, 211, 102, 0.6);
+                    transform: translateX(-50%) scale(1.04);
+                    box-shadow: 0 10px 40px rgba(37, 211, 102, 0.6);
                 }
             }
 
             .floating-btn:hover {
                 transform: translateX(-50%) translateY(-5px) scale(1.05);
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 480px) {
+            .btn-contact-sm {
+                width: 75vw;
+                padding: 1.1rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .btn-contact-sm i {
+                font-size: 1.6rem;
+            }
+
+            .floating-btn {
+                width: 75vw;
+                padding: 1.15rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .floating-btn i {
+                font-size: 2rem;
             }
         }
 
@@ -516,7 +571,7 @@
             </div>
             <div class="header-cta">
                 <button onclick="k2()" class="btn-contact-sm">
-                    <i class="fab fa-whatsapp"></i> Contact Us
+                    <i class="fab fa-whatsapp"></i> Contact Us for Quote
                 </button>
             </div>
         </div>
@@ -539,7 +594,7 @@
                 </div>
             </section>
 
-            
+
             <!-- Image 3 -->
             <section class="image-section reveal">
                 <div class="image-wrapper">
@@ -567,7 +622,7 @@
                     <img src="img/6.jpg" alt="Section 6">
                 </div>
             </section>
- 
+
             <!-- Image 7 -->
             <section class="image-section reveal">
                 <div class="image-wrapper">
@@ -594,7 +649,7 @@
     <!-- Floating Button -->
     <button class="floating-btn" onclick="k2()">
         <i class="fab fa-whatsapp"></i>
-        <span>Contact Us</span>
+        <span>Contact Us for Quote</span>
     </button>
 
     <!-- Footer -->
