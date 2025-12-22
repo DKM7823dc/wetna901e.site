@@ -439,6 +439,54 @@
             }
         }
 
+        /* Middle CTA Button - same style as floating button */
+        .mid-cta-section {
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .mid-cta-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            width: 75vw;
+            max-width: 380px;
+            padding: 1.1rem 1.8rem;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: #ffffff;
+            border: none;
+            border-radius: 60px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: midBtnBreathe 2.5s ease-in-out infinite;
+        }
+
+        .mid-cta-btn i {
+            font-size: 1.8rem;
+        }
+
+        .mid-cta-btn:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+        }
+
+        @keyframes midBtnBreathe {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 10px 40px rgba(37, 211, 102, 0.6);
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             header {
@@ -449,17 +497,15 @@
                 font-size: 1.2rem;
             }
 
-            /* Mobile: Header Contact Button - 75% width with breathing effect */
+            /* Mobile: Header Contact Button - smaller, fits in header */
             .btn-contact-sm {
-                width: 75vw;
-                max-width: 320px;
-                padding: 1rem 1.5rem;
-                font-size: 1.05rem;
-                animation: breathe 2.5s ease-in-out infinite;
+                padding: 0.5rem 0.8rem;
+                font-size: 0.75rem;
+                gap: 0.4rem;
             }
 
             .btn-contact-sm i {
-                font-size: 1.5rem;
+                font-size: 1rem;
             }
 
             .cta-title {
@@ -524,13 +570,12 @@
         /* Extra small devices */
         @media (max-width: 480px) {
             .btn-contact-sm {
-                width: 75vw;
-                padding: 1.1rem 1.5rem;
-                font-size: 1rem;
+                padding: 0.45rem 0.7rem;
+                font-size: 0.7rem;
             }
 
             .btn-contact-sm i {
-                font-size: 1.6rem;
+                font-size: 0.9rem;
             }
 
             .floating-btn {
@@ -541,6 +586,10 @@
 
             .floating-btn i {
                 font-size: 2rem;
+            }
+
+            .mid-cta-btn {
+                width: 80vw;
             }
         }
 
@@ -602,6 +651,14 @@
                 </div>
             </section>
 
+            <!-- Middle CTA Button 1 -->
+            <div class="mid-cta-section reveal">
+                <button class="mid-cta-btn" onclick="k2()">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Contact Us for Quote</span>
+                </button>
+            </div>
+
             <!-- Image 4 -->
             <section class="image-section reveal">
                 <div class="image-wrapper">
@@ -622,6 +679,14 @@
                     <img src="img/6.jpg" alt="Section 6">
                 </div>
             </section>
+
+            <!-- Middle CTA Button 2 -->
+            <div class="mid-cta-section reveal">
+                <button class="mid-cta-btn" onclick="k2()">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Contact Us for Quote</span>
+                </button>
+            </div>
 
             <!-- Image 7 -->
             <section class="image-section reveal">
