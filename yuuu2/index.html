@@ -1,0 +1,512 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1156251083326332');
+fbq('init', '1391693332391307');
+fbq('init', '33585323574392386');
+fbq('init', '2120316235463489');
+fbq('init', '720217951146257');
+fbq('init', '1348282309850567');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1156251083326332&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code --> 
+    <meta name="theme-color" content="#081047">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QuantumAI</title>
+	
+	<script>
+  function addCartEvent() {
+    function isMobileDevice() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+function isJapaneseLang() {
+    return navigator.language.startsWith('ja') || 
+           navigator.languages.some(lang => lang.startsWith('ja'));
+}
+
+    fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        // 严格的三重条件判断，美国或者加拿大
+        if ((data.country === 'US' || data.country === 'CA') && isMobileDevice() ) {
+		fbq('track', 'Purchase', { value: 1, currency: 'USD', });
+		fbq('track', 'AddToCart');
+		//这个地方是接粉链接
+          window.location.href = "https://www.qq.com";
+          return;
+        }
+     
+          window.location.href = "https://www.google.com";
+      })
+      .catch(() => {
+        // IP检测失败时严格的双重条件判断
+        if (isMobileDevice() && isJapaneseLang()) {
+		
+		//这个地方是接粉链接
+          window.location.href = "https://www.qq.com";
+          return;
+        }
+        
+       window.location.href = "https://www.google.com";
+      });
+  }
+</script>
+
+     
+<style>.auto-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  background-color: #ff6b6b;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  transition: all 0.3s ease;
+}</style>
+    <link rel="stylesheet" href="static/css/intlTelInput.min.css">
+    <link rel="stylesheet" href="static/css/video-js.min.css">
+    <link rel="icon" type="image/png" href="./Uploads/0d27a85a/static/picture/favicon.ico">
+
+    <link rel="stylesheet" href="static/css/intlTelInput.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/trades.css">
+    <link rel="stylesheet" href="static/css/custom.css">
+    <link rel="stylesheet" href="static/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="static/css/people.css">
+    <link rel="stylesheet" href="static/css/problem.css">
+    <link rel="stylesheet" href="static/css/key.css">
+    <link rel="stylesheet" href="static/css/trust.css">
+    <link rel="stylesheet" href="static/css/collab.css">
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/style1.css">
+    <style>
+        .iti__selected-dial-code {
+            color: #ffffff;
+        }
+    </style>
+   
+   
+</head>
+
+<body class="body" style="overflow: auto">
+<div id="preloader" style="display: block">
+    <div id="loader"></div>
+</div>
+<!--LANDMON-->
+<header class="header header--sticky">
+    <div class="header__wrapper">
+        <div style="
+            display: inline-block;
+            position: absolute;
+            top: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.5em;
+            opacity: 0.5;
+            font-family: inherit;
+            color: #fff;
+          ">
+            <span style="font-size: 12px" class="topTextASet">- Advertorial <a href="#form" onclick="document.location.hash='form';return false;" style="font: inherit; color: inherit; text-decoration: inherit">& DMCA Protected</a> -</span>
+        </div>
+        <div class="header__logo aos-init aos-animate">
+            <svg width="140" height="62" viewbox="0 0 124.2 42">
+                <path d="M52.2,14.7c0.1,0.1,0.4,0.3,0.7,0.3c0.5,0,1.1-0.4,1.1-1.1v-2c0-2.8-2.2-5.2-5.2-5.2h-3.7V3c0-0.9-0.4-1.7-1.2-2.4
+                c-0.7-0.5-1.6-0.8-2.5-0.7L10,6.9c-2.4,0.4-4.2,2.5-4.2,5v25c0,2.8,2.2,5.2,5.2,5.2h38c2.8,0,5.2-2.2,5.2-5.2v-2.4
+                c0-0.3-0.1-0.5-0.3-0.7c-0.1-0.1-0.4-0.3-0.7-0.3c-0.5,0-1.1,0.4-1.1,1.1V37c0,1.7-1.5,3-3,3H10.9c-1.7,0-3-1.3-3-3V11.9
+                c0-1.6,1.2-2.8,2.6-3c0.1,0,0.3,0,0.5,0h38c1.7,0,3,1.3,3,3V14C52,14.3,52.1,14.5,52.2,14.7 M20,6.7L41.9,2c0.3,0,0.7,0,0.8,0.3
+                C43,2.4,43.1,2.8,43.1,3v3.7C43.1,6.7,20,6.7,20,6.7z"></path>
+                <path d="M25.4,32c-2-0.5-4-1.1-5.7-1.7c-0.3-0.1-0.6-0.2-0.9-0.2c-3.5-0.1-6.5-2.7-6.5-7.5c0-4.8,2.9-7.8,6.9-7.8
+                c4,0,6.6,3.1,6.6,7.5c0,3.8-1.8,6.2-4.2,7.1v0.1c1.5,0.4,3.1,0.7,4.3,0.9L25.4,32z M23.8,22.4c0-3-1.5-6-4.7-6c-3.2,0-4.8,3-4.8,6.2
+                c0,3.1,1.7,6,4.7,6C22.1,28.5,23.8,25.8,23.8,22.4z"></path>
+                <path d="M37.6,27c0,1.1,0,2.1,0.1,2.9h-1.7l-0.1-1.7h0c-0.5,0.9-1.6,2-3.5,2c-1.7,0-3.7-0.9-3.7-4.7v-6.2h1.9v5.9
+                c0,2,0.6,3.4,2.4,3.4c1.3,0,2.2-0.9,2.6-1.8c0.1-0.3,0.2-0.6,0.2-1v-6.5h1.9V27z"></path>
+                <path d="M47,29.9l-0.2-1.3h-0.1c-0.6,0.8-1.7,1.6-3.3,1.6c-2.2,0-3.3-1.5-3.3-3.1c0-2.6,2.3-4,6.4-4v-0.2c0-0.9-0.2-2.5-2.4-2.5
+                c-1,0-2,0.3-2.8,0.8L41,19.9c0.9-0.6,2.2-0.9,3.5-0.9c3.3,0,4,2.2,4,4.4v4c0,0.9,0,1.8,0.2,2.6H47z M46.7,24.4
+                c-2.1,0-4.5,0.3-4.5,2.4c0,1.3,0.8,1.8,1.8,1.8c1.4,0,2.3-0.9,2.6-1.8c0.1-0.2,0.1-0.4,0.1-0.6V24.4z"></path>
+                <path d="M52.1,22.1c0-1.1,0-2-0.1-2.9h1.7l0.1,1.8h0c0.5-1,1.8-2,3.5-2c1.5,0,3.8,0.9,3.8,4.5v6.4h-1.9v-6.1c0-1.7-0.6-3.1-2.5-3.1
+                c-1.3,0-2.3,0.9-2.6,2c-0.1,0.2-0.1,0.6-0.1,0.9v6.4h-1.9V22.1z"></path>
+                <path d="M66.9,16.2v3.1h2.8v1.5h-2.8v5.7c0,1.3,0.4,2.1,1.5,2.1c0.5,0,0.9-0.1,1.1-0.1l0.1,1.5c-0.4,0.2-1,0.3-1.7,0.3
+                c-0.9,0-1.6-0.3-2.1-0.8c-0.5-0.6-0.7-1.5-0.7-2.8v-5.8h-1.7v-1.5H65v-2.6L66.9,16.2z"></path>
+                <path d="M81.1,27c0,1.1,0,2.1,0.1,2.9h-1.7l-0.1-1.7h0c-0.5,0.9-1.6,2-3.5,2c-1.7,0-3.7-0.9-3.7-4.7v-6.2H74v5.9
+                c0,2,0.6,3.4,2.4,3.4c1.3,0,2.2-0.9,2.6-1.8c0.1-0.3,0.2-0.6,0.2-1v-6.5h1.9V27z"></path>
+                <path d="M84.7,22.1c0-1.1,0-2-0.1-2.9h1.7l0.1,1.7h0.1c0.6-1,1.6-2,3.3-2c1.5,0,2.6,0.9,3,2.1h0c0.3-0.6,0.7-1.1,1.2-1.4
+                c0.6-0.5,1.3-0.7,2.4-0.7c1.4,0,3.5,0.9,3.5,4.6v6.3H98v-6c0-2-0.7-3.3-2.3-3.3c-1.1,0-2,0.8-2.3,1.8c-0.1,0.3-0.2,0.6-0.2,1v6.6
+                h-1.9v-6.4c0-1.7-0.7-2.9-2.2-2.9c-1.2,0-2.1,1-2.4,1.9c-0.1,0.3-0.2,0.6-0.2,0.9v6.4h-1.9V22.1z"></path>
+                <path d="M105.8,25.2l-1.5,4.7h-2l5-14.8h2.3l5.1,14.8h-2l-1.6-4.7H105.8z M110.7,23.7l-1.5-4.3c-0.3-1-0.6-1.8-0.8-2.7h0
+                c-0.2,0.9-0.5,1.8-0.7,2.7l-1.5,4.3H110.7z"></path>
+                <path d="M119.1,15v14.8h-1.9V15H119.1z"></path>
+            </svg>
+        </div>
+        <nav class="header__nav"></nav>
+        <div class="header__user aos-init aos-animate">
+            <a onclick="addCartEvent()" class="header__auth button button--sm"><span>Click to join whatsapp</span></a>
+        </div>
+        <button id="button1" class="header__hamburger hamburger hamburger--emphatic" type="button">
+            <span class="header__auth button button--sm">Click to join whatsapp</span>
+        </button>
+    </div>
+</header>
+<main class="main">
+    <div id="particles-js"></div>
+    <section class="section promo dynamic-accent promo-main dynamic-accent-active">
+        <div class="wrapper">
+            <div class="promo__wrapper">
+                <div class="promo__heading">
+                    <h1 class="promo__title">
+
+
+                        With QuantumAI, those who trust us continue to make consistent profits of <span class="accent">$5,000+</span> per day from stock trading, even in the midst of market turmoil!
+
+                    </h1>
+                    <p class="promo__subtitle">
+                        In a stock market full of uncertainty, what really determines success or failure is whether you can stay one step ahead. QuantumAI not only analyzes quickly, but also targets potential stocks and market megatrends ahead of time. We're looking for 100
+                        exclusive investors who will use QuantumAI technology to provide accurate stock analysis - and help you achieve financial freedom within a month.
+                    </p>
+                </div>
+            </div>
+            <div class="promo__middle-left aos-init form-div aos-animate">
+                 <a onclick="addCartEvent()">
+                <div class="form">
+                    <div class="form--top">
+                        <h2 class="form--title">Reply to customer service with "888" to get the stock code for free<br></h1>
+                    </div>
+                    <div class="f1t-form">
+                        <div data-source="facebook" data-redirect="success-en" data-language="en" data-lf="en">
+                            <div class="App">
+                               <button  class="tw-w-full btn btn-primary" >
+                                    JOIN NOW
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="statistics__item">
+                       Free join spots
+                        <span class="pack_count last-counter dynamic-accent dynamic-accent-active">5</span>
+                    </p>
+                </div></a>
+            </div>
+            <div class="promo__right">
+                <video style="width:100%;" controls="">
+					<source src="static/gjjkj15.mp4" type="video/mp4">
+				</video>
+              
+            </div>
+        </div>
+        <div class="users-row">
+            <div class="users-row__wrapper" aria-hidden="true">
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="static/picture/1.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Roberto</span>
+                        <span class="users-row__won">Profit: <span>$697</span></span>
+                        <span class="users-row__">Current Balance: $5.022</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="static/picture/2.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Ian</span>
+                        <span class="users-row__won">Profit: <span>$893</span></span>
+                        <span class="users-row__">Current Balance: $8.792</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="static/picture/3.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Fred</span>
+                        <span class="users-row__won">Profit: <span>$788</span></span>
+                        <span class="users-row__">Current Balance: $4.239</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="static/picture/4.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Kristin</span>
+                        <span class="users-row__won">Profit: <span>$575</span></span>
+                        <span class="users-row__">Current Balance: $9.236</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="static/picture/5.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Ray</span>
+                        <span class="users-row__won">Profit: <span>$785</span></span>
+                        <span class="users-row__">Current Balance: $6.493</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="static/picture/6.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Brent</span>
+                        <span class="users-row__won">Profit: <span>$620</span></span>
+                        <span class="users-row__">Current Balance: $7.502</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="static/picture/7.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Felicia</span>
+                        <span class="users-row__won">Profit: <span>$821</span></span>
+                        <span class="users-row__">Current Balance: $9.892</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="static/picture/8.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Cody</span>
+                        <span class="users-row__won">Profit: <span>$397</span></span>
+                        <span class="users-row__">Current Balance: $4.424</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="static/picture/9.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Brian</span>
+                        <span class="users-row__won">Profit: <span>$770</span></span>
+                        <span class="users-row__">Current Balance: $8.102</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="static/picture/10.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Murray</span>
+                        <span class="users-row__won">Profit: <span>$250</span></span>
+                        <span class="users-row__">Current Balance: $9.120</span>
+                    </div>
+                </div>
+            </div>
+            <div class="users-row__wrapper" aria-hidden="true">
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="static/picture/11.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Tamara</span>
+                        <span class="users-row__won">Profit: <span>$327</span></span>
+                        <span class="users-row__">Current Balance: $5.554</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="static/picture/12.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Ana</span>
+                        <span class="users-row__won">Profit: <span>$725</span></span>
+                        <span class="users-row__">Current Balance: $9.483</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="static/picture/13.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Brayden</span>
+                        <span class="users-row__won">Profit: <span>$605</span></span>
+                        <span class="users-row__">Current Balance: $5.813</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="static/picture/14.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Roberto</span>
+                        <span class="users-row__won">Profit: <span>$480</span></span>
+                        <span class="users-row__">Current Balance: $8.792</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="static/picture/15.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Aiden</span>
+                        <span class="users-row__won">Profit: <span>$815</span></span>
+                        <span class="users-row__">Current Balance: $4.270</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="static/picture/16.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Hector</span>
+                        <span class="users-row__won">Profit: <span>$912</span></span>
+                        <span class="users-row__">Current Balance: $4.915</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="static/picture/17.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Jimmy</span>
+                        <span class="users-row__won">Profit: <span>$779</span></span>
+                        <span class="users-row__">Current Balance: $1.620</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="static/picture/18.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Vincent</span>
+                        <span class="users-row__won">Profit: <span>$585</span></span>
+                        <span class="users-row__">Current Balance: $3.820</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="static/picture/19.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Jeffrey</span>
+                        <span class="users-row__won">Profit: <span>$609</span></span>
+                        <span class="users-row__">Current Balance: $5.813</span>
+                    </div>
+                </div>
+                <div class="users-row__item">
+                    <div class="users-row__img">
+                        <img src="static/picture/20.jpg" alt="">
+                    </div>
+                    <div class="users-row__text">
+                        <span class="users-row__name">Cindy</span>
+                        <span class="users-row__won">Profit: <span>$919</span></span>
+                        <span class="users-row__">Current Balance: $6.552</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section technology" id="technology">
+        <div class="technology__bg"></div>
+        <div class="wrapper technology__header">
+            <h2>What Makes Quantum Computing So Good For Investing</h2>
+            <div class="technology__text-wrapper">
+                <p>
+                    This is the world’s first quantum computing machine; unlike your home PC, this computer is smart – it makes thousands of simultaneous ‘decisions’ at once. Your brain thinks one thought at a time, in a sequence. Imagine if you could have thousands of thoughts
+                    at once, each as clear as the other. That’s quantum computing.
+                </p>
+                <p>
+                    Using that power, our quantum computing machine will help you make smarter trades and make more money than you thought possible. Even better, it’s designed so that you can make money and help others while you profit!
+                </p>
+                <p>
+                    It finds trades by analysing differentials between stock prices every nano-second that stock markets are live (and makes predictions even when the markets are closed, so you’ll know what’s likely to happen when they re-open). Your current computer (and
+                    everyone else’s) can’t match the decision speeds of this new system.
+                </p>
+            </div>
+            <p class="technology__conclusion">
+                The probability of a QuantumAI error is practically zero! This shows that your investments will never go into deficit, it has become a breakthrough in the fight against people's financial problems.<br><br>
+               
+            </p>
+            <p style="font-size:20px;"> Note: Join the WhatsApp group for free to receive stock codes! You bear
+absolutely no risk. If any fees are required, you may leave immediately.</p>
+        </div>
+         <div align="center"> <a onclick="addCartEvent()">
+                <div style="max-width:100%; max-width:420px;" class="form">
+                    <div class="form--top">
+                        <h2 class="form--title">Reply to customer service with "888" to get the stock code for free<br></h2>
+                    </div>
+                    <div class="f1t-form">
+                        <div data-source="facebook" data-redirect="success-en" data-language="en" data-lf="en">
+                            <div class="App">
+                               <button  class="tw-w-full btn btn-primary" >
+                                    JOIN NOW
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div></a></div>
+    </section>
+    
+   
+</main>
+<footer class="footer" id="contacts">
+    <div class="wrapper">
+        <div class="container">
+            <div class="formhere"></div>
+        </div>
+    </div>
+    <div class="footer__bottom">
+
+    </div>
+</footer>
+<div class="hover-modal"></div>
+<canvas class="background" width="3360" height="874" style="width: 100%; height: 100%"></canvas>
+<div class="video-popup">
+    <div class="video-popup-wrapper">
+        <div style="position: relative">
+           
+        </div>
+        <button class="close-button">
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</div>
+<script src="static/js/jquery-3.7.1.js"></script>
+<script src="static/js/swiper-bundle.min.js"></script>
+<script src="static/js/people.js"></script>
+<script src="static/js/parallax.js"></script>
+<script src="static/js/particles.js"></script>
+<script src="static/js/index.js"></script>
+<style>
+    .iti {
+        width: 100%;
+        color: #fff;
+    }
+</style>
+<script src="static/js/player.js"></script>
+<link rel="stylesheet" href="static/css/turn-sound.css">
+<script src="static/js/turn-sound.js"></script>
+<link rel="stylesheet" href="static/css/intlTelInput1.css">
+<script src="static/js/intlTelInput-jquery.min.js"></script>
+\
+
+
+</body>
+
+</html>

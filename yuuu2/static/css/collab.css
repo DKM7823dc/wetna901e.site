@@ -1,0 +1,313 @@
+﻿.collab {
+    z-index: 1;
+    position: relative;
+}
+
+.collab img {
+    width: 300px;
+    filter: drop-shadow(1px 1px 0 var(--accent-color));
+}
+
+.collab__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1050px) {
+    .collab__wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .collab__item {
+        margin: 0 auto;
+    }
+}
+
+.collab .users-row__item {
+    border: none;
+    box-shadow: none;
+    padding: 15px 30px;
+    backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.collab .users-row {
+    margin: 100px 0;
+}
+
+.last-form {
+    padding: 20px;
+}
+
+.last-form .form {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.statistics {
+    position: relative;
+}
+
+.statistics__title {
+    font-weight: 900;
+    font-size: 34px;
+    text-transform: uppercase;
+}
+
+.statistics__item {
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 0;
+}
+
+.statistics__cta {
+    text-align: center;
+    color: var(--third-color);
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 900 !important;
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    overflow: hidden;
+}
+
+.statistics__wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+
+.statistics__wrapper div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
+
+.statistics__svg {
+    /* border: 1px solid var(--accent-color); */
+    /* box-shadow: 0 0 10px var(--accent-color); */
+    filter: drop-shadow(0 0 5px var(--accent-color));
+}
+
+.statistics__svg rect {
+    fill: var(--accent-color);
+    transform: translateZ(0) translate3d(0, 500px, 0);
+    will-change: transform;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.statistics__svg rect:nth-child(1) {
+    transition-delay: 0.8s;
+}
+
+.statistics__wrapper.dynamic-accent-active .statistics__svg rect:nth-child(1) {
+    transform: translateZ(0) translate3d(0, 0, 0);
+}
+
+.statistics__svg rect:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.statistics__wrapper.dynamic-accent-active .statistics__svg rect:nth-child(2) {
+    transform: translateZ(0) translate3d(0, 0, 0);
+}
+
+.statistics__svg rect:nth-child(3) {
+    transition-delay: 0;
+}
+
+.statistics__wrapper.dynamic-accent-active .statistics__svg rect:nth-child(3) {
+    transform: translateZ(0) translate3d(0, 0, 0);
+}
+
+@media (max-width: 790px) {
+    .statistics__wrapper div:last-child {
+        display: none;
+    }
+}
+
+.counter,
+.ix {
+    font-size: 25px;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+.last-counter {
+    color: var(--third-color);
+    text-shadow: 0 0 10px var(--third-color);
+    font-size: 25px;
+}
+
+@media (max-width: 575px) {
+    .statistics__item {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+    .statistics__item .counter,
+    .ix {
+        font-size: 16px;
+    }
+}
+
+.collab .users-row {
+    margin: 50px 0;
+}
+
+.collab .users-row__item img {
+    width: 200px;
+}
+
+.users-row__wrapper {
+    margin-right: 10px;
+}
+
+@media (max-width: 1000px) {
+    .arrows {
+        top: 50px;
+        right: 70px;
+    }
+    .arrows span {
+        width: 20px;
+        height: 20px;
+    }
+    .collab .users-row {
+        margin: 20px 0;
+    }
+}
+
+.statistics__cta {
+    color: var(--third-color);
+    font-family: "Work Sans", sans-serif;
+    will-change: auto;
+    transform: translateZ(0);
+    animation: glitch 1s linear infinite;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    justify-content: center;
+}
+
+@keyframes glitch {
+    2%,
+    64% {
+        transform: translate(2px, 0) skew(0deg);
+    }
+    4%,
+    60% {
+        transform: translate(-2px, 0) skew(0deg);
+    }
+    62% {
+        transform: translate(0, 0) skew(5deg);
+    }
+}
+
+.statistics__cta:before,
+.statistics__cta:after {
+    content: attr(title);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.statistics__cta:before {
+    animation: glitchTop 1s linear infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop {
+    2%,
+    64% {
+        transform: translate(2px, -2px);
+    }
+    4%,
+    60% {
+        transform: translate(-2px, 2px);
+    }
+    62% {
+        transform: translate(13px, -1px) skew(-13deg);
+    }
+}
+
+.statistics__cta:after {
+    animation: glitchBotom 1.5s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom {
+    2%,
+    64% {
+        transform: translate(-2px, 0);
+    }
+    4%,
+    60% {
+        transform: translate(-2px, 0);
+    }
+    62% {
+        transform: translate(-22px, 5px) skew(21deg);
+    }
+}
+
+@media (max-width: 575px) {
+    .slider__item-img-wrapper {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+    .slider__item-text {
+        font-size: 13px;
+    }
+    .slider__item,
+    .swiper-wrapper {
+        padding-bottom: 20px;
+        max-height: 500px;
+    }
+    .people {
+        height: 714px;
+        max-height: unset;
+        min-height: unset;
+        padding-bottom: 0;
+    }
+    .slider {
+        top: 200px;
+    }
+    .description p {
+        font-size: 11px;
+    }
+}
+
+.promo,
+.statistics,
+.key {
+    z-index: 999;
+}
+
+.key__start-list {
+    position: relative;
+}
+
+.key__main-text::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 45px;
+}
+
+.key__start-list::before {
+    border-radius: 15px;
+}

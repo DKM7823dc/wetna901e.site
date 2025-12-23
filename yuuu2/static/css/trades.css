@@ -1,0 +1,81 @@
+﻿.trades-div {
+    width: 100%;
+}
+
+.trades-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 4px;
+}
+
+.trades-wrapper.active {
+    display: flex;
+}
+
+.live-trades {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.live-trades .item {
+    width: 25%;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+}
+
+.live-trades .item .ava img {
+    width: 62px;
+    border-radius: 50%;
+}
+
+.live-trades .item .info {
+    margin-left: 6px;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    flex-direction: column;
+}
+
+.live-trades .item .info .won-info {
+    background: #5c24d7;
+    padding: 4px;
+    color: white;
+    min-width: 175px;
+}
+
+.live-trades .item .info .balance {
+    padding: 0 4px;
+    background: #eaeaea;
+    font-size: 0.8em;
+    margin-right: 4px;
+    border-radius: 0 0 8px 0;
+}
+
+@media (max-width: 1024px) {
+    .header-person .item2 {
+        display: none;
+    }
+    .header-person .item {
+        width: 50%;
+        margin: 0 100px;
+    }
+    .live-trades {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 756px) {
+    .header-person .item3 {
+        display: none;
+    }
+    .header-person .item {
+        width: 50%;
+        margin: 0 50px;
+    }
+    .live-trades {
+        justify-content: center;
+    }
+}
