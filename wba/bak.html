@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+	
+  <!-- TikTok Pixel Code Start (保留原有像素) -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+  ttq.load('D489Q3JC77U505N94830');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End --> 
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#C5A059', 
+                            dark: '#0F172A', 
+                            light: '#F8FAFC', 
+                            card: '#FFFFFF'   
+                        }
+                    },
+                    fontFamily: {
+                        elegant: ['Georgia', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes fadeSlide {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .breathe {
+            animation: breathe 2s ease-in-out infinite;
+        }
+
+        .fade-slide {
+            animation: fadeSlide 0.8s ease-out;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #C5A059, #8E733B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .elegant-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-bg {
+            background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
+        }
+
+        /* Modal Scrollbar Styling */
+        .modal-content {
+            max-height: 60vh;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .modal-content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .modal-content::-webkit-scrollbar-track {
+            background: #F3F4F6;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb {
+            background: #D1D5DB;
+            border-radius: 3px;
+        }
+        
+        .modal-text h4 {
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #111;
+        }
+        
+        .modal-text p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: #4B5563;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body class="bg-white text-brand-dark overflow-x-hidden font-sans">
+    <div class="hero-bg min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="container mx-auto px-4 py-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <h1 class="text-3xl md:text-5xl font-elegant font-bold text-brand-dark mb-4 leading-tight">
+                   Curated Premium Timepieces <br/>
+                   <span class="gradient-text">Elevate Your Style</span>
+                </h1>
+				 <!-- Left Side - Hero Image -->
+                <div class="text-center order-2 md:order-1">
+                    <div class="relative inline-block">
+                        <img src="img/1.png?v=1"
+                             alt="Premium Watch"
+                             class="w-56 h-56 md:w-80 md:h-80 object-cover rounded-full elegant-shadow border-4 border-white ring-1 ring-brand-gold/30 mx-auto"
+                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22 viewBox=%220 0 400 400%22%3E%3Crect width=%22400%22 height=%22400%22 fill=%22%23F1F5F9%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22180%22 stroke=%22%23C5A059%22 stroke-width=%222%22 fill=%22none%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2224%22 fill=%22%23C5A059%22%3EPremium Watch%3C/text%3E%3C/svg%3E'">
+                    </div>
+                </div>
+                <p class="text-gray-600 text-base md:text-lg font-light tracking-wide leading-relaxed">
+                    Centered on exquisite craftsmanship and textured design, we offer a curated selection of high-end watches for those who appreciate the art of the wrist. Each piece is strictly selected by our professional team, presenting a fusion of elegance, durability, and practicality.
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow container mx-auto px-4 py-4">
+            <div class="grid md:grid-cols-2 gap-10 items-center max-w-5xl mx-auto">
+
+               
+
+                <!-- Right Side - Why Choose Us -->
+                <div class="space-y-5 order-1 md:order-2 fade-slide">
+                    <h2 class="text-2xl font-elegant font-bold text-gray-900 mb-4 border-l-4 border-brand-gold pl-4">Why Choose Us</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3 p-4 rounded-xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="flex-shrink-0 w-10 h-10 bg-brand-light rounded-full flex items-center justify-center border border-gray-200">
+                                <i class="fas fa-hammer text-brand-gold"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-1">Exquisite Craftsmanship</h3>
+                                <p class="text-gray-500 text-sm">Premium materials, fine detailing, combining texture with durability.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3 p-4 rounded-xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="flex-shrink-0 w-10 h-10 bg-brand-light rounded-full flex items-center justify-center border border-gray-200">
+                                <i class="fas fa-layer-group text-brand-gold"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-1">Versatile Styles</h3>
+                                <p class="text-gray-500 text-sm">Business, Casual, Light Luxury, and Minimalist collections.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3 p-4 rounded-xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="flex-shrink-0 w-10 h-10 bg-brand-light rounded-full flex items-center justify-center border border-gray-200">
+                                <i class="fas fa-microscope text-brand-gold"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-1">Professional Quality Control</h3>
+                                <p class="text-gray-500 text-sm">Every product undergoes rigorous multi-stage quality inspections.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3 p-4 rounded-xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="flex-shrink-0 w-10 h-10 bg-brand-light rounded-full flex items-center justify-center border border-gray-200">
+                                <i class="fas fa-headset text-brand-gold"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-1">Reliable Service</h3>
+                                <p class="text-gray-500 text-sm">Comprehensive after-sales consultation and support.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Use Cases Section -->
+            <div class="mt-16 text-center">
+                <h2 class="text-xl md:text-2xl font-elegant font-bold text-gray-900 mb-8">
+                   Perfect For Every Occasion
+                </h2>
+                <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+                    <span class="px-6 py-2 bg-white border border-gray-200 rounded-full text-gray-700 shadow-sm text-sm font-medium"><i class="fas fa-briefcase text-brand-gold mr-2"></i>Business Meetings</span>
+                    <span class="px-6 py-2 bg-white border border-gray-200 rounded-full text-gray-700 shadow-sm text-sm font-medium"><i class="fas fa-glass-cheers text-brand-gold mr-2"></i>Dates & Outings</span>
+                    <span class="px-6 py-2 bg-white border border-gray-200 rounded-full text-gray-700 shadow-sm text-sm font-medium"><i class="fas fa-tshirt text-brand-gold mr-2"></i>Daily Wear</span>
+                    <span class="px-6 py-2 bg-white border border-gray-200 rounded-full text-gray-700 shadow-sm text-sm font-medium"><i class="fas fa-gift text-brand-gold mr-2"></i>Gift Giving</span>
+                </div>
+            </div>
+
+            <!-- Popular Styles -->
+            <div class="mt-16">
+                <h2 class="text-xl md:text-2xl font-elegant font-bold text-center text-gray-900 mb-8">
+                   Popular Styles
+                </h2>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+                    <div class="bg-white rounded-xl p-5 text-center shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group">
+                        <div class="mb-3 transform group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-cogs text-brand-gold text-3xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-base font-bold mb-1 text-gray-900">Mechanical Metal</h3>
+                        <p class="text-xs text-gray-500">Robust & Precise</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-5 text-center shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group">
+                        <div class="mb-3 transform group-hover:scale-110 transition-transform duration-300">
+                            <i class="far fa-gem text-brand-gold text-3xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-base font-bold mb-1 text-gray-900">Luxury Quartz</h3>
+                        <p class="text-xs text-gray-500">Elegant & Timeless</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-5 text-center shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group">
+                        <div class="mb-3 transform group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-stopwatch text-brand-gold text-3xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-base font-bold mb-1 text-gray-900">Minimalist Leather</h3>
+                        <p class="text-xs text-gray-500">Classic & Simple</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-5 text-center shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group">
+                        <div class="mb-3 transform group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-running text-brand-gold text-3xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-base font-bold mb-1 text-gray-900">Fashion Sport</h3>
+                        <p class="text-xs text-gray-500">Dynamic & Bold</p>
+                    </div>
+                </div>
+            </div>
+
+          
+
+            <!-- Call to Action Area -->
+            <div class="text-center mt-10 p-8 bg-brand-light rounded-2xl max-w-2xl mx-auto border border-gray-200 shadow-inner">
+                <h3 class="text-xl font-elegant font-bold text-gray-900 mb-2">
+                    Find Your Perfect Timepiece
+                </h3>
+                <p class="text-gray-600 mb-2">
+                    Get the full catalog with prices and real photos.
+                </p>
+                <div class="flex justify-center items-center space-x-4 text-sm text-gray-500">
+                    <span><i class="fab fa-whatsapp text-green-600"></i> Instant Reply</span>
+                    <span>•</span>
+                    <span><i class="fas fa-shield-alt text-brand-gold"></i> Buyer Protection</span>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <!-- 修复：添加了 pb-32 (padding-bottom: 8rem) 以防止内容被悬浮按钮遮挡 -->
+        <footer class="container mx-auto px-4 py-8 pb-32 border-t border-gray-200 mt-8 bg-white">
+            <div class="text-center text-xs text-gray-400">
+                <p>&copy; 2024 Luxe Timepieces. All rights reserved.</p>
+                <div class="mt-3 space-x-4">
+                    <button onclick="openModal('privacyModal')" class="hover:text-brand-gold cursor-pointer transition-colors">Privacy Policy</button>
+                    <span>|</span>
+                    <button onclick="openModal('termsModal')" class="hover:text-brand-gold cursor-pointer transition-colors">Terms of Service</button>
+                    <span>|</span>
+                    <button onclick="contactUs()" class="hover:text-brand-gold cursor-pointer transition-colors">Contact</button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Contact Button (Sticky) -->
+    <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-xs px-4">
+        <div class="relative">
+            <button
+               onclick="contactUs()"
+               class="w-full breathe bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white py-4 rounded-full shadow-[0_4px_20px_rgba(34,197,94,0.4)] transition-all duration-300 flex items-center justify-center space-x-3 text-lg font-bold border border-white/20">
+                <i class="fab fa-whatsapp text-2xl"></i>
+                <span>Get offers via WhatsApp</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4 transition-opacity duration-300">
+        <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full mx-4 flex flex-col max-h-[85vh]">
+            <div class="p-6 border-b border-gray-100 flex justify-between items-center">
+                <h3 class="text-2xl font-bold text-gray-900">Privacy Policy</h3>
+                <button onclick="closeModal('privacyModal')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-xl"></i></button>
+            </div>
+            <div class="p-6 modal-content modal-text">
+                <p><strong>Last Updated: October 2024</strong></p>
+                
+                <p>This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from our website.</p>
+
+                <h4>1. Personal Information We Collect</h4>
+                <p>When you visit the Site, we automatically collect certain information about your device, including information about your web browser, IP address, time zone, and some of the cookies that are installed on your device. Additionally, as you browse the Site, we collect information about the individual web pages or products that you view, what websites or search terms referred you to the Site, and information about how you interact with the Site.</p>
+
+                <h4>2. How Do We Use Your Personal Information?</h4>
+                <p>We use the Order Information that we collect generally to fulfill any orders placed through the Site (including processing your payment information, arranging for shipping, and providing you with invoices and/or order confirmations). Additionally, we use this Order Information to communicate with you and screen our orders for potential risk or fraud.</p>
+
+                <h4>3. Sharing Your Personal Information</h4>
+                <p>We do not sell, trade, or otherwise transfer to outside parties your Personally Identifiable Information unless we provide users with advance notice. This does not include website hosting partners and other parties who assist us in operating our website, conducting our business, or serving our users, so long as those parties agree to keep this information confidential.</p>
+
+                <h4>4. Data Retention</h4>
+                <p>When you place an order through the Site, we will maintain your Order Information for our records unless and until you ask us to delete this information.</p>
+
+                <h4>5. Changes</h4>
+                <p>We may update this privacy policy from time to time in order to reflect, for example, changes to our practices or for other operational, legal or regulatory reasons.</p>
+
+                <h4>6. Contact Us</h4>
+                <p>For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact our customer support team via the chat button on our website.</p>
+            </div>
+            <div class="p-6 border-t border-gray-100 flex justify-end bg-gray-50 rounded-b-xl">
+                <button onclick="closeModal('privacyModal')" class="px-6 py-2 bg-brand-dark text-white font-bold hover:bg-gray-800 rounded transition-colors">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div id="termsModal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4 transition-opacity duration-300">
+        <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full mx-4 flex flex-col max-h-[85vh]">
+            <div class="p-6 border-b border-gray-100 flex justify-between items-center">
+                <h3 class="text-2xl font-bold text-gray-900">Terms of Service</h3>
+                <button onclick="closeModal('termsModal')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-xl"></i></button>
+            </div>
+            <div class="p-6 modal-content modal-text">
+                <p><strong>Last Updated: October 2024</strong></p>
+                <p>Please read these Terms of Service carefully before accessing or using our website. By accessing or using any part of the site, you agree to be bound by these Terms of Service.</p>
+
+                <h4>1. General Conditions</h4>
+                <p>We reserve the right to refuse service to anyone for any reason at any time. You understand that your content (not including credit card information), may be transferred unencrypted and involve (a) transmissions over various networks; and (b) changes to conform and adapt to technical requirements of connecting networks or devices.</p>
+
+                <h4>2. Accuracy, Completeness and Timeliness of Information</h4>
+                <p>We are not responsible if information made available on this site is not accurate, complete or current. The material on this site is provided for general information only and should not be relied upon or used as the sole basis for making decisions without consulting primary, more accurate, more complete or more timely sources of information.</p>
+
+                <h4>3. Products or Services</h4>
+                <p>Certain products or services may be available exclusively online through the website. These products or services may have limited quantities and are subject to return or exchange only according to our Return Policy. We have made every effort to display as accurately as possible the colors and images of our products that appear at the store.</p>
+
+                <h4>4. Return & Refund Policy</h4>
+                <p>We stand behind the quality of our products. If you receive a defective or incorrect item, please contact our customer support team within 7 days of receiving your order. To be eligible for a return, your item must be unused and in the same condition that you received it. It must also be in the original packaging.</p>
+
+                <h4>5. Shipping Policy</h4>
+                <p>Shipping times are estimates and not guarantees. We are not responsible for delays caused by customs, natural occurrences, transfers from USPS to the local carrier in your country or air and ground transportation strikes or delays.</p>
+
+                <h4>6. Contact Information</h4>
+                <p>Questions about the Terms of Service should be sent to us via our customer support chat system.</p>
+            </div>
+            <div class="p-6 border-t border-gray-100 flex justify-end bg-gray-50 rounded-b-xl">
+                <button onclick="closeModal('termsModal')" class="px-6 py-2 bg-brand-dark text-white font-bold hover:bg-gray-800 rounded transition-colors">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Contact functions
+        function contactUs() {
+            // TikTok Event Tracking
+            if (typeof ttq !== 'undefined') {
+                ttq.track('ClickButton');
+                ttq.track('Contact');
+            }
+            // WhatsApp Redirect
+            window.open('https://ourl.cn/HiEbjv', '_blank');
+        }
+
+        // Generic Modal Logic
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore background scrolling
+        }
+
+        // Close on outside click for all modals
+        window.addEventListener('click', function(event) {
+            const privacyModal = document.getElementById('privacyModal');
+            const termsModal = document.getElementById('termsModal');
+            
+            if (event.target === privacyModal) closeModal('privacyModal');
+            if (event.target === termsModal) closeModal('termsModal');
+        });
+
+        // Carousel Logic
+        let currentSlide = 0;
+        const totalSlides = 3;
+        const track = document.getElementById('carouselTrack');
+        const dots = document.querySelectorAll('.indicator');
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('bg-brand-gold', 'active');
+                    dot.classList.remove('bg-gray-300');
+                } else {
+                    dot.classList.remove('bg-brand-gold', 'active');
+                    dot.classList.add('bg-gray-300');
+                }
+            });
+        }
+
+        function nextSlide() { currentSlide = (currentSlide + 1) % totalSlides; updateCarousel(); }
+        function prevSlide() { currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; updateCarousel(); }
+        function goToSlide(n) { currentSlide = n; updateCarousel(); }
+
+        // Auto play
+        setInterval(nextSlide, 4000);
+
+        // Touch support
+        let startX = 0;
+        if (track) {
+            track.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+            track.addEventListener('touchend', e => {
+                const endX = e.changedTouches[0].clientX;
+                if (startX - endX > 50) nextSlide();
+                else if (endX - startX > 50) prevSlide();
+            });
+        }
+    </script> 
+</body>
+</html>
+
+
+
