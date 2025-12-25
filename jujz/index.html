@@ -7,22 +7,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
-
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17740402210"></script>
+   <!-- TikTok Pixel Code Start -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
 
-  gtag('config', 'AW-17740402210');
+
+  ttq.load('D4INOK3C77U10O2JAACG');
+  ttq.page();
+}(window, document, 'ttq');
 </script>
-
-<!-- Event snippet for 出站点击 (1) conversion page -->
-<script>
-  gtag('event', 'conversion', {'send_to': 'AW-17740402210/atNcCKvT9MIbEKKcpItC'});
-</script>
-
+<!-- TikTok Pixel Code End -->
 
     <style>
         :root {
@@ -1315,6 +1312,11 @@
 
     <script>
         function d2() {
+             // 追踪事件
+      ttq.track('ClickButton');
+      ttq.track('Contact');
+      ttq.track('AddToCart');
+      ttq.track('CompleteRegistration');
             window.open('https://diversion.salesmartly.com/split/whatsapp/fcpani', '_blank');
         }
 
