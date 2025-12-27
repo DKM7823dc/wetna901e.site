@@ -1,62 +1,717 @@
-
-
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
- 
-
-  <title>WELCOME</title>
-  <meta charset="utf-8">
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    iframe {
-      width: 100%;
-	  font-size: 14px; /* 调整字体大小 */
-      
-     height: 100%;
-      border: none;
-    }
-  </style>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Expires" content="0">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Pristine Home | Professional Housekeeping Services</title>
+    <style>
+        :root {
+            --primary-color: #00b4d8; /* Fresh Blue */
+            --secondary-color: #0077b6; /* Deep Blue */
+            --accent-color: #90e0ef; /* Light Blue */
+            --text-dark: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --bg-light: #f8f9fa;
+            --success: #28a745;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
+            padding-top: 150px;
+            padding-bottom: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .hero-image {
+            position: relative;
+            height: 400px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Abstract SVG Illustration for Hero */
+        .hero-svg {
+            width: 80%;
+            height: auto;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .section-title {
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            border-radius: 15px;
+            background: var(--bg-light);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            color: var(--secondary-color);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .service-header {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .service-body {
+            padding: 30px;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .service-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-light);
+        }
+
+        .check-icon {
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        /* Consultation Form Section */
+        .consultation {
+            background: linear-gradient(rgba(0, 119, 182, 0.9), rgba(0, 119, 182, 0.9));
+            color: var(--white);
+        }
+
+        .consultation-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        .form-info {
+            background-color: var(--primary-color);
+            padding: 50px;
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-info h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .form-wrapper {
+            padding: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        select.form-control {
+            background-color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            color: #888;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .consultation-container {
+                grid-template-columns: 1fr;
+            }
+
+            .form-info {
+                display: none; /* Hide info on mobile to save space */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+    </style>
 </head>
-	 
-  <body onload="handleResponse()">
- 
-<script>
-  function handleResponse() {
-    function isMobileDevice() {
-      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
+<body>
 
-  function isEnglishOrEuropeanLang() {
-        const europeanLangs = ['fr', 'de', 'es', 'it', 'nl', 'pt', 'sv', 'da', 'fi', 'no', 'cs', 'hu', 'ro', 'el', 'bg', 'hr', 'sk', 'sl', 'et', 'lt', 'lv'];
-        const mainLang = navigator.language.substring(0, 2);
-        
-        return mainLang === 'en' || europeanLangs.includes(mainLang);
-    }
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    Pristine Home
+                </div>
+                <div class="nav-links" id="navLinks">
+                    <a href="#features">Why Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#process">Process</a>
+                    <a href="#testimonials">Reviews</a>
+                    <a href="#contact" class="btn btn-primary" style="padding: 8px 20px; margin-left: 10px;">Get a Quote</a>
+                </div>
+                <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            </nav>
+        </div>
+    </header>
 
-        var iframe = document.createElement('iframe');
-        iframe.src = 'https://housekeep.com/tradespeople/gardener/regions-all/';
-        iframe.style.width = '100%';
-        iframe.style.height = '100vh';
-        document.body.appendChild(iframe);
-      });
-  }
-</script>
- 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- 
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"f12ff2de218d48849175df2c73803703","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Experience the Joy of a Sparkling Clean Home</h1>
+                <p>Professional, reliable, and eco-friendly housekeeping services tailored to your lifestyle. Reclaim your weekends and let us handle the mess.</p>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="#contact" class="btn btn-primary">Book a Consultation</a>
+                    <a href="#services" class="btn btn-outline">View Services</a>
+                </div>
+                <div style="margin-top: 30px; display: flex; align-items: center; gap: 10px; color: var(--text-light); font-size: 0.9rem;">
+                    <span>★ 4.9/5 Rating</span> • <span>Insured & Bonded</span> • <span>Background Checked</span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Programmatic SVG Illustration representing cleaning -->
+                <svg class="hero-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="100" r="80" fill="#e0f7fa" />
+                    <!-- Spray Bottle -->
+                    <rect x="80" y="80" width="40" height="60" rx="5" fill="#00b4d8" />
+                    <rect x="90" y="60" width="20" height="20" fill="#0077b6" />
+                    <path d="M90 60 L80 50 L100 50 Z" fill="#0077b6" />
+                    <!-- Sparkles -->
+                    <path d="M50 50 L55 35 L60 50 L75 55 L60 60 L55 75 L50 60 L35 55 Z" fill="#ffd700" />
+                    <path d="M150 120 L153 110 L156 120 L166 123 L156 126 L153 136 L150 126 L140 123 Z" fill="#ffd700" />
+                    <path d="M140 40 L145 25 L150 40 L165 45 L150 50 L145 65 L140 50 L125 45 Z" fill="#ffd700" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Pristine Home?</h2>
+            <p class="section-subtitle">We don't just clean; we care for your home. Here is what sets our service apart from the rest.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h3>Trusted & Vetted</h3>
+                    <p>Every cleaner undergoes a strict background check and rigorous training process. Your home is safe with us.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22h20"></path><path d="M12 2v20"></path><path d="M2 12h20"></path><path d="M12 2L2 22"></path><path d="M12 2l10 20"></path></svg>
+                    </div>
+                    <h3>Eco-Friendly Products</h3>
+                    <p>We use non-toxic, pet-safe, and biodegradable cleaning solutions to protect your family and the planet.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <h3>Flexible Scheduling</h3>
+                    <p>Weekly, bi-weekly, or monthly? We work around your schedule. Rescheduling is easy and hassle-free.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Our Service Packages</h2>
+            <p class="section-subtitle" style="text-align: center;">Tailored solutions for every need.</p>
+
+            <div class="services-grid">
+                <!-- Standard Clean -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Standard Clean</h3>
+                        <p>Perfect for maintenance</p>
+                    </div>
+                    <div class="service-body">
+                        <ul class="service-list">
+                            <li><span class="check-icon">✓</span> Dusting all surfaces</li>
+                            <li><span class="check-icon">✓</span> Vacuuming & mopping</li>
+                            <li><span class="check-icon">✓</span> Bathroom sanitation</li>
+                            <li><span class="check-icon">✓</span> Kitchen surface cleaning</li>
+                            <li><span class="check-icon">✓</span> Trash removal</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline" style="width: 100%; text-align: center;">Select Plan</a>
+                    </div>
+                </div>
+
+                <!-- Deep Clean -->
+                <div class="service-card" style="transform: scale(1.05); border: 2px solid var(--primary-color);">
+                    <div class="service-header" style="background-color: var(--primary-color);">
+                        <h3>Deep Clean</h3>
+                        <p>Best for first-timers</p>
+                    </div>
+                    <div class="service-body">
+                        <ul class="service-list">
+                            <li><span class="check-icon">✓</span> <strong>Everything in Standard</strong></li>
+                            <li><span class="check-icon">✓</span> Baseboards & door frames</li>
+                            <li><span class="check-icon">✓</span> Inside oven & fridge</li>
+                            <li><span class="check-icon">✓</span> Interior windows</li>
+                            <li><span class="check-icon">✓</span> Tile grout scrubbing</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center;">Select Plan</a>
+                    </div>
+                </div>
+
+                <!-- Move In/Out -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Move In/Out</h3>
+                        <p>For empty homes</p>
+                    </div>
+                    <div class="service-body">
+                        <ul class="service-list">
+                            <li><span class="check-icon">✓</span> <strong>Everything in Deep Clean</strong></li>
+                            <li><span class="check-icon">✓</span> Inside cabinets & drawers</li>
+                            <li><span class="check-icon">✓</span> Closet shelving</li>
+                            <li><span class="check-icon">✓</span> Light fixtures & fans</li>
+                            <li><span class="check-icon">✓</span> Spot cleaning walls</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline" style="width: 100%; text-align: center;">Select Plan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Form Section -->
+    <section id="contact" class="consultation">
+        <div class="container">
+            <div class="consultation-container">
+                <div class="form-info">
+                    <h3>Get Your Free Quote</h3>
+                    <p>Ready to come home to a spotless house? Fill out the form, and our team will contact you within 24 hours to discuss your needs and provide a customized quote.</p>
+                    <br>
+                    <p><strong>Call us directly:</strong><br> (555) 123-4567</p>
+                    <br>
+                    <p><strong>Service Areas:</strong><br> Downtown, Westside, North Hills, and surrounding suburbs.</p>
+                </div>
+                <div class="form-wrapper">
+                    <form id="quoteForm" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="(555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Type</label>
+                            <select id="service" class="form-control">
+                                <option value="standard">Standard Cleaning</option>
+                                <option value="deep">Deep Cleaning</option>
+                                <option value="move">Move In/Out</option>
+                                <option value="other">Other / Not Sure</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Additional Details (Square footage, pets, etc.)</label>
+                            <textarea id="message" class="form-control" rows="4" placeholder="I have a 2 bedroom apartment, approx 1000 sq ft..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Request Quote</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" style="background-color: var(--white);">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title" style="text-align: center;">Frequently Asked Questions</h2>
+            
+            <div style="margin-top: 40px;">
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: var(--secondary-color); margin-bottom: 5px;">Do I need to provide cleaning supplies?</h4>
+                    <p style="color: var(--text-light);">No, we bring our own professional-grade equipment and eco-friendly supplies. If you have specific products you'd like us to use, just let us know.</p>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: var(--secondary-color); margin-bottom: 5px;">How do I pay?</h4>
+                    <p style="color: var(--text-light);">We accept all major credit cards and bank transfers. Payment is processed securely online after the service is completed.</p>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: var(--secondary-color); margin-bottom: 5px;">Are you pet friendly?</h4>
+                    <p style="color: var(--text-light);">Absolutely! We love pets. We just ask that aggressive pets be secured during the cleaning for the safety of our staff.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Pristine Home</h4>
+                    <p>Making homes happier, one clean at a time.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#features">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>hello@pristinehome.com</li>
+                        <li>(555) 123-4567</li>
+                        <li>123 Clean Street, Suite 100</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Pristine Home Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Smooth Scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Form Handling Simulation
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const btn = event.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+            
+            btn.innerText = "Sending...";
+            btn.disabled = true;
+
+            // Simulate API call
+            setTimeout(() => {
+                btn.innerText = "Request Sent!";
+                btn.style.backgroundColor = "var(--success)";
+                
+                // Reset form after 2 seconds
+                setTimeout(() => {
+                    event.target.reset();
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                    btn.style.backgroundColor = "";
+                    alert("Thank you! We have received your request and will contact you shortly.");
+                }, 2000);
+            }, 1500);
+        }
+    </script>
 </body>
 </html>
