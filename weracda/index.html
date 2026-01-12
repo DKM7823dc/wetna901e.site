@@ -3,27 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>跳转限制页面</title>
+    <title>按钮点击限制示例</title>
+	
+	
+    <script>
+        // 定义常量：10天 
+        const LIMIT_DAYS = 10;
+        const LIMIT_TIME = LIMIT_DAYS * 24 * 60 * 60 * 1000; 
+        const STORAGE_KEY = 'user_last_click_time';
+
+        function k2() {
+            const now = new Date().getTime();
+            const lastClick = localStorage.getItem(STORAGE_KEY);
+            const messageDiv = document.getElementById('message');
+
+            // 检查是否有记录
+            if (lastClick) {
+                const timePassed = now - parseInt(lastClick);
+                
+                // 如果时间差小于限制时间
+                if (timePassed < LIMIT_TIME) {
+                    // 计算还需要等待多久
+                    const timeLeft = LIMIT_TIME - timePassed;
+                    const daysLeft = Math.floor(timeLeft / (24 * 60 * 60 * 1000));
+                    const hoursLeft = Math.floor((timeLeft % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+                    
+                    messageDiv.textContent = `限制中：请在 ${daysLeft} 天 ${hoursLeft} 小时后再次尝试。`;
+                    console.log("点击被拦截：还在10天冷却期内");
+                    return; // 阻止后续代码执行
+                }
+            }
+
+            // 如果没有记录，或者时间已超过10天
+            // 1. 记录当前时间
+            localStorage.setItem(STORAGE_KEY, now);
+             
+            window.location.href = "https://www.qq.com";
+        }
+
+      
+    </script>
+	
+	
     <style>
-        body { padding: 50px; font-family: sans-serif; text-align: center; }
-        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
-        #message { margin-top: 20px; font-weight: bold; }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        #message {
+            margin-top: 15px;
+            color: #d9534f;
+            font-size: 14px;
+            min-height: 20px;
+        }
     </style>
 </head>
 <body>
 
-    <!-- 核心按钮 -->
-    <button onclick="k2()">点击跳转 (10天一次)</button>
-
-    <!-- 用于显示提示信息的区域 -->
-    <div id="message"></div>
-
-    <hr style="margin-top: 50px;">
-    
- 
-
-    <!-- 引入外部 JS 文件 -->
-    <script src="js/a.js"></script>
+    <div class="container">
+        <h2>访问限制测试</h2>
+        <p>此按钮每10天只能生效一次</p>
+        <!-- 调用 k2 方法 -->
+        <button id="myButton" onclick="k2()">跳转到 QQ.com</button>
+        <div id="message"></div>
+         
+    </div>
 
 </body>
 </html>
