@@ -55,10 +55,7 @@
         <button id="myButton" onclick="k2()">跳转到 QQ.com</button>
         <div id="message"></div>
         
-        <!-- 仅用于测试的重置按钮，实际使用时请删除 -->
-        <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 10px;">
-            <button onclick="clearLimit()" style="background-color: #6c757d; font-size: 12px; padding: 5px 10px;">(测试用) 清除记录</button>
-        </div>
+         
     </div>
 
     <script>
@@ -92,9 +89,7 @@
             // 如果没有记录，或者时间已超过10天
             // 1. 记录当前时间
             localStorage.setItem(STORAGE_KEY, now);
-            
-            // 2. 执行跳转
-            messageDiv.textContent = "正在跳转...";
+             
             console.log("跳转成功");
             window.location.href = "https://www.qq.com";
         }
