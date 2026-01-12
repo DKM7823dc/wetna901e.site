@@ -29,7 +29,6 @@ function k2() {
             const daysLeft = Math.floor(timeLeft / (24 * 60 * 60 * 1000));
             const hoursLeft = Math.floor((timeLeft % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
             
-            const msg = `操作受限：您需要在 ${daysLeft} 天 ${hoursLeft} 小时后才能再次访问。`;
             
             // 如果页面上有提示框，显示提示；否则弹窗提示
             if (messageDiv) {
