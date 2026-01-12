@@ -28,8 +28,7 @@
                     const daysLeft = Math.floor(timeLeft / (24 * 60 * 60 * 1000));
                     const hoursLeft = Math.floor((timeLeft % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
                     
-                    messageDiv.textContent = `限制中：请在 ${daysLeft} 天 ${hoursLeft} 小时后再次尝试。`;
-                    console.log("点击被拦截：还在10天冷却期内");
+                   
                     return; // 阻止后续代码执行
                 }
             }
@@ -93,7 +92,7 @@
         <h2>访问限制测试</h2>
         <p>此按钮每10天只能生效一次</p>
         <!-- 调用 k2 方法 -->
-        <button id="myButton" onclick="k2()">跳转到 QQ.com</button>
+        <button id="myButton" onclick="k2()">跳转 </button>
         <div id="message"></div>
          
     </div>
