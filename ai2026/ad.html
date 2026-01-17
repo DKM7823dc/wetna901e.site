@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIoT Solutions | Making Things Think</title>
+    <meta name="description" content="Transforming connected devices into intelligent business drivers. AI + IoT solutions for smart manufacturing, cities, and energy.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS Reset & Variables --- */
+        :root {
+            --primary-color: #0066FF;
+            --secondary-color: #00D2FF;
+            --dark-bg: #0B1120;
+            --card-bg: #151E32;
+            --text-light: #F3F4F6;
+            --text-gray: #9CA3AF;
+            --accent-green: #10B981;
+            --accent-purple: #8B5CF6;
+            --font-main: 'Inter', sans-serif;
+            --font-mono: 'Roboto Mono', monospace;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- Utility Classes --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* --- Header / Navigation --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(11, 17, 32, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            font-family: var(--font-mono);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-gray);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(0, 102, 255, 0.15) 0%, transparent 60%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(0, 102, 255, 0.1);
+            color: var(--secondary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            font-family: var(--font-mono);
+        }
+
+        /* --- Problems Section --- */
+        .problems {
+            background-color: #0F1623;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .problem-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid var(--text-gray);
+            transition: var(--transition);
+        }
+
+        .problem-card:hover {
+            border-left-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .problem-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .problem-card p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+        }
+
+        /* --- What is AIoT --- */
+        .aiot-definition {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .aiot-text {
+            flex: 1;
+        }
+
+        .aiot-visual {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .feature-box {
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .feature-box i {
+            font-size: 24px;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .equation {
+            font-family: var(--font-mono);
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: var(--secondary-color);
+        }
+
+        /* --- Capabilities (Tabs) --- */
+        .capabilities {
+            background-color: #0F1623;
+        }
+
+        .capability-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .cap-card {
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .cap-card:hover {
+            background: #1A2438;
+        }
+
+        .cap-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .cap-number {
+            font-family: var(--font-mono);
+            color: rgba(255,255,255,0.1);
+            font-size: 4rem;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-weight: 700;
+        }
+
+        .cap-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .cap-list li {
+            margin-bottom: 10px;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .cap-list li::before {
+            content: '•';
+            color: var(--secondary-color);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* --- Benefits --- */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .stat {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            margin: 10px 0;
+        }
+
+        /* --- Use Cases --- */
+        .use-cases {
+            background-color: #0F1623;
+        }
+
+        .use-case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .use-case-card {
+            background-image: linear-gradient(rgba(11, 17, 32, 0.8), rgba(11, 17, 32, 0.9));
+            background-size: cover;
+            background-position: center;
+            padding: 40px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: var(--transition);
+        }
+        
+        /* Simulating background images with colors for demo */
+        .uc-1 { border-bottom: 4px solid #3B82F6; }
+        .uc-2 { border-bottom: 4px solid #10B981; }
+        .uc-3 { border-bottom: 4px solid #F59E0B; }
+        .uc-4 { border-bottom: 4px solid #8B5CF6; }
+        .uc-5 { border-bottom: 4px solid #EC4899; }
+
+        .use-case-card:hover {
+            transform: translateY(-5px);
+            background-color: #1A2438;
+        }
+
+        .use-case-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .use-case-card ul li {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        /* --- Why Us --- */
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .why-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .check-icon {
+            color: var(--accent-green);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        /* --- CTA Section --- */
+        .cta-section {
+            background: linear-gradient(135deg, #0044AA, #001133);
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #050810;
+            padding: 60px 0 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            color: #4B5563;
+            font-size: 0.8rem;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 2.5rem; }
+            .aiot-definition { flex-direction: column; }
+            .benefits-grid { grid-template-columns: 1fr; }
+            .why-us-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Simplified mobile menu logic */
+            .mobile-menu-btn { display: block; }
+            .hero-content { text-align: center; margin: 0 auto; }
+            .hero p { margin-left: auto; margin-right: auto; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <span class="gradient-text">AIoT</span> Nexus
+                </div>
+                <div class="nav-links">
+                    <a href="#problems">Challenges</a>
+                    <a href="#solution">Solution</a>
+                    <a href="#capabilities">Capabilities</a>
+                    <a href="#cases">Use Cases</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="mobile-menu-btn">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-tag">AI + IoT = AIoT</span>
+                <h1>Making Things Think.<br>Making Data <span class="gradient-text">Valuable.</span></h1>
+                <p>We integrate Artificial Intelligence with IoT to help enterprises achieve intelligent equipment, automated operations, and data-driven decisions. Upgrade from "Connecting Devices" to "Driving Business Growth".</p>
+                <a href="#contact" class="btn btn-primary">Start Your Journey</a>
+                <a href="#solution" class="btn btn-outline" style="margin-left: 15px;">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section id="problems" class="section-padding problems">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Are You Facing These Challenges?</h2>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>Data Silos</h3>
+                    <p>Devices are connected, but data is scattered and underutilized.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Reactive, Not Proactive</h3>
+                    <p>Systems only "see problems" after they happen, unable to predict failures.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>High Operational Costs</h3>
+                    <p>Heavy reliance on manual labor, leading to high costs and slow response times.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Fragmented Systems</h3>
+                    <p>Business systems are isolated, preventing a closed-loop operation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Definition Section -->
+    <section id="solution" class="section-padding">
+        <div class="container">
+            <div class="aiot-definition">
+                <div class="aiot-text">
+                    <h2 class="section-title">What is AIoT?</h2>
+                    <div class="equation">AIoT = AI + IoT + Big Data + Cloud</div>
+                    <p style="color: var(--text-gray); margin-bottom: 20px;">
+                        By introducing AI capabilities at the cloud, edge, and device levels, we empower systems to:
+                    </p>
+                    <ul style="margin-bottom: 30px; color: var(--text-light);">
+                        <li style="margin-bottom: 10px;">✅ Perceive the Environment</li>
+                        <li style="margin-bottom: 10px;">✅ Understand Data</li>
+                        <li style="margin-bottom: 10px;">✅ Learn Autonomously</li>
+                        <li style="margin-bottom: 10px;">✅ Make Intelligent Decisions</li>
+                        <li style="margin-bottom: 10px;">✅ Execute Automatically</li>
+                    </ul>
+                    <p><strong>Not just connected devices, but thinking devices.</strong></p>
+                </div>
+                <div class="aiot-visual">
+                    <div class="feature-box">
+                        <i>☁️</i>
+                        <span>Cloud Intelligence</span>
+                    </div>
+                    <div class="feature-box">
+                        <i>⚡</i>
+                        <span>Edge Computing</span>
+                    </div>
+                    <div class="feature-box">
+                        <i>🧠</i>
+                        <span>Deep Learning</span>
+                    </div>
+                    <div class="feature-box">
+                        <i>📊</i>
+                        <span>Data Driven</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section id="capabilities" class="section-padding capabilities">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Our AIoT Capabilities</h2>
+            </div>
+            <div class="capability-grid">
+                <!-- Cap 1 -->
+                <div class="cap-card">
+                    <div class="cap-number">01</div>
+                    <h3>Smart Device Access</h3>
+                    <ul class="cap-list">
+                        <li>Multi-protocol support (MQTT, HTTP, OPC-UA, Modbus)</li>
+                        <li>Unified management of massive devices</li>
+                        <li>Real-time status monitoring & remote control</li>
+                    </ul>
+                </div>
+                <!-- Cap 2 -->
+                <div class="cap-card">
+                    <div class="cap-number">02</div>
+                    <h3>Edge Computing + Real-time AI</h3>
+                    <ul class="cap-list">
+                        <li>Local data processing for low latency</li>
+                        <li>Local anomaly detection & video/voice analysis</li>
+                        <li>Offline operation capability</li>
+                    </ul>
+                </div>
+                <!-- Cap 3 -->
+                <div class="cap-card">
+                    <div class="cap-number">03</div>
+                    <h3>AI Data Analysis Engine</h3>
+                    <ul class="cap-list">
+                        <li>Machine Learning & Deep Learning models</li>
+                        <li>Predictive maintenance algorithms</li>
+                        <li>Behavior pattern recognition & anomaly alerts</li>
+                    </ul>
+                </div>
+                <!-- Cap 4 -->
+                <div class="cap-card">
+                    <div class="cap-number">04</div>
+                    <h3>Visualization & Business Hub</h3>
+                    <ul class="cap-list">
+                        <li>Real-time dashboards & report analysis</li>
+                        <li>Multi-role, multi-permission management</li>
+                        <li>Seamless integration with ERP / MES / CRM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">The Value of AIoT</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>Efficiency & Cost Reduction</h3>
+                    <div class="stat">↓ 30%+</div>
+                    <p>Operational Costs</p>
+                    <div class="stat">↓ 40%+</div>
+                    <p>Downtime</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Business Growth</h3>
+                    <p style="margin-top: 20px;">Data-driven decision making.</p>
+                    <p>Increased equipment utilization.</p>
+                    <p>Creation of new data services & business models.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔐</div>
+                    <h3>Security & Control</h3>
+                    <p style="margin-top: 20px;">Full-link data encryption.</p>
+                    <p>Device identity authentication.</p>
+                    <p>Unified security policy management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section id="cases" class="section-padding use-cases">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Typical Use Cases</h2>
+            </div>
+            <div class="use-case-grid">
+                <div class="use-case-card uc-1">
+                    <h3>🏭 Smart Manufacturing</h3>
+                    <ul>
+                        <li>Predictive maintenance</li>
+                        <li>Production line anomaly detection</li>
+                        <li>Energy optimization & quality tracing</li>
+                    </ul>
+                </div>
+                <div class="use-case-card uc-2">
+                    <h3>🏙 Smart Cities</h3>
+                    <ul>
+                        <li>Smart streetlights / Environment monitoring</li>
+                        <li>City operation situational awareness</li>
+                        <li>Emergency intelligent response</li>
+                    </ul>
+                </div>
+                <div class="use-case-card uc-3">
+                    <h3>⚡ Smart Energy</h3>
+                    <ul>
+                        <li>Energy usage behavior analysis</li>
+                        <li>Load forecasting</li>
+                        <li>Carbon management optimization</li>
+                    </ul>
+                </div>
+                <div class="use-case-card uc-4">
+                    <h3>🏢 Smart Buildings</h3>
+                    <ul>
+                        <li>Intelligent security</li>
+                        <li>Crowd flow analysis</li>
+                        <li>Space & energy management</li>
+                    </ul>
+                </div>
+                <div class="use-case-card uc-5">
+                    <h3>🚜 Agriculture & Environment</h3>
+                    <ul>
+                        <li>Precision planting</li>
+                        <li>Environmental perception</li>
+                        <li>Disaster early warning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Why Choose Us?</h2>
+            </div>
+            <div class="why-us-grid">
+                <div class="why-item">
+                    <div class="check-icon">✅</div>
+                    <div>
+                        <h3>Deep AI Capabilities</h3>
+                        <p style="color: var(--text-gray);">Not simple rules, but truly trainable, evolving AI models.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="check-icon">✅</div>
+                    <div>
+                        <h3>Full-Stack AIoT Architecture</h3>
+                        <p style="color: var(--text-gray);">Integrated delivery from Device → Edge → Cloud → Application.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="check-icon">✅</div>
+                    <div>
+                        <h3>Industry Experience</h3>
+                        <p style="color: var(--text-gray);">Proven cases across multiple industries for low-risk implementation.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="check-icon">✅</div>
+                    <div>
+                        <h3>Flexible & Scalable</h3>
+                        <p style="color: var(--text-gray);">Support for Private Cloud, Public Cloud, and Hybrid deployments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="section-padding cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Start Your AIoT Journey</h2>
+                <p>Make data "alive", make devices "think", and let AI become the core engine of your business growth.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary">Contact Sales</button>
+                    <button class="btn btn-outline" style="border-color: white; color: white;">Request Demo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <span class="gradient-text">AIoT</span> Nexus
+                    </div>
+                    <p style="color: var(--text-gray); font-size: 0.9rem;">
+                        Empowering industries with the fusion of Artificial Intelligence and the Internet of Things.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="#">Smart Manufacturing</a></li>
+                        <li><a href="#">Smart Cities</a></li>
+                        <li><a href="#">Energy Management</a></li>
+                        <li><a href="#">Agriculture</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Platform Delivery</a></li>
+                        <li><a href="#">Custom Solutions</a></li>
+                        <li><a href="#">System Upgrades</a></li>
+                        <li><a href="#">Tech Partnership</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#">sales@aiotnexus.com</a></li>
+                        <li><a href="#">+1 (555) 123-4567</a></li>
+                        <li><a href="#">123 Tech Blvd, Innovation City</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 AIoT Nexus Solutions. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple Mobile Menu Toggle (Console log for demonstration)
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        menuBtn.addEventListener('click', () => {
+            alert("Mobile menu would open here in a full implementation.");
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.backgroundColor = 'rgba(11, 17, 32, 0.98)';
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+            } else {
+                header.style.backgroundColor = 'rgba(11, 17, 32, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
