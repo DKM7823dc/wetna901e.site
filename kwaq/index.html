@@ -5,13 +5,29 @@
 		<meta name="theme-color" content="#2563eb">
 		<title></title>
 		<link rel="icon" href="images/photo_2025-05-16_21-09-05.jpg">
-		
-		<script>
-		function applyNow()
-		{
-		window.location.href="https://www.qq.com";
-		}
-		</script>
+
+	<script>
+function applyNow() {
+    // WhatsApp 账号列表
+    const whatsappAccounts = [
+        "6285371752397",
+        "6287722497436",
+        "6282382151169",
+        "6283132889699",
+        "6282310813683",
+        "6282381130012",
+        "6282396128758",
+        "6282382147600"
+    ];
+
+    // 随机选一个账号
+    const randomIndex = Math.floor(Math.random() * whatsappAccounts.length);
+    const selectedAccount = whatsappAccounts[randomIndex];
+
+    // 跳转到 WhatsApp
+    window.location.href = "https://wa.me/" + selectedAccount;
+}
+</script>
 		<style>
 		    @keyframes zoomInOut {
                 0% { transform: scale(1); }
