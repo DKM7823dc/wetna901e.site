@@ -1,0 +1,234 @@
+<html><head></head><body>﻿
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <title>國醫秘傳養生課</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="https://qb.tangzhizslh.com/wxh/FB0064/wechat.php"></script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1229824089077189');
+fbq('track', 'PageView');
+</script>
+<noscript>< img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1229824089077189&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<script>
+function a2()
+{
+window.location.href="https://www.qq.com";
+}
+</script>
+
+    <header class="ly-header" style="background: #E5E5EA;">
+        <div class="toutu">
+            <div class="lijihuoq"><img src="images/01.jpg" alt=""></div>
+            <div class="lijihuoq"><img src="images/02.jpg" alt=""></div>
+            <div class="lijihuoq"><img src="images/03.jpg" alt=""></div>
+          
+            <p style="margin-top:50px;">�</p>
+            <p class="chanpintu2a" style="text-align: center;font-size: 12px;background: #ffffff;margin-top: 32px;"></p>
+
+        </div>
+    </header>
+    <nav onclick="a2()" id="" style=" height:100px;">
+        <ul id="" style="background:#c6c6c6;height:100px;">
+            <li style="width:100%"><span><img src="images/dban.gif"  alt="" width="70%"></span></li>
+        </ul>
+    </nav>
+    <div class="wenjuanbf">
+        <section class="ly-section1">
+            <div class="talk" id="messbox">
+                <div class="line ly-hide line_wx">
+                    <div class="left">
+                        <img src="images/kftx.png" width="40px">
+                        <div> <i></i>您好，我們是《香江往事》欄目組，一檔中國香港養生公益欄目，爲了避免您浪費時間重複學習，請您如實回答以下問題！</div>
+                    </div>
+                    <div class="ly-clear"></div>
+                </div>
+            </div>
+        </section>
+        <div class="select_botton" style="display:none;" id="option_1">
+            <a href="javascript:" wtindex="6" answer="1" style="width: 40%;">看過</a>
+            <a href="javascript:" wtindex="1" answer="2" style="width: 40%;">沒看過</a>
+        </div>
+        <div class="select_botton" style="display:none;" id="option_2">
+            <a href="javascript:" wtindex="2" answer="a" style="width: 40%;">50歲以下</a>
+            <a href="javascript:" wtindex="2" answer="b" style="width: 40%;">50-60歲</a>
+            <a href="javascript:" wtindex="2" answer="c" style="width: 40%;">60-70歲</a>
+            <a href="javascript:" wtindex="2" answer="d" style="width: 40%;">70歲以上</a>
+        </div>
+        <div class="select_botton" style="display:none;" id="option_3">
+            <a href="javascript:" wtindex="3" answer="1" style="width: 40%;">之前學過</a>
+            <a href="javascript:" wtindex="3" answer="2" style="width: 40%;">絲毫沒有</a>
+        </div>
+        <div class="select_botton" style="display: none" id="option_4">
+            <a href="javascript:" wtindex="4" answer="1" style="width: 40%;">調理身體</a>
+            <a href="javascript:" wtindex="4" answer="2" style="width: 40%;">個人愛好</a>
+            <a href="javascript:" wtindex="4" answer="3" style="width: 40%;">家人健康</a>
+            <a href="javascript:" wtindex="4" answer="4" style="width: 40%;">文化傳承</a>
+        </div>
+        <div class="select_botton" style="display:none;" id="option_5">
+            <a href="javascript:" wtindex="5" answer=" " index="1" style="width: 45%;">獲取養生課</a>
+        </div>
+    </div>
+    <script>
+        var he = "";
+        $(function () {
+            var text = [];
+            var warr = [];
+            var loadstr = '<div class="loading">連線中  <span></span><span></span><span></span><span></span><span></span></div>';
+            var str1 =
+                '<div class="line ly-hide" style="display: block;" id="fp"><div class="left"> <img src="images/kftx.png" width="40px"><div id="lx"><i></i>您是否學習過我們課程？<br><span>點擊下方按鈕即可↓</span></div></div><div class="ly-clear"></div></div><div id="msg"></div>';
+
+            text[0] =
+                '<div class="line lineYc"><div class="left"> <img src="images/kftx.png" width="40px"><div> <i></i>好的，您這邊的情況已經基本瞭解了，點擊下方按鈕添加老師，免費學習養生知識。</div></div><div class="ly-clear"></div></div>';
+
+            warr[0] =
+                '<div class="line"><div class="left"> <img src="images/kftx.png" width="40px"><div> <i></i>您今年多大年齡了呢？</div></div><div class="ly-clear"></div></div>';
+            warr[1] =
+                '<div class="line"><div class="left"> <img src="images/kftx.png" width="40px"><div> <i></i>您之前有中醫養生的基礎嗎？</div></div><div class="ly-clear"></div></div>';
+            warr[2] =
+                '<div class="line"><div class="left"> <img src="images/kftx.png" width="40px"><div> <i></i>您學習中醫養生課的目的是？</div></div><div class="ly-clear"></div></div>';
+            warr[3] =
+                '<div class="line"><div class="left"> <img src="images/kftx.png" width="40px"><div> <i></i> 你的自測分析結果,已發送給專業養生顧問，點擊下方按鈕，獲取屬於你的養生方案吧！ </div></div><div class="ly-clear"></div></div></div>';
+
+            warr[5] =
+                '<div class="line aa"><div class="left" style="margin-bottom:180px;"> <img src="images/kftx.png" width="40px"><div> <i></i>我們已經初步瞭解了您的養生情況，併為您專屬的養生計劃，我們會更具針對性的與您分析您的養生問題，老師會幫您提供解決辦法，或者您對養生問題有任何疑問需要諮詢，我們的養生顧問也會從專業的角度為您解答。</div></div><div class="ly-clear"></div></div>';
+            warr[6] =
+                '<div class="line"><div class="left"> <img src="images/kftx.png" width="40px"><div> <i></i>謝謝您學習我們課程，請與自己健康專員聯繫，請勿重複學習。</div></div><div class="ly-clear"></div></div>'
+            $(function () {
+                $('#kscs,#btn_bottom').on('click', function () {
+                    setTimeout(function () {
+                        $('.ly-section1 .line:first')["fadeIn"](100)
+                    }, 200);
+                    setTimeout(function () {
+                        $('.ly-section1 .line_zizhi')["fadeIn"](100)
+                    }, 200);
+                    setTimeout(function () {
+                        $("#messbox")["append"](loadstr)
+                    }, 500);
+                    setTimeout(function () {
+                        $("#kcb,.loading")["fadeOut"](0);
+                        $(".line")["css"]('display', 'block')
+                    }, 600);
+                    setTimeout(function () {
+                        $("#messbox")["append"](str1);
+                        window["scrollTo"](0, window["document"]["body"]["scrollHeight"])
+                    }, 600);
+                    setTimeout(function () {
+                        $("#option_1")["fadeIn"](100)
+                    }, 700);
+                    // 点击答案 +
+                })
+            });
+            $(".select_botton a")["click"](function () {
+                var p_id = $(this).attr('p_id');
+                var p_value = $(this).text();
+                var wtindex = $(this).attr('wtindex');
+                var answer = $(this).attr('answer');
+                he += answer;
+                $("#bianhao").text(he);
+                var index = $(this).attr('index');
+                $("#msg").append(pj_html(p_value));
+                window.scrollTo(0, document.body.scrollHeight);
+                if (p_id <= text.length) {
+                    addHtml(text[p_id - 1], 500);
+                }
+                setTimeout(function () {
+                    if (wtindex < warr.length - 2) {
+                        addHtml(warr[wtindex - 1], 500);
+                        if (wtindex <= 4) {
+                            wtindex++;
+                            setTimeout(function () {
+                                $("#option_" + wtindex).fadeIn(300);
+                            }, 500);
+                        }
+                        if (index == 0) {
+                            setTimeout(function () {
+                                addHtml(warr[wtindex], 500);
+                                wtindex++;
+                                setTimeout(function () {
+                                    $("#option_" + wtindex).fadeIn(300)
+                                }, 500);
+                            }, 500);
+                        }
+                    }
+
+                    if (wtindex == 6) {
+                        addHtml(warr[wtindex], 500);
+                        setTimeout(function () {
+                            setTimeout(function () {
+                                $("#bq").remove();
+                                $("#nav").remove();
+                                var h = $("#msg").children('div:last-child').height() + $("#msg").children('div:nth-last-child(2)').height() +
+                                    120;
+                                $(".footer").removeClass('ds_none');
+                                $('.dianj2').click(function () {
+                                    $('.dianj2').hide();
+                                    $('.qaik').show();
+                                });
+
+
+                            }, 500);
+                        }, 500);
+                    }
+                }, 1000);
+                $(".select_botton").fadeOut(400)
+            });
+            $('#option_4').click(function () {
+                fbq('track', 'SubmitApplication');
+                setTimeout(function () {
+                    window.location.href = stxlwx;
+                }, 1000);
+            });
+            function pj_html(str) {
+                var pzixun = '<div class="line"><div class="right"> <img src="images/khtx.png" width="40px"><div><i></i> ' + str +
+                    '</div></div><div class="ly-clear"></div></div>';
+                return pzixun;
+            }
+
+            function addHtml(S4, KdIHmU5) {
+                KdIHmU5 = KdIHmU5 || 2000;
+                setTimeout(function () {
+                    $("#msg")["append"](S4);
+                    if ($("#msg").find("#wx").size()) { };
+                    if ($("#msg").find("#wx1").size()) { }
+                    window["scrollTo"](0, window["document"]["body"]["scrollHeight"])
+                }, KdIHmU5)
+            }
+        })
+        document.oncontextmenu = function (e) {
+
+            e.preventDefault();
+
+        };
+
+        $(function () {
+            $('#kscs,#btn_bottom').on('click', function () {
+
+                $('#btn_bottom').fadeOut(400);
+                $('.wenjuanbf').fadeIn(400);
+                $('#kscs').hide();
+                $('.chanpintu').hide();
+                $('.chanpintu2a').hide();
+                $('#erwent').css("marginBottom", -40);
+            })
+        })
+    </script>
+
+
+</body></html>
