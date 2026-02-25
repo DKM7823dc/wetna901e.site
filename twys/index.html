@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>探索台灣 - 遇見心的旅程</title>
+    
+    <!-- Google Fonts: Noto Sans TC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js for interactivity -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    },
+                    colors: {
+                        tw: {
+                            red: '#E63946',
+                            dark: '#1D3557',
+                            light: '#F1FAEE',
+                            blue: '#457B9D',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* 自定義淡入動畫 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* 隱藏滾動條但保持功能 */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 bg-stone-50 antialiased" x-data="{ scrolled: false, mobileMenu: false }" @scroll.window="scrolled = (window.pageYOffset > 50)">
+
+    <!-- Navigation -->
+    <nav :class="scrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-6'" class="fixed w-full z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold tracking-tighter flex items-center gap-2 group">
+                <span class="bg-tw-red text-white px-2 py-1 rounded text-lg transition-transform group-hover:scale-110">TW</span>
+                <span :class="scrolled ? 'text-gray-800' : 'text-white'" class="transition-colors">探索台灣</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#destinations" :class="scrolled ? 'text-gray-600 hover:text-tw-red' : 'text-white/90 hover:text-white'" class="transition-colors">熱門景點</a>
+                <a href="#culture" :class="scrolled ? 'text-gray-600 hover:text-tw-red' : 'text-white/90 hover:text-white'" class="transition-colors">文化體驗</a>
+                <a href="#itinerary" :class="scrolled ? 'text-gray-600 hover:text-tw-red' : 'text-white/90 hover:text-white'" class="transition-colors">行程規劃</a>
+                <a href="#contact" :class="scrolled ? 'text-gray-600 hover:text-tw-red' : 'text-white/90 hover:text-white'" class="transition-colors">聯絡我們</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button @click="mobileMenu = !mobileMenu" class="md:hidden focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl" :class="scrolled ? 'text-gray-800' : 'text-white'"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div x-show="mobileMenu" 
+             x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 -translate-y-2"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-150"
+             x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-2"
+             @click.away="mobileMenu = false"
+             class="md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100">
+            <div class="flex flex-col p-6 space-y-4 font-medium text-gray-600">
+                <a href="#destinations" @click="mobileMenu = false" class="hover:text-tw-red">熱門景點</a>
+                <a href="#culture" @click="mobileMenu = false" class="hover:text-tw-red">文化體驗</a>
+                <a href="#itinerary" @click="mobileMenu = false" class="hover:text-tw-red">行程規劃</a>
+                <a href="#contact" @click="mobileMenu = false" class="hover:text-tw-red">聯絡我們</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1470004914212-05527e49370b?q=80&w=2070&auto=format&fit=crop" alt="Taiwan Landscape" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-stone-50"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-up">
+            <h2 class="text-white text-lg md:text-xl font-medium tracking-[0.3em] mb-4 uppercase">Formosa Beautiful Island</h2>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+                遇見台灣<br />
+                <span class="text-tw-red">心</span>的旅程
+            </h1>
+            <p class="text-gray-200 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+                從繁華的台北街頭到靜謐的阿里山雲海，探索這座島嶼獨特的文化、美食與人情味。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#itinerary" class="px-8 py-4 bg-tw-red hover:bg-red-700 text-white rounded-full font-bold transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-2">
+                    開始規劃 <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#destinations" class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border border-white/30 rounded-full font-bold transition-all flex items-center justify-center gap-2">
+                    探索景點 <i class="fa-solid fa-camera"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Destinations Section -->
+    <section id="destinations" class="py-20 px-6 container mx-auto">
+        <div class="text-center mb-16">
+            <h3 class="text-tw-red font-bold tracking-wider mb-2 text-sm uppercase">Destinations</h3>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">必訪熱門景點</h2>
+            <div class="w-20 h-1 bg-tw-red mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Card 1 -->
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1542998966-260f562627e5?q=80&w=2070&auto=format&fit=crop" alt="Taipei 101" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-sm">
+                        <i class="fa-solid fa-location-dot text-tw-red"></i> 台北市
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">台北 101</h3>
+                    <p class="text-gray-600 text-sm mb-4 line-clamp-2">曾經的世界最高樓，俯瞰繁華都市夜景的最佳地點。結合現代建築美學與購物娛樂。</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">#地標</span>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">#夜景</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1559534606-2591667b8495?q=80&w=2070&auto=format&fit=crop" alt="Jiufen" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-sm">
+                        <i class="fa-solid fa-location-dot text-tw-red"></i> 新北市
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">九份老街</h3>
+                    <p class="text-gray-600 text-sm mb-4 line-clamp-2">掛滿紅燈籠的山城，彷彿走進《千與千尋》的世界。品嚐芋圓，欣賞絕美海景。</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">#老街</span>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">#美食</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1638260790074-88404285743c?q=80&w=2070&auto=format&fit=crop" alt="Alishan" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-sm">
+                        <i class="fa-solid fa-location-dot text-tw-red"></i> 嘉義縣
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">阿里山</h3>
+                    <p class="text-gray-600 text-sm mb-4 line-clamp-2">搭乘森林小火車，穿梭於千年神木之間。欣賞舉世聞名的日出、雲海與晚霞。</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">#自然</span>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">#日出</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1571474004502-c18476e81b79?q=80&w=2071&auto=format&fit=crop" alt="Taroko" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-sm">
+                        <i class="fa-solid fa-location-dot text-tw-red"></i> 花蓮縣
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">太魯閣峽谷</h3>
+                    <p class="text-gray-600 text-sm mb-4 line-clamp-2">大自然的鬼斧神工，壯麗的大理石峽谷與碧綠溪水，是徒步愛好者的天堂。</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">#健行</span>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md">#風景</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section id="culture" class="py-20 bg-stone-100">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Text Content -->
+                <div class="lg:w-1/2">
+                    <h3 class="text-tw-red font-bold tracking-wider mb-2 text-sm uppercase">Culture</h3>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">深度體驗台灣文化</h2>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        台灣的魅力不僅在於風景，更在於深厚的文化底蘊。融合了閩南、客家、原住民以及現代創新，形成了獨一無二的台灣味。
+                    </p>
+
+                    <div class="space-y-6">
+                        <!-- Item 1 -->
+                        <div class="flex gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-utensils text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">夜市美食</h4>
+                                <p class="text-gray-600 text-sm">從珍珠奶茶到臭豆腐，台灣的夜市是味蕾的冒險樂園。士林、逢甲、六合，每一處都有獨特風味。</p>
+                            </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="flex gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-gopuram text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">傳統廟宇</h4>
+                                <p class="text-gray-600 text-sm">龍山寺、行天宮，精緻的雕刻與虔誠的信徒，展現深厚的宗教文化底蘊與建築藝術。</p>
+                            </div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="flex gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-mug-hot text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">高山茶道</h4>
+                                <p class="text-gray-600 text-sm">世界級的烏龍茶產地。在靜謐的茶藝館中，體驗泡茶的儀式感，品味回甘的茶香。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Grid -->
+                <div class="lg:w-1/2 relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1525596662741-e94ff9f26de1?q=80&w=1974&auto=format&fit=crop" class="rounded-2xl shadow-lg mt-12 w-full h-64 object-cover hover:scale-[1.02] transition-transform" alt="Food">
+                        <img src="https://images.unsplash.com/photo-1536698658655-08c3114528f1?q=80&w=2070&auto=format&fit=crop" class="rounded-2xl shadow-lg w-full h-64 object-cover hover:scale-[1.02] transition-transform" alt="Temple">
+                    </div>
+                    <!-- Decorative Blob -->
+                    <div class="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-red-200 rounded-full blur-3xl opacity-30"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerary Section (with Tabs) -->
+    <section id="itinerary" class="py-20 px-6 container mx-auto" x-data="{ activeTab: 'north' }">
+        <div class="text-center mb-12">
+            <h3 class="text-tw-red font-bold tracking-wider mb-2 text-sm uppercase">Itinerary</h3>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">精選旅遊路線</h2>
+            <p class="text-gray-600 mt-4">無論您喜歡城市漫遊還是自然探險，我們都有適合您的計畫</p>
+        </div>
+
+        <!-- Tab Buttons -->
+        <div class="flex justify-center mb-10">
+            <div class="bg-white p-1 rounded-full shadow-md inline-flex flex-wrap justify-center">
+                <button @click="activeTab = 'north'" 
+                        :class="activeTab === 'north' ? 'bg-tw-red text-white shadow-md' : 'text-gray-500 hover:bg-gray-100'"
+                        class="px-6 py-2 rounded-full text-sm font-bold transition-all">
+                    北台灣 (North)
+                </button>
+                <button @click="activeTab = 'central'" 
+                        :class="activeTab === 'central' ? 'bg-tw-red text-white shadow-md' : 'text-gray-500 hover:bg-gray-100'"
+                        class="px-6 py-2 rounded-full text-sm font-bold transition-all">
+                    中台灣 (Central)
+                </button>
+                <button @click="activeTab = 'south'" 
+                        :class="activeTab === 'south' ? 'bg-tw-red text-white shadow-md' : 'text-gray-500 hover:bg-gray-100'"
+                        class="px-6 py-2 rounded-full text-sm font-bold transition-all">
+                    南台灣 (South)
+                </button>
+            </div>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="max-w-4xl mx-auto min-h-[300px]">
+            
+            <!-- North Content -->
+            <div x-show="activeTab === 'north'" 
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0 translate-y-4"
+                 x-transition:enter-end="opacity-100 translate-y-0"
+                 class="space-y-6">
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-tw-red flex flex-col md:flex-row md:items-center gap-4 hover:shadow-md transition-shadow">
+                    <div class="bg-red-50 text-tw-red font-bold px-4 py-2 rounded-lg text-center min-w-[100px]">Day 1</div>
+                    <div class="flex-1">
+                        <h4 class="text-xl font-bold text-gray-800">台北都會探索</h4>
+                        <p class="text-gray-600 mt-1">故宮博物院 <i class="fa-solid fa-arrow-right text-xs mx-1"></i> 台北101 <i class="fa-solid fa-arrow-right text-xs mx-1"></i> 饒河夜市</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-tw-red flex flex-col md:flex-row md:items-center gap-4 hover:shadow-md transition-shadow">
+                    <div class="bg-red-50 text-tw-red font-bold px-4 py-2 rounded-lg text-center min-w-[100px]">Day 2</div>
+                    <div class="flex-1">
+                        <h4 class="text-xl font-bold text-gray-800">懷舊山城之旅</h4>
+                        <p class="text-gray-600 mt-1">九份老街 <i class="fa-solid fa-arrow-right text-xs mx-1"></i> 十份放天燈 <i class="fa-solid fa-arrow-right text-xs mx-1"></i> 基隆廟口</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-tw-red flex flex-col md:flex-row md:items-center gap-4 hover:shadow-md transition-shadow">
+                    <div class="bg-red-50 text-tw-red font-bold px-4 py-2 rounded-lg text-center min-w-[100px]">Day 3</div>
+                    <div class="flex-1">
+                        <h4 class="text-xl font-bold text-gray-800">自然地質奇觀</h4>
+                        <p class="text-gray-600 mt-1">野柳地質公園 <i class="fa-solid fa-arrow-right text-xs mx-1"></i> 淡水老街夕陽</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Central Content -->
+            <div x-show="activeTab === 'central'" 
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0 translate-y-4"
+                 x-transition:enter-end="opacity-100 translate-y-0"
+                 style="display: none;"
+                 class="space-y-6">
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-tw-red flex flex-col md:flex-row md:items-center gap-4 hover:shadow-md transition-shadow">
+                    <div class="bg-red-50 text-tw-red font-bold px-4 py-2 rounded-lg text-center min-w-[100px]">Day 1</div>
+                    <div class="flex-1">
+                        <h4 class="text-xl font-bold text-gray-800">台中藝文漫遊</h4>
+                        <p class="text-gray-600 mt-1">宮原眼科 <i class="fa-solid fa-arrow-right text-xs mx-1"></i> 審計新村 <i class="fa-solid fa-arrow-right text-xs mx-1"></i> 高美濕地</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-tw-red flex flex-col md:flex-row md:items-center gap-4 hover:shadow-md transition-shadow">
+                    <div class="bg-red-50 text-tw-red font-bold px-4 py-2 rounded-lg text-center min-w-[100px]">Day 2</div>
+                    <div class="flex-1">
+                        <h4 class="text-xl font-bold text-gray-800">日月潭風光</h4>
+                        <p class="text-gray-600 mt-1">環湖自行車 <i class="fa-solid fa-arrow-right text-xs mx-1"></i> 文武廟 <i class="fa-solid fa-arrow-right text-xs mx-1"></i> 伊達邵碼頭</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-tw-red flex flex-col md:flex-row md:items-center gap-4 hover:shadow-md transition-shadow">
+                    <div class="bg-red-50 text-tw-red font-bold px-4 py-2 rounded-lg text-center min-w-[100px]">Day 3</div>
+                    <div class="flex-1">
+                        <h4 class="text-xl font-bold text-gray-800">清境農場</h4>
+                        <p class="text-gray-600 mt-1">青青草原綿羊秀 <i class="fa-solid fa-arrow-right text-xs mx-1"></i> 小瑞士花園</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- South Content -->
+            <div x-show="activeTab === 'south'" 
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0 translate-y-4"
+                 x-transition:enter-end="opacity-100 translate-y-0"
+                 style="display: none;"
+                 class="space-y-6">
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-tw-red flex flex-col md:flex-row md:items-center gap-4 hover:shadow-md transition-shadow">
+                    <div class="bg-red-50 text-tw-red font-bold px-4 py-2 rounded-lg text-center min-w-[100px]">Day 1</div>
+                    <div class="flex-1">
+                        <h4 class="text-xl font-bold text-gray-800">台南古都巡禮</h4>
+                        <p class="text-gray-600 mt-1">赤崁樓 <i class="fa-solid fa-arrow-right text-xs mx-1"></i> 安平古堡 <i class="fa-solid fa-arrow-right text-xs mx-1"></i> 牛肉湯早餐</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-tw-red flex flex-col md:flex-row md:items-center gap-4 hover:shadow-md transition-shadow">
+                    <div class="bg-red-50 text-tw-red font-bold px-4 py-2 rounded-lg text-center min-w-[100px]">Day 2</div>
+                    <div class="flex-1">
+                        <h4 class="text-xl font-bold text-gray-800">高雄港都風情</h4>
+                        <p class="text-gray-600 mt-1">駁二藝術特區 <i class="fa-solid fa-arrow-right text-xs mx-1"></i> 旗津渡輪 <i class="fa-solid fa-arrow-right text-xs mx-1"></i> 西子灣</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-tw-red flex flex-col md:flex-row md:items-center gap-4 hover:shadow-md transition-shadow">
+                    <div class="bg-red-50 text-tw-red font-bold px-4 py-2 rounded-lg text-center min-w-[100px]">Day 3</div>
+                    <div class="flex-1">
+                        <h4 class="text-xl font-bold text-gray-800">墾丁熱帶假期</h4>
+                        <p class="text-gray-600 mt-1">南灣水上活動 <i class="fa-solid fa-arrow-right text-xs mx-1"></i> 鵝鑾鼻燈塔 <i class="fa-solid fa-arrow-right text-xs mx-1"></i> 墾丁大街</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-gray-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-30">
+            <img src="https://images.unsplash.com/photo-1508248467877-aec1b0813150?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover" alt="Background">
+        </div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">準備好出發了嗎？</h2>
+            <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+                訂閱我們的電子報，獲取最新的台灣旅遊資訊、季節限定活動以及專屬優惠碼。
+            </p>
+            <form class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto" onsubmit="event.preventDefault(); alert('感謝您的訂閱！');">
+                <input type="email" placeholder="您的電子郵件信箱" required class="px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-tw-red flex-1 backdrop-blur-sm">
+                <button type="submit" class="px-8 py-4 bg-tw-red hover:bg-red-700 text-white rounded-full font-bold transition-colors shadow-lg">
+                    立即訂閱
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-950 text-gray-400 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Brand -->
+                <div>
+                    <div class="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                        <span class="bg-tw-red text-white px-2 py-1 rounded text-sm">TW</span>
+                        探索台灣
+                    </div>
+                    <p class="text-sm leading-relaxed">致力於向世界推廣台灣之美，提供最道地的旅遊資訊與文化體驗。</p>
+                </div>
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">快速連結</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-tw-red transition-colors">關於我們</a></li>
+                        <li><a href="#" class="hover:text-tw-red transition-colors">旅遊指南</a></li>
+                        <li><a href="#" class="hover:text-tw-red transition-colors">住宿推薦</a></li>
+                        <li><a href="#" class="hover:text-tw-red transition-colors">交通資訊</a></li>
+                    </ul>
+                </div>
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">聯絡資訊</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-envelope w-4"></i> info@exploretaiwan.com</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-phone w-4"></i> +886 2 2345 6789</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot w-4"></i> 台北市信義區信義路五段7號</li>
+                    </ul>
+                </div>
+                <!-- Social -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">追蹤我們</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-tw-red hover:text-white transition-colors">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors">
+                            <i class="fa-brands fa-facebook-f text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-sky-400 hover:text-white transition-colors">
+                            <i class="fa-brands fa-twitter text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-xs">
+                <p>&copy; 2024 Explore Taiwan. All rights reserved. Design for Demo Purpose.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
