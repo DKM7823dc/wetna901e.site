@@ -1,1 +1,1378 @@
-1
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>デジタル資産回収サービス | グローバル暗号資産追跡・法的回収</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    teal: { 500: '#01798E', 600: '#016A7D', 700: '#015B6C', 400: '#0290A9', 300: '#03ABC8', 200: '#B0E4EE', 100: '#E0F5F9', 50: '#F0FAFB' },
+                    crim: { 500: '#CC313B', 600: '#B52B34', 700: '#9E252D', 400: '#D94A53', 300: '#E6777E', 200: '#F0B3B7', 100: '#F9E0E2', 50: '#FDF2F3' }
+                }
+            }
+        }
+    }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; margin: 0; padding: 0; box-sizing: border-box; }
+        body { overflow-x: hidden; }
+        .hero-gradient {
+            background: linear-gradient(135deg, #041E23 0%, #052E36 50%, #041E23 100%);
+            position: relative;
+        }
+        .particles { position: absolute; inset: 0; overflow: hidden; z-index: 1; }
+        .particle {
+            position: absolute;
+            background: radial-gradient(circle, rgba(1,121,142,0.8), transparent);
+            border-radius: 50%;
+            animation: float linear infinite;
+        }
+        .particle.crim-particle {
+            background: radial-gradient(circle, rgba(204,49,59,0.5), transparent);
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; } 90% { opacity: 1; }
+            100% { transform: translateY(-100vh) scale(1); opacity: 0; }
+        }
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #03ABC8, #01798E, #CC313B, #D94A53, #03ABC8);
+            background-size: 300% 300%;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; animation: gradientShift 4s ease infinite;
+        }
+        .glow-teal {
+            box-shadow: 0 0 60px rgba(1,121,142,0.3), 0 0 30px rgba(1,121,142,0.15);
+            transition: all 0.4s ease;
+        }
+        .glow-teal:hover {
+            box-shadow: 0 0 90px rgba(1,121,142,0.4), 0 0 45px rgba(1,121,142,0.25);
+        }
+        .hero-bg-image { position: absolute; inset: 0; z-index: 0; }
+        .hero-bg-image img {
+            width: 100%; height: 100%; object-fit: cover; opacity: 0.1;
+            animation: zoomSlow 30s ease-in-out infinite alternate;
+        }
+        @keyframes zoomSlow { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
+        .hero-bg-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to right, rgba(4,30,35,0.95), rgba(4,30,35,0.7), transparent);
+            z-index: 1;
+        }
+        .hero-content { position: relative; z-index: 2; }
+        .grid-bg {
+            background-image:
+                linear-gradient(rgba(1,121,142,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(1,121,142,0.04) 1px, transparent 1px);
+            background-size: 50px 50px; animation: gridMove 20s linear infinite;
+        }
+        @keyframes gridMove { 0% { background-position: 0 0; } 100% { background-position: 50px 50px; } }
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .float-btn {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: pulse-float 3s ease-in-out infinite;
+        }
+        .float-btn:hover { transform: translateX(-8px) scale(1.05); }
+        @keyframes pulse-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+        .modal-backdrop { backdrop-filter: blur(12px); animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .stat-number { display: inline-block; animation: countUp 2s ease-out; }
+        @keyframes countUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes bounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 10px); } }
+        .btn-ripple { position: relative; overflow: hidden; }
+        .btn-ripple::after {
+            content: ''; position: absolute; top: 50%; left: 50%;
+            width: 0; height: 0; border-radius: 50%; background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%); transition: width 0.6s, height 0.6s;
+        }
+        .btn-ripple:active::after { width: 300px; height: 300px; }
+        .icon-rotate { transition: transform 0.4s ease; }
+        .hover-lift:hover .icon-rotate { transform: rotate(15deg) scale(1.1); }
+        .navbar-scrolled {
+            background: rgba(255,255,255,0.97) !important;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .fade-in-section { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in-section.visible { opacity: 1; transform: translateY(0); }
+        .marquee-wrapper {
+            overflow: hidden; white-space: nowrap; width: 100%; position: relative;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .marquee-content { display: inline-flex; gap: 1.5rem; animation: marqueeScroll 40s linear infinite; }
+        .marquee-wrapper:hover .marquee-content { animation-play-state: paused; }
+        @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-50% - 0.75rem)); } }
+        .team-card { overflow: hidden; position: relative; }
+        .team-card::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(1,121,142,0.25), transparent);
+            transition: left 0.5s ease;
+        }
+        .team-card:hover::before { left: 100%; }
+        .magazine-col { column-count: 1; column-gap: 2.5rem; }
+        @media (min-width: 1024px) { .magazine-col { column-count: 2; } }
+        @media (max-width: 768px) { .hero-gradient { padding-top: 80px; } }
+        @keyframes pulse-border-crim {
+            0%, 100% { border-color: rgba(204,49,59,0.4); box-shadow: 0 0 15px rgba(204,49,59,0.15); }
+            50% { border-color: rgba(204,49,59,0.8); box-shadow: 0 0 30px rgba(204,49,59,0.3); }
+        }
+        .animate-pulse-border-crim { animation: pulse-border-crim 3s ease-in-out infinite; }
+        @keyframes pulse-border {
+            0%, 100% { border-color: rgba(1,121,142,0.4); box-shadow: 0 0 15px rgba(1,121,142,0.15); }
+            50% { border-color: rgba(1,121,142,0.8); box-shadow: 0 0 30px rgba(1,121,142,0.3); }
+        }
+        .animate-pulse-border { animation: pulse-border 3s ease-in-out infinite; }
+        .tag-pill {
+            background: rgba(1,121,142,0.08); color: #01798E;
+            border: 1px solid rgba(1,121,142,0.2); font-size: 0.7rem; font-weight: 600;
+            padding: 0.25rem 0.75rem; border-radius: 9999px; transition: all 0.3s ease; display: inline-block;
+        }
+        .tag-pill:hover { background: rgba(1,121,142,0.15); border-color: rgba(1,121,142,0.4); transform: translateY(-2px); }
+        .tag-pill-crim {
+            background: rgba(204,49,59,0.08); color: #CC313B;
+            border: 1px solid rgba(204,49,59,0.2); font-size: 0.7rem; font-weight: 600;
+            padding: 0.25rem 0.75rem; border-radius: 9999px; transition: all 0.3s ease; display: inline-block;
+        }
+        .tag-pill-crim:hover { background: rgba(204,49,59,0.15); border-color: rgba(204,49,59,0.4); transform: translateY(-2px); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #01798E, #CC313B); border-radius: 4px; }
+        @keyframes ctaPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }
+        .cta-pulse { animation: ctaPulse 3s ease-in-out infinite; }
+        .problems-bento { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+        @media (min-width: 768px) { .problems-bento { grid-template-columns: repeat(12, 1fr); gap: 1.25rem; } }
+        .bento-item {
+            position: relative; border-radius: 1.25rem; padding: 1.75rem; overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            border: 1px solid #e2e8f0; background: #fff;
+        }
+        .bento-item:hover {
+            transform: translateY(-6px); border-color: rgba(204,49,59,0.35);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08), 0 0 30px rgba(204,49,59,0.06);
+        }
+        .bento-item > * { position: relative; z-index: 1; }
+        @media (min-width: 768px) {
+            .bento-half { grid-column: span 6; }
+            .bento-wide { grid-column: span 7; }
+            .bento-narrow { grid-column: span 5; }
+            .bento-third { grid-column: span 4; }
+        }
+        .bento-icon-ring {
+            width: 52px; height: 52px; border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(135deg, rgba(204,49,59,0.1), rgba(204,49,59,0.04));
+            border: 1px solid rgba(204,49,59,0.15); transition: all 0.4s ease;
+        }
+        .bento-item:hover .bento-icon-ring {
+            background: linear-gradient(135deg, rgba(204,49,59,0.18), rgba(204,49,59,0.08));
+            border-color: rgba(204,49,59,0.35); box-shadow: 0 0 15px rgba(204,49,59,0.1); transform: scale(1.08);
+        }
+        .case-hero-card {
+            position: relative; border-radius: 1.5rem; padding: 2.5rem; overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            background: #fff; border: 1px solid #e2e8f0;
+        }
+        .case-hero-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1), 0 0 40px rgba(204,49,59,0.06);
+        }
+        .case-amount {
+            font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1;
+            background: linear-gradient(135deg, #CC313B, #B52B34, #D94A53);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .case-amount-sm {
+            font-size: 1.75rem; font-weight: 900; line-height: 1;
+            background: linear-gradient(135deg, #01798E, #03ABC8);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .case-grid-card {
+            position: relative; border-radius: 1.25rem; padding: 1.75rem; overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            border: 1px solid #e2e8f0; background: #fff;
+        }
+        .case-grid-card:hover {
+            transform: translateY(-5px); border-color: rgba(1,121,142,0.35);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        .case-number-badge {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 28px; height: 28px; border-radius: 8px; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.05em;
+        }
+        .case-divider {
+            width: 100%; height: 1px;
+            background: linear-gradient(to right, transparent, rgba(1,121,142,0.2), transparent);
+            margin: 1rem 0;
+        }
+        .case-divider-crim {
+            width: 100%; height: 1px;
+            background: linear-gradient(to right, transparent, rgba(204,49,59,0.2), transparent);
+            margin: 1rem 0;
+        }
+        .why-card {
+            position: relative; border-radius: 1.5rem; overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .why-card:hover { transform: translateY(-6px); box-shadow: 0 25px 50px rgba(0,0,0,0.1); }
+        .why-number {
+            font-size: 5rem; font-weight: 900; line-height: 1; color: transparent;
+            -webkit-text-stroke: 1.5px rgba(1,121,142,0.12);
+            position: absolute; top: -0.5rem; right: 1.25rem; z-index: 0;
+            transition: all 0.5s ease; user-select: none;
+        }
+        .why-number-crim {
+            font-size: 5rem; font-weight: 900; line-height: 1; color: transparent;
+            -webkit-text-stroke: 1.5px rgba(204,49,59,0.12);
+            position: absolute; top: -0.5rem; right: 1.25rem; z-index: 0;
+            transition: all 0.5s ease; user-select: none;
+        }
+        .why-card:hover .why-number { -webkit-text-stroke: 1.5px rgba(1,121,142,0.25); transform: scale(1.05); }
+        .why-card:hover .why-number-crim { -webkit-text-stroke: 1.5px rgba(204,49,59,0.25); transform: scale(1.05); }
+        .why-icon-box {
+            width: 56px; height: 56px; border-radius: 16px;
+            display: flex; align-items: center; justify-content: center; transition: all 0.4s ease;
+        }
+        .why-card:hover .why-icon-box { transform: scale(1.1) rotate(5deg); }
+        .why-card:hover .why-icon-box-teal { box-shadow: 0 0 20px rgba(1,121,142,0.2); }
+        .why-card:hover .why-icon-box-crim { box-shadow: 0 0 20px rgba(204,49,59,0.2); }
+        .why-feature-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+        @media (min-width: 768px) { .why-feature-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .why-feature-grid { grid-template-columns: repeat(3, 1fr); } }
+        .why-card-inner { position: relative; z-index: 1; padding: 2rem; }
+        .why-card-bg {
+            position: absolute; inset: 0; background: #fff;
+            border: 1px solid #e2e8f0; border-radius: inherit; transition: border-color 0.4s ease;
+        }
+        .why-card.teal-card:hover .why-card-bg { border-color: rgba(1,121,142,0.35); }
+        .why-card.crim-card:hover .why-card-bg { border-color: rgba(204,49,59,0.35); }
+        .why-card-shine-teal {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(1,121,142,0.04) 0%, transparent 50%, transparent 100%);
+            border-radius: inherit; opacity: 0; transition: opacity 0.5s ease;
+        }
+        .why-card-shine-crim {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(204,49,59,0.04) 0%, transparent 50%, transparent 100%);
+            border-radius: inherit; opacity: 0; transition: opacity 0.5s ease;
+        }
+        .why-card:hover .why-card-shine-teal,
+        .why-card:hover .why-card-shine-crim { opacity: 1; }
+
+        .client-case-card {
+            background: #fff;
+            border-radius: 1.5rem;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .client-case-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 28px 55px rgba(0,0,0,0.09), 0 0 0 1px rgba(1,121,142,0.12);
+        }
+        .client-case-card .card-accent-bar { height: 4px; width: 100%; }
+        .client-case-card .card-body { padding: 1.75rem; }
+        .recovery-bar-track {
+            width: 100%; height: 8px; background: #f1f5f9;
+            border-radius: 9999px; overflow: hidden;
+        }
+        .recovery-bar-fill {
+            height: 100%; border-radius: 9999px;
+            background: linear-gradient(to right, #22c55e, #16a34a);
+            transition: width 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .tl-item { display: flex; gap: 12px; align-items: flex-start; }
+        .tl-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 18px; }
+        .tl-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; }
+        .tl-line { width: 2px; flex: 1; background: #f1f5f9; margin-top: 3px; min-height: 26px; }
+        .tl-dot-success { background: #22c55e; box-shadow: 0 0 0 3px rgba(34,197,94,0.15); }
+        .tl-dot-start { background: #CC313B; box-shadow: 0 0 0 3px rgba(204,49,59,0.12); }
+        .tl-dot-mid { background: #01798E; box-shadow: 0 0 0 3px rgba(1,121,142,0.12); }
+
+        /* Team Card Responsive Size */
+        .team-card-size { width: 220px; height: 280px; }
+        @media (min-width: 768px) { .team-card-size { width: 300px; height: 360px; } }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+<!-- ========== FLOATING LINE BUTTON ========== -->
+<div class="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3">
+    <a href="javascript:void(0)" onclick="k2()"
+       class="float-btn flex items-center gap-2 text-white pl-3 pr-4 py-3 rounded-l-2xl shadow-2xl" style="background: linear-gradient(to right, #06C755, #05a849); box-shadow: 0 8px 25px rgba(6,199,85,0.35);">
+        <i class="fab fa-line text-xl"></i>
+        <span class="text-sm font-semibold hidden sm:inline">LINE</span>
+    </a>
+</div>
+
+<!-- ========== CONTACT MODAL ========== -->
+<div id="contactModal" class="fixed inset-0 z-[100] hidden items-center justify-center modal-backdrop bg-black/60">
+    <div class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-10 max-w-sm w-full mx-4 shadow-2xl animate-pulse-border-crim transform transition-all duration-300 scale-95 hover:scale-100">
+        <div class="text-center mb-8">
+            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg" style="background: linear-gradient(135deg, #06C755, #05a849);">
+                <i class="fab fa-line text-2xl text-white"></i>
+            </div>
+            <h3 class="text-2xl font-black text-gray-900">専門家に相談する</h3>
+            <p class="text-gray-500 text-sm mt-2">LINEでお気軽にご相談ください</p>
+        </div>
+        <a href="javascript:void(0)" onclick="k2()"
+           class="btn-ripple flex items-center justify-center gap-3 text-white w-full p-5 rounded-2xl transition-all duration-200 shadow-lg text-lg font-bold hover:-translate-y-1" style="background: linear-gradient(135deg, #06C755, #05a849);">
+            <i class="fab fa-line text-3xl"></i>
+            <span>LINE で相談する</span>
+        </a>
+        <button onclick="closeModal()" class="mt-6 w-full text-gray-400 hover:text-gray-600 text-sm transition-colors py-3 rounded-xl hover:bg-gray-100">
+            <i class="fas fa-times mr-2"></i>閉じる
+        </button>
+    </div>
+</div>
+
+<!-- ========== NAVIGATION ========== -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-xl border-b border-gray-200/60 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <img src="img/k.jpg" alt="ロゴ" class="h-10 w-auto object-contain">
+        </div>
+        <div class="hidden md:flex items-center gap-8 text-sm text-gray-500 font-medium">
+            <a href="#process" class="hover:text-gray-900 transition-colors relative group">
+                サポートの流れ<span class="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full" style="background:#01798E;"></span>
+            </a>
+            <a href="#about" class="hover:text-gray-900 transition-colors relative group">
+                私たちについて<span class="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full" style="background:#CC313B;"></span>
+            </a>
+            <a href="#capabilities" class="hover:text-gray-900 transition-colors relative group">
+                専門性<span class="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full" style="background:#01798E;"></span>
+            </a>
+            <a href="#cases" class="hover:text-gray-900 transition-colors relative group">
+                解決事例<span class="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full" style="background:#CC313B;"></span>
+            </a>
+            <a href="#team" class="hover:text-gray-900 transition-colors relative group">
+                専門チーム<span class="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full" style="background:#01798E;"></span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- ========== HERO (DARK) ========== -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden hero-gradient">
+    <div class="particles">
+        <div class="particle" style="left:10%;width:4px;height:4px;animation-duration:15s;animation-delay:0s;"></div>
+        <div class="particle crim-particle" style="left:20%;width:6px;height:6px;animation-duration:18s;animation-delay:2s;"></div>
+        <div class="particle" style="left:30%;width:3px;height:3px;animation-duration:20s;animation-delay:4s;"></div>
+        <div class="particle crim-particle" style="left:40%;width:5px;height:5px;animation-duration:22s;animation-delay:1s;"></div>
+        <div class="particle" style="left:50%;width:4px;height:4px;animation-duration:19s;animation-delay:3s;"></div>
+        <div class="particle" style="left:60%;width:6px;height:6px;animation-duration:21s;animation-delay:5s;"></div>
+        <div class="particle crim-particle" style="left:70%;width:3px;height:3px;animation-duration:17s;animation-delay:2s;"></div>
+        <div class="particle" style="left:80%;width:5px;height:5px;animation-duration:23s;animation-delay:4s;"></div>
+        <div class="particle crim-particle" style="left:90%;width:4px;height:4px;animation-duration:16s;animation-delay:1s;"></div>
+    </div>
+    <div class="hero-bg-image"><img src="https://www.yud819ad.site/uswq/img/6.webp" alt=""></div>
+    <div class="hero-bg-overlay"></div>
+    <div class="absolute inset-0 grid-bg opacity-[0.05] z-[1]"></div>
+
+    <div class="hero-content max-w-7xl mx-auto px-6 py-16 md:py-24 grid lg:grid-cols-2 gap-16 items-center w-full">
+        <div class="fade-in-section">
+            <div class="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-semibold mb-8 uppercase tracking-wider backdrop-blur-sm" style="background:rgba(1,121,142,0.2);border:1px solid rgba(1,121,142,0.4);color:#B0E4EE;">
+                <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50"></span>
+                世界中の機関から信頼されています
+            </div>
+            
+            <!-- 优化后的标题 -->
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black leading-tight sm:leading-[1.15] mb-7">
+                <span class="text-white">詐欺は至る所に存在するが、</span><br>
+                <span class="gradient-text">正義の光は</span><br>
+                <span style="color:#CC313B;">決して欠席しない</span>
+            </h1>
+            
+            <p class="text-gray-300 text-lg sm:text-xl leading-relaxed mb-10 max-w-lg">
+                私たちは7年間にわたり初心を忘れず、様々なサイバー詐欺と闘い、多くの方々の個人資産を守り、被害者が苦労して築いた财産の回収を支援してきました。この強い使命感と責任感が、最新の詐欺手口の分析、金融法務とサイバー技術の専門知識の習得、そして豊富な国際経験と専門的パートナーシップの構築へと私たちを駆り立てています。高度なサイバーセキュリティ技術は、決して一部の人のためのものではなく、支援を必要とするすべての方々に提供されるべきだと私たちは信じています。
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <button onclick="openModal()"
+                        class="btn-ripple group flex items-center justify-center gap-3 text-white px-6 sm:px-8 py-4 rounded-2xl text-sm sm:text-base font-bold transition-all duration-300 shadow-2xl hover:-translate-y-1 whitespace-nowrap" style="background:linear-gradient(to right,#CC313B,#B52B34);box-shadow:0 10px 30px rgba(204,49,59,0.35);">
+                    <i class="fas fa-search-dollar"></i>
+                    <span>無料相談</span>
+                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+            <div class="mt-6 flex items-center gap-3 rounded-xl px-5 py-3 max-w-md backdrop-blur-sm hover-lift" style="background:rgba(1,121,142,0.15);border:1px solid rgba(1,121,142,0.35);">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background:rgba(1,121,142,0.25);">
+                    <i class="fas fa-shield-check text-lg" style="color:#03ABC8;"></i>
+                </div>
+                <p class="text-sm font-semibold leading-tight" style="color:#B0E4EE;">
+                    事案のご相談、調査・資金追跡、所在地特定 — 無料サポート
+                </p>
+            </div>
+            <div class="mt-14 grid grid-cols-2 gap-6 pt-10" style="border-top:1px solid rgba(255,255,255,0.1);">
+                <div class="stat-number">
+                    <p class="text-2xl sm:text-3xl font-black" style="color:#CC313B;">231億円</p>
+                    <p class="text-gray-400 text-xs mt-1 font-medium uppercase tracking-wider">累計回収資産</p>
+                </div>
+                <div class="stat-number" style="animation-delay:0.4s;">
+                    <p class="text-2xl sm:text-3xl font-black" style="color:#CC313B;">1700+</p>
+                    <p class="text-gray-400 text-xs mt-1 font-medium uppercase tracking-wider">成功事例数</p>
+                </div>
+            </div>
+        </div>
+        <div class="relative hidden lg:block fade-in-section" style="animation-delay:0.3s;">
+            <div class="relative rounded-3xl overflow-hidden glow-teal">
+                <img src="https://www.yud819ad.site/uswq/img/6.webp" alt="デジタル資産回収" class="w-full aspect-square object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#041E23]/70 via-transparent to-transparent"></div>
+            </div>
+            <div class="absolute top-6 left-6 bg-white/95 backdrop-blur-md border border-gray-200 rounded-2xl p-4 shadow-2xl hover-lift">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center"><i class="fas fa-check-circle text-green-600"></i></div>
+                    <div><p class="text-gray-900 font-bold text-sm">解決実績</p><p class="text-green-600 text-xs">9,000万ドル 暗号資産詐欺</p></div>
+                </div>
+            </div>
+            <div class="absolute bottom-6 right-6 bg-white/95 backdrop-blur-md border border-gray-200 rounded-2xl p-4 shadow-2xl hover-lift">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(204,49,59,0.1);"><i class="fas fa-globe" style="color:#CC313B;"></i></div>
+                    <div><p class="text-gray-900 font-bold text-sm">グローバル展開</p><p class="text-xs" style="color:#CC313B;">20以上の法域</p></div>
+                </div>
+            </div>
+            <div class="absolute -bottom-10 -left-10 w-64 h-64 rounded-full blur-3xl pointer-events-none" style="background:rgba(204,49,59,0.08);"></div>
+        </div>
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-gray-500 z-[2]" style="animation:bounce 2s ease-in-out infinite;">
+        <span class="text-[10px] uppercase tracking-widest font-semibold">スクロール</span>
+        <i class="fas fa-chevron-down text-xs"></i>
+    </div>
+</section>
+
+<!-- ========== PROCESS ========== -->
+<section id="process" class="py-16 lg:py-28 px-6 bg-gray-50 fade-in-section">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <p class="font-bold tracking-widest uppercase text-xs mb-3" style="color:#01798E;">私たちの方法論</p>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900">ワンストップ解決プロセス</h2>
+            <div class="w-20 h-1 mx-auto mt-5 rounded-full" style="background:linear-gradient(to right,#01798E,#03ABC8);"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+            <div class="hover-lift bg-white border border-gray-200 hover:border-teal-500/40 rounded-xl p-5">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 font-black text-white text-sm shadow-lg" style="background:linear-gradient(135deg,#01798E,#016A7D);">1</div>
+                    <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style="background:rgba(1,121,142,0.1);"><i class="fas fa-clipboard-list text-sm icon-rotate" style="color:#01798E;"></i></div>
+                </div>
+                <h3 class="text-base font-bold text-gray-900 mb-2">被害状況の詳細な整理</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">詐欺プラットフォーム / 被害額 / 送金方法 / 送金記録の整理と確認</p>
+            </div>
+            <div class="hover-lift bg-white border border-gray-200 hover:border-teal-500/40 rounded-xl p-5">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 font-black text-white text-sm shadow-lg" style="background:linear-gradient(135deg,#01798E,#016A7D);">2</div>
+                    <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style="background:rgba(1,121,142,0.1);"><i class="fas fa-search text-sm icon-rotate" style="color:#01798E;"></i></div>
+                </div>
+                <h3 class="text-base font-bold text-gray-900 mb-2">正式な調査开始と資金追跡</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">調査開始 — 資金の流れを追跡 — 詐欺グループのIPを特定 — 専門技術による証拠確保</p>
+            </div>
+            <div class="hover-lift bg-white border border-gray-200 hover:border-teal-500/40 rounded-xl p-5">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 font-black text-white text-sm shadow-lg" style="background:linear-gradient(135deg,#01798E,#016A7D);">3</div>
+                    <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style="background:rgba(1,121,142,0.1);"><i class="fas fa-lightbulb text-sm icon-rotate" style="color:#01798E;"></i></div>
+                </div>
+                <h3 class="text-base font-bold text-gray-900 mb-2">効果的な回収プランの策定</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">事案の状況 / 資金の分散・流れに応じて — 最適かつ安全な回収プランをシミュレーション</p>
+            </div>
+            <div class="hover-lift bg-white border border-gray-200 hover:border-crim-500/40 rounded-xl p-5">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 font-black text-white text-sm shadow-lg" style="background:linear-gradient(135deg,#CC313B,#B52B34);">4</div>
+                    <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style="background:rgba(204,49,59,0.1);"><i class="fas fa-users text-sm icon-rotate" style="color:#CC313B;"></i></div>
+                </div>
+                <h3 class="text-base font-bold text-gray-900 mb-2">専門チームの編成</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">回収プランの确定 / 業務委託契約の締結 / 専門家チームによる回収行動の開始</p>
+            </div>
+            <div class="hover-lift bg-white border border-gray-200 hover:border-crim-500/40 rounded-xl p-5">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 font-black text-white text-sm shadow-lg" style="background:linear-gradient(135deg,#CC313B,#B52B34);">5</div>
+                    <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style="background:rgba(204,49,59,0.1);"><i class="fas fa-handshake text-sm icon-rotate" style="color:#CC313B;"></i></div>
+                </div>
+                <h3 class="text-base font-bold text-gray-900 mb-2">国際的な連携と法的措置</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">計画に基づき、現地の金融捜査機関や法執行機関と連携し、合同で法的措置を実施</p>
+            </div>
+        </div>
+        <div class="hover-lift bg-white border-2 animate-pulse-border-crim rounded-2xl p-6 max-w-3xl mx-auto" style="border-color:rgba(204,49,59,0.5);">
+            <div class="flex items-center gap-4 mb-3">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 font-black text-white shadow-xl" style="background:linear-gradient(135deg,#CC313B,#B52B34);">6</div>
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(204,49,59,0.12);"><i class="fas fa-money-bill-transfer text-lg icon-rotate" style="color:#CC313B;"></i></div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900">安全な資金の回収</h3>
+            </div>
+            <p class="text-gray-500 text-sm sm:text-base leading-relaxed sm:pl-16">現地の金融法規や銀行の仕組みに基づき、ご依頼者様の被害資金を安全かつ合法的にご指定の口座へ返还します。あなたの大切な資産を確実にお手元へ取り戻します。</p>
+        </div>
+        <div class="text-center mt-12">
+            <button onclick="openModal()"
+                    class="btn-ripple group inline-flex items-center gap-3 text-white px-8 sm:px-10 py-4 rounded-2xl text-sm sm:text-base font-black transition-all duration-300 shadow-2xl hover:-translate-y-1" style="background:linear-gradient(to right,#CC313B,#B52B34);box-shadow:0 10px 30px rgba(204,49,59,0.3);">
+                <i class="fas fa-magnifying-glass-dollar"></i>
+                お気軽にご相談ください
+                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- ========== WHO WE ARE (UPDATED) ========== -->
+<section id="about" class="py-16 lg:py-28 px-6 bg-white fade-in-section">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+            
+            <!-- Left Side: Timeline (Company History) -->
+            <div class="lg:w-3/5 w-full">
+                <p class="font-bold tracking-widest uppercase text-xs mb-4" style="color:#CC313B;">私たちについて</p>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
+                    7年間の重要なマイルストーン、<br>私たちの成長と約束の証
+                </h2>
+                <div class="w-20 h-1 rounded-full mb-10" style="background:linear-gradient(to right,#CC313B,#D94A53);"></div>
+                
+                <h3 class="text-xl font-bold text-gray-900 mb-8">発展の歩み：</h3>
+                
+                <div class="relative border-l-2 border-teal-500/30 ml-3 md:ml-4 space-y-10">
+                    
+                    <!-- 2026 -->
+                    <div class="relative pl-8 hover-lift">
+                        <div class="absolute w-5 h-5 bg-teal-500 rounded-full -left-[11px] top-1 border-4 border-white shadow-md"></div>
+                        <h4 class="text-xl font-black text-gray-900">2026. 継続的な革新</h4>
+                        <p class="text-gray-600 mt-2 leading-relaxed">デジタルAI技術を統合し、よりスマートで安全な詐欺対策を構築</p>
+                    </div>
+
+                    <!-- 2024 (1) -->
+                    <div class="relative pl-8 hover-lift">
+                        <div class="absolute w-5 h-5 bg-teal-500 rounded-full -left-[11px] top-1 border-4 border-white shadow-md"></div>
+                        <h4 class="text-xl font-black text-gray-900">2024. 継続的な革新</h4>
+                        <p class="text-gray-600 mt-2 leading-relaxed">AI技術を統合し、よりスマートな詐欺対策システムを構築</p>
+                    </div>
+
+                    <!-- 2024 (2) -->
+                    <div class="relative pl-8 hover-lift">
+                        <div class="absolute w-5 h-5 bg-crim-500 rounded-full -left-[11px] top-1 border-4 border-white shadow-md"></div>
+                        <h4 class="text-xl font-black text-gray-900">2024. 豊かな成果</h4>
+                        <p class="text-gray-600 mt-2 leading-relaxed">国境を越えた資金回収作戦、グローバル協力サービスチームが本格稼働</p>
+                    </div>
+
+                    <!-- 2022 -->
+                    <div class="relative pl-8 hover-lift">
+                        <div class="absolute w-5 h-5 bg-teal-500 rounded-full -left-[11px] top-1 border-4 border-white shadow-md"></div>
+                        <h4 class="text-xl font-black text-gray-900">2022. デジタルトランスフォーメーション</h4>
+                        <p class="text-gray-600 mt-2 leading-relaxed">先進技術を導入し、詐欺調査と資金回収の効率を向上</p>
+                    </div>
+
+                    <!-- 2021 -->
+                    <div class="relative pl-8 hover-lift">
+                        <div class="absolute w-5 h-5 bg-teal-500 rounded-full -left-[11px] top-1 border-4 border-white shadow-md"></div>
+                        <h4 class="text-xl font-black text-gray-900">2021. 地域拡大</h4>
+                        <p class="text-gray-600 mt-2 leading-relaxed">サービス範囲をアジア太平洋地域に拡大し、多国間協力ネットワークを構築</p>
+                    </div>
+
+                    <!-- 2019 -->
+                    <div class="relative pl-8 hover-lift">
+                        <div class="absolute w-5 h-5 bg-crim-500 rounded-full -left-[11px] top-1 border-4 border-white shadow-md"></div>
+                        <h4 class="text-xl font-black text-gray-900">2019. 機関設立</h4>
+                        <p class="text-gray-600 mt-2 leading-relaxed">正義の初心を持つサイバーセキュリティの専門家たちが、精緻な詐欺対策サービスを開始</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Right Side: Image -->
+            <div class="lg:w-2/5 shrink-0 w-full">
+                <div class="sticky top-24">
+                    <div class="relative w-full aspect-square rounded-3xl overflow-hidden shadow-2xl glow-teal">
+                        <img src="img/a1.webp" alt="チーム" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent z-10 pointer-events-none"></div>
+                    </div>
+                    <div class="absolute -bottom-5 -right-5 text-white p-6 rounded-2xl shadow-2xl hidden md:block z-20" style="background:linear-gradient(135deg,#CC313B,#B52B34);">
+                        <p class="text-3xl sm:text-4xl font-black">7+</p>
+                        <p class="text-red-100 text-sm font-medium mt-1">年の<br>信頼と実績</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ========== PROBLEMS WE SOLVE ========== -->
+<section class="py-16 lg:py-28 px-6 bg-gray-50 relative overflow-hidden fade-in-section">
+    <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl pointer-events-none" style="background:rgba(204,49,59,0.03);"></div>
+    <div class="relative max-w-7xl mx-auto">
+        <div class="text-center mb-12 sm:mb-16">
+            <p class="font-bold tracking-widest uppercase text-xs mb-4" style="color:#CC313B;">対応可能な詐欺被害</p>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900">私たちが解決できる问题</h2>
+            <div class="w-20 h-1 mx-auto mt-6 rounded-full" style="background:linear-gradient(to right,#CC313B,#D94A53);"></div>
+            <p class="text-gray-500 mt-6 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">高度な暗号資産詐欺から多層的なオフショア隠蔽まで — 複雑な構造を解体し、あなたの資産を取り戻します。</p>
+        </div>
+        <div class="problems-bento">
+            <div class="bento-item bento-half">
+                <div class="absolute top-0 right-0 w-48 h-48 rounded-full blur-3xl pointer-events-none" style="background:rgba(204,49,59,0.04);"></div>
+                <div class="flex flex-col sm:flex-row sm:items-start gap-5">
+                    <div class="bento-icon-ring shrink-0"><i class="fas fa-heart-crack text-lg" style="color:#CC313B;"></i></div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 leading-snug">オンライン恋愛・感情詐欺</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">エリート層になりすまして恋愛感情や信頼関係につけ込み、偽の投資プラットフォームへ誘導して資金を騙し取ります。</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="inline-block text-[10px] font-bold uppercase tracking-wider rounded-full px-3 py-1" style="color:#CC313B;background:rgba(204,49,59,0.06);border:1px solid rgba(204,49,59,0.12);">ロマンス詐欺</span>
+                            <span class="inline-block text-[10px] font-bold uppercase tracking-wider rounded-full px-3 py-1" style="color:#CC313B;background:rgba(204,49,59,0.06);border:1px solid rgba(204,49,59,0.12);">SNS詐欺</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bento-item bento-half">
+                <div class="bento-icon-ring mb-4"><i class="fas fa-chart-line text-lg" style="color:#CC313B;"></i></div>
+                <h3 class="text-base font-bold text-gray-900 mb-2 leading-snug">偽の投資・金融詐欺</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">証券会社や投资ファンドの専門家を装い、特別な投資機会を提供すると持ちかけて資金を騙し取ります。</p>
+            </div>
+            <div class="bento-item bento-half">
+                <div class="bento-icon-ring mb-4"><i class="fab fa-bitcoin text-lg" style="color:#CC313B;"></i></div>
+                <h3 class="text-base font-bold text-gray-900 mb-2 leading-snug">暗号資産詐欺</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">ビットコイン等の暗号資産への投資を名目に誘導し、精巧に作られた偽の取引所を通じて資金を詐取します。</p>
+            </div>
+            <div class="bento-item bento-half">
+                <div class="absolute bottom-0 left-0 w-40 h-40 rounded-full blur-3xl pointer-events-none" style="background:rgba(204,49,59,0.04);"></div>
+                <div class="flex flex-col sm:flex-row sm:items-start gap-5">
+                    <div class="bento-icon-ring shrink-0"><i class="fas fa-cart-shopping text-lg" style="color:#CC313B;"></i></div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 leading-snug">オンラインショッピング・副業詐欺</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">簡単な副業や偽のECサイトでの注文代行を名目に、最初は少額の利益を出させて信用させ、最终的に高額な資金を騙し取ります。</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="inline-block text-[10px] font-bold uppercase tracking-wider rounded-full px-3 py-1" style="color:#CC313B;background:rgba(204,49,59,0.06);border:1px solid rgba(204,49,59,0.12);">副業詐欺</span>
+                            <span class="inline-block text-[10px] font-bold uppercase tracking-wider rounded-full px-3 py-1" style="color:#CC313B;background:rgba(204,49,59,0.06);border:1px solid rgba(204,49,59,0.12);">EC詐欺</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bento-item bento-half">
+                <div class="bento-icon-ring mb-4"><i class="fas fa-mobile-screen text-lg" style="color:#CC313B;"></i></div>
+                <h3 class="text-base font-bold text-gray-900 mb-2 leading-snug">SNS広告による投資誘惑詐欺</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">SNSを通じて積極的に接触してくる自称「投資機関」には警戒が必要です。少額投資での高利回りといった甘い言葉にはご注意ください。</p>
+            </div>
+            <div class="bento-item bento-half">
+                <div class="bento-icon-ring mb-4"><i class="fas fa-user-secret text-lg" style="color:#CC313B;"></i></div>
+                <h3 class="text-base font-bold text-gray-900 mb-2 leading-snug">警察・公的機関を装う詐欺</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">警察や政府職員になりすまし、捜査を名目に口座情報の提供や送金を要求してきます。脅迫めいた連絡には十分ご注意ください。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CORE CAPABILITIES ========== -->
+<section id="capabilities" class="py-16 lg:py-28 px-6 bg-white fade-in-section">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12 sm:mb-16">
+            <p class="font-bold tracking-widest uppercase text-xs mb-4" style="color:#01798E;">私たちの強み</p>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900">コアコンピタンス</h2>
+            <div class="w-20 h-1 mx-auto mt-6 rounded-full" style="background:linear-gradient(to right,#01798E,#CC313B);"></div>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-6">
+            <div class="hover-lift bg-white border border-gray-200 hover:border-teal-500/40 rounded-3xl p-6 sm:p-8 group">
+                <div class="flex items-start gap-4 sm:gap-5 mb-7">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-transform" style="background:linear-gradient(135deg,#01798E,#016A7D);"><i class="fas fa-link text-white text-lg sm:text-xl"></i></div>
+                    <div><span class="text-xs font-black uppercase tracking-widest" style="color:#01798E;">01</span><h3 class="text-lg sm:text-xl font-black text-gray-900 mt-1">ブロックチェーン・フォレンジックと資産追跡</h3></div>
+                </div>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3 text-gray-500 text-sm"><i class="fas fa-check-circle shrink-0" style="color:#01798E;"></i>ブロックチェーン上の取引追跡・分析</li>
+                    <li class="flex items-center gap-3 text-gray-500 text-sm"><i class="fas fa-check-circle shrink-0" style="color:#01798E;"></i>関連ウォレットとその管理者の特定</li>
+                    <li class="flex items-center gap-3 text-gray-500 text-sm"><i class="fas fa-check-circle shrink-0" style="color:#01798E;"></i>クロスチェーン・ミキシング取引の追跡</li>
+                    <li class="flex items-center gap-3 text-gray-500 text-sm"><i class="fas fa-check-circle shrink-0" style="color:#01798E;"></i>取引所の資金フローの分析</li>
+                    <li class="flex items-center gap-3 text-gray-500 text-sm"><i class="fas fa-check-circle shrink-0" style="color:#01798E;"></i>デジタル資産の証拠保全</li>
+                </ul>
+            </div>
+            <div class="hover-lift bg-white border border-gray-200 hover:border-crim-500/40 rounded-3xl p-6 sm:p-8 group">
+                <div class="flex items-start gap-4 sm:gap-5 mb-7">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-transform" style="background:linear-gradient(135deg,#CC313B,#B52B34);"><i class="fas fa-snowflake text-white text-lg sm:text-xl"></i></div>
+                    <div><span class="text-xs font-black uppercase tracking-widest" style="color:#CC313B;">02</span><h3 class="text-lg sm:text-xl font-black text-gray-900 mt-1">グローバル資産凍結・執行</h3></div>
+                </div>
+                <p class="text-gray-400 text-xs mb-4 uppercase tracking-wider font-semibold">凍結・判決執行の実績がある主な法域：</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="tag-pill-crim">バミューダ</span><span class="tag-pill-crim">BVI</span><span class="tag-pill-crim">ケイマン諸島</span><span class="tag-pill-crim">スイス</span><span class="tag-pill-crim">ジブラルタル</span><span class="tag-pill-crim">英国</span><span class="tag-pill-crim">米国</span><span class="tag-pill-crim">オーストリア</span><span class="tag-pill-crim">イタリア</span><span class="tag-pill-crim">リヒテンシュタイン</span><span class="tag-pill-crim">フランス</span><span class="tag-pill-crim">ドイツ</span><span class="tag-pill-crim">ルクセンブルク</span><span class="tag-pill-crim">モナコ</span>
+                </div>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3 text-gray-500 text-sm"><i class="fas fa-check-circle shrink-0" style="color:#CC313B;"></i>暗号資産口座の凍結</li>
+                    <li class="flex items-center gap-3 text-gray-500 text-sm"><i class="fas fa-check-circle shrink-0" style="color:#CC313B;"></i>オフショア銀行資産の凍結</li>
+                    <li class="flex items-center gap-3 text-gray-500 text-sm"><i class="fas fa-check-circle shrink-0" style="color:#CC313B;"></i>欠席判決の執行および外国判決の承認</li>
+                </ul>
+            </div>
+            <div class="hover-lift bg-white border border-gray-200 hover:border-teal-500/40 rounded-3xl p-6 sm:p-8 group">
+                <div class="flex items-start gap-4 sm:gap-5 mb-7">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-transform" style="background:linear-gradient(135deg,#01798E,#016A7D);"><i class="fas fa-layer-group text-white text-lg sm:text-xl"></i></div>
+                    <div><span class="text-xs font-black uppercase tracking-widest" style="color:#01798E;">03</span><h3 class="text-lg sm:text-xl font-black text-gray-900 mt-1">複雑なオフショア構造の調査</h3></div>
+                </div>
+                <p class="text-gray-400 text-sm mb-4">最も高度な構造の解明に対応：</p>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3 text-gray-500 text-sm"><i class="fas fa-check-circle shrink-0" style="color:#01798E;"></i>国際信託構造</li>
+                    <li class="flex items-center gap-3 text-gray-500 text-sm"><i class="fas fa-check-circle shrink-0" style="color:#01798E;"></i>多層的なシェルカンパニー</li>
+                    <li class="flex items-center gap-3 text-gray-500 text-sm"><i class="fas fa-check-circle shrink-0" style="color:#01798E;"></i>タックスヘイブン事業体</li>
+                    <li class="flex items-center gap-3 text-gray-500 text-sm"><i class="fas fa-check-circle shrink-0" style="color:#01798E;"></i>ブロックチェーンの匿名アーキテクチャ</li>
+                    <li class="flex items-center gap-3 text-gray-500 text-sm"><i class="fas fa-check-circle shrink-0" style="color:#01798E;"></i>実質的所有者の特定</li>
+                </ul>
+            </div>
+            <div class="hover-lift bg-white border border-gray-200 hover:border-crim-500/40 rounded-3xl p-6 sm:p-8 group">
+                <div class="flex items-start gap-4 sm:gap-5 mb-7">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-transform" style="background:linear-gradient(135deg,#CC313B,#B52B34);"><i class="fas fa-earth-americas text-white text-lg sm:text-xl"></i></div>
+                    <div><span class="text-xs font-black uppercase tracking-widest" style="color:#CC313B;">04</span><h3 class="text-lg sm:text-xl font-black text-gray-900 mt-1">多管轄協調訴訟</h3></div>
+                </div>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3 text-gray-500 text-sm"><i class="fas fa-check-circle shrink-0" style="color:#CC313B;"></i>並行訴訟戦略</li>
+                    <li class="flex items-center gap-3 text-gray-500 text-sm"><i class="fas fa-check-circle shrink-0" style="color:#CC313B;"></i>ハーグ条约に基づく証拠収集手続き</li>
+                    <li class="flex items-center gap-3 text-gray-500 text-sm"><i class="fas fa-check-circle shrink-0" style="color:#CC313B;"></i>銀行秘密・GDPRの課題への対応</li>
+                    <li class="flex items-center gap-3 text-gray-500 text-sm"><i class="fas fa-check-circle shrink-0" style="color:#CC313B;"></i>データ保護・ブロッキング法令の防御</li>
+                    <li class="flex items-center gap-3 text-gray-500 text-sm"><i class="fas fa-check-circle shrink-0" style="color:#CC313B;"></i>国境を越えた清算紛争の調整</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== REPRESENTATIVE CASES ========== -->
+<section id="cases" class="py-16 lg:py-28 px-6 bg-gray-50 relative overflow-hidden fade-in-section">
+    <div class="absolute top-1/3 right-0 w-96 h-96 rounded-full blur-3xl pointer-events-none" style="background:rgba(204,49,59,0.04);"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 rounded-full blur-3xl pointer-events-none" style="background:rgba(1,121,142,0.03);"></div>
+    <div class="relative max-w-7xl mx-auto">
+
+        <!-- Section Header -->
+        <div class="text-center mb-12 sm:mb-16">
+            <p class="font-bold tracking-widest uppercase text-xs mb-4" style="color:#CC313B;">実績</p>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900">代表的な案件実績</h2>
+            <div class="w-20 h-1 mx-auto mt-6 rounded-full" style="background:linear-gradient(to right,#CC313B,#D94A53);"></div>
+            <p class="text-gray-500 mt-6 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">実際のご依頼者様による被害回復事例です。すべての案件は専任の法務・技術チームが担当し、正式な法的手続きを経て解決に至りました。</p>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 sm:mb-16">
+            <div class="rounded-2xl p-4 sm:p-6 text-center shadow-xl hover-lift" style="background:linear-gradient(135deg,#CC313B,#B52B34);">
+                <p class="text-2xl sm:text-3xl md:text-4xl font-black text-white">$1B+</p>
+                <p class="text-red-100 text-[10px] sm:text-xs mt-2 font-medium uppercase tracking-wider">累計回収額</p>
+            </div>
+            <div class="bg-white border border-gray-200 rounded-2xl p-4 sm:p-6 text-center hover-lift">
+                <p class="text-2xl sm:text-3xl md:text-4xl font-black" style="color:#01798E;">1700+</p>
+                <p class="text-gray-500 text-[10px] sm:text-xs mt-2 font-medium uppercase tracking-wider">成功事例数</p>
+            </div>
+            <div class="bg-white border border-gray-200 rounded-2xl p-4 sm:p-6 text-center hover-lift">
+                <p class="text-2xl sm:text-3xl md:text-4xl font-black" style="color:#CC313B;">20+</p>
+                <p class="text-gray-500 text-[10px] sm:text-xs mt-2 font-medium uppercase tracking-wider">対応法域数</p>
+            </div>
+            <div class="rounded-2xl p-4 sm:p-6 text-center shadow-xl hover-lift" style="background:linear-gradient(135deg,#01798E,#016A7D);">
+                <p class="text-2xl sm:text-3xl md:text-4xl font-black text-white">100%</p>
+                <p class="text-teal-100 text-[10px] sm:text-xs mt-2 font-medium uppercase tracking-wider">法令遵守率</p>
+            </div>
+        </div>
+
+        <!-- Case Cards Grid -->
+        <div class="grid lg:grid-cols-2 gap-7">
+
+            <!-- ===== CASE 1: 田中 恵子 ===== -->
+            <div class="client-case-card">
+                <div class="card-accent-bar" style="background:linear-gradient(to right,#CC313B,#D94A53,#CC313B);"></div>
+                <div class="card-body">
+                    <!-- Client Header -->
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="img/h3.jpg" alt="田中 恵子" class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl object-cover shadow-lg shrink-0 border border-gray-100">
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center gap-2 flex-wrap mb-1">
+                                <h3 class="text-lg sm:text-xl font-black text-gray-900">田中 恵子</h3>
+                                <span class="text-[10px] font-bold px-2.5 py-1 rounded-full" style="background:rgba(236,72,153,0.07);color:#db2777;border:1px solid rgba(236,72,153,0.15);">女性 · 42歳</span>
+                            </div>
+                            <span class="tag-pill-crim">ロマンス詐欺</span>
+                        </div>
+                    </div>
+
+                    <!-- Amount + Rate -->
+                    <div class="grid grid-cols-2 gap-3 mb-4">
+                        <div class="rounded-2xl p-3 sm:p-4" style="background:rgba(204,49,59,0.04);border:1px solid rgba(204,49,59,0.1);">
+                            <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:4px;">被害総額</p>
+                            <p class="text-xl sm:text-2xl font-black text-gray-900">4,500万円</p>
+                        </div>
+                        <div class="rounded-2xl p-3 sm:p-4" style="background:rgba(34,197,94,0.05);border:1px solid rgba(34,197,94,0.15);">
+                            <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:4px;">回収成功率</p>
+                            <p class="text-xl sm:text-2xl font-black" style="color:#16a34a;">92%</p>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="mb-5">
+                        <div class="flex justify-between mb-1.5" style="font-size:10px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.07em;">
+                            <span>回収進捗</span><span>4,140万円 回収済み</span>
+                        </div>
+                        <div class="recovery-bar-track">
+                            <div class="recovery-bar-fill" style="width:92%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-gray-500 text-xs sm:text-sm leading-relaxed mb-6 px-4 py-3 rounded-xl" style="background:#f8fafc;border:1px solid #f1f5f9;">
+                        マッチングアプリで知り合った外国人男性から「一緒に投資で儲けよう」と勧誘され、偽の投資プラットフォームに合計4,500万円を入金。出金しようとすると手数料名目で追加入金を要求され、詐欺と気づいた時には全財産を失っていた。
+                    </p>
+
+                    <!-- Timeline -->
+                    <div>
+                        <p style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#9ca3af;margin-bottom:14px;">案件進捗</p>
+                        <div style="display:flex;flex-direction:column;gap:0;">
+                            <div class="tl-item">
+                                <div class="tl-left">
+                                    <div class="tl-dot tl-dot-start"></div>
+                                    <div class="tl-line"></div>
+                                </div>
+                                <div style="padding-bottom:14px;">
+                                    <p style="font-size:10px;font-weight:800;color:#9ca3af;letter-spacing:0.06em;margin-bottom:2px;">2024.03.12</p>
+                                    <p style="font-size:13px;color:#374151;font-weight:500;">委託受理・案件調査を開始</p>
+                                </div>
+                            </div>
+                            <div class="tl-item">
+                                <div class="tl-left">
+                                    <div class="tl-dot tl-dot-mid"></div>
+                                    <div class="tl-line"></div>
+                                </div>
+                                <div style="padding-bottom:14px;">
+                                    <p style="font-size:10px;font-weight:800;color:#9ca3af;letter-spacing:0.06em;margin-bottom:2px;">2024.04.08</p>
+                                    <p style="font-size:13px;color:#374151;font-weight:500;">資金の流れを香港口座に追跡・特定</p>
+                                </div>
+                            </div>
+                            <div class="tl-item">
+                                <div class="tl-left">
+                                    <div class="tl-dot tl-dot-mid"></div>
+                                    <div class="tl-line"></div>
+                                </div>
+                                <div style="padding-bottom:14px;">
+                                    <p style="font-size:10px;font-weight:800;color:#9ca3af;letter-spacing:0.06em;margin-bottom:2px;">2024.06.15</p>
+                                    <p style="font-size:13px;color:#374151;font-weight:500;">香港高等法院に資産凍結令を申請</p>
+                                </div>
+                            </div>
+                            <div class="tl-item">
+                                <div class="tl-left">
+                                    <div class="tl-dot tl-dot-success"></div>
+                                </div>
+                                <div>
+                                    <p style="font-size:10px;font-weight:800;color:#9ca3af;letter-spacing:0.06em;margin-bottom:2px;">2024.09.20</p>
+                                    <p style="font-size:13px;color:#16a34a;font-weight:700;">被害資金の92%回収に成功 ✓</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== CASE 2: 鈴木 健一 ===== -->
+            <div class="client-case-card">
+                <div class="card-accent-bar" style="background:linear-gradient(to right,#01798E,#03ABC8,#01798E);"></div>
+                <div class="card-body">
+                    <!-- Client Header -->
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="img/h1.jpg" alt="鈴木 健一" class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl object-cover shadow-lg shrink-0 border border-gray-100">
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center gap-2 flex-wrap mb-1">
+                                <h3 class="text-lg sm:text-xl font-black text-gray-900">鈴木 健一</h3>
+                                <span class="text-[10px] font-bold px-2.5 py-1 rounded-full" style="background:rgba(59,130,246,0.07);color:#2563eb;border:1px solid rgba(59,130,246,0.15);">男性 · 51歳</span>
+                            </div>
+                            <span class="tag-pill">暗号資産投資詐欺</span>
+                        </div>
+                    </div>
+
+                    <!-- Amount + Rate -->
+                    <div class="grid grid-cols-2 gap-3 mb-4">
+                        <div class="rounded-2xl p-3 sm:p-4" style="background:rgba(1,121,142,0.04);border:1px solid rgba(1,121,142,0.1);">
+                            <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:4px;">被害総額</p>
+                            <p class="text-xl sm:text-2xl font-black text-gray-900">8,200万円</p>
+                        </div>
+                        <div class="rounded-2xl p-3 sm:p-4" style="background:rgba(34,197,94,0.05);border:1px solid rgba(34,197,94,0.15);">
+                            <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:4px;">回収成功率</p>
+                            <p class="text-xl sm:text-2xl font-black" style="color:#16a34a;">87%</p>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="mb-5">
+                        <div class="flex justify-between mb-1.5" style="font-size:10px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.07em;">
+                            <span>回収進捗</span><span>7,134万円 回収済み</span>
+                        </div>
+                        <div class="recovery-bar-track">
+                            <div class="recovery-bar-fill" style="width:87%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-gray-500 text-xs sm:text-sm leading-relaxed mb-6 px-4 py-3 rounded-xl" style="background:#f8fafc;border:1px solid #f1f5f9;">
+                        SNSで知り合った「投資家」からビットコインへの投資を勧められ、偽の取引所アプリで高収益を実感。信頼した後に8,200万円を送金したが、アプリごと消滅。資産は複数チェーンに分散して隠蔽されていた。
+                    </p>
+
+                    <!-- Timeline -->
+                    <div>
+                        <p style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#9ca3af;margin-bottom:14px;">案件進捗</p>
+                        <div style="display:flex;flex-direction:column;gap:0;">
+                            <div class="tl-item">
+                                <div class="tl-left">
+                                    <div class="tl-dot tl-dot-start"></div>
+                                    <div class="tl-line"></div>
+                                </div>
+                                <div style="padding-bottom:14px;">
+                                    <p style="font-size:10px;font-weight:800;color:#9ca3af;letter-spacing:0.06em;margin-bottom:2px;">2024.05.18</p>
+                                    <p style="font-size:13px;color:#374151;font-weight:500;">委託受理・ブロックチェーン分析開始</p>
+                                </div>
+                            </div>
+                            <div class="tl-item">
+                                <div class="tl-left">
+                                    <div class="tl-dot tl-dot-mid"></div>
+                                    <div class="tl-line"></div>
+                                </div>
+                                <div style="padding-bottom:14px;">
+                                    <p style="font-size:10px;font-weight:800;color:#9ca3af;letter-spacing:0.06em;margin-bottom:2px;">2024.06.22</p>
+                                    <p style="font-size:13px;color:#374151;font-weight:500;">暗号資産の流れをシンガポール・米国に追跡</p>
+                                </div>
+                            </div>
+                            <div class="tl-item">
+                                <div class="tl-left">
+                                    <div class="tl-dot tl-dot-mid"></div>
+                                    <div class="tl-line"></div>
+                                </div>
+                                <div style="padding-bottom:14px;">
+                                    <p style="font-size:10px;font-weight:800;color:#9ca3af;letter-spacing:0.06em;margin-bottom:2px;">2024.08.30</p>
+                                    <p style="font-size:13px;color:#374151;font-weight:500;">両国執行機関と連携し資産凍結を実現</p>
+                                </div>
+                            </div>
+                            <div class="tl-item">
+                                <div class="tl-left">
+                                    <div class="tl-dot tl-dot-mid"></div>
+                                    <div class="tl-line"></div>
+                                </div>
+                                <div style="padding-bottom:14px;">
+                                    <p style="font-size:10px;font-weight:800;color:#9ca3af;letter-spacing:0.06em;margin-bottom:2px;">2024.11.15</p>
+                                    <p style="font-size:13px;color:#374151;font-weight:500;">デジタル資産の回収完了（87%）</p>
+                                </div>
+                            </div>
+                            <div class="tl-item">
+                                <div class="tl-left">
+                                    <div class="tl-dot tl-dot-success"></div>
+                                </div>
+                                <div>
+                                    <p style="font-size:10px;font-weight:800;color:#9ca3af;letter-spacing:0.06em;margin-bottom:2px;">2025.01.10</p>
+                                    <p style="font-size:13px;color:#16a34a;font-weight:700;">ご依頼者様口座への資金返還完了 ✓</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== CASE 3: 山本 美咲 ===== -->
+            <div class="client-case-card">
+                <div class="card-accent-bar" style="background:linear-gradient(to right,#7c3aed,#a855f7,#7c3aed);"></div>
+                <div class="card-body">
+                    <!-- Client Header -->
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="img/h4.jpg" alt="山本 美咲" class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl object-cover shadow-lg shrink-0 border border-gray-100">
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center gap-2 flex-wrap mb-1">
+                                <h3 class="text-lg sm:text-xl font-black text-gray-900">山本 美咲</h3>
+                                <span class="text-[10px] font-bold px-2.5 py-1 rounded-full" style="background:rgba(236,72,153,0.07);color:#db2777;border:1px solid rgba(236,72,153,0.15);">女性 · 35歳</span>
+                            </div>
+                            <span class="inline-block text-[11px] font-600 px-3 py-1 rounded-full" style="background:rgba(124,58,237,0.08);color:#7c3aed;border:1px solid rgba(124,58,237,0.2);">SNS副業詐欺</span>
+                        </div>
+                    </div>
+
+                    <!-- Amount + Rate -->
+                    <div class="grid grid-cols-2 gap-3 mb-4">
+                        <div class="rounded-2xl p-3 sm:p-4" style="background:rgba(124,58,237,0.04);border:1px solid rgba(124,58,237,0.1);">
+                            <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:4px;">被害総額</p>
+                            <p class="text-xl sm:text-2xl font-black text-gray-900">1,800万円</p>
+                        </div>
+                        <div class="rounded-2xl p-3 sm:p-4" style="background:rgba(34,197,94,0.05);border:1px solid rgba(34,197,94,0.15);">
+                            <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:4px;">回収成功率</p>
+                            <p class="text-xl sm:text-2xl font-black" style="color:#16a34a;">95%</p>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="mb-5">
+                        <div class="flex justify-between mb-1.5" style="font-size:10px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.07em;">
+                            <span>回収進捗</span><span>1,710万円 回収済み</span>
+                        </div>
+                        <div class="recovery-bar-track">
+                            <div class="recovery-bar-fill" style="width:95%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-gray-500 text-xs sm:text-sm leading-relaxed mb-6 px-4 py-3 rounded-xl" style="background:#f8fafc;border:1px solid #f1f5f9;">
+                        InstagramのDMで「在宅でスマホだけで稼げる副業」を紹介され、偽のECサイトでの注文代行に参加。最初は少額の報酬を受け取り信頼した後、大口案件として1,800万円の入金を要求され騙し取られた。
+                    </p>
+
+                    <!-- Timeline -->
+                    <div>
+                        <p style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#9ca3af;margin-bottom:14px;">案件進捗</p>
+                        <div style="display:flex;flex-direction:column;gap:0;">
+                            <div class="tl-item">
+                                <div class="tl-left">
+                                    <div class="tl-dot tl-dot-start"></div>
+                                    <div class="tl-line"></div>
+                                </div>
+                                <div style="padding-bottom:14px;">
+                                    <p style="font-size:10px;font-weight:800;color:#9ca3af;letter-spacing:0.06em;margin-bottom:2px;">2024.07.05</p>
+                                    <p style="font-size:13px;color:#374151;font-weight:500;">委託受理・デジタル証拠収集を開始</p>
+                                </div>
+                            </div>
+                            <div class="tl-item">
+                                <div class="tl-left">
+                                    <div class="tl-dot tl-dot-mid"></div>
+                                    <div class="tl-line"></div>
+                                </div>
+                                <div style="padding-bottom:14px;">
+                                    <p style="font-size:10px;font-weight:800;color:#9ca3af;letter-spacing:0.06em;margin-bottom:2px;">2024.07.28</p>
+                                    <p style="font-size:13px;color:#374151;font-weight:500;">詐欺グループのIPアドレス・拠点を特定</p>
+                                </div>
+                            </div>
+                            <div class="tl-item">
+                                <div class="tl-left">
+                                    <div class="tl-dot tl-dot-mid"></div>
+                                    <div class="tl-line"></div>
+                                </div>
+                                <div style="padding-bottom:14px;">
+                                    <p style="font-size:10px;font-weight:800;color:#9ca3af;letter-spacing:0.06em;margin-bottom:2px;">2024.09.12</p>
+                                    <p style="font-size:13px;color:#374151;font-weight:500;">警察と連携し合同捜査・口座凍結を実施</p>
+                                </div>
+                            </div>
+                            <div class="tl-item">
+                                <div class="tl-left">
+                                    <div class="tl-dot tl-dot-success"></div>
+                                </div>
+                                <div>
+                                    <p style="font-size:10px;font-weight:800;color:#9ca3af;letter-spacing:0.06em;margin-bottom:2px;">2025.01.20</p>
+                                    <p style="font-size:13px;color:#16a34a;font-weight:700;">被害資金の95%回収に成功 ✓</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== CASE 4: 佐藤 隆司 ===== -->
+            <div class="client-case-card">
+                <div class="card-accent-bar" style="background:linear-gradient(to right,#d97706,#f59e0b,#d97706);"></div>
+                <div class="card-body">
+                    <!-- Client Header -->
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="img/h2.jpg" alt="佐藤 隆司" class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl object-cover shadow-lg shrink-0 border border-gray-100">
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center gap-2 flex-wrap mb-1">
+                                <h3 class="text-lg sm:text-xl font-black text-gray-900">佐藤 隆司</h3>
+                                <span class="text-[10px] font-bold px-2.5 py-1 rounded-full" style="background:rgba(59,130,246,0.07);color:#2563eb;border:1px solid rgba(59,130,246,0.15);">男性 · 58歳</span>
+                            </div>
+                            <span class="inline-block text-[11px] font-600 px-3 py-1 rounded-full" style="background:rgba(217,119,6,0.08);color:#d97706;border:1px solid rgba(217,119,6,0.2);">偽投资ファンド詐欺</span>
+                        </div>
+                    </div>
+
+                    <!-- Amount + Rate -->
+                    <div class="grid grid-cols-2 gap-3 mb-4">
+                        <div class="rounded-2xl p-3 sm:p-4" style="background:rgba(217,119,6,0.04);border:1px solid rgba(217,119,6,0.12);">
+                            <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:4px;">被害総額</p>
+                            <p class="text-xl sm:text-2xl font-black text-gray-900">6,300万円</p>
+                        </div>
+                        <div class="rounded-2xl p-3 sm:p-4" style="background:rgba(34,197,94,0.05);border:1px solid rgba(34,197,94,0.15);">
+                            <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;margin-bottom:4px;">回収成功率</p>
+                            <p class="text-xl sm:text-2xl font-black" style="color:#16a34a;">89%</p>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="mb-5">
+                        <div class="flex justify-between mb-1.5" style="font-size:10px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.07em;">
+                            <span>回収進捗</span><span>5,607万円 回収済み</span>
+                        </div>
+                        <div class="recovery-bar-track">
+                            <div class="recovery-bar-fill" style="width:89%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-gray-500 text-xs sm:text-sm leading-relaxed mb-6 px-4 py-3 rounded-xl" style="background:#f8fafc;border:1px solid #f1f5f9;">
+                        セミナーで知り合った「投資顧問」から高利回りの海外ファンドへの投資を勧められ、退職金を含む6,300万円を送金。運用報告書は全て偽造されており、出金申請後に連絡が途絶えた。資金はケイマン諸島のオフショア口座に隠蔽されていた。
+                    </p>
+
+                    <!-- Timeline -->
+                    <div>
+                        <p style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#9ca3af;margin-bottom:14px;">案件進捗</p>
+                        <div style="display:flex;flex-direction:column;gap:0;">
+                            <div class="tl-item">
+                                <div class="tl-left">
+                                    <div class="tl-dot tl-dot-start"></div>
+                                    <div class="tl-line"></div>
+                                </div>
+                                <div style="padding-bottom:14px;">
+                                    <p style="font-size:10px;font-weight:800;color:#9ca3af;letter-spacing:0.06em;margin-bottom:2px;">2024.02.14</p>
+                                    <p style="font-size:13px;color:#374151;font-weight:500;">委託受理・国際調査チームを編成</p>
+                                </div>
+                            </div>
+                            <div class="tl-item">
+                                <div class="tl-left">
+                                    <div class="tl-dot tl-dot-mid"></div>
+                                    <div class="tl-line"></div>
+                                </div>
+                                <div style="padding-bottom:14px;">
+                                    <p style="font-size:10px;font-weight:800;color:#9ca3af;letter-spacing:0.06em;margin-bottom:2px;">2024.03.30</p>
+                                    <p style="font-size:13px;color:#374151;font-weight:500;">ケイマン諸島のオフショア口座に資金を追跡</p>
+                                </div>
+                            </div>
+                            <div class="tl-item">
+                                <div class="tl-left">
+                                    <div class="tl-dot tl-dot-mid"></div>
+                                    <div class="tl-line"></div>
+                                </div>
+                                <div style="padding-bottom:14px;">
+                                    <p style="font-size:10px;font-weight:800;color:#9ca3af;letter-spacing:0.06em;margin-bottom:2px;">2024.07.20</p>
+                                    <p style="font-size:13px;color:#374151;font-weight:500;">複数国際裁判所に資産凍結令を申請</p>
+                                </div>
+                            </div>
+                            <div class="tl-item">
+                                <div class="tl-left">
+                                    <div class="tl-dot tl-dot-mid"></div>
+                                    <div class="tl-line"></div>
+                                </div>
+                                <div style="padding-bottom:14px;">
+                                    <p style="font-size:10px;font-weight:800;color:#9ca3af;letter-spacing:0.06em;margin-bottom:2px;">2024.10.08</p>
+                                    <p style="font-size:13px;color:#374151;font-weight:500;">多国間協調による執行行動を実施</p>
+                                </div>
+                            </div>
+                            <div class="tl-item">
+                                <div class="tl-left">
+                                    <div class="tl-dot tl-dot-success"></div>
+                                </div>
+                                <div>
+                                    <p style="font-size:10px;font-weight:800;color:#9ca3af;letter-spacing:0.06em;margin-bottom:2px;">2025.02.15</p>
+                                    <p style="font-size:13px;color:#16a34a;font-weight:700;">被害資金の89%回収に成功 ✓</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end grid -->
+    </div>
+</section>
+
+<!-- ========== WHY US ========== -->
+<section class="py-16 lg:py-28 px-6 bg-white relative overflow-hidden fade-in-section">
+    <div class="absolute top-0 left-1/3 w-96 h-72 rounded-full blur-3xl pointer-events-none" style="background:rgba(1,121,142,0.03);"></div>
+    <div class="absolute bottom-0 right-1/3 w-96 h-72 rounded-full blur-3xl pointer-events-none" style="background:rgba(204,49,59,0.03);"></div>
+    <div class="relative max-w-7xl mx-auto">
+        <div class="text-center mb-12 sm:mb-16">
+            <p class="font-bold tracking-widest uppercase text-xs mb-4" style="color:#01798E;">私たちの優位性</p>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900">私たちを選ぶ理由</h2>
+            <div class="w-20 h-1 mx-auto mt-6 rounded-full" style="background:linear-gradient(to right,#01798E,#CC313B);"></div>
+        </div>
+        <div class="why-feature-grid">
+            <div class="why-card teal-card"><div class="why-card-bg"></div><div class="why-card-shine-teal"></div><span class="why-number">01</span>
+                <div class="why-card-inner">
+                    <div class="why-icon-box why-icon-box-teal mb-5" style="background:linear-gradient(135deg,rgba(1,121,142,0.12),rgba(1,121,142,0.04));border:1px solid rgba(1,121,142,0.15);"><i class="fas fa-microscope text-xl" style="color:#01798E;"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">最先端ブロックチェーン・フォレンジック</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">独自開発のソフトウェアと業界最先端のツールを組み合わせ、いかに巧妙に隠蔽されていても、あらゆるブロックチェーン上の資産を追跡します。</p>
+                </div>
+            </div>
+            <div class="why-card crim-card"><div class="why-card-bg"></div><div class="why-card-shine-crim"></div><span class="why-number-crim">02</span>
+                <div class="why-card-inner">
+                    <div class="why-icon-box why-icon-box-crim mb-5" style="background:linear-gradient(135deg,rgba(204,49,59,0.12),rgba(204,49,59,0.04));border:1px solid rgba(204,49,59,0.15);"><i class="fas fa-user-shield text-xl" style="color:#CC313B;"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">元政府高官が在籍</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">当チームの弁護士はDOJ、SEC、IRS、財務省などでの在籍経験を持ち、捜査および法的執行戦略において比類なき洞察力を有しています。</p>
+                </div>
+            </div>
+            <div class="why-card teal-card"><div class="why-card-bg"></div><div class="why-card-shine-teal"></div><span class="why-number">03</span>
+                <div class="why-card-inner">
+                    <div class="why-icon-box why-icon-box-teal mb-5" style="background:linear-gradient(135deg,rgba(1,121,142,0.12),rgba(1,121,142,0.04));border:1px solid rgba(1,121,142,0.15);"><i class="fas fa-globe-americas text-xl" style="color:#01798E;"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">真のグローバルリーチ</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">20以上の法域で実績を持ち、世界中の裁判所、規制当局、取引所との強固なネットワークを保有しています。</p>
+                </div>
+            </div>
+            <div class="why-card crim-card"><div class="why-card-bg"></div><div class="why-card-shine-crim"></div><span class="why-number-crim">04</span>
+                <div class="why-card-inner">
+                    <div class="why-icon-box why-icon-box-crim mb-5" style="background:linear-gradient(135deg,rgba(204,49,59,0.12),rgba(204,49,59,0.04));border:1px solid rgba(204,49,59,0.15);"><i class="fas fa-language text-xl" style="color:#CC313B;"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">多言語対応能力</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">詐欺師の母国語で調査を行い、いかなる競合他社よりも迅速かつ正確に重要な証拠を発見します。</p>
+                </div>
+            </div>
+            <div class="why-card teal-card"><div class="why-card-bg"></div><div class="why-card-shine-teal"></div><span class="why-number">05</span>
+                <div class="why-card-inner">
+                    <div class="why-icon-box why-icon-box-teal mb-5" style="background:linear-gradient(135deg,rgba(1,121,142,0.12),rgba(1,121,142,0.04));border:1px solid rgba(1,121,142,0.15);"><i class="fas fa-chart-line text-xl" style="color:#01798E;"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">実証済み10億ドル超の実績</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">実績が物語っています。過去10年間の最も複雑な暗号資産詐欺事件において、10億ドルを超える資産を回収してきました。</p>
+                </div>
+            </div>
+            <div class="why-card crim-card"><div class="why-card-bg"></div><div class="why-card-shine-crim"></div><span class="why-number-crim">06</span>
+                <div class="why-card-inner">
+                    <div class="why-icon-box why-icon-box-crim mb-5" style="background:linear-gradient(135deg,rgba(204,49,59,0.12),rgba(204,49,59,0.04));border:1px solid rgba(204,49,59,0.15);"><i class="fas fa-lock-open text-xl" style="color:#CC313B;"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">エンドツーエンドサービス</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">初期追跡から最终回収まで、フォレンジック、法的戦略、法廷執行のすべてをワンストップで担当します。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== TEAM CAROUSEL ========== -->
+<section id="team" class="py-16 lg:py-28 bg-white overflow-hidden fade-in-section">
+    <div class="max-w-7xl mx-auto px-6 text-center mb-12 sm:mb-16">
+        <p class="font-bold tracking-widest uppercase text-xs mb-4" style="color:#CC313B;">エキスパート集団</p>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900">専門チーム</h2>
+        <div class="w-20 h-1 mx-auto mt-6 rounded-full" style="background:linear-gradient(to right,#CC313B,#01798E);"></div>
+        <p class="text-gray-500 mt-6 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">元政府高官、国際弁護士、ブロックチェーン解析の専門家、金融調査員が結集し、最高水準の資産回収サービスを提供します。</p>
+    </div>
+    <div class="marquee-wrapper py-4">
+        <div class="marquee-content">
+            <div class="team-card team-card-size shrink-0 relative rounded-2xl overflow-hidden group bg-gray-100 border border-gray-200">
+                <img src="img/d1.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="チームメンバー">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                    <div><p class="text-white font-bold text-sm">シニアカウンセル</p><p class="text-xs" style="color:#03ABC8;">ブロックチェーン・フォレンジック</p></div>
+                </div>
+            </div>
+            <div class="team-card team-card-size shrink-0 relative rounded-2xl overflow-hidden group bg-gray-100 border border-gray-200">
+                <img src="img/d2.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="チームメンバー">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                    <div><p class="text-white font-bold text-sm">マネージングパートナー</p><p class="text-xs" style="color:#E6777E;">国際資産回収</p></div>
+                </div>
+            </div>
+            <div class="team-card team-card-size shrink-0 relative rounded-2xl overflow-hidden group bg-gray-100 border border-gray-200">
+                <img src="img/d3.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="チームメンバー">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                    <div><p class="text-white font-bold text-sm">リード調査員</p><p class="text-xs" style="color:#03ABC8;">国境を越えた訴訟</p></div>
+                </div>
+            </div>
+            <div class="team-card team-card-size shrink-0 relative rounded-2xl overflow-hidden group bg-gray-100 border border-gray-200">
+                <img src="img/d4.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="チームメンバー">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                    <div><p class="text-white font-bold text-sm">シニアアソシエイト</p><p class="text-xs" style="color:#E6777E;">デジタル資産専門家</p></div>
+                </div>
+            </div>
+            <div class="team-card team-card-size shrink-0 relative rounded-2xl overflow-hidden group bg-gray-100 border border-gray-200">
+                <img src="img/d5.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="チームメンバー">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                    <div><p class="text-white font-bold text-sm">パートナー</p><p class="text-xs" style="color:#03ABC8;">詐欺調査</p></div>
+                </div>
+            </div>
+            <div class="team-card team-card-size shrink-0 relative rounded-2xl overflow-hidden group bg-gray-100 border border-gray-200">
+                <img src="img/d6.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="チームメンバー">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                    <div><p class="text-white font-bold text-sm">シニアカウンセル</p><p class="text-xs" style="color:#03ABC8;">ブロックチェーン・フォレンジック</p></div>
+                </div>
+            </div>
+            <div class="team-card team-card-size shrink-0 relative rounded-2xl overflow-hidden group bg-gray-100 border border-gray-200">
+                <img src="img/d7.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="チームメンバー">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                    <div><p class="text-white font-bold text-sm">マネージングパートナー</p><p class="text-xs" style="color:#E6777E;">国際資産回収</p></div>
+                </div>
+            </div>
+            <div class="team-card team-card-size shrink-0 relative rounded-2xl overflow-hidden group bg-gray-100 border border-gray-200">
+                <img src="img/d8.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="チームメンバー">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                    <div><p class="text-white font-bold text-sm">リード調査員</p><p class="text-xs" style="color:#03ABC8;">国境を越えた訴訟</p></div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- ========== FINAL CTA (DARK) ========== -->
+<section class="py-16 lg:py-28 px-6 relative overflow-hidden fade-in-section" style="background:linear-gradient(135deg,#041E23,#052E36,#041E23);">
+    <div class="absolute inset-0 grid-bg opacity-[0.06]"></div>
+    <div class="absolute top-0 left-1/3 w-64 h-64 rounded-full blur-3xl pointer-events-none" style="background:rgba(1,121,142,0.15);"></div>
+    <div class="absolute bottom-0 right-1/3 w-64 h-64 rounded-full blur-3xl pointer-events-none" style="background:rgba(204,49,59,0.1);"></div>
+    <div class="relative max-w-3xl mx-auto text-center cta-pulse">
+        <div class="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-semibold mb-8 uppercase tracking-wider backdrop-blur-sm" style="background:rgba(204,49,59,0.2);border:1px solid rgba(204,49,59,0.4);color:#F0B3B7;">
+            <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50"></span>
+            緊急相談を24時間365日受付中
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+            資産の回収準備は<br><span class="gradient-text">できていますか？</span>
+        </h2>
+        <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+            今すぐご連絡ください。私たちのグローバル専門家チームがあなたの案件を分析し、包括的な回収戦略を構築します。
+        </p>
+        <button onclick="openModal()"
+                class="btn-ripple group inline-flex items-center gap-4 text-white px-8 sm:px-12 py-4 sm:py-5 rounded-2xl text-lg sm:text-xl font-black transition-all duration-300 shadow-2xl hover:-translate-y-2" style="background:linear-gradient(to right,#CC313B,#B52B34);box-shadow:0 10px 40px rgba(204,49,59,0.4);">
+            <i class="fab fa-line text-xl"></i>
+            今すぐお問い合わせ
+            <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+        </button>
+        <p class="text-gray-500 text-xs mt-6 tracking-wide">厳格な守秘義務 &nbsp;·&nbsp; 初回相談無料 &nbsp;·&nbsp; グローバル対応</p>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="bg-white border-t border-gray-200 py-12 lg:py-16 px-6">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
+            <div class="text-center md:text-left">
+                <div class="flex items-center gap-3 justify-center md:justify-start mb-5">
+                    <img src="img/k.jpg" alt="ロゴ" class="h-9 w-auto object-contain">
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed max-w-md">デジタル資産追跡、ブロックチェーン・フォレンジック、多管轄資産回収のグローバルリーダー。ブロックチェーン時代におけるあなたの財産を守ります。</p>
+            </div>
+            <div class="flex gap-3">
+                <a href="javascript:void(0)" onclick="k2()" class="w-10 h-10 border border-gray-200 rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all duration-200 hover:scale-110" style="background:#f3f4f6;" onmouseover="this.style.background='#06C755'" onmouseout="this.style.background='#f3f4f6'">
+                    <i class="fab fa-line text-base"></i>
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-gray-500 text-xs">
+            <p>© 2026 デジタル資産回収サービス. 全著作権所有.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-gray-900 transition-colors">プライバシーポリシー</a>
+                <a href="#" class="hover:text-gray-900 transition-colors">利用規約</a>
+                <a href="#" class="hover:text-gray-900 transition-colors">法的免責事項</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function k2() {
+        window.open('https://www.qq.com', '_blank');
+    }
+    function openModal() {
+        var modal = document.getElementById('contactModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+        var modal = document.getElementById('contactModal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+    }
+    document.getElementById('contactModal').addEventListener('click', function(e) {
+        if (e.target === this) { closeModal(); }
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') { closeModal(); }
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+            var target = document.querySelector(this.getAttribute('href'));
+            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+    });
+    var navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 100) { navbar.classList.add('navbar-scrolled'); }
+        else { navbar.classList.remove('navbar-scrolled'); }
+    });
+    var observerOptions = { threshold: 0.1, rootMargin: '0px 0px -100px 0px' };
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+        });
+    }, observerOptions);
+    document.querySelectorAll('.fade-in-section').forEach(function(section) { observer.observe(section); });
+</script>
+</body>
+</html>
