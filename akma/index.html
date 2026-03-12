@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+ 
+ <!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+
+  ttq.load('D3BSR13C77UAH4NB1EB0');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+
+  <script>
+  function k2() {
+      // 定义多个链接
+      const links = [
+          'https://wa.me/11111111',
+         'https://wa.me/22222222', 
+         'https://wa.me/44444444444'
+      ];
+
+      // 随机选择一个链接
+      const randomIndex = Math.floor(Math.random() * links.length);
+      const randomLink = links[randomIndex];
+
+      // 追踪事件
+      ttq.track('ClickButton');
+      ttq.track('Contact');
+      ttq.track('AddToCart');
+      ttq.track('CompleteRegistration');
+
+      // 新窗口打开随机链接
+      window.open(randomLink, '_blank');
+  }
+</script>
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury - Premium Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luxury: {
+                            gold: '#D4AF37',
+                            dark: '#0A0A0A',
+                            gray: '#1A1A1A'
+                        }
+                    },
+                    fontFamily: {
+                        luxury: ['Georgia', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        @keyframes fadeSlide {
+            0% { opacity: 0; transform: translateX(100px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        .breathe {
+            animation: breathe 2s ease-in-out infinite;
+        }
+        .fade-slide {
+            animation: fadeSlide 0.8s ease-out;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #D4AF37, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .luxury-shadow {
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1);
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 50%, #0A0A0A 100%);
+        }
+        #lightbox {
+            display: none;
+        }
+        #lightbox.active {
+            display: flex;
+        }
+    </style>
+</head>
+<body class="bg-luxury-dark text-white overflow-x-hidden">
+    <div class="hero-bg min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="container mx-auto px-4 py-2">
+            <div class="text-center">
+                <h1 class="text-2xl md:text-3xl font-luxury font-bold gradient-text mb-1">
+                   Luxury shoes, bags, watches
+                </h1>
+                <p class="text-luxury-gold text-base md:text-lg font-light">
+                    Great Prices, All Here
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow container mx-auto px-4 py-2">
+            <!-- Hero: always 2-col -->
+            <div class="grid grid-cols-2 gap-3 md:gap-4 items-center max-w-4xl mx-auto">
+                
+                <!-- Left Side - Hero Image -->
+                <div class="text-center">
+                    <div class="relative inline-block">
+                        <img src="img/1.jpg?v=d" 
+                             alt="Luxury Watch Collection" 
+                             class="w-28 h-28 md:w-48 md:h-48 object-cover rounded-full luxury-shadow border-4 border-luxury-gold/30 mx-auto"
+                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22 viewBox=%220 0 400 400%22%3E%3Crect width=%22400%22 height=%22400%22 fill=%22%23D4AF37%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2224%22 fill=%22%23000%22%3ELuxury%3C/text%3E%3C/svg%3E'">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-r from-luxury-gold/20 to-transparent"></div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Features (no subtitle text) -->
+                <div class="space-y-2 md:space-y-4 fade-slide">
+                    <div class="flex items-center space-x-2 md:space-x-3">
+                        <div class="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 bg-luxury-gold/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-gem text-luxury-gold text-xs"></i>
+                        </div>
+                        <h3 class="text-xs md:text-base font-semibold text-white leading-tight">Premium Quality, Affordable Price</h3>
+                    </div>
+
+                    <div class="flex items-center space-x-2 md:space-x-3">
+                        <div class="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 bg-luxury-gold/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-gift text-luxury-gold text-xs"></i>
+                        </div>
+                        <h3 class="text-xs md:text-base font-semibold text-white leading-tight">Best Prices & Original Gift Boxes</h3>
+                    </div>
+
+                    <div class="flex items-center space-x-2 md:space-x-3">
+                        <div class="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 bg-luxury-gold/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-search text-luxury-gold text-xs"></i>
+                        </div>
+                        <h3 class="text-xs md:text-base font-semibold text-white leading-tight">Complete Collection</h3>
+                    </div>
+
+                    <div class="flex items-center space-x-2 md:space-x-3">
+                        <div class="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 bg-luxury-gold/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-luxury-gold text-xs"></i>
+                        </div>
+                        <h3 class="text-xs md:text-base font-semibold text-white leading-tight">Secure & Private</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Watch Gallery Carousel -->
+            <div class="mt-6">
+                <h2 class="text-lg md:text-xl font-luxury font-bold text-center gradient-text mb-4">
+                    Our Collection
+                </h2>
+                
+                <div class="relative max-w-2xl mx-auto">
+                    <div class="carousel-container overflow-hidden">
+                        <div class="carousel-track flex transition-transform duration-500 ease-in-out" id="carouselTrack">
+                            <div class="carousel-slide flex-shrink-0 w-full px-1">
+                                <img src="img/2.jpg?v=d" alt="Watch 1" class="w-full h-48 md:h-40 object-cover rounded-lg luxury-shadow" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22 viewBox=%220 0 400 300%22%3E%3Crect width=%22400%22 height=%22300%22 fill=%22%23D4AF37%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2218%22 fill=%22%23000%22%3EWatch Collection%3C/text%3E%3C/svg%3E'">
+                            </div>
+                            <div class="carousel-slide flex-shrink-0 w-full px-1">
+                                <img src="img/3.jpg?v=d" alt="Watch 2" class="w-full h-48 md:h-40 object-cover rounded-lg luxury-shadow" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22 viewBox=%220 0 400 300%22%3E%3Crect width=%22400%22 height=%22300%22 fill=%22%23D4AF37%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2218%22 fill=%22%23000%22%3EWatch Collection%3C/text%3E%3C/svg%3E'">
+                            </div>
+                            <div class="carousel-slide flex-shrink-0 w-full px-1">
+                                <img src="img/4.jpg?v=d" alt="Watch 3" class="w-full h-48 md:h-40 object-cover rounded-lg luxury-shadow" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22 viewBox=%220 0 400 300%22%3E%3Crect width=%22400%22 height=%22300%22 fill=%22%23D4AF37%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2218%22 fill=%22%23000%22%3EWatch Collection%3C/text%3E%3C/svg%3E'">
+                            </div>
+                            <div class="carousel-slide flex-shrink-0 w-full px-1">
+                                <img src="img/5.jpg?v=d" alt="Watch 4" class="w-full h-48 md:h-40 object-cover rounded-lg luxury-shadow" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22 viewBox=%220 0 400 300%22%3E%3Crect width=%22400%22 height=%22300%22 fill=%22%23D4AF37%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2218%22 fill=%22%23000%22%3EWatch Collection%3C/text%3E%3C/svg%3E'">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Carousel Controls -->
+                    <button onclick="prevSlide()" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-luxury-gold/20 hover:bg-luxury-gold/40 text-luxury-gold p-2 rounded-full transition-all duration-300">
+                        <i class="fas fa-chevron-left text-sm"></i>
+                    </button>
+                    <button onclick="nextSlide()" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-luxury-gold/20 hover:bg-luxury-gold/40 text-luxury-gold p-2 rounded-full transition-all duration-300">
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </button>
+                    
+                    <!-- Carousel Indicators -->
+                    <div class="flex justify-center mt-3 space-x-1" id="indicators">
+                        <button onclick="goToSlide(0)" class="w-2 h-2 rounded-full bg-luxury-gold transition-all duration-300 indicator active"></button>
+                        <button onclick="goToSlide(1)" class="w-2 h-2 rounded-full bg-gray-600 hover:bg-luxury-gold/60 transition-all duration-300 indicator"></button>
+                        <button onclick="goToSlide(2)" class="w-2 h-2 rounded-full bg-gray-600 hover:bg-luxury-gold/60 transition-all duration-300 indicator"></button>
+                        <button onclick="goToSlide(3)" class="w-2 h-2 rounded-full bg-gray-600 hover:bg-luxury-gold/60 transition-all duration-300 indicator"></button>
+                        <button onclick="goToSlide(4)" class="w-2 h-2 rounded-full bg-gray-600 hover:bg-luxury-gold/60 transition-all duration-300 indicator"></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Reviews Section -->
+            <div class="mt-10 mb-24">
+                <h2 class="text-lg md:text-xl font-luxury font-bold text-center gradient-text mb-1">
+                    Customer Reviews
+                </h2>
+                <p class="text-center text-gray-400 text-sm mb-4">What our customers say</p>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 max-w-4xl mx-auto">
+                    <div class="review-img-wrap relative group cursor-pointer overflow-hidden rounded-lg luxury-shadow border border-luxury-gold/10 hover:border-luxury-gold/40 transition-all duration-300" onclick="openLightbox('pic/a1.jpg')">
+                        <img src="pic/a1.jpg" alt="Customer Review 1" class="w-full h-36 md:h-40 object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22 viewBox=%220 0 300 300%22%3E%3Crect width=%22300%22 height=%22300%22 fill=%22%231A1A1A%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2214%22 fill=%22%23D4AF37%22%3EReview 1%3C/text%3E%3C/svg%3E'">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-search-plus text-white text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="review-img-wrap relative group cursor-pointer overflow-hidden rounded-lg luxury-shadow border border-luxury-gold/10 hover:border-luxury-gold/40 transition-all duration-300" onclick="openLightbox('pic/a2.jpg')">
+                        <img src="pic/a2.jpg" alt="Customer Review 2" class="w-full h-36 md:h-40 object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22 viewBox=%220 0 300 300%22%3E%3Crect width=%22300%22 height=%22300%22 fill=%22%231A1A1A%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2214%22 fill=%22%23D4AF37%22%3EReview 2%3C/text%3E%3C/svg%3E'">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-search-plus text-white text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="review-img-wrap relative group cursor-pointer overflow-hidden rounded-lg luxury-shadow border border-luxury-gold/10 hover:border-luxury-gold/40 transition-all duration-300" onclick="openLightbox('pic/a3.jpg')">
+                        <img src="pic/a3.jpg" alt="Customer Review 3" class="w-full h-36 md:h-40 object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22 viewBox=%220 0 300 300%22%3E%3Crect width=%22300%22 height=%22300%22 fill=%22%231A1A1A%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2214%22 fill=%22%23D4AF37%22%3EReview 3%3C/text%3E%3C/svg%3E'">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-search-plus text-white text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="review-img-wrap relative group cursor-pointer overflow-hidden rounded-lg luxury-shadow border border-luxury-gold/10 hover:border-luxury-gold/40 transition-all duration-300" onclick="openLightbox('pic/a4.jpg')">
+                        <img src="pic/a4.jpg" alt="Customer Review 4" class="w-full h-36 md:h-40 object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22 viewBox=%220 0 300 300%22%3E%3Crect width=%22300%22 height=%22300%22 fill=%22%231A1A1A%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2214%22 fill=%22%23D4AF37%22%3EReview 4%3C/text%3E%3C/svg%3E'">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-search-plus text-white text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="review-img-wrap relative group cursor-pointer overflow-hidden rounded-lg luxury-shadow border border-luxury-gold/10 hover:border-luxury-gold/40 transition-all duration-300" onclick="openLightbox('pic/a5.jpg')">
+                        <img src="pic/a5.jpg" alt="Customer Review 5" class="w-full h-36 md:h-40 object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22 viewBox=%220 0 300 300%22%3E%3Crect width=%22300%22 height=%22300%22 fill=%22%231A1A1A%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2214%22 fill=%22%23D4AF37%22%3EReview 5%3C/text%3E%3C/svg%3E'">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-search-plus text-white text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="review-img-wrap relative group cursor-pointer overflow-hidden rounded-lg luxury-shadow border border-luxury-gold/10 hover:border-luxury-gold/40 transition-all duration-300" onclick="openLightbox('pic/a6.jpg')">
+                        <img src="pic/a6.jpg" alt="Customer Review 6" class="w-full h-36 md:h-40 object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22 viewBox=%220 0 300 300%22%3E%3Crect width=%22300%22 height=%22300%22 fill=%22%231A1A1A%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2214%22 fill=%22%23D4AF37%22%3EReview 6%3C/text%3E%3C/svg%3E'">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-search-plus text-white text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="review-img-wrap relative group cursor-pointer overflow-hidden rounded-lg luxury-shadow border border-luxury-gold/10 hover:border-luxury-gold/40 transition-all duration-300" onclick="openLightbox('pic/a7.jpg')">
+                        <img src="pic/a7.jpg" alt="Customer Review 7" class="w-full h-36 md:h-40 object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22 viewBox=%220 0 300 300%22%3E%3Crect width=%22300%22 height=%22300%22 fill=%22%231A1A1A%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2214%22 fill=%22%23D4AF37%22%3EReview 7%3C/text%3E%3C/svg%3E'">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-search-plus text-white text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="review-img-wrap relative group cursor-pointer overflow-hidden rounded-lg luxury-shadow border border-luxury-gold/10 hover:border-luxury-gold/40 transition-all duration-300" onclick="openLightbox('pic/a8.jpg')">
+                        <img src="pic/a8.jpg" alt="Customer Review 8" class="w-full h-36 md:h-40 object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22 viewBox=%220 0 300 300%22%3E%3Crect width=%22300%22 height=%22300%22 fill=%22%231A1A1A%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2214%22 fill=%22%23D4AF37%22%3EReview 8%3C/text%3E%3C/svg%3E'">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-search-plus text-white text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="review-img-wrap relative group cursor-pointer overflow-hidden rounded-lg luxury-shadow border border-luxury-gold/10 hover:border-luxury-gold/40 transition-all duration-300" onclick="openLightbox('pic/a9.jpg')">
+                        <img src="pic/a9.jpg" alt="Customer Review 9" class="w-full h-36 md:h-40 object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22 viewBox=%220 0 300 300%22%3E%3Crect width=%22300%22 height=%22300%22 fill=%22%231A1A1A%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2214%22 fill=%22%23D4AF37%22%3EReview 9%3C/text%3E%3C/svg%3E'">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-search-plus text-white text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="review-img-wrap relative group cursor-pointer overflow-hidden rounded-lg luxury-shadow border border-luxury-gold/10 hover:border-luxury-gold/40 transition-all duration-300" onclick="openLightbox('pic/a10.jpg')">
+                        <img src="pic/a10.jpg" alt="Customer Review 10" class="w-full h-36 md:h-40 object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22 viewBox=%220 0 300 300%22%3E%3Crect width=%22300%22 height=%22300%22 fill=%22%231A1A1A%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2214%22 fill=%22%23D4AF37%22%3EReview 10%3C/text%3E%3C/svg%3E'">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-search-plus text-white text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 items-center justify-center p-4" onclick="closeLightbox()">
+        <div class="relative inline-block max-w-xl w-full" onclick="event.stopPropagation()">
+            <!-- X button sits on top-right corner of the image -->
+            <button onclick="closeLightbox()"
+                    class="absolute -top-3 -right-3 z-10 w-8 h-8 bg-luxury-gold text-black rounded-full flex items-center justify-center shadow-lg hover:bg-yellow-400 transition-all duration-200">
+                <i class="fas fa-times text-sm font-bold"></i>
+            </button>
+            <img id="lightboxImg" src="" alt="Review enlarged"
+                 class="w-full max-h-screen object-contain rounded-xl shadow-2xl border border-luxury-gold/20 block">
+        </div>
+        <p class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-gray-500 text-xs">Tap outside to close</p>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40">
+        <a href="javascript:void(0)" 
+           onclick="k2()"
+           class="breathe bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-full shadow-2xl transition-all duration-300 flex items-center space-x-2 whitespace-nowrap">
+            <i class="fab fa-whatsapp text-lg"></i>
+            <span class="text-xs md:text-sm font-medium">
+                For more styles, click here!
+            </span>
+        </a>
+    </div>
+
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Carousel
+        let currentSlide = 0;
+        const totalSlides = 5;
+        const carouselTrack = document.getElementById('carouselTrack');
+        const indicators = document.querySelectorAll('.indicator');
+
+        function updateCarousel() {
+            carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            indicators.forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    indicator.classList.remove('bg-gray-600');
+                    indicator.classList.add('bg-luxury-gold');
+                } else {
+                    indicator.classList.remove('bg-luxury-gold');
+                    indicator.classList.add('bg-gray-600');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        setInterval(nextSlide, 4000);
+
+        let startX = 0, endX = 0;
+        carouselTrack.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; });
+        carouselTrack.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            if (startX - endX > 50) nextSlide();
+            else if (endX - startX > 50) prevSlide();
+        });
+
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('dragstart', (e) => e.preventDefault());
+        });
+
+        // Lightbox
+        function openLightbox(src) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
