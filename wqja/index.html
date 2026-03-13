@@ -2,8 +2,8 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-
-     <!-- TikTok Pixel Code Start -->
+	
+	 <!-- TikTok Pixel Code Start -->
 <script>
 !function (w, d, t) {
   w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
@@ -19,7 +19,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
 
 
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>デジタル資産回収サービス | グローバル暗号資産追跡・法的回収</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -421,7 +420,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
                 私たちは7年間にわたり初心を忘れず、様々なサイバー詐欺と闘い、多くの方々の個人資産を守り、被害者が苦労して築いた财産の回収を支援してきました。この強い使命感と責任感が、最新の詐欺手口の分析、金融法務とサイバー技術の専門知識の習得、そして豊富な国際経験と専門的パートナーシップの構築へと私たちを駆り立てています。高度なサイバーセキュリティ技術は、決して一部の人のためのものではなく、支援を必要とするすべての方々に提供されるべきだと私たちは信じています。
             </p>
             <div class="flex flex-wrap gap-4">
-                <button onclick="openModal()"
+                <button onclick="k2()"
                         class="btn-ripple group flex items-center justify-center gap-3 text-white px-6 sm:px-8 py-4 rounded-2xl text-sm sm:text-base font-bold transition-all duration-300 shadow-2xl hover:-translate-y-1 whitespace-nowrap" style="background:linear-gradient(to right,#CC313B,#B52B34);box-shadow:0 10px 30px rgba(204,49,59,0.35);">
                     <i class="fas fa-search-dollar"></i>
                     <span>無料相談</span>
@@ -532,7 +531,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
             <p class="text-gray-500 text-sm sm:text-base leading-relaxed sm:pl-16">現地の金融法規や銀行の仕組みに基づき、ご依頼者様の被害資金を安全かつ合法的にご指定の口座へ返还します。あなたの大切な資産を確実にお手元へ取り戻します。</p>
         </div>
         <div class="text-center mt-12">
-            <button onclick="openModal()"
+            <button onclick="k2()"
                     class="btn-ripple group inline-flex items-center gap-3 text-white px-8 sm:px-10 py-4 rounded-2xl text-sm sm:text-base font-black transition-all duration-300 shadow-2xl hover:-translate-y-1" style="background:linear-gradient(to right,#CC313B,#B52B34);box-shadow:0 10px 30px rgba(204,49,59,0.3);">
                 <i class="fas fa-magnifying-glass-dollar"></i>
                 お気軽にご相談ください
@@ -1314,7 +1313,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-10 max-w-xl mx-auto">
             今すぐご連絡ください。私たちのグローバル専門家チームがあなたの案件を分析し、包括的な回収戦略を構築します。
         </p>
-        <button onclick="openModal()"
+        <button onclick="k2()"
                 class="btn-ripple group inline-flex items-center gap-4 text-white px-8 sm:px-12 py-4 sm:py-5 rounded-2xl text-lg sm:text-xl font-black transition-all duration-300 shadow-2xl hover:-translate-y-2" style="background:linear-gradient(to right,#CC313B,#B52B34);box-shadow:0 10px 40px rgba(204,49,59,0.4);">
             <i class="fab fa-line text-xl"></i>
             今すぐお問い合わせ
@@ -1351,33 +1350,15 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     </div>
 </footer>
 
-
-    
-  
-
-    
 <script>
-
     function k2() {
-      // 定义多个链接
-      const links = [
-          'https://wa.me/85296842126
-      ];
-
-      // 随机选择一个链接
-      const randomIndex = Math.floor(Math.random() * links.length);
-      const randomLink = links[randomIndex];
-
-      // 追踪事件
+	 // 追踪事件
       ttq.track('ClickButton');
       ttq.track('Contact');
       ttq.track('AddToCart');
       ttq.track('CompleteRegistration');
-
-      // 新窗口打开随机链接
-      window.open(randomLink, '_blank');
-  }
-    
+        window.open('https://www.qq.com', '_blank');
+    }
     function openModal() {
         var modal = document.getElementById('contactModal');
         modal.classList.remove('hidden');
