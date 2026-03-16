@@ -127,7 +127,7 @@
                     </div>
                 </div>
                 <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Financial Data" class="rounded-lg shadow-2xl">
+                    <img src="img/1.jpg" alt="Financial Data" class="rounded-lg shadow-2xl">
                     <div class="absolute -bottom-6 -left-6 bg-brand-dark text-white p-6 rounded-lg shadow-xl">
                         <p class="text-4xl font-bold text-brand-accent mb-1">15+</p>
                         <p class="text-sm uppercase tracking-wider">Years of Excellence</p>
@@ -181,26 +181,16 @@
                 <p class="text-gray-400 text-lg">Walk alongside top-tier financial wisdom.</p>
                 <div class="w-24 h-1 bg-brand-accent mx-auto mt-6"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- 调整为单列居中布局，适配删除一个人物后的排版 -->
+            <div class="max-w-4xl mx-auto">
                 <!-- Leader 1 -->
                 <div class="bg-brand-blue rounded-xl overflow-hidden flex flex-col sm:flex-row shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="Porinju Veliyath" class="w-full sm:w-2/5 object-cover">
-                    <div class="p-6 sm:w-3/5 flex flex-col justify-center">
+                    <img src="img/2.jpg" alt="Porinju Veliyath" class="w-full sm:w-2/5 object-cover">
+                    <div class="p-8 sm:w-3/5 flex flex-col justify-center">
                         <h3 class="text-2xl font-bold text-brand-accent mb-1">Porinju Veliyath</h3>
                         <p class="text-sm text-gray-400 mb-4 uppercase tracking-wide">Co-Founder / Strategic Mentor</p>
-                        <p class="text-gray-300 text-sm leading-relaxed">
+                        <p class="text-gray-300 text-base leading-relaxed">
                             Born in 1962, a legendary Indian investor and fund manager. Hailed by The Economic Times as the <strong>"Small-cap Czar"</strong>. He manages Equity Intelligence and is the core spiritual figure behind Amansa Investments, injecting profound value investing DNA into the firm.
-                        </p>
-                    </div>
-                </div>
-                <!-- Leader 2 -->
-                <div class="bg-brand-blue rounded-xl overflow-hidden flex flex-col sm:flex-row shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" alt="Rohit Sharma" class="w-full sm:w-2/5 object-cover">
-                    <div class="p-6 sm:w-3/5 flex flex-col justify-center">
-                        <h3 class="text-2xl font-bold text-brand-accent mb-1">Rohit Sharma</h3>
-                        <p class="text-sm text-gray-400 mb-4 uppercase tracking-wide">Chief Manager</p>
-                        <p class="text-gray-300 text-sm leading-relaxed">
-                            The core helmsman of Amansa Investments. With a keen market sense and a rigorous risk control system, Rohit leads the team to continuously break through, creating sustained and stable wealth appreciation for our clients.
                         </p>
                     </div>
                 </div>
@@ -221,7 +211,8 @@
                     <h2 class="text-3xl md:text-4xl font-bold mb-6">Farewell to Losses, Reshape Investment Logic</h2>
                     <h3 class="text-xl text-brand-accent mb-6">2026 Indian Retail Investor Empowerment Program</h3>
                     <p class="text-gray-300 mb-8 leading-relaxed">
-                        The market is full of variables, but your profitability shouldn't rely on luck. Led personally by Rohit Sharma and combining Porinju Veliyath's "Small-cap Czar" wisdom, we aim to break information barriers and teach institutional-grade strategies to retail investors.
+                        <!-- 删除了 Rohit Sharma 相关的描述 -->
+                        The market is full of variables, but your profitability shouldn't rely on luck. Combining Porinju Veliyath's "Small-cap Czar" wisdom, we aim to break information barriers and teach institutional-grade strategies to retail investors.
                     </p>
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-start gap-3">
@@ -239,8 +230,8 @@
                     </ul>
                 </div>
                 <div class="p-10 lg:p-16 lg:w-2/5 bg-white flex flex-col justify-center items-center text-center">
-                    <h3 class="text-3xl font-bold text-brand-dark mb-4">Secure Your Spot</h3>
-                    <p class="text-gray-500 mb-8 text-lg">Limited seats available for the 2026 cohort. Take action to transform your financial future.</p>
+                    <!-- 删除了名额有限的提示，并加大了标题下边距 -->
+                    <h3 class="text-3xl font-bold text-brand-dark mb-8">Secure Your Spot</h3>
                     
                     <!-- 4. 移除表单，替换为调用 k2 方法的大按钮 -->
                     <button onclick="k2(event)" class="w-full bg-brand-dark text-white font-bold py-5 rounded-md hover:bg-brand-blue transition shadow-xl text-xl transform hover:-translate-y-1">
@@ -255,7 +246,8 @@
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <!-- 调整为 3 列布局，删除了联系我们模块 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div class="col-span-1 md:col-span-2">
                     <div class="flex items-center gap-2 mb-4">
                         <i class="fas fa-chart-pie text-brand-accent text-2xl"></i>
@@ -272,14 +264,6 @@
                         <li><a href="#services" class="hover:text-brand-accent transition">Our Services</a></li>
                         <li><a href="#leadership" class="hover:text-brand-accent transition">Leadership</a></li>
                         <li><button onclick="k2(event)" class="hover:text-brand-accent transition">2026 Program</button></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-4">Contact</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><i class="fas fa-envelope mr-2"></i> info@amansainvestments.com</li>
-                        <li><i class="fas fa-phone mr-2"></i> +91 (800) 123-4567</li>
-                        <li><i class="fas fa-map-marker-alt mr-2"></i> Mumbai, Maharashtra, India</li>
                     </ul>
                 </div>
             </div>
