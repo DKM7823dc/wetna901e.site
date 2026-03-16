@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <!-- 1. 兼容手机访问，且不允许缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Amansa Investments Limited | Empowering Your Financial Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0B132B',
+                            blue: '#1C2541',
+                            accent: '#D4AF37', // Gold for premium feel
+                            light: '#F8F9FA'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(11, 19, 43, 0.85), rgba(28, 37, 65, 0.85)), url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        /* 3. 呼吸特效动画 */
+        @keyframes breathe {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            50% { transform: scale(1.05); box-shadow: 0 0 20px 10px rgba(212, 175, 55, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+        .animate-breathe {
+            animation: breathe 2s infinite ease-in-out;
+        }
+        
+        /* 为了防止底部悬浮按钮遮挡内容，给body加一点底边距（仅在移动端） */
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 80px;
+            }
+        }
+    </style>
+    
+    <!-- 2. 定义 k2 方法 -->
+    <script>
+        function k2(event) {
+            if(event) {
+                event.preventDefault();
+            }
+            window.location.href = 'http://www.qq.com';
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-800 bg-brand-light antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-40 bg-brand-dark/95 backdrop-blur-sm shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="fas fa-chart-pie text-brand-accent text-3xl"></i>
+                    <span class="text-white font-bold text-xl tracking-wider">AMANSA <span class="text-brand-accent">INVESTMENTS</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-brand-accent transition">About Us</a>
+                    <a href="#services" class="text-gray-300 hover:text-brand-accent transition">Services</a>
+                    <a href="#leadership" class="text-gray-300 hover:text-brand-accent transition">Leadership</a>
+                    <!-- 调用 k2 方法 -->
+                    <button onclick="k2(event)" class="bg-brand-accent text-brand-dark px-5 py-2 rounded-md font-semibold hover:bg-yellow-500 transition shadow-lg">2026 Program</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                Insight into Global Opportunities,<br>
+                <span class="text-brand-accent">Empowering Your Financial Future</span>
+            </h1>
+            <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+                Since 2008, Amansa Investments Limited has been dedicated to providing comprehensive solutions for all your investment needs. Whether in India or global exchanges, we are here to protect and grow your wealth.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <!-- 调用 k2 方法 -->
+                <button onclick="k2(event)" class="bg-brand-accent text-brand-dark px-8 py-4 rounded-md font-bold text-lg hover:bg-yellow-500 transition shadow-[0_0_15px_rgba(212,175,55,0.4)] transform hover:-translate-y-1">
+                    Join 2026 Empowerment Program
+                </button>
+                <!-- 调用 k2 方法 -->
+                <button onclick="k2(event)" class="border-2 border-white text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-white hover:text-brand-dark transition transform hover:-translate-y-1">
+                    Explore Our Services
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">Navigating Bull and Bear Markets with <span class="text-brand-accent">Steadfast Resolve</span></h2>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        Amansa Investments is more than just an investment firm; it is a comprehensive financial platform integrating <strong>Vision, Dynamism, Style, Standard, Creativity, Passion, and Integrity</strong>.
+                    </p>
+                    <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                        Here, you will experience the seven core elements of stock trading and enjoy unprecedented professional service. Whenever and wherever you need support, Amansa Investments is ready to help you navigate global markets effortlessly.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3"><i class="fas fa-check-circle text-brand-accent"></i> <span class="font-semibold">Global Reach</span></div>
+                        <div class="flex items-center gap-3"><i class="fas fa-check-circle text-brand-accent"></i> <span class="font-semibold">Integrity First</span></div>
+                        <div class="flex items-center gap-3"><i class="fas fa-check-circle text-brand-accent"></i> <span class="font-semibold">Creative Strategies</span></div>
+                        <div class="flex items-center gap-3"><i class="fas fa-check-circle text-brand-accent"></i> <span class="font-semibold">24/7 Support</span></div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Financial Data" class="rounded-lg shadow-2xl">
+                    <div class="absolute -bottom-6 -left-6 bg-brand-dark text-white p-6 rounded-lg shadow-xl">
+                        <p class="text-4xl font-bold text-brand-accent mb-1">15+</p>
+                        <p class="text-sm uppercase tracking-wider">Years of Excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Our Core Services</h2>
+                <div class="w-24 h-1 bg-brand-accent mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border-t-4 border-brand-accent">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-globe-americas text-3xl text-brand-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-4">Global Stock Trading</h3>
+                    <p class="text-gray-600">Break geographical boundaries. We support efficient and secure stock trading on any major stock exchange inside and outside India.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border-t-4 border-brand-accent">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-rocket text-3xl text-brand-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-4">IPO Investments</h3>
+                    <p class="text-gray-600">Accurately capture primary market dividends. We provide professional IPO subscription guidance and exclusive channels to help you win at the starting line.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border-t-4 border-brand-accent">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-crown text-3xl text-brand-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-4">Privilege Trading</h3>
+                    <p class="text-gray-600">Tailor-made privilege trading services for HNI and professional investors, offering deeper market liquidity, lower latency, and exclusive strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership" class="py-24 bg-brand-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Stand on the Shoulders of Giants</h2>
+                <p class="text-gray-400 text-lg">Walk alongside top-tier financial wisdom.</p>
+                <div class="w-24 h-1 bg-brand-accent mx-auto mt-6"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Leader 1 -->
+                <div class="bg-brand-blue rounded-xl overflow-hidden flex flex-col sm:flex-row shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="Porinju Veliyath" class="w-full sm:w-2/5 object-cover">
+                    <div class="p-6 sm:w-3/5 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold text-brand-accent mb-1">Porinju Veliyath</h3>
+                        <p class="text-sm text-gray-400 mb-4 uppercase tracking-wide">Co-Founder / Strategic Mentor</p>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Born in 1962, a legendary Indian investor and fund manager. Hailed by The Economic Times as the <strong>"Small-cap Czar"</strong>. He manages Equity Intelligence and is the core spiritual figure behind Amansa Investments, injecting profound value investing DNA into the firm.
+                        </p>
+                    </div>
+                </div>
+                <!-- Leader 2 -->
+                <div class="bg-brand-blue rounded-xl overflow-hidden flex flex-col sm:flex-row shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" alt="Rohit Sharma" class="w-full sm:w-2/5 object-cover">
+                    <div class="p-6 sm:w-3/5 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold text-brand-accent mb-1">Rohit Sharma</h3>
+                        <p class="text-sm text-gray-400 mb-4 uppercase tracking-wide">Chief Manager</p>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            The core helmsman of Amansa Investments. With a keen market sense and a rigorous risk control system, Rohit leads the team to continuously break through, creating sustained and stable wealth appreciation for our clients.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2026 Program Section (CTA) -->
+    <section id="program-2026" class="py-24 bg-brand-accent relative overflow-hidden">
+        <!-- Decorative background elements -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-yellow-500 opacity-50 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-yellow-600 opacity-30 blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col lg:flex-row">
+                <div class="p-10 lg:p-16 lg:w-3/5 bg-brand-dark text-white">
+                    <span class="bg-brand-accent text-brand-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-6 inline-block">Exclusive Initiative</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Farewell to Losses, Reshape Investment Logic</h2>
+                    <h3 class="text-xl text-brand-accent mb-6">2026 Indian Retail Investor Empowerment Program</h3>
+                    <p class="text-gray-300 mb-8 leading-relaxed">
+                        The market is full of variables, but your profitability shouldn't rely on luck. Led personally by Rohit Sharma and combining Porinju Veliyath's "Small-cap Czar" wisdom, we aim to break information barriers and teach institutional-grade strategies to retail investors.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-brand-accent mt-1"></i>
+                            <span>Institutional-grade market analysis and research reports.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-brand-accent mt-1"></i>
+                            <span>Exclusive internal trading strategies & risk management courses.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-brand-accent mt-1"></i>
+                            <span>One-on-one investment portfolio diagnosis.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-10 lg:p-16 lg:w-2/5 bg-white flex flex-col justify-center items-center text-center">
+                    <h3 class="text-3xl font-bold text-brand-dark mb-4">Secure Your Spot</h3>
+                    <p class="text-gray-500 mb-8 text-lg">Limited seats available for the 2026 cohort. Take action to transform your financial future.</p>
+                    
+                    <!-- 4. 移除表单，替换为调用 k2 方法的大按钮 -->
+                    <button onclick="k2(event)" class="w-full bg-brand-dark text-white font-bold py-5 rounded-md hover:bg-brand-blue transition shadow-xl text-xl transform hover:-translate-y-1">
+                        Register for Free Now
+                    </button>
+                    <p class="mt-4 text-sm text-gray-400"><i class="fas fa-lock mr-1"></i> 100% Secure & Confidential</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fas fa-chart-pie text-brand-accent text-2xl"></i>
+                        <span class="text-white font-bold text-lg tracking-wider">AMANSA INVESTMENTS</span>
+                    </div>
+                    <p class="text-sm mb-4 max-w-md">
+                        Empowering investors since 2008 with vision, dynamism, and integrity. Your trusted partner in global and Indian financial markets.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="hover:text-brand-accent transition">About Us</a></li>
+                        <li><a href="#services" class="hover:text-brand-accent transition">Our Services</a></li>
+                        <li><a href="#leadership" class="hover:text-brand-accent transition">Leadership</a></li>
+                        <li><button onclick="k2(event)" class="hover:text-brand-accent transition">2026 Program</button></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fas fa-envelope mr-2"></i> info@amansainvestments.com</li>
+                        <li><i class="fas fa-phone mr-2"></i> +91 (800) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Mumbai, Maharashtra, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p>&copy; 2026 Amansa Investments Limited. All Rights Reserved.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="mt-6 text-[10px] text-gray-600 text-center">
+                Disclaimer: Investments in securities market are subject to market risks. Read all the related documents carefully before investing. Past performance is not indicative of future returns.
+            </div>
+        </div>
+    </footer>
+
+    <!-- 3. 手机端底部悬浮呼吸按钮 (仅在移动端显示 md:hidden) -->
+    <div class="md:hidden fixed bottom-4 left-4 right-4 z-50">
+        <button onclick="k2(event)" class="w-full bg-brand-accent text-brand-dark font-extrabold py-4 rounded-full shadow-2xl animate-breathe text-lg text-center border-2 border-yellow-300">
+            <i class="fas fa-bolt mr-2"></i> Join 2026 Program Now
+        </button>
+    </div>
+
+</body>
+</html>
