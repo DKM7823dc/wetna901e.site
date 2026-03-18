@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>發現投資的奧秘，掌握財富的鑰匙</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	
+	<script>
+	   function h2() {
+            window.location.href="https://www.qq.com";
+        }
+	</script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'chinese': ['Noto Sans TC', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#003d6b',
+                        secondary: '#0056b3',
+                        accent: '#1976d2',
+                        gold: '#ffd700',
+                        yellow: '#ffeb3b',
+                        deepBlue: '#001a2e',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #003d6b 0%, #001a2e 100%);
+        }
+        .ocean-gradient {
+            background: linear-gradient(135deg, #003d6b 0%, #001a2e 50%, #000d1a 100%);
+        }
+        .book-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .book-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4); }
+            50% { box-shadow: 0 0 0 20px rgba(255, 215, 0, 0); }
+        }
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            box-shadow: 0 8px 24px rgba(255, 215, 0, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .section-spacing {
+            padding: 80px 0;
+        }
+        .hero-pattern {
+            
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 font-chinese">
+
+    <!-- Hero Section -->
+    <section class="ocean-gradient hero-pattern text-white min-h-screen md:min-h-screen sm:min-h-[60vh] flex items-center relative overflow-hidden">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-20"></div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight text-white" style="text-shadow: 3px 3px 6px rgba(0,0,0,0.8), 1px 1px 0px rgba(0,0,0,1);">
+                發現投資的奧秘<br>
+                <span class="text-yellow-300" style="text-shadow: 3px 3px 6px rgba(0,0,0,0.8), 1px 1px 0px rgba(0,0,0,1);">掌握財富的鑰匙！</span>
+            </h1>
+            <div class="bg-gradient-to-r from-yellow to-gold text-deepBlue px-10 py-6 rounded-full text-xl md:text-2xl font-bold mb-12 inline-block pulse-animation shadow-2xl">
+                🎉 限量贈送：100本精選股票書籍 🎉
+            </div>
+            <p class="text-xl md:text-2xl mb-16 max-w-5xl mx-auto leading-relaxed text-yellow-100 drop-shadow-md">
+                在這個瞬息萬變的金融市場，如何抓住投資機會、規避風險，成為了許多投資者面臨的挑戰。為了幫助更多人掌握股市的核心知識，我們特別推出這一活動！你將有機會獲得我們精心挑選的股票書籍，助你在投資的道路上走得更穩、更遠！
+            </p>
+           
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section class="section-spacing bg-gradient-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary dark:text-white mb-6">
+                    📚 贈送書籍如下
+                </h2>
+                <div class="w-24 h-1 bg-yellow mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Book 1 -->
+                <div class="book-card bg-white dark:bg-gray-700 rounded-2xl shadow-xl overflow-hidden border-2 border-transparent hover:border-yellow-300 transition-all duration-300">
+                    <div class="relative">
+                        <img src="img/1.jpg" alt="短線交易秘訣" class="w-full h-72 sm:h-80 object-contain bg-gray-50 dark:bg-gray-600 p-4">
+                        <div class="absolute top-4 right-4 bg-yellow text-primary px-3 py-1 rounded-full text-xs font-bold">
+                            經典
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-primary dark:text-white">《短線交易秘訣》</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">本書覆蓋了從投機與波幅突破，到市場是如何運動的、何時進場、何時退場、如何控制交易風險，以及怎樣握住成功的交易機會等主題</p>
+                    </div>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="book-card bg-white dark:bg-gray-700 rounded-2xl shadow-xl overflow-hidden border-2 border-transparent hover:border-yellow-300 transition-all duration-300">
+                    <div class="relative">
+                        <img src="img/2.jpg" alt="股票魔法師2" class="w-full h-72 sm:h-80 object-contain bg-gray-50 dark:bg-gray-600 p-4">
+                        <div class="absolute top-4 right-4 bg-yellow text-primary px-3 py-1 rounded-full text-xs font-bold">
+                            實戰
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-primary dark:text-white">《股票魔法師2》</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">馬克通過 Minervini Private Access 在線平台向交易者傳授他的 SEPA交易方法。該平台讓用戶能夠與他實時並肩交易，獲得獨特的體驗</p>
+                    </div>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="book-card bg-white dark:bg-gray-700 rounded-2xl shadow-xl overflow-hidden border-2 border-transparent hover:border-yellow-300 transition-all duration-300">
+                    <div class="relative">
+                        <img src="img/3.jpg" alt="一本書讀懂K線圖" class="w-full h-72 sm:h-80 object-contain bg-gray-50 dark:bg-gray-600 p-4">
+                        <div class="absolute top-4 right-4 bg-yellow text-primary px-3 py-1 rounded-full text-xs font-bold">
+                            入門
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-primary dark:text-white">《一本書讀懂K線圖》</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">內容翔實、通俗易懂、簡明實用，可以作為初入股市與有一定經驗投資者的讀物。</p>
+                    </div>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="book-card bg-white dark:bg-gray-700 rounded-2xl shadow-xl overflow-hidden border-2 border-transparent hover:border-yellow-300 transition-all duration-300">
+                    <div class="relative">
+                        <img src="img/4.jpg" alt="股票大作手回憶錄" class="w-full h-72 sm:h-80 object-contain bg-gray-50 dark:bg-gray-600 p-4">
+                        <div class="absolute top-4 right-4 bg-yellow text-primary px-3 py-1 rounded-full text-xs font-bold">
+                            傳記
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-primary dark:text-white">《股票大作手回憶錄》</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">本書以拉瑞·利文斯頓的第一人稱撰寫，記述了這位20世紀20年代華爾街的風雲人物在股票交易方面的傳奇經歷和感悟</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section-spacing bg-gradient-to-br from-primary to-secondary">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    💎 為什麼選擇我們的股票書籍？
+                </h2>
+                <div class="w-24 h-1 bg-yellow mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="text-center p-10 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300 border-t-4 border-yellow">
+                    <div class="text-6xl mb-6 text-yellow">📖</div>
+                    <h3 class="text-2xl font-bold mb-6 text-primary dark:text-white">深入淺出</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">我們的書籍涵蓋從基礎到高級的知識，通俗易懂，幫助你輕鬆理解複雜的投資概念，無論你是新手還是有經驗的投資者，都能找到適合自己的內容。</p>
+                </div>
+                <div class="text-center p-10 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300 border-t-4 border-yellow">
+                    <div class="text-6xl mb-6 text-yellow">💡</div>
+                    <h3 class="text-2xl font-bold mb-6 text-primary dark:text-white">實戰技巧</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">書中提供豐富的實用投資策略和案例分析，教你如何在市場中做出明智的決策，幫助你提升投資回報。</p>
+                </div>
+                <div class="text-center p-10 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300 border-t-4 border-yellow">
+                    <div class="text-6xl mb-6 text-yellow">🏆</div>
+                    <h3 class="text-2xl font-bold mb-6 text-primary dark:text-white">經典之作</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">包括市場上公認的經典書籍，讀懂投資大師的智慧，讓你在學習的同時，也能獲得啟發，拓寬我們的視野。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section-spacing bg-gradient-to-br from-white to-blue-50 dark:from-gray-800 dark:to-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary dark:text-white mb-6">
+                    🚀 活動流程
+                </h2>
+                <div class="w-24 h-1 bg-yellow mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="text-center p-8 bg-white dark:bg-gray-700 rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-300">
+                    <div class="bg-gradient-to-br from-yellow to-gold text-primary rounded-full w-20 h-20 flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-lg">1</div>
+                    <h3 class="text-2xl font-bold mb-6 text-primary dark:text-white">提交申請</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">請點擊下方按鈕獲取申請資格，確保你能及時獲取名額。</p>
+                </div>
+                <div class="text-center p-8 bg-white dark:bg-gray-700 rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-300">
+                    <div class="bg-gradient-to-br from-yellow to-gold text-primary rounded-full w-20 h-20 flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-lg">2</div>
+                    <h3 class="text-2xl font-bold mb-6 text-primary dark:text-white">名額確認</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">我們將在48小時內對申請進行審核，並將確認結果以郵件形式告知你。</p>
+                </div>
+                <div class="text-center p-8 bg-white dark:bg-gray-700 rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-300">
+                    <div class="bg-gradient-to-br from-yellow to-gold text-primary rounded-full w-20 h-20 flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-lg">3</div>
+                    <h3 class="text-2xl font-bold mb-6 text-primary dark:text-white">書籍寄送</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">一旦你確認獲得名額，我們將迅速將書籍寄送到你指定的地址，送到你手中，讓你盡快開始學習之旅。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-spacing ocean-gradient text-white text-center relative overflow-hidden">
+        <div class="hero-pattern absolute inset-0"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8">限時機會，馬上行動！</h2>
+            <p class="text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed text-yellow-100">
+                在這快速變化的時代，抓住學習的機會，提升自己的投資能力是至關重要的。名額有限，僅有100本，機會難得！加入我們的行列，與志同道合的朋友們一起探索股票投資的無窮魅力！
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800 dark:text-white">
+                常見問題解答
+            </h2>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white">Q1：這個活動是否收費？</h3>
+                    <p class="text-gray-600 dark:text-gray-300">A：本次活動完全免費，前100名用戶均可獲得贈書，數量有限，先到先得！</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white">Q2：我可以獲得哪本書籍？</h3>
+                    <p class="text-gray-600 dark:text-gray-300">A：所贈送的書籍將由我們團隊精心挑選，確保書籍的內容和質量，以便為你的投資學習提供最大幫助。</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white">Q3：申請需要多長時間？</h3>
+                    <p class="text-gray-600 dark:text-gray-300">A：填寫表單後，我們會在48小時內與您聯繫，確認您的申請狀態。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-20 bg-white dark:bg-gray-800 text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800 dark:text-white">
+                一步之遙，邁向投資成功的第一步！
+            </h2>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto text-gray-600 dark:text-gray-300">
+                不要再猶豫，抓住這個難得的機會，讓知識為你的投資之路保駕護航！立即申請你的免費股票書籍，讓自己的未來掌握在手中！成功，在於行動，而你的第一步，就是申請這本書
+            </p>
+        
+        </div>
+    </section>
+
+    <!-- Floating Button -->
+    <button onclick="h2()" class="floating-btn bg-yellow hover:bg-gold text-deepBlue font-bold py-4 px-6 rounded-full text-lg shadow-2xl border-2 border-yellow-300">
+          立即申請
+    </button>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div class="text-center md:text-left">
+                    <h4 class="text-xl font-bold text-yellow mb-4">📊 投資學習中心</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        專業的投資知識分享平台，致力於為投資者提供優質的學習資源，幫助您在投資路上穩健前行。
+                    </p>
+                </div>
+                <div class="text-center">
+                    <h4 class="text-xl font-bold text-yellow mb-4">📞 聯繫我們</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>客服時間：週一至週五 9:00-18:00</p> 
+                    </div>
+                </div>
+                <div class="text-center md:text-right">
+                    <h4 class="text-xl font-bold text-yellow mb-4">🔒 安全保障</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p>✅ 個人資料保護</p>
+                        <p>✅ 免費活動保證</p>
+                        <p>✅ 快速物流配送</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 pt-8">
+                <div class="text-center text-gray-300 text-sm space-y-2">
+                    <p>© 2025 投資書籍贈送活動平台 版權所有 | 助你掌握財富密碼</p>
+                    <p class="text-xs">本網站由專業投資教育團隊運營 | 服務條款 | 隱私政策 | 免責聲明</p>
+                    <p class="text-xs text-gray-400"> 
+                        地址：台北市信義區信義路五段7號
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // h2() function for button click
+     
+
+        // Smooth scrolling for better UX
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('button[onclick="h2()"]');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05)';
+                });
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
