@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Luggage Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+    <!-- k2 function for redirecting -->
+    <script>
+        function k2() {
+            window.location.href = 'https://www.qq.com';
+        }
+    </script>
+</head>
+<body class="text-gray-900 bg-white antialiased">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-6 text-white">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-6">
+                <!-- Menu Icon -->
+                <svg class="w-6 h-6 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <!-- Search Icon -->
+                <svg class="w-5 h-5 cursor-pointer hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+            <div class="text-2xl font-bold tracking-widest uppercase cursor-pointer">
+                LUGGAGE
+            </div>
+            <div class="flex items-center gap-6">
+                <span class="text-sm font-medium hidden md:block cursor-pointer">ACCOUNT</span>
+                <!-- Shopping Bag Icon -->
+                <svg class="w-5 h-5 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen w-full bg-gray-900 overflow-hidden">
+        <img src="img/b.jpg" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover opacity-70 bg-gray-800" />
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-end pb-32">
+            <h1 class="text-5xl md:text-7xl font-light text-white mb-6 leading-tight max-w-3xl">
+                Set your sights on <br />
+                <span class="font-serif italic">new destinations</span>
+            </h1>
+            <button onclick="k2()" class="bg-white text-black px-8 py-4 text-sm tracking-widest uppercase hover:bg-gray-100 transition-colors w-max flex items-center gap-2">
+                Explore Collection 
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Products Section -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-xs font-bold tracking-[0.2em] text-gray-500 uppercase mb-3">Limited Time Offers</h2>
+            <h3 class="text-3xl md:text-4xl font-light">Exclusive Selection</h3>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+            <!-- Product 1 (50% Off) -->
+            <div onclick="k2()" class="group cursor-pointer flex flex-col border border-gray-200 p-4 bg-white hover:shadow-xl transition-all duration-300">
+                <div class="relative overflow-hidden bg-gray-100 aspect-[4/5] mb-5">
+                    <img src="img/a1.jpg" alt="Essential Sleeve Cabin Plus" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                    <div class="absolute top-3 left-3 bg-black text-white text-xs font-bold px-3 py-1 uppercase tracking-wider">
+                        Sale 50% Off
+                    </div>
+                </div>
+                <h4 class="text-lg font-medium mb-2">Essential Sleeve Cabin Plus</h4>
+                <div class="flex items-center gap-3 mt-auto">
+                    <span class="text-gray-400 line-through text-sm">$1,435.00</span>
+                    <span class="text-red-700 font-semibold">$717.50</span>
+                </div>
+            </div>
+
+            <!-- Product 2 (40% Off) -->
+            <div onclick="k2()" class="group cursor-pointer flex flex-col border border-gray-200 p-4 bg-white hover:shadow-xl transition-all duration-300">
+                <div class="relative overflow-hidden bg-gray-100 aspect-[4/5] mb-5">
+                    <img src="img/a2.jpg" alt="Never Still - Canvas Flap Backpack Large" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                    <div class="absolute top-3 left-3 bg-black text-white text-xs font-bold px-3 py-1 uppercase tracking-wider">
+                        Sale 40% Off
+                    </div>
+                </div>
+                <h4 class="text-lg font-medium mb-2">Never Still - Canvas Flap Backpack Large</h4>
+                <div class="flex items-center gap-3 mt-auto">
+                    <span class="text-gray-400 line-through text-sm">$1,750.00</span>
+                    <span class="text-red-700 font-semibold">$1,050.00</span>
+                </div>
+            </div>
+
+            <!-- Product 3 (60% Off) -->
+            <div onclick="k2()" class="group cursor-pointer flex flex-col border border-gray-200 p-4 bg-white hover:shadow-xl transition-all duration-300">
+                <div class="relative overflow-hidden bg-gray-100 aspect-[4/5] mb-5">
+                    <img src="img/a3.jpg" alt="Essential Check-In M" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                    <div class="absolute top-3 left-3 bg-black text-white text-xs font-bold px-3 py-1 uppercase tracking-wider">
+                        Sale 60% Off
+                    </div>
+                </div>
+                <h4 class="text-lg font-medium mb-2">Essential Check-In M</h4>
+                <div class="flex items-center gap-3 mt-auto">
+                    <span class="text-gray-400 line-through text-sm">$1,050.00</span>
+                    <span class="text-red-700 font-semibold">$420.00</span>
+                </div>
+            </div>
+
+            <!-- Product 4 (50% Off) -->
+            <div onclick="k2()" class="group cursor-pointer flex flex-col border border-gray-200 p-4 bg-white hover:shadow-xl transition-all duration-300">
+                <div class="relative overflow-hidden bg-gray-100 aspect-[4/5] mb-5">
+                    <img src="img/a4.jpg" alt="Original Cabin Twist" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                    <div class="absolute top-3 left-3 bg-black text-white text-xs font-bold px-3 py-1 uppercase tracking-wider">
+                        Sale 50% Off
+                    </div>
+                </div>
+                <h4 class="text-lg font-medium mb-2">Original Cabin Twist</h4>
+                <div class="flex items-center gap-3 mt-auto">
+                    <span class="text-gray-400 line-through text-sm">$1,950.00</span>
+                    <span class="text-red-700 font-semibold">$975.00</span>
+                </div>
+            </div>
+
+            <!-- Product 5 (70% Off) -->
+            <div onclick="k2()" class="group cursor-pointer flex flex-col border border-gray-200 p-4 bg-white hover:shadow-xl transition-all duration-300">
+                <div class="relative overflow-hidden bg-gray-100 aspect-[4/5] mb-5">
+                    <img src="img/a5.jpg" alt="Cabin" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                    <div class="absolute top-3 left-3 bg-black text-white text-xs font-bold px-3 py-1 uppercase tracking-wider">
+                        Sale 70% Off
+                    </div>
+                </div>
+                <h4 class="text-lg font-medium mb-2">Cabin</h4>
+                <div class="flex items-center gap-3 mt-auto">
+                    <span class="text-gray-400 line-through text-sm">$3,920.00</span>
+                    <span class="text-red-700 font-semibold">$1,176.00</span>
+                </div>
+            </div>
+
+            <!-- Product 6 (60% Off) -->
+            <div onclick="k2()" class="group cursor-pointer flex flex-col border border-gray-200 p-4 bg-white hover:shadow-xl transition-all duration-300">
+                <div class="relative overflow-hidden bg-gray-100 aspect-[4/5] mb-5">
+                    <img src="img/a6.jpg" alt="Cabin Twist" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                    <div class="absolute top-3 left-3 bg-black text-white text-xs font-bold px-3 py-1 uppercase tracking-wider">
+                        Sale 60% Off
+                    </div>
+                </div>
+                <h4 class="text-lg font-medium mb-2">Cabin Twist</h4>
+                <div class="flex items-center gap-3 mt-auto">
+                    <span class="text-gray-400 line-through text-sm">$1,620.00</span>
+                    <span class="text-red-700 font-semibold">$648.00</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-16 text-center">
+            <button onclick="k2()" class="border border-black text-black px-10 py-4 text-sm tracking-widest uppercase hover:bg-black hover:text-white transition-colors">
+                View More
+            </button>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-light mb-4">Find a match for every kind of journey</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Category 1 -->
+                <div class="relative group overflow-hidden h-[400px] cursor-pointer bg-gray-200">
+                    <img src="img/b1.jpg" alt="See all luggage" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-black/30 transition-opacity duration-500 group-hover:bg-black/40"></div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                        <h3 class="text-2xl text-white font-medium mb-6">See all luggage</h3>
+                        <button onclick="k2()" class="bg-white/10 backdrop-blur-sm border border-white text-white px-8 py-3 text-sm tracking-widest uppercase hover:bg-white hover:text-black transition-colors z-10">
+                            View More
+                        </button>
+                    </div>
+                </div>
+                <!-- Category 2 -->
+                <div class="relative group overflow-hidden h-[400px] cursor-pointer bg-gray-200">
+                    <img src="img/b2.jpg" alt="See all bags" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-black/30 transition-opacity duration-500 group-hover:bg-black/40"></div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                        <h3 class="text-2xl text-white font-medium mb-6">See all bags</h3>
+                        <button onclick="k2()" class="bg-white/10 backdrop-blur-sm border border-white text-white px-8 py-3 text-sm tracking-widest uppercase hover:bg-white hover:text-black transition-colors z-10">
+                            View More
+                        </button>
+                    </div>
+                </div>
+                <!-- Category 3 -->
+                <div class="relative group overflow-hidden h-[400px] cursor-pointer bg-gray-200">
+                    <img src="img/b3.jpg" alt="See all accessories" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-black/30 transition-opacity duration-500 group-hover:bg-black/40"></div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                        <h3 class="text-2xl text-white font-medium mb-6">See all accessories</h3>
+                        <button onclick="k2()" class="bg-white/10 backdrop-blur-sm border border-white text-white px-8 py-3 text-sm tracking-widest uppercase hover:bg-white hover:text-black transition-colors z-10">
+                            View More
+                        </button>
+                    </div>
+                </div>
+                <!-- Category 4 -->
+                <div class="relative group overflow-hidden h-[400px] cursor-pointer bg-gray-200">
+                    <img src="img/b4.jpg" alt="See all specialities" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-black/30 transition-opacity duration-500 group-hover:bg-black/40"></div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                        <h3 class="text-2xl text-white font-medium mb-6">See all specialities</h3>
+                        <button onclick="k2()" class="bg-white/10 backdrop-blur-sm border border-white text-white px-8 py-3 text-sm tracking-widest uppercase hover:bg-white hover:text-black transition-colors z-10">
+                            View More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Series Section -->
+    <section class="relative h-[80vh] w-full bg-gray-900 flex items-center justify-center overflow-hidden">
+        <img src="img/c1.jpg" alt="Video Background" class="absolute inset-0 w-full h-full object-cover opacity-60 bg-gray-800" />
+        <div class="relative z-10 text-center px-6">
+            <h2 class="text-xs font-bold tracking-[0.2em] text-white/70 uppercase mb-4">Rimowa Video Series</h2>
+            <h3 class="text-4xl md:text-5xl font-light text-white mb-10 max-w-2xl mx-auto leading-tight">
+                Discover our Bags collection: <br />
+                <span class="font-serif italic">How to use & style</span>
+            </h3>
+            <button onclick="k2()" class="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mx-auto hover:bg-white hover:text-black transition-all duration-300 text-white group">
+                <svg class="w-8 h-8 ml-1 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+                <div class="flex flex-col items-center">
+                    <svg class="w-8 h-8 mb-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    <h4 class="text-lg font-medium mb-3">Lifetime guarantee</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">On all functional damage to your suitcase</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <svg class="w-8 h-8 mb-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <h4 class="text-lg font-medium mb-3">Worldwide repairs</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">Access a network of over 120 repair points around the world</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <svg class="w-8 h-8 mb-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                    <h4 class="text-lg font-medium mb-3">Free returns</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">Benefit from a prepaid label for returns within 30 days</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <svg class="w-8 h-8 mb-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"></path></svg>
+                    <h4 class="text-lg font-medium mb-3">RIMOWA Unique</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">Customize your Classic suitcase</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Visit Section -->
+    <section class="relative h-[60vh] w-full bg-gray-100 flex items-center justify-center overflow-hidden">
+        <img src="img/c2.jpg" alt="Store Background" class="absolute inset-0 w-full h-full object-cover opacity-80 bg-gray-300" />
+        <div class="absolute inset-0 bg-black/10"></div>
+        <div class="relative z-10 text-center px-6 bg-white/90 backdrop-blur-sm p-12 md:p-16 max-w-xl mx-auto shadow-xl">
+            <svg class="w-8 h-8 mx-auto mb-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            <h2 class="text-3xl font-light mb-2">Always within reach</h2>
+            <p class="text-gray-600 mb-8">Visit us in store</p>
+            <button onclick="k2()" class="border border-black text-black px-8 py-3 text-sm tracking-widest uppercase hover:bg-black hover:text-white transition-colors w-full">
+                Find a Store
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-2xl font-bold tracking-widest uppercase mb-8">
+                LUGGAGE
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 mb-8 text-sm text-gray-400">
+                <span class="hover:text-white cursor-pointer transition-colors">Contact Us</span>
+                <span class="hover:text-white cursor-pointer transition-colors">FAQ</span>
+                <span class="hover:text-white cursor-pointer transition-colors">Terms & Conditions</span>
+                <span class="hover:text-white cursor-pointer transition-colors">Privacy Policy</span>
+            </div>
+            <p class="text-gray-600 text-xs">
+                &copy; 2026 Luxury Luggage Brand. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Navbar Scroll Effect -->
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.remove('bg-transparent', 'text-white', 'py-6');
+                navbar.classList.add('bg-white', 'text-gray-900', 'py-4', 'shadow-sm');
+            } else {
+                navbar.classList.add('bg-transparent', 'text-white', 'py-6');
+                navbar.classList.remove('bg-white', 'text-gray-900', 'py-4', 'shadow-sm');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+帮我做个英文的 奢侈品行李箱的，官网， 大气，美观，首屏吸引人。 落地页的文案和图片必须使用我的。你需要站在一名专业的ui和视觉设计师的角度出发，而且网站的设计符合欧美人的审美。
+如下：
+首屏的标题将目光投向，新的目的地
+背景图：img/b.jpg
+
+产品图 
+img/a1.jpg
+名字：
+Essential Sleeve Cabin Plus
+原价：$1,435.00
+
+
+img/a2.jpg
+名字：
+Never Still - Canvas Flap Backpack Large
+原价：$1,750.00
+
+img/a3.jpg
+名字：
+Essential Check-In M
+原价：$1,050.00
+
+img/a4.jpg
+名字：
+Original Cabin Twist
+原价：$1,950.00
+
+
+img/a5.jpg
+名字：
+Cabin
+原价：$3,920.00
+
+
+img/a6.jpg
+名字：Cabin Twist
+原价：$1,620.00
+以上产品，随机打3-6折折扣，需要显示原价和销售价
+同时加入一些营销元素标题
+行动号召：查看更多
+
+Find a match for every kind of journe
+
+调用 img/b1.jpg
+描述：See all luggage
+行动号召：查看更多
+
+调用 img/b2.jpg
+See all bags
+行动号召：查看更多
+
+调用 img/b3.jpg
+描述：See all accessories
+行动号召：查看更多
+
+调用 img/b4.jpg
+See all specialities
+行动号召：查看更多
+
+
+imowa Video Series
+Discover our Bags collection: How to use & style
+调用背景图
+img/c1.jpg
+
+
+
+Lifetime guarantee
+On all functional damage to your suitcase
+
+
+Worldwide repairs
+Access a network of over 120 repair points around the world
+
+
+Free returns
+Benefit from a prepaid label for returns within 30 days
+
+
+RIMOWA Unique
+Customize your Classic suitcase
+
+
+Always within reach
+Visit us in store
+调用背景图
+img/c2.jpg
+
+底部是网页页脚，网站版权信息
+
