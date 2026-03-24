@@ -43,14 +43,15 @@
         </div>
     </nav>
 
-    <!-- Hero Section (Increased height on md and lg screens: md:h-[85vh] lg:h-[90vh]) -->
+    <!-- Hero Section -->
     <header class="relative h-[calc(100vh-88px)] md:h-[85vh] lg:h-[90vh] w-full bg-gray-900 overflow-hidden mt-[88px]">
         <img src="img/b.jpg" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover bg-gray-800" />
         <div class="absolute inset-0 bg-black/20"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-end pb-24 md:pb-32">
-            <h1 class="text-5xl md:text-7xl font-light text-white mb-6 leading-tight max-w-3xl">
-                Set your sights on <br />
-                <span class="font-serif italic">new destinations</span>
+            <!-- Updated Heading for Mobile -->
+            <h1 class="text-[8vw] sm:text-5xl md:text-7xl font-light text-white mb-6 leading-tight max-w-3xl">
+                <span class="block whitespace-nowrap">Set your sights on</span>
+                <span class="block font-serif italic whitespace-nowrap">new destinations</span>
             </h1>
             <button onclick="k2()" class="bg-white text-black px-8 py-4 text-sm tracking-widest uppercase hover:bg-gray-100 transition-colors w-max flex items-center gap-2">
                 Explore Collection 
