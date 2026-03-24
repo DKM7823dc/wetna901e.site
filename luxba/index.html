@@ -24,7 +24,7 @@
 <body class="text-gray-900 bg-white antialiased">
 
     <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-6 text-white">
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white py-6 text-gray-900">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <div class="flex items-center gap-6">
                 <!-- Menu Icon -->
@@ -43,11 +43,11 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="relative h-screen w-full bg-gray-900 overflow-hidden">
-        <img src="img/b.jpg" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover opacity-70 bg-gray-800" />
+    <!-- Hero Section (Increased height on md and lg screens: md:h-[85vh] lg:h-[90vh]) -->
+    <header class="relative h-[calc(100vh-88px)] md:h-[85vh] lg:h-[90vh] w-full bg-gray-900 overflow-hidden mt-[88px]">
+        <img src="img/b.jpg" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover bg-gray-800" />
         <div class="absolute inset-0 bg-black/20"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-end pb-32">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-end pb-24 md:pb-32">
             <h1 class="text-5xl md:text-7xl font-light text-white mb-6 leading-tight max-w-3xl">
                 Set your sights on <br />
                 <span class="font-serif italic">new destinations</span>
@@ -301,11 +301,11 @@
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                navbar.classList.remove('bg-transparent', 'text-white', 'py-6');
-                navbar.classList.add('bg-white', 'text-gray-900', 'py-4', 'shadow-sm');
+                navbar.classList.remove('py-6');
+                navbar.classList.add('py-4', 'shadow-sm');
             } else {
-                navbar.classList.add('bg-transparent', 'text-white', 'py-6');
-                navbar.classList.remove('bg-white', 'text-gray-900', 'py-4', 'shadow-sm');
+                navbar.classList.add('py-6');
+                navbar.classList.remove('py-4', 'shadow-sm');
             }
         });
     </script>
