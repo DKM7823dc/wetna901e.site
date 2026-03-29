@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <title>利用規約  </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gradient-sophisticated: linear-gradient(135deg, #001f3f 0%, #003366 50%, #000000 100%);
+            --secondary-gradient-elegant: linear-gradient(45deg, #FFD700 0%, #FFC107 100%);
+            --accent-gold-premium: #FFD700;
+            --text-primary-sophisticated: #ffffff;
+            --text-secondary-refined: #ffffff;
+            --text-muted-professional: #cccccc;
+            --surface-card-sophisticated: rgba(0, 31, 63, 0.8);
+            --border-elegant-subtle: rgba(255, 215, 0, 0.3);
+            --shadow-sophisticated-depth: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .terms-container {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif;
+            background: var(--primary-gradient-sophisticated);
+            min-height: 100vh;
+            line-height: 1.8;
+            color: var(--text-primary-sophisticated);
+        }
+
+        .terms-header-section {
+            background: var(--primary-gradient-sophisticated);
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .terms-content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .terms-main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-gold-premium) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .terms-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary-refined);
+            margin-bottom: 10px;
+        }
+
+        .terms-last-updated {
+            font-size: 0.9rem;
+            color: var(--text-muted-professional);
+        }
+
+        .terms-content-section {
+            background: var(--surface-card-sophisticated);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px auto;
+            border: 1px solid var(--border-elegant-subtle);
+            box-shadow: var(--shadow-sophisticated-depth);
+        }
+
+        .terms-section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--accent-gold-premium);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-gold-premium);
+        }
+
+        .terms-subsection-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary-sophisticated);
+            margin: 25px 0 15px 0;
+        }
+
+        .terms-text-content {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: var(--text-secondary-refined);
+        }
+
+        .terms-list {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .terms-list li {
+            margin-bottom: 8px;
+            color: var(--text-secondary-refined);
+        }
+
+        .terms-highlight-box {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid var(--accent-gold-premium);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .terms-warning-box {
+            background: rgba(220, 38, 38, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .terms-contact-section {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            border: 1px solid var(--border-elegant-subtle);
+        }
+
+        .terms-back-button {
+            background: var(--secondary-gradient-elegant);
+            color: #000000;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            touch-action: manipulation;
+            min-height: 44px;
+        }
+
+        .terms-back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(255, 215, 0, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .terms-content-wrapper {
+                padding: 0 15px;
+            }
+
+            .terms-header-section {
+                padding: 40px 0 30px;
+            }
+
+            .terms-main-title {
+                font-size: 2rem;
+            }
+
+            .terms-content-section {
+                padding: 25px 20px;
+                margin: 30px auto;
+            }
+
+            .terms-section-title {
+                font-size: 1.2rem;
+            }
+
+            .terms-subsection-title {
+                font-size: 1.1rem;
+            }
+
+            .terms-text-content {
+                font-size: 0.9rem;
+            }
+
+            .terms-contact-section {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .terms-main-title {
+                font-size: 1.7rem;
+            }
+
+            .terms-content-section {
+                padding: 20px 15px;
+            }
+
+            .terms-text-content {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body class="terms-container">
+    <header class="terms-header-section">
+        <div class="terms-content-wrapper">
+            <h1 class="terms-main-title">利用規約</h1> 
+            <p class="terms-last-updated">最終更新日：2025年3月20日</p>
+        </div>
+    </header>
+
+    <main class="terms-content-wrapper">
+        <section class="terms-content-section">
+            <h2 class="terms-section-title">第1条 総則</h2>
+            <p class="terms-text-content">
+                本利用規約（以下「本規約」）は、 （以下「当サービス」）が提供する投資教育サービスの利用条件を定めるものです。利用者は、本規約に同意した上で当サービスをご利用いただきます。
+            </p>
+            <div class="terms-warning-box">
+                <p class="terms-text-content">
+                    <strong>重要な注意：</strong>当サービスは投資教育を目的とし、投資勧誘や助言を行うものではありません。実際の投資判断は利用者自身の責任で行ってください。
+                </p>
+            </div>
+        </section>
+
+        <section class="terms-content-section">
+            <h2 class="terms-section-title">第2条 定義</h2>
+            <p class="terms-text-content">
+                本規約において使用する用語の定義は、以下の通りです：
+            </p>
+            <ul class="terms-list"> 
+                <li><strong>「利用者」：</strong>当サービスを利用する個人</li>
+                <li><strong>「コンテンツ」：</strong>当サービスで提供される教材、動画、文書等の全ての情報</li>
+                <li><strong>「会員」：</strong>当サービスに登録し、アカウントを持つ利用者</li>
+                <li><strong>「個人情報」：</strong>利用者個人を識別できる情報</li>
+            </ul>
+        </section>
+
+        <section class="terms-content-section">
+            <h2 class="terms-section-title">第3条 サービスの内容</h2>
+            
+            <h3 class="terms-subsection-title">3.1 提供サービス</h3>
+            <p class="terms-text-content">
+                当サービスは、以下のサービスを提供します：
+            </p>
+            <ul class="terms-list">
+                <li>株式投資に関する基礎知識の教育</li>
+                <li>市場分析手法の学習コンテンツ</li>
+                <li>データドリブンな投資戦略の解説</li>
+                <li>リスク管理手法の指導</li>
+                <li>投資に関する質問・相談サポート</li>
+            </ul>
+
+            <h3 class="terms-subsection-title">3.2 サービスの性質</h3>
+            <div class="terms-highlight-box">
+                <p class="terms-text-content">
+                    当サービスは教育目的のみを目的とし、以下の行為は一切行いません：
+                </p>
+                <ul class="terms-list">
+                    <li>特定銘柄の推奨・勧誘</li>
+                    <li>投資判断の代行</li>
+                    <li>投資顧問業務</li>
+                    <li>金融商品の販売・仲介</li>
+                    <li>投資成果の保証</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="terms-content-section">
+            <h2 class="terms-section-title">第4条 利用条件</h2>
+            
+            <h3 class="terms-subsection-title">4.1 利用資格</h3>
+            <p class="terms-text-content">
+                当サービスの利用にあたり、以下の条件を満たす必要があります：
+            </p>
+            <ul class="terms-list">
+                <li>18歳以上であること（未成年者は保護者の同意が必要）</li>
+                <li>本規約および関連規程に同意すること</li>
+                <li>反社会的勢力でないこと</li>
+                <li>正確な個人情報を提供すること</li>
+                <li>日本国内に居住していること</li>
+            </ul>
+
+            <h3 class="terms-subsection-title">4.2 アカウント管理</h3>
+            <p class="terms-text-content">
+                利用者は、アカウント情報を適切に管理し、第三者による不正使用を防止する責任があります。アカウントの貸与、譲渡、売買は禁止します。
+            </p>
+        </section>
+
+        <section class="terms-content-section">
+            <h2 class="terms-section-title">第5条 禁止事項</h2>
+            <p class="terms-text-content">
+                利用者は、当サービスの利用にあたり、以下の行為を行ってはいけません：
+            </p>
+            <ul class="terms-list">
+                <li>法令、本規約、公序良俗に違反する行為</li>
+                <li>当サービスのコンテンツの無断複製、転載、配布</li>
+                <li>虚偽の情報の登録・提供</li>
+                <li>他の利用者や第三者に迷惑をかける行為</li>
+                <li>当サービスの運営を妨害する行為</li>
+                <li>不正アクセス、ウイルス配布等の技術的攻撃</li>
+                <li>当サービスを商業目的で利用する行為</li>
+                <li>投資勧誘や金融商品の販売行為</li>
+                <li>誹謗中傷、差別的発言</li>
+                <li>その他、当サービスが不適切と判断する行為</li>
+            </ul>
+        </section>
+
+        <section class="terms-content-section">
+            <h2 class="terms-section-title">第6条 知的財産権</h2>
+            
+            <h3 class="terms-subsection-title">6.1 著作権</h3>
+            <p class="terms-text-content">
+                当サービスで提供される全てのコンテンツ（文章、画像、動画、音声等）の著作権は、当サービスまたは正当な権利者に帰属します。
+            </p>
+
+            <h3 class="terms-subsection-title">6.2 利用制限</h3>
+            <p class="terms-text-content">
+                利用者は、個人的な学習目的に限り、コンテンツを閲覧・利用できます。以下の行為は禁止します：
+            </p>
+            <ul class="terms-list">
+                <li>コンテンツの複製、転載、配布</li>
+                <li>商業目的での利用</li>
+                <li>二次的著作物の作成</li>
+                <li>第三者への提供・販売</li>
+            </ul>
+        </section>
+
+        <section class="terms-content-section">
+            <h2 class="terms-section-title">第7条 投資リスクと免責事項</h2>
+            
+            <div class="terms-warning-box">
+                <h3 class="terms-subsection-title">7.1 投資リスクの認識</h3>
+                <p class="terms-text-content">
+                    利用者は、投資には以下のリスクが伴うことを理解し、同意するものとします：
+                </p>
+                <ul class="terms-list">
+                    <li>元本割れのリスク</li>
+                    <li>市場変動による損失のリスク</li>
+                    <li>流動性リスク</li>
+                    <li>信用リスク</li>
+                    <li>その他の予期せぬリスク</li>
+                </ul>
+            </div>
+
+            <h3 class="terms-subsection-title">7.2 免責事項</h3>
+            <p class="terms-text-content">
+                当サービスは、以下について一切の責任を負いません：
+            </p>
+            <ul class="terms-list">
+                <li>利用者の投資判断および投資結果</li>
+                <li>市場データの正確性・完全性・適時性</li>
+                <li>提供情報に基づく損失・損害</li>
+                <li>サービス利用によるあらゆる損害</li>
+                <li>第三者によるコンテンツの不正使用</li>
+                <li>システム障害による利用不能</li>
+            </ul>
+        </section>
+
+        <section class="terms-content-section">
+            <h2 class="terms-section-title">第8条 料金・支払い</h2>
+            
+            <h3 class="terms-subsection-title">8.1 料金体系</h3>
+            <p class="terms-text-content">
+                当サービスの料金は、サービス内で明示された金額に従います。料金は事前告知により変更される場合があります。
+            </p>
+
+            <h3 class="terms-subsection-title">8.2 支払い条件</h3>
+            <ul class="terms-list">
+                <li>料金は前払いとし、指定された方法で支払うものとします</li>
+                <li>支払い完了後のキャンセル・返金は原則として行いません</li>
+                <li>料金の滞納がある場合、サービス利用を停止する場合があります</li>
+            </ul>
+        </section>
+
+        <section class="terms-content-section">
+            <h2 class="terms-section-title">第9条 プライバシー・個人情報</h2>
+            <p class="terms-text-content">
+                個人情報の取り扱いについては、別途定める「プライバシーポリシー」に従います。利用者は、プライバシーポリシーに同意した上で当サービスを利用するものとします。
+            </p>
+            
+            <h3 class="terms-subsection-title">9.1 学習データの利用</h3>
+            <p class="terms-text-content">
+                当サービスは、利用者の学習進度や理解度データを、個人を特定できない形で分析し、サービス向上に活用する場合があります。
+            </p>
+        </section>
+
+        <section class="terms-content-section">
+            <h2 class="terms-section-title">第10条 サービスの変更・中止</h2>
+            
+            <h3 class="terms-subsection-title">10.1 サービス内容の変更</h3>
+            <p class="terms-text-content">
+                当サービスは、事前の通知により、サービス内容を変更・追加・削除する場合があります。重要な変更については、適切な期間をもって通知いたします。
+            </p>
+
+            <h3 class="terms-subsection-title">10.2 サービスの中止</h3>
+            <p class="terms-text-content">
+                以下の場合、サービスを一時的または永続的に中止することがあります：
+            </p>
+            <ul class="terms-list">
+                <li>システムメンテナンス</li>
+                <li>技術的障害</li>
+                <li>法令の変更</li>
+                <li>事業上の理由</li>
+                <li>不可抗力による場合</li>
+            </ul>
+        </section>
+
+        <section class="terms-content-section">
+            <h2 class="terms-section-title">第11条 利用停止・解除</h2>
+            
+            <h3 class="terms-subsection-title">11.1 利用停止</h3>
+            <p class="terms-text-content">
+                利用者が以下に該当する場合、事前通知なくサービス利用を停止することがあります：
+            </p>
+            <ul class="terms-list">
+                <li>本規約への違反</li>
+                <li>料金の滞納</li>
+                <li>虚偽の情報提供</li>
+                <li>反社会的勢力との関係が判明した場合</li>
+                <li>その他、当サービスが不適切と判断した場合</li>
+            </ul>
+
+            <h3 class="terms-subsection-title">11.2 解約</h3>
+            <p class="terms-text-content">
+                利用者は、指定された手続きにより、いつでもサービスを解約できます。解約後のデータ復旧はできません。
+            </p>
+        </section>
+
+        <section class="terms-content-section">
+            <h2 class="terms-section-title">第12条 損害賠償</h2>
+            <p class="terms-text-content">
+                利用者が本規約に違反し、当サービスまたは第三者に損害を与えた場合、利用者はその損害を賠償する責任を負います。
+            </p>
+            <p class="terms-text-content">
+                当サービスの責任は、故意または重大な過失がある場合を除き、利用者が支払った料金の範囲内に限定されます。
+            </p>
+        </section>
+
+        <section class="terms-content-section">
+            <h2 class="terms-section-title">第13条 規約の変更</h2>
+            <p class="terms-text-content">
+                当サービスは、必要に応じて本規約を変更することがあります。重要な変更については、サービス内での告知またはメール通知により、事前にお知らせいたします。
+            </p>
+            <p class="terms-text-content">
+                変更後も継続してサービスを利用した場合、変更された規約に同意したものとみなします。
+            </p>
+        </section>
+
+        <section class="terms-content-section">
+            <h2 class="terms-section-title">第14条 分離可能性</h2>
+            <p class="terms-text-content">
+                本規約のいずれかの条項が無効と判断された場合でも、他の条項の効力には影響しません。無効とされた条項は、その趣旨に最も近い有効な条項に置き換えられるものとします。
+            </p>
+        </section>
+
+        <section class="terms-content-section">
+            <h2 class="terms-section-title">第15条 準拠法・管轄裁判所</h2>
+            <p class="terms-text-content">
+                本規約は、日本法を準拠法とし、日本国の法令に従って解釈されます。
+            </p>
+            <p class="terms-text-content">
+                当サービスと利用者との間で生じた紛争については、東京地方裁判所を第一審の専属的合意管轄裁判所とします。
+            </p>
+        </section>
+
+        <section class="terms-content-section">
+            <div class="terms-contact-section">
+                <h2 class="terms-section-title">第16条 お問い合わせ</h2>
+                <p class="terms-text-content">
+                    本規約に関するお問い合わせは、以下の窓口までご連絡ください：
+                </p>
+                <div style="margin: 20px 0;"> 
+                    <p class="terms-text-content">受付時間：平日 9:00-18:00（土日祝日除く）</p>
+                    <p class="terms-text-content">回答期間：ご連絡から1週間以内</p>
+                </div>
+                <div class="terms-highlight-box">
+                    <p class="terms-text-content">
+                        <strong>投資に関する注意：</strong>当サービスは投資助言・勧誘を行いません。投資判断は必ずご自身で行い、十分にリスクを理解した上でご判断ください。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <p class="terms-text-content" style="margin-bottom: 20px;">
+                本規約は2024年12月20日より施行いたします。
+            </p>
+            <button class="terms-back-button" onclick="window.history.back()">前のページに戻る</button>
+        </div>
+    </main>
+
+    <script>
+        // 戻るボタンの処理
+        document.querySelector('.terms-back-button').addEventListener('click', function() {
+            if (document.referrer) {
+                window.history.back();
+            } else {
+                window.location.href = '/';
+            }
+        });
+    </script>
+</body>
+</html>

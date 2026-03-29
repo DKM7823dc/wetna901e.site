@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) 谷歌像素替换你自己的？懂-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10976462266"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-10976462266');
+</script>
+
+<!-- 谷歌 事件替换你自己的？懂 -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-10976462266/oZrpCLiMgv4aELqL_vEo',
+      'value': 1.0,
+      'currency': 'USD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+<script>
+  function t2() {
+	// 跳转地址，懂？
+            gtag_report_conversion('https://line.me/add-friend/'); 
+        }
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI株式診断 - データ駆動型投資戦略</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .progress-bar {
+            animation: progress 2s ease-in-out;
+        }
+        
+        @keyframes progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .modal-backdrop {
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+    <!-- Dark mode detection script -->
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 fade-in">
+                基礎から始める<br>
+                <span class="text-yellow-300">データ駆動型投資戦略</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto fade-in">
+                専門ツールと市場データ分析を通じて、実用的な投資知識を提供し、<br>
+                より合理的な投資判断をサポートします
+            </p>
+            
+            <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-6 max-w-2xl mx-auto mb-8">
+                <h3 class="text-2xl font-semibold mb-4">あらゆる投資家に適した学習方法</h3>
+                <p class="text-lg">
+                    初心者から経験者まで、市場分析手法を体系的に解説し、<br>
+                    投資時のリスク管理をより効果的に行えるようサポートします
+                </p>
+            </div>
+            
+            <div class="flex items-center justify-center space-x-4 mb-8">
+                <div class="bg-green-500 w-3 h-3 rounded-full animate-ping"></div>
+                <span class="text-lg font-semibold">本日の利用者数：<span id="userCount" class="text-yellow-300 text-2xl">7,231</span>人</span>
+            </div>
+            
+            <div class="max-w-md mx-auto mb-8">
+                <input type="text" id="stockInput" placeholder="株式名または銘柄コードを入力" class="w-full text-base px-6 py-4 rounded-full border-2 border-white/30 bg-white/20 backdrop-blur-sm text-white placeholder-white/70 focus:outline-none focus:border-yellow-300 text-center">
+            </div>
+            
+            <button onclick="f2()" class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 text-xl font-bold py-4 px-12 rounded-full transition-all duration-300 pulse-animation shadow-lg">
+                <i class="fas fa-rocket mr-2"></i>今すぐ体験
+            </button>
+        </div>
+    </section>
+
+    <!-- AI Stock Analysis Section -->
+    <section class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">
+                        人工智能株式診断の仕組み
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+                        最新技術を活用して市場トレンドを分析し、<br>
+                        将来の見通しを予測します
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-blue-500 w-12 h-12 rounded-full flex items-center justify-center">
+                                <i class="fas fa-chart-line text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">市場データ分析</h4>
+                                <p class="text-gray-600 dark:text-gray-300">大量の市場データを分析し、価格パターン、取引量変化、市場センチメントから有意義な洞察を導き出します</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-purple-500 w-12 h-12 rounded-full flex items-center justify-center">
+                                <i class="fas fa-brain text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">機械学習アルゴリズム</h4>
+                                <p class="text-gray-600 dark:text-gray-300">独自のアルゴリズムが過去の株価データから学習し、複雑な市場パターンを理解して将来の動向を予測します</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center">
+                                <i class="fas fa-newspaper text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">ニュース・センチメント分析</h4>
+                                <p class="text-gray-600 dark:text-gray-300">最新ニュース、SNSトレンド、アナリスト意見を分析し、株価に影響を与える可能性のある要因を特定します</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button onclick="f2()" class="mt-8 bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold py-3 px-8 rounded-lg transition-all duration-300">
+                        <i class="fas fa-gift mr-2"></i>今すぐ無料体験
+                    </button>
+                </div>
+                
+                <div class="text-center">
+                    <img src="img/516287.jpg" alt="AI株式診断" class="rounded-2xl shadow-2xl w-full max-w-md mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Reviews Section -->
+    <section class="py-20 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
+                ユーザーの声
+            </h2>
+            <p class="text-center text-xl text-gray-600 dark:text-gray-300 mb-12">
+                株式診断サービスをご利用いただいたユーザー様からのコメントをご紹介します
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        「初心者でも理解しやすい分析レポートで、投資判断に大変役立っています。特に市場データの可視化が分かりやすく、リスク管理の参考になります。」
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold">T</div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-gray-900 dark:text-white">田中様</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">投資歴2年</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        「人工智能による客観的な分析が印象的です。感情に左右されがちな投資判断を、データに基づいて冷静に行えるようになりました。継続的に利用しています。」
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-semibold">S</div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-gray-900 dark:text-white">佐藤様</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">投資歴5年</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Disclosure Section -->
+    <section class="py-16 bg-gray-800 text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">重要な開示事項</h2>
+            <div class="max-w-4xl mx-auto text-sm space-y-4">
+                <div>
+                    <h3 class="font-semibold mb-2">投資リスクの開示：</h3>
+                    <p>投資にはリスクが伴い、市場変動により元本損失が生じる可能性があります</p>
+					<p>本コースは知識共有のみを目的とし、投資アドバイスを構成するものではありません</p>
+					<p>すべての履歴データは参考用であり、将来のパフォーマンスを示すものではありません</p>
+					<p>ご自身のリスク許容度に応じて慎重に決定してください</p>
+                </div>
+                
+             
+                
+                 
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">人工智能株式診断</h3>
+                    <p class="text-gray-400 text-sm">
+                        データ駆動型投資戦略で、<br>
+                        より良い投資判断をサポートします
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-md font-semibold mb-4">法的情報</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a   class="hover:text-white transition-colors">プライバシーポリシー</a></li>
+                        <li><a   class="hover:text-white transition-colors">利用規約</a></li>
+                        <li><a   class="hover:text-white transition-colors">免責事項</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-md font-semibold mb-4">規制情報</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">金融商品取引法</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">投資リスク開示</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">業績免責声明</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-md font-semibold mb-4">お問い合わせ</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">サポート</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">よくある質問</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">お問い合わせフォーム</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8">
+                <div class="grid md:grid-cols-2 gap-4 items-center">
+                    <div class="text-sm text-gray-400">
+                        <p>&copy; 2025 人工智能株式診断. All rights reserved.</p>
+                        <p class="mt-1">本サービスは金融商品取引法に基づく登録投資顧問業者ではありません。</p>
+                    </div>
+                    
+                    <div class="text-sm text-gray-400 md:text-right">
+                        <p class="mb-1">金融庁登録番号：未登録</p>
+                        <p>投資判断は自己責任で行ってください。</p>
+                    </div>
+                </div>
+                
+                <div class="mt-6 text-xs text-gray-500 text-center">
+                    <p class="mb-2">
+                        当サイトは、金融商品取引法第37条の規定に基づき、以下の事項を明示いたします：
+                    </p>
+                    <p class="mb-1">
+                        ・投資は元本保証されるものではありません ・過去の運用実績は将来の運用成果を保証するものではありません
+                    </p>
+                    <p>
+                        ・投資に関するご判断は、お客様自身の責任において行っていただきますようお願いいたします
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Progress Modal -->
+    <div id="progressModal" class="fixed inset-0 bg-black bg-opacity-50 modal-backdrop hidden items-center justify-center z-50">
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-2xl max-w-md w-full mx-4">
+            <div class="text-center">
+                <div class="mb-4">
+                    <i class="fas fa-cog fa-spin text-4xl text-blue-500"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">システム分析中...</h3>
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-600 dark:text-gray-300">市場分析</span>
+                        <i class="fas fa-check text-green-500" id="check1"></i>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-600 dark:text-gray-300">最新ニュース分析</span>
+                        <i class="fas fa-check text-green-500" id="check2"></i>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-600 dark:text-gray-300">履歴データ分析</span>
+                        <i class="fas fa-check text-green-500" id="check3"></i>
+                    </div>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                    <div id="progressBar" class="bg-blue-500 h-3 rounded-full progress-bar" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Modal -->
+    <div id="resultModal" class="fixed inset-0 bg-black bg-opacity-50 modal-backdrop hidden items-center justify-center z-50">
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-2xl max-w-md w-full mx-4">
+            <div class="text-center">
+                <div class="mb-4">
+                    <i class="fas fa-check-circle text-4xl text-green-500"></i>
+                </div>
+                <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">システム分析完成</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-6">下記のリンクをクリックして専用レポートを受け取ってください</p>
+                
+                <button onclick="t2()" class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg mb-4 transition-all duration-300">
+                    <i class="fab fa-line mr-2"></i>LINE友達追加でレポート受信
+                </button>
+                
+                <button onclick="closeModal()" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">
+                    閉じる
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // User count animation
+        let userCount = 7231;
+        function updateUserCount() {
+            userCount += Math.floor(Math.random() * 21) + 10; // 10-30 random increment
+            document.getElementById('userCount').textContent = userCount.toLocaleString();
+        }
+        setInterval(updateUserCount, 1000);
+
+        // Main button function
+        function f2() {
+            const stockInput = document.getElementById('stockInput').value.trim();
+            
+            if (!stockInput) {
+                showCustomAlert('株式名または銘柄コードを入力してください');
+                return;
+            }
+            
+            showProgressModal();
+        }
+
+        // Custom alert function
+        function showCustomAlert(message) {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+            modal.innerHTML = `
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-sm w-full mx-4">
+                    <div class="text-center">
+                        <i class="fas fa-exclamation-triangle text-4xl text-yellow-500 mb-4"></i>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">${message}</p>
+                        <button onclick="this.closest('.fixed').remove()" class="px-6 py-2 bg-blue-500 text-white hover:bg-blue-600 rounded">
+                            確認
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        // Show progress modal
+        function showProgressModal() {
+            const modal = document.getElementById('progressModal');
+            const progressBar = document.getElementById('progressBar');
+            const checks = ['check1', 'check2', 'check3'];
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Hide all checks initially
+            checks.forEach(id => {
+                document.getElementById(id).style.display = 'none';
+            });
+            
+            // Animate progress bar
+            progressBar.style.width = '100%';
+            
+            // Show checks with delay
+            setTimeout(() => document.getElementById('check1').style.display = 'inline', 600);
+            setTimeout(() => document.getElementById('check2').style.display = 'inline', 1200);
+            setTimeout(() => document.getElementById('check3').style.display = 'inline', 1800);
+            
+            // Show result modal after 2 seconds
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                showResultModal();
+            }, 2000);
+        }
+
+        // Show result modal
+        function showResultModal() {
+            const modal = document.getElementById('resultModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        // Close modal
+        function closeModal() {
+            const resultModal = document.getElementById('resultModal');
+            resultModal.classList.add('hidden');
+            resultModal.classList.remove('flex');
+        }
+
+        // T2 function for LINE redirect
+      
+    </script>
+</body>
+</html>
