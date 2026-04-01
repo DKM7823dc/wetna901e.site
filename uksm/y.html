@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Investor Exchange Community</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #6ED25A;
+            --primary-black: #000000;
+            --dark-bg: #0a0a0a;
+            --card-bg: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --gradient-overlay: linear-gradient(135deg, rgba(110, 210, 90, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--primary-black);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .dark body {
+            background-color: var(--dark-bg);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -2;
+        }
+
+        .hero-bg img,
+        .hero-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Mobile Hero Layout */
+        @media (max-width: 640px) {
+            .hero {
+                min-height: auto;
+                flex-direction: column;
+                padding: 0;
+                position: relative;
+            }
+
+            .hero-bg {
+                position: relative;
+                width: 100%;
+                height: 50vh;
+                min-height: 300px;
+                z-index: 0;
+            }
+
+            .hero-bg img,
+            .hero-bg video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .hero-content {
+                position: relative;
+                z-index: 1;
+                background: var(--primary-black);
+                width: 100%;
+                padding: 3rem 1rem;
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            color: #6ED25A;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: #ffffff;
+            margin-bottom: 3rem;
+            font-weight: 300;
+            line-height: 1.8;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.25rem 3.5rem;
+            background: var(--primary-green);
+            color: var(--primary-black);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.125rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            box-shadow: 0 10px 40px rgba(110, 210, 90, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(110, 210, 90, 0.5);
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+
+        /* Breathing animation for CTA buttons */
+        @keyframes breathe {
+            0%, 100% {
+                box-shadow: 0 10px 40px rgba(110, 210, 90, 0.3);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 15px 60px rgba(110, 210, 90, 0.6);
+                transform: scale(1.02);
+            }
+        }
+
+        .cta-button {
+            animation: breathe 3s ease-in-out infinite;
+        }
+
+        .cta-button:hover {
+            animation: none;
+        }
+
+        /* Logo Section */
+        .logos {
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, var(--primary-black) 0%, var(--dark-bg) 100%);
+        }
+
+        .logos-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 3rem;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .logos-container img {
+            max-width: 180px;
+            height: auto;
+            opacity: 0.7;
+            filter: grayscale(100%) brightness(1.5);
+            transition: all 0.3s ease;
+        }
+
+        .logos-container img:hover {
+            opacity: 1;
+            filter: grayscale(0%) brightness(1);
+            transform: scale(1.1);
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 1rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-alt {
+            background: var(--card-bg);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-align: center;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .media-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            margin-bottom: 6rem;
+        }
+
+        .media-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .media-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .media-item:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .media-content h3 {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-green);
+        }
+
+        .media-content p {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+
+        .media-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(110, 210, 90, 0.2);
+        }
+
+        .media-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .media-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Text Content Sections */
+        .text-section {
+            background: var(--card-bg);
+            padding: 2rem;
+            margin: 3rem 0;
+            border-left: 5px solid var(--primary-green);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .text-section:hover {
+            background: #1a1a1a;
+        }
+
+        .text-section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .text-section h2 {
+            font-size: clamp(1.75rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .toggle-icon {
+            font-size: 2rem;
+            color: var(--primary-green);
+            transition: transform 0.3s ease;
+            font-weight: bold;
+        }
+
+        .text-section.expanded .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .text-section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+            padding: 0;
+        }
+
+        .text-section.expanded .text-section-content {
+            max-height: 1000px;
+            padding: 2rem 0 1rem 0;
+        }
+
+        .text-section p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.9;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary-green);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(110, 210, 90, 0.2);
+        }
+
+        .feature-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card h3 {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-green);
+        }
+
+        .feature-card h4 {
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .feature-card p,
+        .feature-card ul {
+            color: var(--text-secondary);
+            font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-card li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .feature-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+
+        .feature-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Alternate layout for even cards */
+        .feature-card:nth-child(even) {
+            direction: rtl;
+        }
+
+        .feature-card:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        /* Results Image */
+        .results-image {
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .results-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(110, 210, 90, 0.3);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--card-bg);
+            padding: 6rem 2rem;
+            margin: 4rem 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 4rem auto;
+        }
+
+        .testimonial {
+            text-align: center;
+        }
+
+        .testimonial img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            aspect-ratio: 1;
+            border-radius: 15px;
+            margin: 0 auto 2rem;
+            border: 5px solid var(--primary-green);
+            box-shadow: 0 10px 40px rgba(110, 210, 90, 0.3);
+            object-fit: cover;
+        }
+
+        .testimonial h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        @media (max-width: 968px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, var(--primary-green) 0%, #4fb83f 100%);
+            padding: 6rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 900;
+            color: var(--primary-black);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .final-cta p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--primary-black);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .final-cta .cta-button {
+            background: var(--primary-black);
+            color: var(--primary-green);
+            margin-top: 2rem;
+        }
+
+        .final-cta .cta-button:hover {
+            background: #1a1a1a;
+        }
+
+        /* Floating Mobile CTA Button */
+        .floating-cta {
+            display: none;
+            position: fixed;
+            bottom: 24px;
+            left: 16px;
+            right: 16px;
+            z-index: 1000;
+            padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+
+        .floating-cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            width: 100%;
+            padding: 1.1rem 2rem;
+            background: var(--primary-green);
+            color: var(--primary-black);
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            box-shadow: 0 8px 30px rgba(110, 210, 90, 0.5), 0 0 0 0 rgba(110, 210, 90, 0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: floatingBreathe 2s ease-in-out infinite;
+        }
+
+        .floating-cta-button:active {
+            transform: scale(0.96);
+            box-shadow: 0 4px 20px rgba(110, 210, 90, 0.4);
+            animation: none;
+        }
+
+        .floating-cta-button svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        @keyframes floatingBreathe {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 8px 30px rgba(110, 210, 90, 0.5), 0 0 0 0 rgba(110, 210, 90, 0.4);
+            }
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 12px 50px rgba(110, 210, 90, 0.8), 0 0 20px 5px rgba(110, 210, 90, 0.3);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .floating-cta {
+                display: block;
+            }
+
+            /* Add padding to bottom of page to prevent content being hidden by floating button */
+            body {
+                padding-bottom: 120px;
+            }
+
+            .final-cta {
+                padding-bottom: 8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .media-item {
+                grid-template-columns: 1fr;
+            }
+
+            .media-item:nth-child(even) {
+                direction: ltr;
+            }
+
+            .logos-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 968px) {
+            .feature-card {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card:nth-child(even) {
+                direction: ltr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .logos {
+                padding: 3rem 1rem;
+            }
+
+            .logos-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .section {
+                padding: 1rem 1rem;
+            }
+
+            .text-section {
+                padding: 1.5rem 1rem;
+            }
+
+            .feature-card {
+                padding: 2rem 1rem;
+            }
+
+            .testimonials {
+                padding: 4rem 1rem;
+            }
+
+            .final-cta {
+                padding: 4rem 1rem;
+            }
+
+            .media-item {
+                gap: 2rem;
+            }
+
+            .features-grid {
+                gap: 2rem;
+            }
+
+            .testimonials-grid {
+                gap: 2rem;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --card-bg: #0f0f0f;
+                --dark-bg: #000000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+       <div class="hero-bg">
+    <video autoplay muted loop playsinline>
+        <source src="media/1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+        <div class="hero-content">
+            <h1>Professional Investor Exchange Community</h1>
+            <p>We teach you how to make money from the stock market offering financial security strategies, stock investment techniques, stock selection methods, and investment philosophy education. Every week, we openly share stocks with expected returns of 10% or higher in our community.</p>
+            <button class="cta-button" onclick="k2()">Join WhatsApp Group</button>
+        </div>
+    </section>
+
+    <!-- Logos Section -->
+    <section class="logos">
+        <div class="logos-container">
+            <img src="img/NYSE-logo-1024x375.webp" alt="NYSE">
+            <img src="img/NASDAQ-Logo-1024x291.webp" alt="NASDAQ">
+            <img src="img/CBOE-Logo-1024x349.webp" alt="CBOE">
+            <img src="img/bloomberg-logo.webp" alt="Bloomberg">
+            <img src="img/Forbes-Logo.webp" alt="Forbes">
+        </div>
+    </section>
+
+    <!-- System Demo Section -->
+    <section class="section">
+        <div class="media-section">
+            <div class="media-item">
+                <div class="media-content">
+                    <h3>System Demo</h3>
+                    <p>Watch our automated scanners find explosive opportunities in the market!</p>
+                </div>
+                <div class="media-image">
+                    <img src="img/intro_video-q3m46xtm36yzwlketfnd7224u2an1iy3a8gwcjz6ds.webp" alt="System Demo">
+                </div>
+            </div>
+
+            <!-- Option Flow Scanner -->
+            <div class="media-item">
+                <div class="media-content">
+                    <h3>Option Flow Scanner</h3>
+                    <p>See how our options flow scanner allows you to follow the "smart money"!</p>
+                </div>
+                <div class="media-image">
+                    <img src="img/options_video-q3m47p2xle0b9agte9fjpd6i28ka8qyb1zdz9kurdc.webp" alt="Option Flow Scanner">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Text Sections -->
+    <div class="text-section" onclick="toggleSection(this)">
+        <div class="section">
+            <div class="text-section-header">
+                <h2>WE FIND THE ACTION</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="text-section-content">
+                <p>We are distinctly different than any other trading system on the market. Long before the market opens, our system scans the exchanges using proprietary algorithms to find the most active stocks. Our fully automated scanners then send you alerts to explosive opportunities in the market in real time. Once an alert is posted, you can click on the symbol and find out why that stock received an alert. Then use our advanced charting tools and proprietary volatility indicator to see which stocks are breaking out and posting the biggest gains.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-section" onclick="toggleSection(this)">
+        <div class="section">
+            <div class="text-section-header">
+                <h2>A POWERFUL ADVANTAGE</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="text-section-content">
+                <p>Our system continuously scans the NASDAQ, New York Stock Exchange and all other stock markets analyzing over 8,000 stocks. Our algorithms are similar to those used in extremely profitable 'high frequency trading' (HFT) strategies. We are here to level the playing field offering you technology that has too often been reserved for large financial firms, hedge funds, and the Wall Street elite.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="section">
+        <h2 class="section-title">Our Proprietary Features</h2>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-content">
+                    <h3>Powerful Alerts</h3>
+                    <p>Our fully automated algorithm-based system scans over 11,000 stocks multiple times per second to find the most volatile stocks and alert you to the biggest moves in the market before they occur.</p>
+                    <h4>Harness Algo-Driven Market Alerts</h4>
+                </div>
+                <div class="feature-image">
+                    <img src="img/alerts_reflect_3-1024x1024.webp" alt="Alerts">
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-content">
+                    <h3>Trading Community</h3>
+                    <p>No one trades alone. Chat directly with experienced and novice traders in our professional investor community. No need to waste precious time switching between platforms and tabs.</p>
+                    <ul>
+                        <li>Get three high-yield stocks</li>
+                        <li>Collaborate and Share Ideas</li>
+                        <li>Interact with Seasoned Veterans in a Team Environment</li>
+                        <li>Delve Deeper into Our Chat Capabilities</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <img src="img/chat_reflect-725x1024-1.webp" alt="Chat">
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-content">
+                    <h3>Dark Pool</h3>
+                    <p>Dark Pools are private exchanges where financial institutions conduct large block trades outside of the public markets. Our Dark Pool scanner provides our members with real-time insight into what is happening in these mysterious private exchanges.</p>
+                    <h4>Uncover Dark Pool Insights</h4>
+                </div>
+                <div class="feature-image">
+                    <img src="img/darkpool_reflect_down-1024x1024-1-1024x1024.webp" alt="Dark Pool">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="text-align: center; padding: 4rem 2rem;">
+        <button class="cta-button" onclick="k2()">Join WhatsApp Group</button>
+    </section>
+
+    <!-- Results Section -->
+    <section class="section">
+        <h2 class="section-title">Here are some of the results of our community tests</h2>
+        <p class="section-subtitle">Join us and you'll get something different</p>
+        <div class="results-image">
+            <img src="img/shouyi22.png" alt="Community Test Results">
+        </div>
+    </section>
+
+    <!-- Track Alerts Section -->
+    <section class="section section-alt" style="padding: 6rem 2rem;">
+        <h2 class="section-title" style="font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 2rem;">Track Our Top Alerts</h2>
+        <p class="section-subtitle" style="font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 400; margin-bottom: 1rem;">See our Top Gainers from the previous day. Our alert log finds the biggest profit opportunities in the market!</p>
+        <div style="text-align: center; margin-top: 4rem;">
+            <h3 style="font-size: clamp(2rem, 4vw, 3.5rem); color: var(--primary-green); margin-bottom: 2rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Stocks Options</h3>
+            <p style="color: var(--text-secondary); font-size: clamp(1rem, 1.5vw, 1.25rem); font-style: italic;">*This data is updated daily to allow you to track our system's performance.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2 class="section-title">Hear From Stock Traders Who Have Made a Fortune</h2>
+        <p class="section-subtitle">Over the years, smart stock investing has made many people millionaires.</p>
+
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <img src="img/1.webp" alt="Steven Kang">
+                <h4>Maria Chaudhry</h4>
+            </div>
+            <div class="testimonial">
+                <img src="img/2.webp" alt="Steven Kang">
+                <h4>Jason Swan</h4>
+            </div>
+            <div class="testimonial">
+                <img src="img/3" alt="Steven Kang">
+                <h4>Steven Kang</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <h2>NO MORE 'HOPING-AND-PRAYING'</h2>
+        <h2 style="margin-top: 1rem;">Join Our Stock Community Today</h2>
+        <p style="margin-top: 2rem;">Why choose us to recommend "hot" high-yielding top stocks for you?</p>
+        <p>We have a decade of experience in Technical Analysis & in-depth research of stocks.</p>
+        <p>Sending you real time stock alerts!</p>
+        <button class="cta-button" onclick="k2()">Join WhatsApp Group</button>
+    </section>
+
+    <!-- Floating Mobile CTA Button -->
+    <div class="floating-cta">
+        <button class="floating-cta-button" onclick="k2()">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Join WhatsApp Group
+        </button>
+    </div>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // CTA Button Function
+        function k2() {
+            window.open('https://www.qq.com', '_blank');
+        }
+
+        // Toggle section function
+        function toggleSection(element) {
+            element.classList.toggle('expanded');
+        }
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 1s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.media-item, .feature-card, .text-section').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

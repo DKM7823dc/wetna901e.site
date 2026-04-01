@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+ function k2() { 
+            window.open('https://wa.me/123123', '_blank');
+        }
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Professional tutors provide online guidance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-hero {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #ffffff, #00ff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            color: #cccccc;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #00ff00, #00cc00);
+            color: #000000;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 255, 0, 0.3);
+        }
+
+        .logo-strip {
+            background-color: #111111;
+            padding: 40px 0;
+            border-top: 2px solid #00ff00;
+            border-bottom: 2px solid #00ff00;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .logo-item {
+            height: 60px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo-item:hover {
+            opacity: 1;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #00ff00;
+            font-weight: bold;
+        }
+
+        .section-content {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #cccccc;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid #333333;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #00ff00;
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 255, 0, 0.1);
+        }
+
+        .feature-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .feature-title {
+            font-size: 1.8rem;
+            color: #00ff00;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .feature-description {
+            font-size: 1.1rem;
+            color: #cccccc;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-section {
+            background-color: #111111;
+            padding: 80px 0;
+        }
+
+        .testimonial-slider {
+            overflow: hidden;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        .testimonial-track {
+            display: flex;
+            animation: scroll 20s linear infinite;
+            gap: 30px;
+        }
+
+        .testimonial-item {
+            min-width: 300px;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid #333333;
+        }
+
+        .testimonial-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .results-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 15px;
+            margin: 40px auto;
+            display: block;
+        }
+
+        .risk-disclaimer {
+            background-color: #1a1a1a;
+            padding: 40px;
+            border-radius: 15px;
+            border-left: 5px solid #00ff00;
+            margin: 60px 0;
+        }
+
+        .risk-title {
+            color: #00ff00;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .risk-text {
+            color: #cccccc;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background-color: #111111;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 2px solid #333333;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
+
+        .footer-link {
+            color: #00ff00;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #ffffff;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            animation: breathe 2s ease-in-out infinite;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-icon {
+            font-size: 35px;
+            color: white;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #ff0000;
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, #00ff00, #00cc00);
+            color: #000000;
+            padding: 18px 60px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1000;
+            animation: breathe 2s ease-in-out infinite;
+            box-shadow: 0 4px 20px rgba(0, 255, 0, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1) translateY(-50%); }
+            50% { transform: scale(1.05) translateY(-50%); }
+        }
+
+        @keyframes breatheButton {
+            0%, 100% { transform: scale(1) translateX(-50%); }
+            50% { transform: scale(1.05) translateX(-50%); }
+        }
+
+        .floating-button {
+            animation: breatheButton 2s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .logo-container {
+                justify-content: center;
+            }
+            
+            .logo-item {
+                height: 40px;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                right: 20px;
+            }
+            
+            .whatsapp-icon {
+                font-size: 30px;
+            }
+            
+            .floating-button {
+                padding: 15px 40px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="section-hero">
+        <div class="container">
+            <h1 class="hero-title">Professional tutors provide online guidance</h1>
+            <p class="hero-subtitle">
+                We teach you how to make money in the stock market, providing financial security strategies, stock investment techniques, stock selection methods, and investment education. Every week, we publicly share stocks with expected returns of 10% or higher in our community.
+            </p>
+            <button class="cta-button" onclick="k2()">Add tutor WhatsApp</button>
+        </div>
+    </section>
+
+    <!-- Company Introduction -->
+    <section class="section">
+        <div class="container"> 
+            <div class="feature-grid" style="margin-top: 40px;">
+                <div class="feature-card">
+                    <img src="img/22.jpg" alt="AI-Powered Stock Selection" class="feature-image">
+                    <div class="section-content" style="text-align: left; max-width: 100%; margin: 0;">
+                        <p style="margin-bottom: 20px; font-size: 1.1rem; color: #ffffff;">
+                            Want to find stocks with real upside potential in a choppy market?
+                        </p>
+                        <p style="margin-bottom: 20px;">
+                            Our AI-powered stock selection system combines data-driven strategies to help you spot real trading opportunities amid market volatility.
+                        </p>
+                        <p>
+                            We focus on 3–10 day short-term trades so your capital stays flexible and your risk is more controlled.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Strip -->
+    <section class="logo-strip">
+        <div class="container">
+            <div class="logo-container">
+                <img src="img/NYSE-logo-1024x375.webp" alt="NYSE" class="logo-item">
+                <img src="img/NASDAQ-Logo-1024x291.webp" alt="NASDAQ" class="logo-item">
+                <img src="img/CBOE-Logo-1024x349.webp" alt="CBOE" class="logo-item">
+                <img src="img/bloomberg-logo.webp" alt="Bloomberg" class="logo-item">
+                <img src="img/Forbes-Logo.webp" alt="Forbes" class="logo-item">
+            </div>
+        </div>
+    </section>
+
+    <!-- System Demo Section -->
+    <section class="section">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <img src="img/intro_video-q3m46xtm36yzwlketfnd7224u2an1iy3a8gwcjz6ds.webp" alt="System Demo" class="feature-image">
+                    <h3 class="feature-title">System Demo</h3>
+                    <p class="feature-description">Watch how our automated scanner discovers explosive opportunities in the market</p>
+                </div>
+                <div class="feature-card">
+                    <img src="img/options_video-q3m47p2xle0b9agte9fjpd6i28ka8qyb1zdz9kurdc.webp" alt="Options Flow Scanner" class="feature-image">
+                    <h3 class="feature-title">Options Flow Scanner</h3>
+                    <p class="feature-description">See how our options flow scanner lets you track the "smart money"!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proprietary Features -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our Proprietary Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <img src="img/alerts_reflect_3-1024x1024.webp" alt="Powerful Alerts" class="feature-image">
+                    <h3 class="feature-title">Powerful Alerts</h3>
+                    <p class="feature-description">Our algorithm-based fully automated system scans over 11,000 stocks multiple times per second to identify the most volatile stocks and alert you before the biggest market movements occur.</p>
+                    <button class="cta-button" onclick="k2()">Leverage Algorithm-Driven Market Alerts</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trading Community -->
+    <section class="section">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <img src="img/chat_reflect-725x1024-1.webp" alt="Trading Community" class="feature-image">
+                    <h3 class="feature-title">Trading Community</h3>
+                    <p class="feature-description">No need to fight alone. Communicate directly with experienced traders and novice traders in our professional investor community. No need to waste valuable time switching between platforms and tabs. Get three high-yield stocks. Collaborate and share ideas. Interact with experienced veterans in a team environment.</p>
+                    <button class="cta-button" onclick="k2()">Explore Our Chat Features</button>
+                </div>
+                <div class="feature-card">
+                    <img src="img/darkpool_reflect_down-1024x1024-1-1024x1024.webp" alt="Dark Pool" class="feature-image">
+                    <h3 class="feature-title">Dark Pool</h3>
+                    <p class="feature-description">Dark pools are private exchanges where financial institutions conduct large transactions outside of public markets. Our dark pool scanner gives members real-time insights into the dynamics of these mysterious private exchanges.</p>
+                    <button class="cta-button" onclick="k2()">Unlock Dark Pool Insights</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Results from Our Community Testing</h2>
+            <p class="section-content">Join us and you'll get something different</p>
+            <img src="img/shouyi22.png" alt="Community Results" class="results-image">
+        </div>
+    </section>
+
+    <!-- Hot Alerts Tracking -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Track Our Hot Alerts</h2>
+            <p class="section-content">See the stocks with the biggest gains from the previous day. Our alert log helps you discover the biggest profit opportunities in the market</p>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonial-section">
+        <div class="container">
+            <h2 class="section-title">What Profitable Stock Traders Say</h2>
+            <p class="section-content">Over the years, smart stock investing has made many people millionaires</p>
+            <div class="testimonial-slider">
+                <div class="testimonial-track">
+                    <div class="testimonial-item">
+                        <img src="pic/1.png" alt="Testimonial 1" class="testimonial-image">
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="pic/2.png" alt="Testimonial 2" class="testimonial-image">
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="pic/3.png" alt="Testimonial 3" class="testimonial-image">
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="pic/1.png" alt="Testimonial 4" class="testimonial-image">
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="pic/2.png" alt="Testimonial 5" class="testimonial-image">
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="pic/3.png" alt="Testimonial 6" class="testimonial-image">
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="pic/1.png" alt="Testimonial 7" class="testimonial-image">
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="pic/2.png" alt="Testimonial 8" class="testimonial-image">
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="pic/3.png" alt="Testimonial 9" class="testimonial-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="section">
+        <div class="container"> 
+            <p class="section-content">
+             This free offer is limited to just 100 spots. Once they’re gone, they’re gone — first come, first served.
+Click the button below to get this week’s high quality stock ideas and start a deeper conversation with me.
+            </p>
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="cta-button" onclick="k2()">Add tutor WhatsApp</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Disclaimer -->
+    <section class="section">
+        <div class="container">
+            <div class="risk-disclaimer">
+                <h3 class="risk-title">⚠️ Important Risk Disclaimer</h3>
+                <p class="risk-text">*This service is for reference only and does not provide any investment advisory services or financial product trading services.</p>
+                <p class="risk-text">*The information provided is for reference only and should not be used as a basis for investment decisions.</p>
+                <p class="risk-text">*You bear the risk of final investment decisions.</p>
+                <p class="risk-text">*Data accuracy is not guaranteed.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="" class="footer-link" target="_blank">Privacy Policy</a>
+                <a href="" class="footer-link" target="_blank">Terms of Service</a>
+            </div>
+            <p style="color: #666666; font-size: 0.9rem;">© 2024 Professional Investment Community. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <div class="whatsapp-float" onclick="k2()">
+        <div class="whatsapp-icon">💬</div>
+        <div class="notification-badge">1</div>
+    </div>
+
+    <!-- Floating Bottom Button -->
+    <button class="floating-button" onclick="k2()">Add tutor WhatsApp</button>
+
+    <script>
+       
+
+        // Prevent zoom on mobile
+        document.addEventListener('gesturestart', function (e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('gesturechange', function (e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('gestureend', function (e) {
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>
